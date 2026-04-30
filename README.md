@@ -89,6 +89,8 @@ flowchart TD
     Q --> S --> P --> R --> N --> K --> Y --> C --> V --> M --> F --> X --> O --> A
 ```
 
+<img src="assets/diagrams/veritasclin-field-architecture.png" alt="VeritasClin Field architecture diagram" width="600">
+
 ## Core Concepts
 
 | Concept | What it means |
