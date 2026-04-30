@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import os
 from pathlib import Path
 
@@ -25,6 +26,12 @@ from veritasclin.schemas.pack import EvidencePack
 ASSET_DIR = Path(__file__).parent / "assets"
 LOGO_PATH = ASSET_DIR / "veritasclin-field-logo.png"
 MARK_PATH = ASSET_DIR / "veritasclin-field-mark.png"
+
+
+def _img_b64(path: Path) -> str:
+    if path.exists():
+        return base64.b64encode(path.read_bytes()).decode()
+    return ""
 
 st.set_page_config(page_title="VeritasClin Field", page_icon="VC", layout="wide")
 
@@ -66,11 +73,20 @@ st.markdown(
     }
 
     /* ── Header ─────────────────────────────────────────────────── */
-    .vc-shell {
+    .vc-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
       border-bottom: 2px solid var(--vc-teal-light);
-      padding-bottom: 1.1rem;
-      margin-bottom: 0.5rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
     }
+    .vc-logo {
+      width: 200px;
+      min-width: 160px;
+      flex-shrink: 0;
+    }
+    .vc-header-right { flex: 1; }
     .vc-kicker {
       color: var(--vc-teal);
       font-size: 0.73rem;
@@ -81,9 +97,9 @@ st.markdown(
     }
     .vc-title h1 {
       color: var(--vc-navy);
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       margin: 0;
       line-height: 1.15;
     }
@@ -388,14 +404,40 @@ st.markdown(
     }
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
+    [data-testid="stSidebar"] {
+      background-color: #F0F9FF;
+      border-right: 1px solid var(--vc-line);
+    }
+    [data-testid="stSidebar"] h3 {
+      color: var(--vc-navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin: 1rem 0 0.4rem 0;
+    }
     [data-testid="stSidebar"] .stRadio label {
       font-size: 0.9rem;
+      color: var(--vc-ink);
     }
     [data-testid="stSidebar"] .stSelectbox label,
     [data-testid="stSidebar"] .stSlider label {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--vc-ink);
+      color: var(--vc-muted);
+    }
+    /* ── Force light background on inputs ───────────────────────── */
+    .stTextArea textarea,
+    .stTextInput input {
+      background-color: #FFFFFF !important;
+      color: var(--vc-navy) !important;
+      border: 1px solid var(--vc-line) !important;
+      border-radius: 6px !important;
+    }
+    .stTextArea textarea:focus,
+    .stTextInput input:focus {
+      border-color: var(--vc-teal) !important;
+      box-shadow: 0 0 0 3px rgba(8,145,178,0.15) !important;
     }
 
     /* ── Responsive ──────────────────────────────────────────────── */
@@ -424,8 +466,12 @@ def _sec(text: str) -> None:
 # ── Sidebar ────────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    if MARK_PATH.exists():
-        st.image(str(MARK_PATH), width=110)
+    _mark_src = f"data:image/png;base64,{_img_b64(MARK_PATH)}" if MARK_PATH.exists() else ""
+    if _mark_src:
+        st.markdown(
+            f'<img src="{_mark_src}" width="88" style="margin-bottom:0.5rem">',
+            unsafe_allow_html=True,
+        )
     st.markdown("### Mode")
     mode = st.radio(
         "Select mode",
@@ -517,43 +563,46 @@ elif provider == "openai_compatible" and not (
 
 # ── Header ─────────────────────────────────────────────────────────────────
 
-header_logo, header_text = st.columns([1, 2.6], vertical_alignment="center")
-with header_logo:
-    if LOGO_PATH.exists():
-        st.image(str(LOGO_PATH), use_container_width=True)
-    else:
-        st.title("VeritasClin Field")
-with header_text:
-    st.markdown(
-        f"""
-        <div class="vc-shell">
-          <div class="vc-title">
-            <div class="vc-kicker">Offline-first evidence pack console</div>
-            <h1>Audit-ready medical evidence for field teams</h1>
-            <p>
-              Build PubMed-backed Evidence Packs online, carry their Claim Ledger and
-              Caution Map offline, and answer only from loaded evidence in English,
-              Portuguese, or Spanish — powered by Gemma&nbsp;4.
-            </p>
+_logo_src = f"data:image/png;base64,{_img_b64(LOGO_PATH)}" if LOGO_PATH.exists() else ""
+_logo_html = (
+    f'<img src="{_logo_src}" alt="VeritasClin Field" class="vc-logo">'
+    if _logo_src
+    else '<span style="font-size:1.5rem;font-weight:800;color:var(--vc-navy)">VeritasClin</span>'
+)
+
+st.markdown(
+    f"""
+    <div class="vc-header">
+      {_logo_html}
+      <div class="vc-header-right">
+        <div class="vc-title">
+          <div class="vc-kicker">Offline-first evidence pack console</div>
+          <h1>Audit-ready medical evidence for field teams</h1>
+          <p>
+            Build PubMed-backed Evidence Packs online, carry their Claim Ledger and
+            Caution Map offline, and answer only from loaded evidence in English,
+            Portuguese, or Spanish — powered by Gemma&nbsp;4.
+          </p>
+        </div>
+        <div class="vc-status-grid">
+          <div class="vc-status">
+            <span class="vc-status-label">Provider</span>
+            <span class="vc-status-value">{provider_label}</span>
           </div>
-          <div class="vc-status-grid">
-            <div class="vc-status">
-              <span class="vc-status-label">Provider</span>
-              <span class="vc-status-value">{provider_label}</span>
-            </div>
-            <div class="vc-status">
-              <span class="vc-status-label">Retrieval</span>
-              <span class="vc-status-value">{source_mode}</span>
-            </div>
-            <div class="vc-status">
-              <span class="vc-status-label">Offline pack</span>
-              <span class="vc-status-value">{offline_state}</span>
-            </div>
+          <div class="vc-status">
+            <span class="vc-status-label">Retrieval</span>
+            <span class="vc-status-value">{source_mode}</span>
+          </div>
+          <div class="vc-status">
+            <span class="vc-status-label">Offline pack</span>
+            <span class="vc-status-value">{offline_state}</span>
           </div>
         </div>
-        """,
-        unsafe_allow_html=True,
-    )
+      </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # ── Disclaimer ─────────────────────────────────────────────────────────────
 
