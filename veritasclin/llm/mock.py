@@ -9,6 +9,10 @@ class MockLLMProvider(LLMProvider):
     def generate(self, system_prompt: str, user_prompt: str, temperature: float = 0.2) -> str:
         combined = f"{system_prompt}\n{user_prompt}".lower()
 
+        # PICO extraction call — detected by the JSON response instruction
+        if "pico elements" in combined or '"population"' in combined or "pico_system" in combined:
+            return _mock_pico(combined)
+
         # Synthesis call — detected by the evidence-ID citation instruction
         if "cite ids inline" in combined or "cite these source ids" in combined:
             return _mock_synthesis(combined)
@@ -66,6 +70,44 @@ def _mock_synthesis(prompt: str) -> str:
         "The loaded evidence addresses the clinical question with citation-backed findings. "
         "Review the Claim Ledger for individual claim support status and cited evidence IDs."
     )
+
+
+def _mock_pico(prompt: str) -> str:
+    import json
+
+    if "dengue" in prompt:
+        data = {
+            "population": "adults with dengue",
+            "intervention": "warning signs",
+            "comparison": None,
+            "outcome": "severe dengue progression",
+            "timeframe": "recent",
+        }
+    elif "semaglutide" in prompt:
+        data = {
+            "population": "patients with CKD",
+            "intervention": "semaglutide",
+            "comparison": None,
+            "outcome": "renal outcomes and safety",
+            "timeframe": None,
+        }
+    elif "cannabis" in prompt or "cannabinoid" in prompt:
+        data = {
+            "population": "adults with neuropathic pain",
+            "intervention": "cannabinoids",
+            "comparison": "placebo",
+            "outcome": "pain relief",
+            "timeframe": None,
+        }
+    else:
+        data = {
+            "population": None,
+            "intervention": None,
+            "comparison": None,
+            "outcome": None,
+            "timeframe": None,
+        }
+    return json.dumps(data)
 
 
 def _mock_baseline(prompt: str) -> str:

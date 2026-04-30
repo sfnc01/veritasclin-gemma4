@@ -10,8 +10,10 @@ from veritasclin.schemas.evidence import EvidenceItem
 class CautionMapper:
     def map(self, claims: list[Claim], evidence_items: list[EvidenceItem]) -> list[CautionItem]:
         cautions: list[CautionItem] = []
-        evidence_text = _evidence_text(evidence_items)
-        evidence_pmids = [item.paper.pmid for item in evidence_items]
+        # Build a lookup from PMID to EvidenceItem for per-claim scoping
+        evidence_by_pmid: dict[str, EvidenceItem] = {
+            item.paper.pmid: item for item in evidence_items
+        }
         weak_pmids = [
             item.paper.pmid
             for item in evidence_items
@@ -56,6 +58,12 @@ class CautionMapper:
                 )
                 continue
 
+            # Scope evidence text to only the PMIDs this claim cites
+            cited_items = [evidence_by_pmid[p] for p in claim.pmids if p in evidence_by_pmid]
+            cited_text = _evidence_text(cited_items) if cited_items else ""
+            # Fall back to all evidence for low_certainty and indirect checks when no direct cite
+            scope_text = cited_text or _evidence_text(evidence_items)
+
             if claim.evidence_level in {"low", "uncertain"} or (
                 weak_pmids and set(claim.pmids).intersection(weak_pmids)
             ):
@@ -67,58 +75,59 @@ class CautionMapper:
                     weak_pmids,
                 )
 
-            if _has_population_mismatch(claim.text, evidence_text):
+            if _has_population_mismatch(claim.text, scope_text):
                 add(
                     claim,
                     "population_mismatch",
-                    "Some evidence may not directly match the target adult human population.",
+                    "Some cited evidence may not directly match the target adult human population.",
                     "medium",
-                    evidence_pmids,
+                    claim.pmids,
                 )
 
-            if _has_outcome_mismatch(claim.text, evidence_text):
+            if _has_outcome_mismatch(claim.text, scope_text):
                 add(
                     claim,
                     "outcome_mismatch",
                     (
-                        "Some evidence emphasizes surrogate or laboratory outcomes rather "
-                        "than the claim."
+                        "Cited evidence emphasizes surrogate or laboratory outcomes rather "
+                        "than the claimed clinical outcome."
                     ),
                     "medium",
-                    evidence_pmids,
+                    claim.pmids,
                 )
 
-            if _has_safety_signal(claim.text, evidence_text):
+            if _has_safety_signal(claim.text, scope_text):
                 add(
                     claim,
                     "safety_signal",
                     (
-                        "Loaded evidence includes safety or adverse-event language relevant "
+                        "Cited evidence includes safety or adverse-event language relevant "
                         "to this claim."
                     ),
                     "medium" if claim.risk_level != "high" else "high",
-                    evidence_pmids,
+                    claim.pmids,
                 )
 
-            if _has_indirect_evidence(evidence_text):
+            if cited_text and _has_indirect_evidence(cited_text):
                 add(
                     claim,
                     "indirect_evidence",
-                    "Some evidence is indirect for clinical decision-making in the target setting.",
+                    "Cited evidence is indirect for clinical decision-making "
+                    "in the target setting.",
                     "medium",
-                    evidence_pmids,
+                    claim.pmids,
                 )
 
-            if _has_conflict_language(evidence_text):
+            if cited_text and _has_conflict_language(cited_text):
                 add(
                     claim,
                     "conflicting_results",
                     (
-                        "Loaded evidence uses cautious language suggesting mixed or "
+                        "Cited evidence uses cautious language suggesting mixed or "
                         "inconsistent results."
                     ),
                     "low",
-                    evidence_pmids,
+                    claim.pmids,
                 )
         return cautions
 
@@ -165,7 +174,11 @@ def _has_safety_signal(claim_text: str, evidence_text: str) -> bool:
         "dizziness",
         "mortality",
     ]
-    return any(term in claim_text.lower() or term in evidence_text for term in safety_terms)
+    claim_lower = claim_text.lower()
+    # Signal requires presence in claim text OR in the claim's cited evidence — not global
+    return any(term in claim_lower for term in safety_terms) or any(
+        term in evidence_text for term in safety_terms
+    )
 
 
 def _has_indirect_evidence(evidence_text: str) -> bool:
