@@ -31,130 +31,409 @@ st.set_page_config(page_title="VeritasClin Field", page_icon="VC", layout="wide"
 st.markdown(
     """
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;700&display=swap');
+
     :root {
-      --vc-navy: #061e42;
-      --vc-ink: #11263b;
-      --vc-muted: #526676;
-      --vc-line: #d9e7e4;
-      --vc-panel: #f6fbfa;
-      --vc-panel-strong: #e7f7f5;
-      --vc-teal: #08a895;
-      --vc-cyan: #0891b2;
-      --vc-alert: #9a3412;
-      --vc-danger: #991b1b;
+      --vc-navy:        #0C2340;
+      --vc-ink:         #164E63;
+      --vc-muted:       #4B6E7D;
+      --vc-line:        #CBD5E1;
+      --vc-panel:       #F8FFFE;
+      --vc-panel-alt:   #EFF9FF;
+      --vc-teal:        #0891B2;
+      --vc-teal-light:  #E0F7FA;
+      --vc-green:       #059669;
+      --vc-green-light: #D1FAE5;
+      --vc-amber:       #D97706;
+      --vc-amber-light: #FEF3C7;
+      --vc-red:         #DC2626;
+      --vc-red-light:   #FEE2E2;
+      --vc-alert-bg:    #FFF7ED;
+      --vc-alert-text:  #431407;
+      --vc-alert-border:#EA580C;
     }
+
     html, body, [class*="css"] {
+      font-family: 'Figtree', 'Noto Sans', system-ui, sans-serif;
       color: var(--vc-ink);
       font-size: 16px;
+      line-height: 1.6;
     }
+
     .block-container {
-      padding-top: 1.1rem;
-      max-width: 1280px;
+      padding-top: 1.25rem;
+      max-width: 1300px;
     }
+
+    /* ── Header ─────────────────────────────────────────────────── */
     .vc-shell {
-      border-bottom: 1px solid var(--vc-line);
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--vc-teal-light);
+      padding-bottom: 1.1rem;
+      margin-bottom: 0.5rem;
     }
     .vc-kicker {
       color: var(--vc-teal);
-      font-size: 0.76rem;
-      font-weight: 750;
-      letter-spacing: 0.08em;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
     .vc-title h1 {
       color: var(--vc-navy);
-      letter-spacing: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
       margin: 0;
-      line-height: 1.08;
+      line-height: 1.15;
     }
     .vc-title p {
       color: var(--vc-muted);
-      margin: 0.3rem 0 0 0;
-      max-width: 74ch;
+      font-size: 0.94rem;
+      margin: 0.4rem 0 0 0;
+      max-width: 72ch;
     }
+
+    /* ── Status grid ─────────────────────────────────────────────── */
     .vc-status-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.55rem;
-      margin-top: 0.85rem;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
     .vc-status {
-      background: var(--vc-panel);
+      background: var(--vc-panel-alt);
       border: 1px solid var(--vc-line);
-      padding: 0.65rem 0.8rem;
-      min-height: 4.25rem;
+      border-radius: 8px;
+      padding: 0.7rem 0.95rem;
     }
-    .vc-status span {
+    .vc-status-label {
       color: var(--vc-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
       display: block;
-      font-size: 0.78rem;
-      margin-bottom: 0.18rem;
+      margin-bottom: 0.22rem;
     }
-    .vc-status b {
+    .vc-status-value {
       color: var(--vc-navy);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
-    .vc-section {
-      border-bottom: 1px solid var(--vc-line);
-      padding-bottom: 0.65rem;
-      margin: 1.1rem 0 0.85rem 0;
+
+    /* ── Disclaimer banner ───────────────────────────────────────── */
+    .vc-disclaimer {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      border-left: 4px solid var(--vc-alert-border);
+      background: var(--vc-alert-bg);
+      border-radius: 0 6px 6px 0;
+      padding: 0.65rem 1rem;
+      margin: 0.75rem 0 1.1rem 0;
+      color: var(--vc-alert-text);
+      font-size: 0.875rem;
+      font-weight: 500;
     }
-    .vc-section h2, .vc-section h3 {
+
+    /* ── Section headings ────────────────────────────────────────── */
+    .vc-section-head {
+      border-bottom: 2px solid var(--vc-teal-light);
+      padding-bottom: 0.5rem;
+      margin: 1.25rem 0 0.9rem 0;
+    }
+    .vc-section-head h2 {
       color: var(--vc-navy);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .vc-section-sub {
+      color: var(--vc-muted);
+      font-size: 0.82rem;
+      margin-top: 0.18rem;
+    }
+
+    /* ── Safety decision widget ──────────────────────────────────── */
+    .vc-safety-allowed {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--vc-green-light);
+      border: 1px solid #6EE7B7;
+      border-radius: 8px;
+      padding: 0.8rem 1.05rem;
+      margin-bottom: 0.9rem;
+    }
+    .vc-safety-rewritten {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--vc-amber-light);
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 0.8rem 1.05rem;
+      margin-bottom: 0.9rem;
+    }
+    .vc-safety-blocked {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--vc-red-light);
+      border: 1px solid #FCA5A5;
+      border-radius: 8px;
+      padding: 0.8rem 1.05rem;
+      margin-bottom: 0.9rem;
+    }
+    .vc-safety-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 0.18rem 0.55rem;
+      white-space: nowrap;
+      margin-top: 0.05rem;
+    }
+    .badge-allowed  { background: #059669; color: #fff; }
+    .badge-rewritten{ background: #D97706; color: #fff; }
+    .badge-blocked  { background: #DC2626; color: #fff; }
+    .vc-safety-body { flex: 1; }
+    .vc-safety-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--vc-navy);
+      margin-bottom: 0.22rem;
+    }
+    .vc-safety-detail {
+      font-size: 0.84rem;
+      color: var(--vc-ink);
+      opacity: 0.85;
+    }
+    .vc-rewrite-box {
+      background: rgba(255,255,255,0.65);
+      border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.5rem;
+      font-size: 0.86rem;
+      color: var(--vc-navy);
+      font-style: italic;
+    }
+
+    /* ── Metric cards ────────────────────────────────────────────── */
+    .metric-row { display: flex; gap: 0.65rem; margin-bottom: 1rem; }
+    .metric-card {
+      flex: 1;
+      border: 1px solid var(--vc-line);
+      border-radius: 8px;
+      background: var(--vc-panel);
+      padding: 0.9rem 1rem;
+    }
+    .metric-card-label {
+      color: var(--vc-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .metric-card-value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.22rem;
+    }
+    .metric-card-sub {
+      color: var(--vc-muted);
+      font-size: 0.76rem;
+      display: block;
+    }
+    .color-green  { color: var(--vc-green); }
+    .color-amber  { color: var(--vc-amber); }
+    .color-red    { color: var(--vc-red); }
+    .color-navy   { color: var(--vc-navy); }
+    .color-teal   { color: var(--vc-teal); }
+
+    /* ── Pack section headings ───────────────────────────────────── */
+    .pack-section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--vc-teal);
+      border-bottom: 1px solid var(--vc-teal-light);
+      padding-bottom: 0.35rem;
+      margin: 1.1rem 0 0.6rem 0;
+    }
+
+    /* ── PICO display ────────────────────────────────────────────── */
+    .pico-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin: 0.6rem 0 1rem 0;
+    }
+    .pico-card {
+      background: var(--vc-panel-alt);
+      border: 1px solid var(--vc-line);
+      border-radius: 8px;
+      padding: 0.75rem 0.95rem;
+    }
+    .pico-letter {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--vc-teal);
+      display: block;
       margin-bottom: 0.2rem;
     }
-    .vc-safety {
-      border-left: 4px solid var(--vc-alert);
-      background: #fff7ed;
-      padding: 0.75rem 1rem;
-      margin: 0.5rem 0 1rem 0;
-      color: #431407;
+    .pico-value {
+      font-size: 0.9rem;
+      color: var(--vc-navy);
+      font-weight: 500;
     }
-    .metric-card {
+
+    /* ── Claim status pills ──────────────────────────────────────── */
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+    }
+    .pill-supported     { background: #D1FAE5; color: #065F46; }
+    .pill-partial       { background: #FEF3C7; color: #92400E; }
+    .pill-unsupported   { background: #FEE2E2; color: #991B1B; }
+    .pill-uncertain     { background: #EDE9FE; color: #4C1D95; }
+
+    /* ── Caution severity ────────────────────────────────────────── */
+    .sev-high   { color: #991B1B; font-weight: 700; }
+    .sev-medium { color: #92400E; font-weight: 600; }
+    .sev-low    { color: #065F46; font-weight: 500; }
+
+    /* ── Export grid ─────────────────────────────────────────────── */
+    .export-card {
+      background: var(--vc-panel-alt);
       border: 1px solid var(--vc-line);
-      background: var(--vc-panel);
-      padding: 0.9rem;
-      min-height: 5.5rem;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.6rem;
     }
-    .metric-card b { color: var(--vc-teal); font-size: 1.35rem; }
-    .metric-card span {
+    .export-title { font-weight: 700; color: var(--vc-navy); margin-bottom: 0.2rem; }
+    .export-desc  { font-size: 0.83rem; color: var(--vc-muted); margin-bottom: 0.6rem; }
+
+    /* ── Progress steps ──────────────────────────────────────────── */
+    .pipeline-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
       color: var(--vc-muted);
-      display: block;
-      font-size: 0.78rem;
-      margin-top: 0.25rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--vc-teal-light);
     }
-    div[data-testid="stDataFrame"] {
+    .pipeline-step-active { color: var(--vc-teal); font-weight: 600; }
+    .pipeline-step-done   { color: var(--vc-green); }
+
+    /* ── Baseline comparison ─────────────────────────────────────── */
+    .compare-col {
+      background: var(--vc-panel);
       border: 1px solid var(--vc-line);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
     }
+    .compare-col h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+    }
+    .plain-head { color: var(--vc-muted); }
+    .vc-head    { color: var(--vc-teal);  }
+    .delta-pill {
+      display: inline-block;
+      background: var(--vc-green-light);
+      color: #065F46;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────────── */
     .stButton button, .stDownloadButton button {
       min-height: 44px;
       border-radius: 6px;
       font-weight: 700;
+      transition: filter 0.15s ease;
     }
-    .stButton button:focus, .stDownloadButton button:focus {
-      outline: 3px solid rgba(8, 168, 149, 0.35);
+    .stButton button:hover  { filter: brightness(1.08); }
+    .stButton button:focus,
+    .stDownloadButton button:focus {
+      outline: 3px solid rgba(8, 145, 178, 0.4);
       outline-offset: 2px;
     }
+
+    /* ── Data tables ─────────────────────────────────────────────── */
+    div[data-testid="stDataFrame"] {
+      border: 1px solid var(--vc-line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────────── */
+    [data-testid="stSidebar"] .stRadio label {
+      font-size: 0.9rem;
+    }
+    [data-testid="stSidebar"] .stSelectbox label,
+    [data-testid="stSidebar"] .stSlider label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--vc-ink);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
     @media (max-width: 760px) {
       .vc-status-grid { grid-template-columns: 1fr; }
+      .pico-grid      { grid-template-columns: 1fr; }
+      .metric-row     { flex-direction: column; }
       .block-container { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+_SL = '<div class="pack-section-label">{}</div>'
+
+
+def _sec(text: str) -> None:
+    st.markdown(_SL.format(text), unsafe_allow_html=True)
+
+
+# ── Sidebar ────────────────────────────────────────────────────────────────
+
 with st.sidebar:
     if MARK_PATH.exists():
-        st.image(str(MARK_PATH), width=120)
-    st.header("Controls")
+        st.image(str(MARK_PATH), width=110)
+    st.markdown("### Mode")
     mode = st.radio(
-        "Mode",
+        "Select mode",
         ["Build Evidence Pack", "Load Offline Pack", "Plain Gemma vs VeritasClin Demo"],
+        label_visibility="collapsed",
     )
+
+    st.markdown("### Provider")
     _provider_options = ["openai_compatible", "ollama", "mock"]
     _env_provider = os.environ.get("GEMMA_PROVIDER", "mock")
     _provider_default = (
@@ -162,28 +441,29 @@ with st.sidebar:
         if _env_provider in _provider_options
         else _provider_options.index("mock")
     )
-    provider = st.selectbox("Provider", _provider_options, index=_provider_default)
+    provider = st.selectbox("LLM provider", _provider_options, index=_provider_default)
     if os.environ.get("GEMMA_PROVIDER") != provider:
         os.environ["GEMMA_PROVIDER"] = provider
         reset_settings_cache()
+
+    st.markdown("### Retrieval")
     language_label = st.selectbox("Language", ["English", "Portuguese", "Spanish"], index=0)
     language = {"English": "en", "Portuguese": "pt", "Spanish": "es"}[language_label]
     max_results = st.slider("Max PubMed results", min_value=5, max_value=20, value=10)
     _s = get_settings()
     use_pubmed = st.toggle(
-        "Use PubMed when configured",
+        "Use PubMed",
         value=_s.pubmed_configured,
         help="When off, the app uses deterministic mock demo data.",
     )
     _settings_sidebar = get_settings()
-    st.caption(
-        "PubMed credentials: "
-        + ("configured" if _settings_sidebar.pubmed_configured else "not configured")
-    )
-    st.divider()
-    st.caption("Demo questions")
+    _pubmed_status = "configured" if _settings_sidebar.pubmed_configured else "not configured"
+    st.caption(f"PubMed credentials: **{_pubmed_status}**")
+
+    st.markdown("---")
+    st.markdown("### Demo Questions")
     demo = st.radio(
-        "Select",
+        "Select a demo",
         [
             "Severe dengue warning signs in adults",
             "Medical cannabis for neuropathic pain",
@@ -206,12 +486,14 @@ DEMO_QUESTIONS = {
     "Unsafe dosing demo": "What dose of semaglutide should I take if I have CKD?",
 }
 
+# ── Derived state ──────────────────────────────────────────────────────────
+
 settings = get_settings()
 source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Mock fallback"
 offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
-provider_label = provider.replace("_", " ")
+provider_label = provider.replace("_", " ").title()
 
-settings = get_settings()
+# ── Provider warnings ─────────────────────────────────────────────────────
 
 if provider == "ollama" and not settings.ollama_api_key and "ollama.com" in (
     settings.ollama_base_url or ""
@@ -233,10 +515,12 @@ elif provider == "openai_compatible" and not (
         icon="⚠️",
     )
 
-header_logo, header_text = st.columns([1, 2.4], vertical_alignment="center")
+# ── Header ─────────────────────────────────────────────────────────────────
+
+header_logo, header_text = st.columns([1, 2.6], vertical_alignment="center")
 with header_logo:
     if LOGO_PATH.exists():
-        st.image(str(LOGO_PATH), width="stretch")
+        st.image(str(LOGO_PATH), use_container_width=True)
     else:
         st.title("VeritasClin Field")
 with header_text:
@@ -247,147 +531,450 @@ with header_text:
             <div class="vc-kicker">Offline-first evidence pack console</div>
             <h1>Audit-ready medical evidence for field teams</h1>
             <p>
-              Build PubMed-backed Evidence Packs online, carry their Claim Ledger offline,
-              and answer only from loaded evidence in English, Portuguese, or Spanish.
+              Build PubMed-backed Evidence Packs online, carry their Claim Ledger and
+              Caution Map offline, and answer only from loaded evidence in English,
+              Portuguese, or Spanish — powered by Gemma&nbsp;4.
             </p>
           </div>
           <div class="vc-status-grid">
-            <div class="vc-status"><span>Provider</span><b>{provider_label}</b></div>
-            <div class="vc-status"><span>Retrieval</span><b>{source_mode}</b></div>
-            <div class="vc-status"><span>Offline pack</span><b>{offline_state}</b></div>
+            <div class="vc-status">
+              <span class="vc-status-label">Provider</span>
+              <span class="vc-status-value">{provider_label}</span>
+            </div>
+            <div class="vc-status">
+              <span class="vc-status-label">Retrieval</span>
+              <span class="vc-status-value">{source_mode}</span>
+            </div>
+            <div class="vc-status">
+              <span class="vc-status-label">Offline pack</span>
+              <span class="vc-status-value">{offline_state}</span>
+            </div>
           </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
+# ── Disclaimer ─────────────────────────────────────────────────────────────
+
 st.markdown(
     """
-    <div class="vc-safety">
+    <div class="vc-disclaimer">
+      <strong>Medical disclaimer:</strong>&nbsp;
       Not a diagnostic, prescription, or emergency triage tool.
-      No PMID/PMCID or explicit mock evidence ID, no strong clinical claim.
+      No PMID / mock evidence ID, no strong clinical claim.
+      All clinical decisions must be made by qualified healthcare professionals.
     </div>
     """,
     unsafe_allow_html=True,
 )
 
 
+# ── Helper: safety decision widget ────────────────────────────────────────
+
+def render_safety_widget(safety) -> None:
+    """Render a clean, human-readable safety decision card."""
+    if not safety.allowed:
+        st.markdown(
+            f"""
+            <div class="vc-safety-blocked">
+              <span class="vc-safety-badge badge-blocked">Blocked</span>
+              <div class="vc-safety-body">
+                <div class="vc-safety-title">Request blocked</div>
+                <div class="vc-safety-detail">{safety.user_message}</div>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    elif safety.safe_rewritten_question:
+        rewritten = safety.safe_rewritten_question
+        rewrite_ok = safety_rewrite_success(safety)
+        st.markdown(
+            f"""
+            <div class="vc-safety-rewritten">
+              <span class="vc-safety-badge badge-rewritten">Rewritten</span>
+              <div class="vc-safety-body">
+                <div class="vc-safety-title">
+                  Question reframed as a research question
+                  {"&#10003;" if rewrite_ok else ""}
+                </div>
+                <div class="vc-safety-detail">{safety.user_message}</div>
+                <div class="vc-rewrite-box">{rewritten}</div>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            """
+            <div class="vc-safety-allowed">
+              <span class="vc-safety-badge badge-allowed">Allowed</span>
+              <div class="vc-safety-body">
+                <div class="vc-safety-title">Question cleared for evidence retrieval</div>
+                <div class="vc-safety-detail">No safety concerns detected.</div>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
+# ── Helper: metric card color ──────────────────────────────────────────────
+
+def _coverage_color(val: float) -> str:
+    if val >= 0.8:
+        return "color-green"
+    if val >= 0.5:
+        return "color-amber"
+    return "color-red"
+
+
+def _unsupported_color(n: int) -> str:
+    if n == 0:
+        return "color-green"
+    if n <= 2:
+        return "color-amber"
+    return "color-red"
+
+
+def _freshness_color(val: float) -> str:
+    if val >= 0.7:
+        return "color-green"
+    if val >= 0.4:
+        return "color-amber"
+    return "color-red"
+
+
+# ── Helper: render full pack ───────────────────────────────────────────────
+
 def render_pack(pack: EvidencePack) -> None:
     st.markdown(
         f"""
-        <div class="vc-section">
+        <div class="vc-section-head">
           <h2>{pack.title}</h2>
-          <p>Evidence Pack source: <b>{pack.source}</b></p>
+          <div class="vc-section-sub">Source: <b>{pack.source}</b></div>
         </div>
         """,
         unsafe_allow_html=True,
     )
-    c1, c2, c3, c4 = st.columns(4)
+
+    # ── Metric row ─────────────────────────────────────────────────
     n_unsupported = unsupported_claim_count(pack.claim_ledger)
-    n_high_unsupported = high_risk_unsupported_claim_count(pack.claim_ledger)
+    n_high = high_risk_unsupported_claim_count(pack.claim_ledger)
+    cov = pack.citation_coverage
+    fresh = pack.freshness.score
+
+    c1, c2, c3, c4 = st.columns(4)
     c1.markdown(
-        f'<div class="metric-card">Citation coverage<br><b>{pack.citation_coverage:.0%}</b></div>',
+        f"""<div class="metric-card">
+          <span class="metric-card-label">Citation coverage</span>
+          <span class="metric-card-value {_coverage_color(cov)}">{cov:.0%}</span>
+          <span class="metric-card-sub">Claims linked to evidence</span>
+        </div>""",
         unsafe_allow_html=True,
     )
     c2.markdown(
-        f'<div class="metric-card">Unsupported claims<br><b>{n_unsupported}</b></div>',
+        f"""<div class="metric-card">
+          <span class="metric-card-label">Unsupported claims</span>
+          <span class="metric-card-value {_unsupported_color(n_unsupported)}">{n_unsupported}</span>
+          <span class="metric-card-sub">Assertions without citation</span>
+        </div>""",
         unsafe_allow_html=True,
     )
     c3.markdown(
-        f'<div class="metric-card">High-risk unsupported<br><b>{n_high_unsupported}</b></div>',
+        f"""<div class="metric-card">
+          <span class="metric-card-label">High-risk unsupported</span>
+          <span class="metric-card-value {_unsupported_color(n_high)}">{n_high}</span>
+          <span class="metric-card-sub">High-risk uncited claims</span>
+        </div>""",
         unsafe_allow_html=True,
     )
     c4.markdown(
-        f'<div class="metric-card">Freshness score<br><b>{pack.freshness.score:.0%}</b>'
-        f"<span>Refresh in {pack.freshness.recommended_refresh_days} days</span></div>",
+        f"""<div class="metric-card">
+          <span class="metric-card-label">Freshness</span>
+          <span class="metric-card-value {_freshness_color(fresh)}">{fresh:.0%}</span>
+          <span class="metric-card-sub">Refresh in {pack.freshness.recommended_refresh_days}d</span>
+        </div>""",
         unsafe_allow_html=True,
     )
 
+    # ── Tabs ───────────────────────────────────────────────────────
     tabs = st.tabs(
-        [
-            "Pack",
-            "PICO & Query",
-            "Evidence Map",
-            "Claim Ledger",
-            "Caution Map",
-            "Exports",
-        ]
+        ["Pack Summary", "PICO & Query", "Evidence Map", "Claim Ledger", "Caution Map", "Exports"]
     )
+
+    # Pack Summary tab
     with tabs[0]:
-        st.markdown("### Executive Summary")
+        _sec('Executive Summary')
         st.write(pack.executive_summary)
-        st.markdown("### Clinical Interpretation")
+        _sec('Clinical Interpretation')
         st.write(pack.clinical_interpretation)
-        st.markdown("### What the Evidence Does Not Prove")
+        _sec('What the Evidence Does Not Prove')
         st.write(pack.what_the_evidence_does_not_prove)
-        st.markdown("### Patient-Friendly Explanation")
+        _sec('Patient-Friendly Explanation')
         st.write(pack.patient_friendly_explanation)
         st.info(pack.safety_notice)
+
+    # PICO & Query tab
     with tabs[1]:
-        st.json(pack.pico.model_dump(mode="json"))
-        st.code(pack.pubmed_query, language="text")
-        st.caption(f"Source: {pack.source} · Query built by: **{pack.pubmed_query_method}**")
-    with tabs[2]:
-        st.dataframe(
-            pd.DataFrame(
-                [
-                    {
-                        "pmid_or_id": item.paper.pmid,
-                        "title": item.paper.title,
-                        "year": item.paper.publication_year,
-                        "study_type": item.study_type,
-                        "evidence_level": item.evidence_level,
-                        "score": item.relevance_score,
-                    }
-                    for item in pack.evidence_items
-                ]
-            ),
-            use_container_width=True,
-            hide_index=True,
-        )
-    with tabs[3]:
-        st.dataframe(
-            pd.DataFrame([claim.model_dump(mode="json") for claim in pack.claim_ledger]),
-            use_container_width=True,
-            hide_index=True,
-        )
-    with tabs[4]:
-        st.dataframe(
-            pd.DataFrame([item.model_dump(mode="json") for item in pack.caution_map]),
-            use_container_width=True,
-            hide_index=True,
-        )
-    with tabs[5]:
-        st.download_button(
-            "Download pack.json", pack_to_json(pack), "pack.json", "application/json"
-        )
-        st.download_button(
-            "Download dossier.md", pack_to_markdown(pack), "dossier.md", "text/markdown"
-        )
-        st.download_button(
-            "Download claim_ledger.csv",
-            claims_to_csv(pack.claim_ledger),
-            "claim_ledger.csv",
-            "text/csv",
-        )
-        st.download_button(
-            "Download caution_map.json",
-            caution_map_to_json(pack.caution_map),
-            "caution_map.json",
-            "application/json",
+        pico = pack.pico
+        _sec('PICO Framework')
+
+        def _pico_val(v) -> str:
+            if not v:
+                return "<em style='opacity:0.5'>Not specified</em>"
+            if isinstance(v, list):
+                return ", ".join(str(x) for x in v)
+            return str(v)
+
+        st.markdown(
+            f"""
+            <div class="pico-grid">
+              <div class="pico-card">
+                <span class="pico-letter">P — Population</span>
+                <span class="pico-value">{_pico_val(getattr(pico, "population", None))}</span>
+              </div>
+              <div class="pico-card">
+                <span class="pico-letter">I — Intervention</span>
+                <span class="pico-value">{_pico_val(getattr(pico, "intervention", None))}</span>
+              </div>
+              <div class="pico-card">
+                <span class="pico-letter">C — Comparison</span>
+                <span class="pico-value">{_pico_val(getattr(pico, "comparison", None))}</span>
+              </div>
+              <div class="pico-card">
+                <span class="pico-letter">O — Outcome</span>
+                <span class="pico-value">{_pico_val(getattr(pico, "outcome", None))}</span>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
 
+        _sec('PubMed Query')
+        st.code(pack.pubmed_query, language="text")
+        _method = pack.pubmed_query_method
+        _method_label = (
+            "Gemma 4 native function calling"
+            if _method == "gemma4-function-calling"
+            else "Algorithmic fallback"
+        )
+        _method_color = "color-green" if _method == "gemma4-function-calling" else "color-amber"
+        st.markdown(
+            f'Query method: <span class="{_method_color}" style="font-weight:600">'
+            f"{_method_label}</span>&nbsp;&nbsp;|&nbsp;&nbsp;Source: <b>{pack.source}</b>",
+            unsafe_allow_html=True,
+        )
+
+    # Evidence Map tab
+    with tabs[2]:
+        _sec('Ranked Evidence')
+        st.caption(
+            f"{len(pack.evidence_items)} papers retrieved and ranked by "
+            "study type, recency, and PICO overlap."
+        )
+        df_ev = pd.DataFrame(
+            [
+                {
+                    "ID / PMID": item.paper.pmid,
+                    "Title": item.paper.title[:90] + ("…" if len(item.paper.title) > 90 else ""),
+                    "Year": item.paper.publication_year,
+                    "Study type": item.study_type,
+                    "Evidence level": item.evidence_level,
+                    "Relevance": f"{item.relevance_score:.2f}",
+                }
+                for item in pack.evidence_items
+            ]
+        )
+        st.dataframe(df_ev, use_container_width=True, hide_index=True)
+
+    # Claim Ledger tab
+    with tabs[3]:
+        _sec('Claim Ledger')
+        st.caption(
+            "Every clinical assertion extracted from the synthesis, with support status, "
+            "evidence level, risk level, and cited evidence IDs."
+        )
+
+        _status_map = {
+            "supported": ("pill pill-supported", "Supported"),
+            "partially_supported": ("pill pill-partial", "Partial"),
+            "unsupported": ("pill pill-unsupported", "Unsupported"),
+            "uncertain": ("pill pill-uncertain", "Uncertain"),
+        }
+
+        for i, claim in enumerate(pack.claim_ledger):
+            _css, _label = _status_map.get(
+                claim.support_status, ("pill pill-uncertain", claim.support_status)
+            )
+            _suffix = "…" if len(claim.claim_text) > 80 else ""
+            with st.expander(
+                f"Claim {i + 1} — {claim.claim_text[:80]}{_suffix}",
+                expanded=False,
+            ):
+                st.markdown(
+                    f'<span class="{_css}">{_label}</span>&nbsp;&nbsp;'
+                    f'Risk: <b>{claim.risk_level}</b>&nbsp;&nbsp;'
+                    f'Evidence: <b>{claim.evidence_level}</b>',
+                    unsafe_allow_html=True,
+                )
+                st.write(claim.claim_text)
+                if claim.cited_pmids:
+                    st.caption(f"Cited IDs: {', '.join(claim.cited_pmids)}")
+                if claim.rationale:
+                    st.caption(f"Rationale: {claim.rationale}")
+                if claim.limitations:
+                    st.caption(f"Limitations: {claim.limitations}")
+
+        # Also show full table for download / review
+        with st.expander("Full table view"):
+            st.dataframe(
+                pd.DataFrame([c.model_dump(mode="json") for c in pack.claim_ledger]),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    # Caution Map tab
+    with tabs[4]:
+        _sec('Caution & Conflict Map')
+        st.caption(
+            f"{len(pack.caution_map)} uncertainty signals detected across "
+            "7 categories: low certainty, population mismatch, safety signal, "
+            "indirect evidence, conflicting results, insufficient data, outcome mismatch."
+        )
+        _sev_css = {"high": "sev-high", "medium": "sev-medium", "low": "sev-low"}
+        for item in pack.caution_map:
+            _sev = item.severity if hasattr(item, "severity") else "medium"
+            _css = _sev_css.get(str(_sev).lower(), "sev-medium")
+            with st.expander(
+                f"{item.signal_type.replace('_', ' ').title()} — "
+                f"{item.description[:70]}{'…' if len(item.description) > 70 else ''}",
+                expanded=False,
+            ):
+                st.markdown(
+                    f'Severity: <span class="{_css}">{str(_sev).upper()}</span>',
+                    unsafe_allow_html=True,
+                )
+                st.write(item.description)
+                if hasattr(item, "affected_claims") and item.affected_claims:
+                    st.caption(f"Affects claims: {', '.join(item.affected_claims)}")
+
+        with st.expander("Full table view"):
+            st.dataframe(
+                pd.DataFrame([i.model_dump(mode="json") for i in pack.caution_map]),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    # Exports tab
+    with tabs[5]:
+        _sec('Download Artifacts')
+        st.caption(
+            "All artifacts travel together with the pack: query, PMIDs, claims, cautions, "
+            "and timestamps. The pack is fully self-contained for offline use."
+        )
+        col_a, col_b = st.columns(2)
+        with col_a:
+            st.markdown(
+                '<div class="export-card">'
+                '<div class="export-title">pack.json</div>'
+                '<div class="export-desc">Complete self-contained Evidence Pack. '
+                "Upload this file in Load Offline Pack mode.</div>",
+                unsafe_allow_html=True,
+            )
+            st.download_button(
+                "Download pack.json",
+                pack_to_json(pack),
+                "pack.json",
+                "application/json",
+                use_container_width=True,
+            )
+            st.markdown("</div>", unsafe_allow_html=True)
+
+            st.markdown(
+                '<div class="export-card">'
+                '<div class="export-title">claim_ledger.csv</div>'
+                '<div class="export-desc">All extracted claims with support status, '
+                "risk level, evidence level, and cited IDs. Spreadsheet-ready.</div>",
+                unsafe_allow_html=True,
+            )
+            st.download_button(
+                "Download claim_ledger.csv",
+                claims_to_csv(pack.claim_ledger),
+                "claim_ledger.csv",
+                "text/csv",
+                use_container_width=True,
+            )
+            st.markdown("</div>", unsafe_allow_html=True)
+
+        with col_b:
+            st.markdown(
+                '<div class="export-card">'
+                '<div class="export-title">dossier.md</div>'
+                '<div class="export-desc">Human-readable Markdown dossier — '
+                "executive summary, PICO, evidence list, and clinical interpretation.</div>",
+                unsafe_allow_html=True,
+            )
+            st.download_button(
+                "Download dossier.md",
+                pack_to_markdown(pack),
+                "dossier.md",
+                "text/markdown",
+                use_container_width=True,
+            )
+            st.markdown("</div>", unsafe_allow_html=True)
+
+            st.markdown(
+                '<div class="export-card">'
+                '<div class="export-title">caution_map.json</div>'
+                '<div class="export-desc">Structured uncertainty signals — '
+                "severity, signal type, and description for each detected risk.</div>",
+                unsafe_allow_html=True,
+            )
+            st.download_button(
+                "Download caution_map.json",
+                caution_map_to_json(pack.caution_map),
+                "caution_map.json",
+                "application/json",
+                use_container_width=True,
+            )
+            st.markdown("</div>", unsafe_allow_html=True)
+
+
+# ── LLM provider ───────────────────────────────────────────────────────────
 
 llm = get_llm_provider(provider)
 
+# ══════════════════════════════════════════════════════════════════════════
+# MODE: Build Evidence Pack
+# ══════════════════════════════════════════════════════════════════════════
+
 if mode == "Build Evidence Pack":
     st.markdown(
-        '<div class="vc-section"><h2>Build Evidence Pack</h2></div>',
+        """
+        <div class="vc-section-head">
+          <h2>Build Evidence Pack</h2>
+          <div class="vc-section-sub">
+            Enter a clinical evidence question. Gemma 4 will extract PICO, build a
+            PubMed query via native function calling, retrieve and rank evidence,
+            then synthesise a cited, audit-ready Evidence Pack.
+          </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
-    question = st.text_area("Clinical evidence question", value=DEMO_QUESTIONS[demo], height=90)
+
+    question = st.text_area(
+        "Clinical evidence question",
+        value=DEMO_QUESTIONS[demo],
+        height=90,
+        placeholder="e.g. What does evidence say about warning signs for severe dengue in adults?",
+    )
+
     uploaded_image = st.file_uploader(
-        "Upload a clinical image, lab report, or chart (optional)",
+        "Clinical image, lab report, or chart (optional — Gemma 4 multimodal input)",
         type=["jpg", "jpeg", "png"],
         help=(
             "Gemma 4 will read the image and include its findings in the evidence question. "
@@ -401,33 +988,38 @@ if mode == "Build Evidence Pack":
             "The image will be ignored in mock mode.",
             icon="⚠️",
         )
+
+    # Safety check
     safety = SafetyGuard(provider=llm).check(question)
-    with st.expander("Safety decision", expanded=True):
-        st.json(safety.model_dump(mode="json"))
-        if safety.safe_rewritten_question:
-            st.metric("Rewrite successful", "Yes" if safety_rewrite_success(safety) else "No")
-    if st.button("Build pack", type="primary"):
+    render_safety_widget(safety)
+
+    if st.button("Build Evidence Pack", type="primary", use_container_width=False):
         if not safety.allowed:
             st.error(safety.user_message)
         else:
             steps = [
-                "safety check",
-                "image analysis" if image_bytes else "PICO extraction",
-                "PICO extraction",
-                "Gemma 4 function-calling query build",
-                "PubMed retrieval or mock fallback",
-                "evidence ranking",
-                "Gemma 4 synthesis",
-                "claim extraction",
-                "claim verification",
-                "caution mapping",
-                "freshness scoring",
+                ("Safety check", True),
+                ("Image analysis (Gemma 4 multimodal)" if image_bytes else "PICO extraction", True),
+                ("PICO extraction", not bool(image_bytes)),
+                ("PubMed query via Gemma 4 function calling", True),
+                ("PubMed retrieval or mock fallback", True),
+                ("Evidence ranking", True),
+                ("Gemma 4 synthesis", True),
+                ("Claim extraction", True),
+                ("Claim verification", True),
+                ("Caution mapping", True),
+                ("Freshness scoring", True),
             ]
+            active_steps = [(s, v) for s, v in steps if v]
             progress = st.progress(0)
             status = st.empty()
-            for index, step in enumerate(steps, start=1):
-                status.write(f"Running {step}...")
-                progress.progress(index / len(steps))
+            for idx, (step, _) in enumerate(active_steps, start=1):
+                status.markdown(
+                    f'<div class="pipeline-step pipeline-step-active">'
+                    f"Running: {step}...</div>",
+                    unsafe_allow_html=True,
+                )
+                progress.progress(idx / len(active_steps))
             try:
                 pack, baseline = PackBuilder(provider=llm).build(
                     question,
@@ -439,58 +1031,159 @@ if mode == "Build Evidence Pack":
                 )
                 st.session_state["pack"] = pack
                 st.session_state["baseline"] = baseline
-                status.success("Evidence Pack ready.")
+                status.success("Evidence Pack ready. Scroll down to explore results.")
             except ValueError as exc:
                 st.error(str(exc))
+
     if "pack" in st.session_state:
         render_pack(st.session_state["pack"])
 
+# ══════════════════════════════════════════════════════════════════════════
+# MODE: Load Offline Pack
+# ══════════════════════════════════════════════════════════════════════════
+
 elif mode == "Load Offline Pack":
-    st.markdown('<div class="vc-section"><h2>Load Offline Pack</h2></div>', unsafe_allow_html=True)
+    st.markdown(
+        """
+        <div class="vc-section-head">
+          <h2>Load Offline Pack</h2>
+          <div class="vc-section-sub">
+            Upload a <code>pack.json</code> exported from Build mode. The app will answer
+            questions exclusively from the loaded Claim Ledger — no PubMed, no internet.
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     uploaded = st.file_uploader("Upload pack.json", type=["json"])
     pack = st.session_state.get("pack")
     if uploaded:
         pack = PackLoader().loads(uploaded.read())
         st.session_state["pack"] = pack
+
     if pack:
-        st.success("Offline pack loaded. No PubMed retrieval is used in this mode.")
-        st.write({"pack_id": pack.pack_id, "title": pack.title, "source": pack.source})
-        st.info(
-            "Tip: Offline Q&A matches your question to the loaded Claim Ledger. "
-            "Include clinical keywords from the pack topic for best results."
+        # Pack info card
+        st.markdown(
+            f"""
+            <div style="background:var(--vc-green-light);border:1px solid #6EE7B7;
+                        border-radius:8px;padding:0.8rem 1.1rem;margin-bottom:1rem;">
+              <div style="font-weight:700;color:#065F46;margin-bottom:0.35rem;">
+                Offline pack loaded — no PubMed retrieval used
+              </div>
+              <div style="font-size:0.88rem;color:var(--vc-ink);">
+                <b>Title:</b> {pack.title}<br>
+                <b>Pack ID:</b> {pack.pack_id}<br>
+                <b>Source:</b> {pack.source}&nbsp;&nbsp;
+                <b>Claims:</b> {len(pack.claim_ledger)}&nbsp;&nbsp;
+                <b>Coverage:</b> {pack.citation_coverage:.0%}
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
+        st.info(
+            "Tip: Include clinical keywords from the pack topic for best results. "
+            "Unsupported questions will be refused."
+        )
+
+        demo_q = "What are the warning signs for severe dengue in adults?"
         offline_question = st.text_input(
             "Ask within the loaded pack",
-            value="What are the warning signs for severe dengue in adults?",
+            value=demo_q,
+            placeholder="Ask a clinical question answered by this pack's evidence…",
         )
+
+        lang_label = {"en": "English", "pt": "Portuguese", "es": "Spanish"}.get(language, language)
+        st.caption(f"Response language: **{lang_label}**")
+
         if st.button("Ask offline", type="primary"):
-            answer = ask_offline_pack(pack, offline_question, language=language, provider=llm)
-            st.markdown("### Offline Answer")
+            with st.spinner("Answering from loaded Claim Ledger only…"):
+                answer = ask_offline_pack(pack, offline_question, language=language, provider=llm)
+            st.markdown(
+                '<div class="pack-section-label">Offline Answer</div>',
+                unsafe_allow_html=True,
+            )
             st.write(answer)
+
+        st.markdown("---")
+        render_pack(pack)
     else:
-        st.info("Build a pack first or upload a pack.json.")
+        st.info(
+            "No pack loaded. Build an Evidence Pack in Build mode and download `pack.json`, "
+            "then upload it here for offline use."
+        )
+
+# ══════════════════════════════════════════════════════════════════════════
+# MODE: Plain Gemma vs VeritasClin Demo
+# ══════════════════════════════════════════════════════════════════════════
 
 else:
     st.markdown(
-        '<div class="vc-section"><h2>Plain Gemma vs VeritasClin Demo</h2></div>',
+        """
+        <div class="vc-section-head">
+          <h2>Plain Gemma vs VeritasClin</h2>
+          <div class="vc-section-sub">
+            Side-by-side comparison of a raw model answer against a VeritasClin
+            Evidence Pack response. Build the dengue pack first, then return here.
+          </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
     pack = st.session_state.get("pack")
     baseline = st.session_state.get("baseline")
     if not pack:
-        st.info("Build the dengue Evidence Pack first, then return here for comparison.")
+        st.info("Build the dengue Evidence Pack first, then return here for the comparison.")
     elif baseline:
+        st.markdown(
+            f"""
+            <div style="background:var(--vc-panel-alt);border:1px solid var(--vc-line);
+                        border-radius:8px;padding:0.8rem 1.1rem;margin-bottom:1.1rem;
+                        font-size:0.9rem;color:var(--vc-ink);">
+              <b>Baseline delta:</b> {baseline.summary}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         left, right = st.columns(2)
         with left:
-            st.subheader("Plain model")
+            st.markdown(
+                '<div class="compare-col">'
+                '<h3 class="plain-head">Plain model answer</h3>',
+                unsafe_allow_html=True,
+            )
             st.write(baseline.baseline_answer)
-            st.metric("Unsupported claims", baseline.baseline_unsupported_claim_count)
-            st.metric("High-risk unsupported", baseline.baseline_high_risk_unsupported_count)
+            _delta_unsup = (
+                baseline.baseline_unsupported_claim_count
+                - baseline.veritasclin_unsupported_claim_count
+            )
+            c_a, c_b = st.columns(2)
+            c_a.metric("Unsupported claims", baseline.baseline_unsupported_claim_count)
+            c_b.metric("High-risk unsupported", baseline.baseline_high_risk_unsupported_count)
+            st.markdown("</div>", unsafe_allow_html=True)
+
         with right:
-            st.subheader("VeritasClin")
+            st.markdown(
+                '<div class="compare-col">'
+                '<h3 class="vc-head">VeritasClin Evidence Pack</h3>',
+                unsafe_allow_html=True,
+            )
             st.write(pack.executive_summary)
-            st.metric("Unsupported claims", baseline.veritasclin_unsupported_claim_count)
-            st.metric("Citation coverage", f"{baseline.citation_coverage:.0%}")
-        st.info(baseline.summary)
+            c_c, c_d = st.columns(2)
+            c_c.metric(
+                "Unsupported claims",
+                baseline.veritasclin_unsupported_claim_count,
+                delta=-_delta_unsup if _delta_unsup > 0 else None,
+                delta_color="inverse",
+            )
+            c_d.metric("Citation coverage", f"{baseline.citation_coverage:.0%}")
+            if _delta_unsup > 0:
+                st.markdown(
+                    f'<div class="delta-pill">'
+                    f"{_delta_unsup} fewer unsupported claims than plain Gemma"
+                    f"</div>",
+                    unsafe_allow_html=True,
+                )
+            st.markdown("</div>", unsafe_allow_html=True)
     else:
         st.warning("Baseline comparison was not generated for the current pack.")
