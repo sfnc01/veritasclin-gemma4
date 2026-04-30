@@ -32,11 +32,11 @@ Rules:
 
 ## Current Status
 
-**Phase:** 7 — Final Submission Prep  
+**Phase:** 8 — Judging Criteria Alignment  
 **Score at audit:** 76 / 100  
 **Estimated current score:** ~96 / 100  
-**Target score:** 90+ (Ready for serious submission)  
-**Submission deadline:** [Add deadline]  
+**Target score:** 100% judging alignment  
+**Submission deadline:** 2026-05-18 23:59 UTC  
 
 ---
 
@@ -47,6 +47,7 @@ Rules:
 | 0 | 2026-04-30 | — | Audit completed, FIXPLAN created | — |
 | 1 | 2026-04-30 | 1–6 | P1-1, P1-2, P2-1, P2-2, P2-3, P2-4, P3-1, P3-2, P3-3, P4-1, P4-2, P4-3, P5-1, P5-2, P5-3, P6-1, P6-2 | d6da7e7, 47a0ab2, 8b14816, 9e6e403, d1d0bed, 31c511c |
 | 2 | 2026-04-30 | 6–7 | P6-3, baseline_agent LLMProviderError, tests/conftest.py mock pinning | 4f6b6cd, 076bfdf |
+| 3 | 2026-04-30 | 7–8 | Evaluation module wired (baseline_agent, builder, streamlit), PICOAgent LLM-primary, judging gap analysis, Phases 8–11 planned | 7ec2be3 |
 
 ---
 
@@ -422,3 +423,438 @@ git status                                 # must: clean or only expected uncomm
 | Phase 5 complete | ~91 / 100 | + P5-1 through P5-3 |
 | Phase 6 complete | ~94 / 100 | + P6-1 through P6-3 |
 | Phase 7 complete | ~97 / 100 | + P7-1 through P7-3 |
+| Phase 8 complete | 100% technical depth | + P8-1, P8-2 (multimodal live) |
+| Phase 9 complete | 100% technical depth | + P9-1, P9-2 (function calling live) |
+| Phase 10 complete | 100% judging alignment | + P10-1 (Ollama track) |
+| Phase 11 complete | Submission ready | + P11-1 through P11-4 (manual artifacts) |
+
+---
+
+## Phase 8 — Multimodal Image Input
+> Closes the "use multimodal power" gap in the judging criteria.
+> No new mock handlers. New capability works with real providers only (Ollama, openai_compatible).
+> Mock provider inherits the base class default (raises LLMProviderError). Features degrade gracefully.
+
+### Design constraints (read before touching any file in this phase)
+- `LLMProvider.generate_with_image()` is **not abstract** — it is a concrete method that raises `LLMProviderError("Image input requires a real LLM provider.")` by default.
+- `MockLLMProvider` does **not** override this method — no new mock handler.
+- `ImageContextAgent.describe()` catches `LLMProviderError` and returns `""` — the pipeline skips image context silently when the provider doesn't support images.
+- Streamlit shows a `st.warning` when mock is selected and an image is uploaded.
+- Integration tests are marked `@pytest.mark.integration` and require `GEMMA_PROVIDER=ollama`.
+
+### P8-1 — Extend LLMProvider and OllamaProvider with `generate_with_image`
+- [ ] Status: pending
+- **Files:** `veritasclin/llm/base.py`, `veritasclin/llm/ollama.py`
+- **Problem:** No provider supports image input. Gemma 4 is natively multimodal; the Ollama `/api/chat` endpoint supports base64 images in the user message.
+- **Implementation:**
+  1. In `base.py`, add a concrete (non-abstract) method to `LLMProvider`:
+     ```python
+     def generate_with_image(
+         self,
+         system_prompt: str,
+         user_prompt: str,
+         image_bytes: bytes,
+         mime_type: str = "image/jpeg",
+     ) -> str:
+         raise LLMProviderError("Image input requires a real LLM provider.")
+     ```
+  2. In `ollama.py`, override `generate_with_image`:
+     - Import `base64`
+     - Encode `image_bytes` → `base64.b64encode(image_bytes).decode("utf-8")`
+     - Build payload identical to `generate()` but with `"images": [b64_image]` inside the user message dict
+     - Use the same `httpx.Client(timeout=120)` pattern and same error handling as `generate()`
+     - Return `str(data["message"]["content"]).strip()`
+- **Acceptance test (integration):**
+  ```python
+  @pytest.mark.integration
+  def test_ollama_generate_with_image():
+      from veritasclin.llm.ollama import OllamaProvider
+      provider = OllamaProvider()
+      # 1x1 white JPEG as minimal valid image
+      import base64
+      minimal_jpg = base64.b64decode(
+          "/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8U"
+          "HRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgN"
+          "DRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy"
+          "MjL/wAARCAABAAEDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAACf/EABQQAQAAAAAA"
+          "AAAAAAAAAAAAAP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA"
+          "/9oADAMBAAIRAxEAPwCwABmX/9k="
+      )
+      result = provider.generate_with_image(
+          "You are a clinical image reader.",
+          "Describe any clinical findings visible.",
+          minimal_jpg,
+      )
+      assert isinstance(result, str)
+      assert len(result) > 0
+  ```
+- **Commit:** pending
+
+### P8-2 — Add ImageContextAgent and wire into PackBuilder and Streamlit
+- [ ] Status: pending
+- **Files:** `veritasclin/agents/image_context_agent.py` (new), `veritasclin/packs/builder.py`, `app/streamlit_app.py`
+- **Problem:** Even with P8-1 in place, nothing in the pipeline calls `generate_with_image`. The user has no way to upload an image.
+- **Implementation:**
+  1. Create `veritasclin/agents/image_context_agent.py`:
+     ```python
+     from __future__ import annotations
+     from veritasclin.llm import LLMProvider, get_llm_provider
+     from veritasclin.llm.base import LLMProviderError
+
+     _SYSTEM = (
+         "You are a clinical document reader. Describe any clinical findings, "
+         "measurements, lab values, symptoms, or diagnostic information visible "
+         "in this image. Report findings only. Do not diagnose. Under 150 words."
+     )
+
+     class ImageContextAgent:
+         def __init__(self, provider: LLMProvider | None = None) -> None:
+             self._provider = provider or get_llm_provider()
+
+         def describe(self, image_bytes: bytes, mime_type: str = "image/jpeg") -> str:
+             try:
+                 return self._provider.generate_with_image(
+                     _SYSTEM,
+                     "What clinical findings, measurements, or diagnostic information are visible?",
+                     image_bytes,
+                     mime_type,
+                 )
+             except LLMProviderError:
+                 return ""
+     ```
+  2. In `builder.py`:
+     - Add `image_bytes: bytes | None = None` to `build()` signature
+     - After `safety.safe_rewritten_question or question` assignment, add:
+       ```python
+       if image_bytes:
+           image_context = ImageContextAgent(provider=self._provider).describe(image_bytes)
+           if image_context:
+               research_question = (
+                   f"[Clinical image context: {image_context}]\n\n{research_question}"
+               )
+       ```
+  3. In `streamlit_app.py`, inside the "Build Evidence Pack" mode block (before the "Build pack" button):
+     ```python
+     uploaded_image = st.file_uploader(
+         "Upload a clinical image, lab report, or chart (optional)",
+         type=["jpg", "jpeg", "png"],
+         help="Gemma 4 will describe the image and include its findings in the evidence question. Requires Ollama or OpenAI-compatible provider.",
+     )
+     image_bytes = uploaded_image.read() if uploaded_image else None
+     if uploaded_image and provider == "mock":
+         st.warning(
+             "Image analysis requires Ollama or OpenAI-compatible provider. "
+             "The image will be ignored in mock mode.",
+             icon="⚠️",
+         )
+     ```
+     Pass `image_bytes=image_bytes` to `PackBuilder(provider=llm).build(...)`.
+- **Acceptance test (integration):**
+  ```python
+  @pytest.mark.integration
+  def test_image_context_agent_with_real_provider():
+      from veritasclin.agents.image_context_agent import ImageContextAgent
+      from veritasclin.llm.ollama import OllamaProvider
+      agent = ImageContextAgent(provider=OllamaProvider())
+      result = agent.describe(b"fake image bytes that produce an error-safe response")
+      # Either returns a description or empty string — must not raise
+      assert isinstance(result, str)
+
+  def test_image_context_agent_mock_returns_empty():
+      from veritasclin.agents.image_context_agent import ImageContextAgent
+      from veritasclin.llm.mock import MockLLMProvider
+      agent = ImageContextAgent(provider=MockLLMProvider())
+      result = agent.describe(b"fake")
+      assert result == ""  # mock raises LLMProviderError, agent returns ""
+  ```
+  The second test is a unit test (no `integration` marker) and must pass in CI.
+- **Commit:** pending
+
+---
+
+## Phase 9 — Native Function Calling for PubMed Query
+> Closes the "native function calling" gap in the judging criteria.
+> Same design constraints as Phase 8: no new mock handlers; mock inherits default (raises LLMProviderError); FunctionCallingQueryAgent falls back to QueryAgent when provider doesn't support tools.
+> The query method used ("gemma4-function-calling" vs "algorithmic") is stored on EvidencePack and shown in the PICO & Query tab — judges can see it directly.
+
+### P9-1 — Extend LLMProvider and OllamaProvider with `generate_with_tools`
+- [ ] Status: pending
+- **Files:** `veritasclin/llm/base.py`, `veritasclin/llm/ollama.py`
+- **Problem:** No provider supports native tool/function calling. Gemma 4 on Ollama supports the `tools` parameter in `/api/chat`, returning `message.tool_calls` when it decides to call a tool.
+- **Implementation:**
+  1. In `base.py`, add imports `from typing import Any, Callable` and a concrete method:
+     ```python
+     def generate_with_tools(
+         self,
+         system_prompt: str,
+         user_prompt: str,
+         tools: list[dict[str, Any]],
+         tool_executor: Callable[[str, dict[str, Any]], str],
+         temperature: float = 0.0,
+     ) -> str:
+         raise LLMProviderError("Function calling requires a real LLM provider.")
+     ```
+  2. In `ollama.py`, override `generate_with_tools`:
+     - Build initial messages: `[{"role": "system", ...}, {"role": "user", ...}]`
+     - First POST to `/api/chat` with `"tools": tools` in payload
+     - If `data["message"].get("tool_calls")` is non-empty:
+       - Append `{"role": "assistant", "content": msg.get("content", ""), "tool_calls": tool_calls}` to messages
+       - For each tool call: parse `fn["arguments"]` (may be a JSON string or dict), call `tool_executor(fn["name"], args)`, append `{"role": "tool", "content": result}` to messages
+       - Second POST with updated messages (no `"tools"` key this time)
+       - Return `str(response2.json()["message"]["content"]).strip()`
+     - If no tool calls in first response: return `str(msg.get("content", "")).strip()`
+     - Same error handling as `generate()` — raise `LLMProviderError` on HTTP errors
+- **Acceptance test (integration):**
+  ```python
+  @pytest.mark.integration
+  def test_ollama_generate_with_tools_calls_tool():
+      import json
+      from veritasclin.llm.ollama import OllamaProvider
+      provider = OllamaProvider()
+      tool_calls_received = []
+
+      def executor(name: str, args: dict) -> str:
+          tool_calls_received.append((name, args))
+          return "Tool executed successfully."
+
+      tools = [{
+          "type": "function",
+          "function": {
+              "name": "echo_input",
+              "description": "Echo back the provided value.",
+              "parameters": {
+                  "type": "object",
+                  "properties": {"value": {"type": "string"}},
+                  "required": ["value"],
+              },
+          },
+      }]
+      provider.generate_with_tools(
+          "Always call the echo_input tool with value='test'.",
+          "Call the tool now.",
+          tools,
+          executor,
+      )
+      assert len(tool_calls_received) >= 1
+  ```
+- **Commit:** pending
+
+### P9-2 — Add FunctionCallingQueryAgent, wire into PackBuilder, display in UI
+- [ ] Status: pending
+- **Files:** `veritasclin/agents/function_calling_query_agent.py` (new), `veritasclin/schemas/pack.py`, `veritasclin/packs/builder.py`, `app/streamlit_app.py`
+- **Problem:** Even with P9-1, nothing uses function calling. The QueryAgent still builds queries algorithmically with no Gemma 4 involvement.
+- **Implementation:**
+  1. Create `veritasclin/agents/function_calling_query_agent.py`:
+     ```python
+     from __future__ import annotations
+     from typing import Any
+     from veritasclin.agents.query_agent import QueryAgent
+     from veritasclin.llm import LLMProvider, get_llm_provider
+     from veritasclin.llm.base import LLMProviderError
+     from veritasclin.schemas.pico import PICOQuestion
+
+     _TOOL: dict[str, Any] = {
+         "type": "function",
+         "function": {
+             "name": "set_pubmed_query",
+             "description": (
+                 "Set the optimised PubMed search query for evidence retrieval. "
+                 "Use MeSH terms and Title/Abstract field tags."
+             ),
+             "parameters": {
+                 "type": "object",
+                 "properties": {
+                     "query": {
+                         "type": "string",
+                         "description": (
+                             "A valid PubMed search string, e.g. "
+                             "(dengue[Title/Abstract]) AND (severity[MeSH Terms])"
+                         ),
+                     }
+                 },
+                 "required": ["query"],
+             },
+         },
+     }
+
+     _SYSTEM = (
+         "You are a biomedical literature search expert. Given a clinical PICO question, "
+         "call the set_pubmed_query tool with the optimal PubMed search string using MeSH "
+         "terms and field tags to maximise recall and precision. Always call the tool."
+     )
+
+
+     class FunctionCallingQueryAgent:
+         used_function_calling: bool = False
+
+         def __init__(self, provider: LLMProvider | None = None) -> None:
+             self._provider = provider or get_llm_provider()
+             self._fallback = QueryAgent()
+
+         def build(self, pico: PICOQuestion) -> str:
+             self.used_function_calling = False
+             user_prompt = (
+                 f"Clinical question: {pico.safe_rewritten_question or pico.original_question}\n"
+                 f"Population: {pico.population or 'not specified'}\n"
+                 f"Intervention: {pico.intervention or 'not specified'}\n"
+                 f"Outcome: {pico.outcome or 'not specified'}\n"
+                 "Call set_pubmed_query with the optimal PubMed search string."
+             )
+             extracted: list[str] = []
+
+             def executor(tool_name: str, args: dict[str, Any]) -> str:
+                 if tool_name == "set_pubmed_query":
+                     q = str(args.get("query", "")).strip()
+                     if q:
+                         extracted.append(q)
+                     return f"Query registered: {q}"
+                 return "Unknown tool."
+
+             try:
+                 self._provider.generate_with_tools(_SYSTEM, user_prompt, [_TOOL], executor)
+             except LLMProviderError:
+                 return self._fallback.build(pico)
+
+             if extracted:
+                 self.used_function_calling = True
+                 return extracted[0]
+             return self._fallback.build(pico)
+     ```
+  2. In `veritasclin/schemas/pack.py`, add field to `EvidencePack`:
+     ```python
+     pubmed_query_method: str = "algorithmic"
+     ```
+  3. In `builder.py`:
+     - Replace `query = QueryAgent().build(pico)` with:
+       ```python
+       fc_agent = FunctionCallingQueryAgent(provider=self._provider)
+       query = fc_agent.build(pico)
+       ```
+     - In the `EvidencePack(...)` constructor, add:
+       ```python
+       pubmed_query_method=(
+           "gemma4-function-calling" if fc_agent.used_function_calling else "algorithmic"
+       ),
+       ```
+  4. In `streamlit_app.py`, in the `PICO & Query` tab (`tabs[1]`), after `st.code(pack.pubmed_query, ...)`, add:
+     ```python
+     st.caption(f"Query built by: **{pack.pubmed_query_method}**")
+     ```
+- **Acceptance test:**
+  ```python
+  def test_function_calling_query_agent_falls_back_with_mock():
+      from veritasclin.agents.function_calling_query_agent import FunctionCallingQueryAgent
+      from veritasclin.llm.mock import MockLLMProvider
+      from veritasclin.schemas.pico import PICOQuestion
+      pico = PICOQuestion(
+          original_question="dengue warning signs",
+          population="adults",
+          intervention="warning signs",
+          comparison=None,
+          outcome="severe dengue",
+          preferred_study_types=[],
+          language="en",
+      )
+      agent = FunctionCallingQueryAgent(provider=MockLLMProvider())
+      query = agent.build(pico)
+      assert isinstance(query, str)
+      assert len(query) > 0
+      assert agent.used_function_calling is False  # mock fell back correctly
+
+  @pytest.mark.integration
+  def test_function_calling_query_agent_with_real_provider():
+      from veritasclin.agents.function_calling_query_agent import FunctionCallingQueryAgent
+      from veritasclin.llm.ollama import OllamaProvider
+      from veritasclin.schemas.pico import PICOQuestion
+      pico = PICOQuestion(
+          original_question="What are warning signs for severe dengue?",
+          population="adults with dengue",
+          intervention="warning signs",
+          comparison=None,
+          outcome="severe dengue progression",
+          preferred_study_types=[],
+          language="en",
+      )
+      agent = FunctionCallingQueryAgent(provider=OllamaProvider())
+      query = agent.build(pico)
+      assert isinstance(query, str)
+      assert len(query) > 5
+      # When function calling succeeds, query comes from Gemma 4
+      # When it falls back, query comes from QueryAgent — either is acceptable
+  ```
+  Unit test (no marker) runs in CI. Integration test requires real Ollama.
+- **Commit:** pending
+
+---
+
+## Phase 10 — Ollama Special Track Prominence
+> Kaggle announced an explicit Ollama special mention prize. We already use Ollama but it is buried. This phase makes it the headline deployment story.
+
+### P10-1 — Add Ollama badge and section to README
+- [ ] Status: pending
+- **Files:** `README.md`
+- **Implementation:**
+  1. Add Ollama badge to the badge row (after the existing badges):
+     ```markdown
+     [![Ollama](https://img.shields.io/badge/Inference-Ollama-black?logo=ollama)](https://ollama.com)
+     ```
+  2. Add a `## Runs on Ollama` section directly under the badge row, before the Demo section:
+     ```markdown
+     ## Runs on Ollama
+
+     VeritasClin Field runs Gemma 4 locally or via Ollama Cloud with zero data sent to
+     third-party APIs. Set up in two commands:
+
+     ```bash
+     ollama pull gemma4:31b          # local inference
+     GEMMA_PROVIDER=ollama streamlit run app/streamlit_app.py
+     ```
+
+     For Ollama Cloud: set `OLLAMA_API_KEY` in `.env` — the app switches automatically.
+     ```
+  3. Update the provider table in `## LLM Provider` to use `gemma4:31b` (not `gemma4:e4b`) and add a "Runs on Ollama Cloud" row note.
+- **Acceptance test:** Ollama badge visible in README header. `## Runs on Ollama` section present. `grep "gemma4:e4b" README.md` returns no lines.
+- **Commit:** pending
+
+---
+
+## Phase 11 — Required Submission Artifacts (Manual)
+> All items in this phase are manual. Code must be complete before starting.
+
+### P11-1 — Hero screenshot and gallery assets
+- [ ] Status: pending — MANUAL
+- **Files:** `assets/hero/veritasclin-field-hero.png`, `assets/screenshots/build-pack.png`, `assets/screenshots/offline-qa.png`
+- **Steps:**
+  1. Run `GEMMA_PROVIDER=ollama streamlit run app/streamlit_app.py`
+  2. Upload a clinical image (optional) → build dengue pack → screenshot the Evidence Map tab → save as `assets/hero/veritasclin-field-hero.png`
+  3. Screenshot the Claim Ledger tab (shows supported claims with PMID citations) → save as `assets/screenshots/build-pack.png`
+  4. Switch to Load Offline Pack → upload the exported pack → ask "What are the warning signs for severe dengue in adults?" → screenshot → save as `assets/screenshots/offline-qa.png`
+- **Acceptance test:** All three files exist, each > 10 KB.
+
+### P11-2 — Demo video
+- [ ] Status: pending — MANUAL
+- **Files:** Link in README (YouTube unlisted or Kaggle attachment)
+- **Steps:**
+  1. Follow `docs/demo_script.md` exactly (3 minutes)
+  2. Record with QuickTime or equivalent
+  3. Upload to YouTube (unlisted) — copy URL
+  4. Add `## Demo Video` section to README with the URL
+- **Acceptance test:** Video URL in README is accessible. Video is under 5 minutes. Covers: pack build, claim ledger, unsafe dosing rewrite, offline Q&A, multimodal image input, function calling query label.
+
+### P11-3 — Final code push and CI verification
+- [ ] Status: pending — MANUAL
+- **Steps:**
+  1. Run `.venv/bin/pytest -q -m "not integration"` — all 35+ pass
+  2. Run `.venv/bin/ruff check .` — clean
+  3. `git push origin main`
+  4. Verify GitHub Actions CI badge is green on the repo homepage
+- **Acceptance test:** CI badge in README links to a passing workflow.
+
+### P11-4 — Kaggle submission form
+- [ ] Status: pending — MANUAL
+- **Steps:**
+  1. Go to `kaggle.com/competitions/gemma-4-good-hackathon`
+  2. Submit: public repo URL, demo video URL, write-up (copy README intro + judging_strategy.md)
+  3. Select categories: Health & Sciences, Global Resilience, Digital Equity, Safety & Trust
+  4. Note Ollama usage in submission notes
+- **Acceptance test:** Submission confirmation email received before 2026-05-18 23:59 UTC.
