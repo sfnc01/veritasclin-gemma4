@@ -23,13 +23,13 @@ sys.path.insert(0, str(ROOT))
 os.environ["GEMMA_PROVIDER"] = "ollama"
 
 from veritasclin.config import reset_settings_cache  # noqa: E402
-reset_settings_cache()
-
 from veritasclin.exporters.csv import caution_map_to_json, claims_to_csv  # noqa: E402
 from veritasclin.exporters.json_export import pack_to_json  # noqa: E402
 from veritasclin.exporters.markdown import pack_to_markdown  # noqa: E402
 from veritasclin.llm import get_llm_provider  # noqa: E402
 from veritasclin.packs.builder import PackBuilder  # noqa: E402
+
+reset_settings_cache()
 
 TOPICS = [
     {
@@ -89,7 +89,8 @@ def build_and_save(topic: dict, provider) -> None:
     (out / "pack.json").write_text(pack_to_json(pack), encoding="utf-8")
     print(f"  ✓ pack.json  (source: {pack.source})")
     print(f"    PMIDs: {[p.pmid for p in pack.papers[:5]]}")
-    print(f"    Claims: {len(pack.claim_ledger)}  |  Citation coverage: {pack.citation_coverage:.0%}")
+    print(f"    Claims: {len(pack.claim_ledger)}"
+          f"  |  Citation coverage: {pack.citation_coverage:.0%}")
     print(f"    Query method: {pack.pubmed_query_method}")
 
     # dossier.md
@@ -121,7 +122,8 @@ def main() -> None:
     print("VeritasClin Field — Real Evidence Pack Builder")
     print(f"  Provider : {settings.gemma_provider}")
     print(f"  Model    : {settings.gemma_model}")
-    print(f"  PubMed   : {'configured' if settings.pubmed_configured else 'NOT configured — aborting'}")
+    _pm = "configured" if settings.pubmed_configured else "NOT configured — aborting"
+    print(f"  PubMed   : {_pm}")
     print(f"  Output   : {OUT_DIR}")
 
     if not settings.pubmed_configured:
