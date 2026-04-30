@@ -88,29 +88,36 @@ Primary hackathon story:
 | Medical safety stance | Varies by model | Deterministic guardrails first |
 | PubMed reproducibility | Often opaque | Query, PMIDs, timestamps, and exports travel together |
 | Low-connectivity use | Not the target | Core product constraint |
-| Gemma role | Optional answer generation | Local reasoning, rewriting, synthesis, and offline Q&A |
+| Image / document input | Rarely | Multimodal — Gemma 4 reads clinical images into the question |
+| Query construction | Fixed template | Native function calling — Gemma 4 calls `set_pubmed_query` tool |
+| Gemma role | Optional answer generation | Multimodal input · function calling · synthesis · offline Q&A |
 
 ## Architecture
 
 ```mermaid
 flowchart TD
     Q(["🩺 Clinical evidence question"])
+    IMG(["🖼️ Clinical image (optional)"])
 
-    subgraph safety["Safety & Framing"]
+    subgraph multimodal["Gemma 4 — Multimodal"]
+        IMG_A["ImageContextAgent\nGemma 4 reads image · adds clinical context"]
+    end
+
+    subgraph safety["Gemma 4 — Safety & Framing"]
         S["SafetyGuard\nblock · rewrite · allow"]
         P["PICOAgent\npopulation · intervention · outcome"]
     end
 
     subgraph retrieval["Evidence Retrieval"]
-        R["PubMed Query Builder\nMeSH + Title/Abstract terms"]
+        R["FunctionCallingQueryAgent\nGemma 4 calls set_pubmed_query tool"]
         N[("PubMed / NCBI\nrate-limited · cached")]
         K["Evidence Ranker\nstudy type · recency · PICO overlap"]
     end
 
-    subgraph synthesis["Gemma 4 Synthesis"]
-        Y["SynthesisAgent\nLLM-grounded · citations inline"]
-        C["Claim Extractor\nsentence-level claims"]
-        V["Claim Verifier\nPMID matching · support status"]
+    subgraph synthesis["Gemma 4 — Synthesis"]
+        Y["SynthesisAgent\ncitations inline · evidence-grounded"]
+        C["ClaimExtractor\nGemma 4 extracts verifiable assertions"]
+        V["ClaimVerifier\nPMID matching · support status"]
     end
 
     subgraph audit["Audit Layer"]
@@ -119,11 +126,12 @@ flowchart TD
     end
 
     subgraph pack["Portable Evidence Pack"]
-        X[/"JSON · Markdown dossier · CSV claim ledger"/]
+        X[/"JSON · Markdown dossier · CSV claim ledger · caution map"/]
         O["Offline Pack Loader"]
-        A["Offline Q&A\ncited claims only · no retrieval"]
+        A["Offline Q&A\nGemma 4 · cited claims only · no retrieval"]
     end
 
+    IMG --> IMG_A --> Q
     Q --> S --> P --> R --> N --> K --> Y --> C --> V --> M --> F --> X --> O --> A
 ```
 
@@ -136,21 +144,6 @@ flowchart TD
 | Offline Mode | A loaded pack can answer questions without PubMed, internet access, or external retrieval. Unsupported questions are refused. |
 | Caution & Conflict Map | A structured list of uncertainty signals such as low certainty, indirect evidence, population mismatch, safety signals, or insufficient data. |
 
-### Evidence Packs
-
-An Evidence Pack is the portable source of truth: `pack.json` plus human-readable exports for review, teaching, audit, and low-connectivity reuse.
-
-### Claim Ledger
-
-The Claim Ledger separates medical claims from prose. Each claim has support status, cited PMIDs or mock evidence IDs, evidence level, risk level, rationale, and limitations.
-
-### Offline Mode
-
-Offline Mode loads a local pack and answers only from that pack. If the pack cannot support an answer, VeritasClin says so instead of retrieving or improvising.
-
-### Caution & Conflict Map
-
-The caution map highlights why evidence should be interpreted carefully, including low certainty, indirect evidence, mismatched populations or outcomes, safety signals, and insufficient data.
 
 ## Quickstart
 
@@ -177,9 +170,9 @@ What does recent evidence say about warning signs for severe dengue in adults?
 | Local Ollama | `ollama` | Yes — full pipeline | Ollama installed + `gemma4:e4b` |
 | API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
 
-**In mock mode**, synthesis uses deterministic template responses that include mock evidence IDs. All other pipeline steps (safety guard, PICO extraction, evidence ranking, claim verification, offline Q&A) use deterministic rule-based logic in all modes — Gemma 4 is used for the generative synthesis and patient explanation steps.
+**In mock mode**, synthesis uses deterministic template responses. Gemma 4 is called at 7 points in the live pipeline: image analysis, PICO extraction, safety rewrite, PubMed query (via native function calling), evidence synthesis, patient explanation, and offline Q&A. Deterministic code handles ranking, verification, caution mapping, and exports — Gemma 4 is not given free rein over safety-critical outputs.
 
-Set `GEMMA_PROVIDER=ollama` to enable live Gemma 4 inference for synthesis and patient-friendly explanations.
+Set `GEMMA_PROVIDER=ollama` to activate the full live pipeline.
 
 ## Mock Mode
 
@@ -191,30 +184,21 @@ GEMMA_PROVIDER=mock
 
 It works without external keys, Ollama, or network access. Mock evidence is clearly labeled and uses IDs such as `MOCK-DENGUE-001`; it never invents real PMIDs. Synthesis responses are deterministic.
 
-## Ollama / Gemma Mode
+## Gemma 4 in the Pipeline
 
-Use local Gemma 4 through Ollama:
+In Ollama mode, Gemma 4 is called at seven points:
 
-```bash
-GEMMA_PROVIDER=ollama
-GEMMA_MODEL=gemma4:31b
-OLLAMA_BASE_URL=http://localhost:11434   # or https://ollama.com for Ollama Cloud
-OLLAMA_API_KEY=your_key                 # required for Ollama Cloud
-```
-
-In Ollama mode, Gemma 4 is called at seven points in the pipeline:
-
-| Step | Gemma 4 capability used |
+| Step | Gemma 4 capability |
 | --- | --- |
-| Image input (optional) | Multimodal — reads clinical images, lab reports, charts |
-| PICO extraction | Text reasoning — extracts population, intervention, outcome |
+| Image input (optional) | **Multimodal** — reads clinical images, lab reports, charts |
+| PICO extraction | Text reasoning — population, intervention, outcome |
 | Safety rewrite | Text reasoning — rewrites unsafe prompts as research questions |
-| PubMed query | **Native function calling** — calls `set_pubmed_query` tool with optimal MeSH terms |
+| PubMed query | **Native function calling** — calls `set_pubmed_query` tool with MeSH terms |
 | Evidence synthesis | Long-context reasoning — synthesises over multiple PubMed abstracts |
 | Patient explanation | Text generation — plain-language summary |
-| Offline Q&A | Retrieval-augmented generation — answers from loaded pack claims only |
+| Offline Q&A | RAG — answers from loaded pack claims only, no external retrieval |
 
-Deterministic code handles evidence ranking, citation coverage, claim verification, caution mapping, freshness scoring, and pack serialization — Gemma 4 is not given free rein over safety-critical outputs.
+Deterministic code handles ranking, citation coverage, claim verification, caution mapping, freshness scoring, and serialization.
 
 ## PubMed / NCBI Mode
 
@@ -296,16 +280,20 @@ caution_map.json
 
 ## Roadmap
 
-| Stage | Focus |
-| --- | --- |
-| Current MVP | Dengue Evidence Pack, offline Q&A, Claim Ledger, caution map, safety guard |
-| Next | Richer multilingual wording, more example packs, stronger conflict detection |
-| Later | Optional Kaggle notebook, richer visual reporting, additional public-health demos |
+| Stage | Status | Focus |
+| --- | --- | --- |
+| v0.1 — Hackathon MVP | ✅ Done | Live Gemma 4 pipeline: multimodal image input, native function calling for PubMed query, LLM synthesis, LLM claim extraction, LLM PICO extraction, offline Q&A |
+| v0.1 — Hackathon MVP | ✅ Done | Offline Evidence Pack: Claim Ledger, Caution Map, freshness score, 4 export formats (JSON, Markdown, CSV, caution JSON) |
+| v0.1 — Hackathon MVP | ✅ Done | SafetyGuard with 6-category detection and LLM-backed rewrite; evaluation module (citation coverage, unsupported-claim delta, reproducibility score) |
+| v0.1 — Hackathon MVP | ✅ Done | Three curated demo topics; any topic via LLM PICO extraction; multilingual offline Q&A (English, Portuguese, Spanish) |
+| v0.2 — Post-hackathon | 🔜 Planned | Demo video and hero assets; additional public-health demo packs (malaria, TB, maternal health) |
+| v0.3 | 🔜 Planned | LLM-backed caution reasoning; stronger conflict detection; richer multilingual synthesis |
+| Later | 💡 Ideas | Fine-tuned Gemma 4 for medical PICO extraction; Kaggle notebook; FHIR-compatible pack export |
 
 ## Medical Disclaimer
 
-VeritasClin Field is for biomedical evidence review and education. It does not provide diagnosis, prescription, emergency triage, or individualized medical advice. Healthcare decisions should be made by qualified professionals using local clinical protocols and current evidence.
+> VeritasClin Field is for biomedical evidence review and education only. It does not provide diagnosis, prescription, emergency triage, or individualised medical advice. All clinical decisions must be made by qualified healthcare professionals using local protocols and current evidence.
 
 ## License
 
-MIT.
+[MIT](LICENSE)
