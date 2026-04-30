@@ -26,14 +26,35 @@ It is not a generic PubMed chatbot, an AI doctor, a diagnosis tool, a prescripti
 
 ## Runs on Ollama
 
-VeritasClin Field runs Gemma 4 locally or via Ollama Cloud — no data sent to third-party APIs.
+VeritasClin Field runs Gemma 4 with no data sent to third-party APIs. Choose the path that fits your hardware:
+
+**Option A — Ollama Cloud** (no GPU required, API key needed):
 
 ```bash
-ollama pull gemma4:31b
-GEMMA_PROVIDER=ollama streamlit run app/streamlit_app.py
+# .env
+GEMMA_PROVIDER=ollama
+GEMMA_MODEL=gemma4:31b
+OLLAMA_BASE_URL=https://ollama.com
+OLLAMA_API_KEY=your_key          # get one at ollama.com/settings/keys
 ```
 
-For Ollama Cloud, add `OLLAMA_API_KEY` to `.env` — the app switches automatically between local and cloud. Gemma 4's **multimodal** capability (image input), **native function calling** (PubMed query construction), and **long-context reasoning** (evidence synthesis over multiple abstracts) are all used in the live pipeline.
+**Option B — Local Ollama** (runs on consumer hardware with the efficiency variant):
+
+```bash
+ollama pull gemma4:e4b           # quantised 4-bit variant, ~8 GB VRAM
+# .env
+GEMMA_PROVIDER=ollama
+GEMMA_MODEL=gemma4:e4b
+OLLAMA_BASE_URL=http://localhost:11434
+```
+
+Then start the app either way:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+Gemma 4's **multimodal** capability (clinical image input), **native function calling** (PubMed query construction), and **long-context reasoning** (evidence synthesis over multiple abstracts) are all used in the live pipeline.
 
 ## Demo
 
@@ -152,7 +173,8 @@ What does recent evidence say about warning signs for severe dengue in adults?
 | Mode | `GEMMA_PROVIDER` | Gemma 4 active | Requires |
 | --- | --- | --- | --- |
 | Default (demo) | `mock` | No — deterministic mock responses | Nothing |
-| Local inference | `ollama` | Yes — synthesis, explanation, baseline | Ollama + `gemma4:31b` |
+| Ollama Cloud | `ollama` | Yes — full pipeline | Ollama Cloud key + `gemma4:31b` |
+| Local Ollama | `ollama` | Yes — full pipeline | Ollama installed + `gemma4:e4b` |
 | API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
 
 **In mock mode**, synthesis uses deterministic template responses that include mock evidence IDs. All other pipeline steps (safety guard, PICO extraction, evidence ranking, claim verification, offline Q&A) use deterministic rule-based logic in all modes — Gemma 4 is used for the generative synthesis and patient explanation steps.
