@@ -761,7 +761,12 @@ def render_pack(pack: EvidencePack) -> None:
         _sec('Clinical Interpretation')
         st.write(pack.clinical_interpretation)
         _sec('What the Evidence Does Not Prove')
-        st.write(pack.what_the_evidence_does_not_prove)
+        _does_not_prove = pack.what_the_evidence_does_not_prove
+        if isinstance(_does_not_prove, list):
+            for _item in _does_not_prove:
+                st.markdown(f"- {_item}")
+        else:
+            st.write(_does_not_prove)
         _sec('Patient-Friendly Explanation')
         st.write(pack.patient_friendly_explanation)
         st.info(pack.safety_notice)
@@ -895,20 +900,21 @@ def render_pack(pack: EvidencePack) -> None:
         )
         _sev_css = {"high": "sev-high", "medium": "sev-medium", "low": "sev-low"}
         for item in pack.caution_map:
-            _sev = item.severity if hasattr(item, "severity") else "medium"
-            _css = _sev_css.get(str(_sev).lower(), "sev-medium")
+            _sev = str(item.severity).lower()
+            _css = _sev_css.get(_sev, "sev-medium")
+            _expl = item.explanation
             with st.expander(
-                f"{item.signal_type.replace('_', ' ').title()} — "
-                f"{item.description[:70]}{'…' if len(item.description) > 70 else ''}",
+                f"{item.caution_type.replace('_', ' ').title()} — "
+                f"{_expl[:70]}{'…' if len(_expl) > 70 else ''}",
                 expanded=False,
             ):
                 st.markdown(
-                    f'Severity: <span class="{_css}">{str(_sev).upper()}</span>',
+                    f'Severity: <span class="{_css}">{_sev.upper()}</span>',
                     unsafe_allow_html=True,
                 )
-                st.write(item.description)
-                if hasattr(item, "affected_claims") and item.affected_claims:
-                    st.caption(f"Affects claims: {', '.join(item.affected_claims)}")
+                st.write(_expl)
+                if item.claim_id:
+                    st.caption(f"Linked claim ID: {item.claim_id}")
 
         with st.expander("Full table view"):
             st.dataframe(
