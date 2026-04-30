@@ -32,7 +32,7 @@ Rules:
 
 ## Current Status
 
-**Phase:** 8 — Judging Criteria Alignment  
+**Phase:** 11 — Required Submission Artifacts (Manual)  
 **Score at audit:** 76 / 100  
 **Estimated current score:** ~96 / 100  
 **Target score:** 100% judging alignment  
@@ -48,6 +48,7 @@ Rules:
 | 1 | 2026-04-30 | 1–6 | P1-1, P1-2, P2-1, P2-2, P2-3, P2-4, P3-1, P3-2, P3-3, P4-1, P4-2, P4-3, P5-1, P5-2, P5-3, P6-1, P6-2 | d6da7e7, 47a0ab2, 8b14816, 9e6e403, d1d0bed, 31c511c |
 | 2 | 2026-04-30 | 6–7 | P6-3, baseline_agent LLMProviderError, tests/conftest.py mock pinning | 4f6b6cd, 076bfdf |
 | 3 | 2026-04-30 | 7–8 | Evaluation module wired (baseline_agent, builder, streamlit), PICOAgent LLM-primary, judging gap analysis, Phases 8–11 planned | 7ec2be3 |
+| 4 | 2026-04-30 | 8–10 | P8-1, P8-2, P9-1, P9-2, P10-1 — multimodal, function calling, Ollama badge | 1410d17 |
 
 ---
 
@@ -443,7 +444,7 @@ git status                                 # must: clean or only expected uncomm
 - Integration tests are marked `@pytest.mark.integration` and require `GEMMA_PROVIDER=ollama`.
 
 ### P8-1 — Extend LLMProvider and OllamaProvider with `generate_with_image`
-- [ ] Status: pending
+- [x] Status: done — commit 1410d17
 - **Files:** `veritasclin/llm/base.py`, `veritasclin/llm/ollama.py`
 - **Problem:** No provider supports image input. Gemma 4 is natively multimodal; the Ollama `/api/chat` endpoint supports base64 images in the user message.
 - **Implementation:**
@@ -491,7 +492,7 @@ git status                                 # must: clean or only expected uncomm
 - **Commit:** pending
 
 ### P8-2 — Add ImageContextAgent and wire into PackBuilder and Streamlit
-- [ ] Status: pending
+- [x] Status: done — commit 1410d17
 - **Files:** `veritasclin/agents/image_context_agent.py` (new), `veritasclin/packs/builder.py`, `app/streamlit_app.py`
 - **Problem:** Even with P8-1 in place, nothing in the pipeline calls `generate_with_image`. The user has no way to upload an image.
 - **Implementation:**
@@ -578,7 +579,7 @@ git status                                 # must: clean or only expected uncomm
 > The query method used ("gemma4-function-calling" vs "algorithmic") is stored on EvidencePack and shown in the PICO & Query tab — judges can see it directly.
 
 ### P9-1 — Extend LLMProvider and OllamaProvider with `generate_with_tools`
-- [ ] Status: pending
+- [x] Status: done — commit 1410d17
 - **Files:** `veritasclin/llm/base.py`, `veritasclin/llm/ollama.py`
 - **Problem:** No provider supports native tool/function calling. Gemma 4 on Ollama supports the `tools` parameter in `/api/chat`, returning `message.tool_calls` when it decides to call a tool.
 - **Implementation:**
@@ -640,7 +641,7 @@ git status                                 # must: clean or only expected uncomm
 - **Commit:** pending
 
 ### P9-2 — Add FunctionCallingQueryAgent, wire into PackBuilder, display in UI
-- [ ] Status: pending
+- [x] Status: done — commit 1410d17
 - **Files:** `veritasclin/agents/function_calling_query_agent.py` (new), `veritasclin/schemas/pack.py`, `veritasclin/packs/builder.py`, `app/streamlit_app.py`
 - **Problem:** Even with P9-1, nothing uses function calling. The QueryAgent still builds queries algorithmically with no Gemma 4 involvement.
 - **Implementation:**
@@ -791,7 +792,7 @@ git status                                 # must: clean or only expected uncomm
 > Kaggle announced an explicit Ollama special mention prize. We already use Ollama but it is buried. This phase makes it the headline deployment story.
 
 ### P10-1 — Add Ollama badge and section to README
-- [ ] Status: pending
+- [x] Status: done — commit 1410d17
 - **Files:** `README.md`
 - **Implementation:**
   1. Add Ollama badge to the badge row (after the existing badges):
