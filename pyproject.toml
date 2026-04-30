@@ -5,6 +5,9 @@ description = "Offline-first, audit-ready medical evidence packs powered by Gemm
 requires-python = ">=3.11"
 readme = "README.md"
 
+[tool.setuptools.packages.find]
+include = ["veritasclin*"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
