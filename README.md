@@ -13,7 +13,9 @@ Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 [![Ollama](https://img.shields.io/badge/Inference-Ollama-black)](https://ollama.com)
 [![License MIT](https://img.shields.io/badge/License-MIT-black)](LICENSE)
 
-![VeritasClin Field logo](app/assets/veritasclin-field-logo.png)
+<p align="center">
+  <img src="app/assets/veritasclin-field-logo.png" width="420" alt="VeritasClin Field">
+</p>
 
 **VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams working under low-connectivity, high-risk, and high-accountability conditions.**
 
