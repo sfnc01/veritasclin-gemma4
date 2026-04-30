@@ -1,23 +1,26 @@
-# VeritasClin Field
-
-Offline-first, audit-ready medical evidence packs powered by Gemma 4.
-
-> Medical AI should not just answer. It should carry its evidence with it.
-
-[![CI](https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml/badge.svg)](https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Pydantic v2](https://img.shields.io/badge/Schemas-Pydantic%20v2-E92063)](https://docs.pydantic.dev/)
-[![PubMed NCBI](https://img.shields.io/badge/Evidence-PubMed%2FNCBI-0B5CAD)](https://pubmed.ncbi.nlm.nih.gov/)
-[![Offline First](https://img.shields.io/badge/Mode-Offline--first-0E7C66)](#offline-mode)
-[![Ollama](https://img.shields.io/badge/Inference-Ollama-black)](https://ollama.com)
-[![License MIT](https://img.shields.io/badge/License-MIT-black)](LICENSE)
-
 <p align="center">
-  <img src="app/assets/veritasclin-field-logo.png" width="420" alt="VeritasClin Field">
+  <img src="app/assets/veritasclin-field-logo.png" width="360" alt="VeritasClin Field">
 </p>
 
-**VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams working under low-connectivity, high-risk, and high-accountability conditions.**
+<p align="center">
+  <strong>Offline-first, audit-ready medical evidence packs powered by Gemma 4.</strong><br>
+  <em>Medical AI should not just answer. It should carry its evidence with it.</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml"><img src="https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" alt="Python 3.11+"></a>
+  <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit"></a>
+  <a href="https://docs.pydantic.dev/"><img src="https://img.shields.io/badge/Schemas-Pydantic%20v2-E92063" alt="Pydantic v2"></a>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/"><img src="https://img.shields.io/badge/Evidence-PubMed%2FNCBI-0B5CAD" alt="PubMed NCBI"></a>
+  <a href="#offline-mode"><img src="https://img.shields.io/badge/Mode-Offline--first-0E7C66" alt="Offline First"></a>
+  <a href="https://ollama.com"><img src="https://img.shields.io/badge/Inference-Ollama-black" alt="Ollama"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-black" alt="License MIT"></a>
+</p>
+
+---
+
+VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams working under low-connectivity, high-risk, and high-accountability conditions.
 
 It is not a generic PubMed chatbot, an AI doctor, a diagnosis tool, a prescription tool, or a clone of Elicit, Consensus, Perplexity, Semantic Scholar, or scite.
 
