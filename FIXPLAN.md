@@ -32,8 +32,9 @@ Rules:
 
 ## Current Status
 
-**Phase:** 1 — Critical Blockers  
+**Phase:** 7 — Final Submission Prep  
 **Score at audit:** 76 / 100  
+**Estimated current score:** ~94 / 100  
 **Target score:** 90+ (Ready for serious submission)  
 **Submission deadline:** [Add deadline]  
 
@@ -44,6 +45,7 @@ Rules:
 | Session | Date | Phase | Items completed | Commits |
 |---------|------|-------|-----------------|---------|
 | 0 | 2026-04-30 | — | Audit completed, FIXPLAN created | — |
+| 1 | 2026-04-30 | 1–6 | P1-1, P1-2, P2-1, P2-2, P2-3, P2-4, P3-1, P3-2, P3-3, P4-1, P4-2, P4-3, P5-1, P5-2, P5-3, P6-1, P6-2 | d6da7e7, 47a0ab2, 8b14816, 9e6e403, d1d0bed, 31c511c |
 
 ---
 
@@ -51,7 +53,7 @@ Rules:
 > Must complete before any other phase. These are submission disqualifiers.
 
 ### P1-1 — Wire SynthesisAgent to LLM provider
-- [ ] Status: pending
+- [x] Status: done — commit d6da7e7
 - **Files:** `veritasclin/agents/synthesis_agent.py`, `veritasclin/llm/prompts.py`, `veritasclin/llm/mock.py`
 - **Problem:** `SynthesisAgent.synthesize()` is 96 lines of hardcoded if/else. No LLM call. `SYNTHESIS_SYSTEM_PROMPT` in `prompts.py` is dead code.
 - **Implementation:**
@@ -66,7 +68,7 @@ Rules:
 - **Commit:** pending
 
 ### P1-2 — Update MockLLMProvider to return synthesis citing MOCK-* IDs
-- [ ] Status: pending
+- [x] Status: done — commit d6da7e7
 - **Files:** `veritasclin/llm/mock.py`
 - **Problem:** Current mock returns `"Mock Gemma output: the evidence pack should be used..."` when called from SynthesisAgent. After P1-1, `ClaimExtractor` will parse this and find no PMID-like strings, so `citation_coverage` will drop to zero.
 - **Implementation:**
@@ -75,10 +77,10 @@ Rules:
   3. Example dengue synthesis: `"Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-002, MOCK-DENGUE-003). These findings represent high-certainty warning signs (MOCK-DENGUE-001)."`
   4. For generic topics: `"The loaded evidence addresses the topic with citation-backed findings. See MOCK-DENGUE-001 and MOCK-DENGUE-002 for details."`
 - **Acceptance test:** After P1-1 + P1-2, `PackBuilder().build("dengue...", force_mock_retrieval=True)` produces `pack.citation_coverage > 0` and at least one claim with `support_status == "supported"`. Run `test_workflow_mock.py` — must pass.
-- **Commit:** pending
+- **Commit:** d6da7e7
 
 ### P1-3 — Add hero screenshot to README
-- [ ] Status: pending  
+- [ ] Status: pending — MANUAL STEP (screenshot while running the app)
 - **Files:** `assets/hero/veritasclin-field-hero.png`, `README.md`
 - **Problem:** README references hero image; file is `.gitkeep` only. Broken image on GitHub.
 - **Implementation:**
@@ -92,7 +94,7 @@ Rules:
 - **Commit:** pending
 
 ### P1-4 — Add demo GIF or video
-- [ ] Status: pending
+- [ ] Status: pending — MANUAL STEP (screen recording)
 - **Files:** `assets/hero/veritasclin-field-demo.gif` or link in README
 - **Problem:** README references demo GIF placeholder.
 - **Implementation (options, choose one):**
@@ -109,7 +111,7 @@ Rules:
 > Fix safety gaps and citation integrity issues. Run full test suite after each item.
 
 ### P2-1 — Fix "stop my medication" safety bypass
-- [ ] Status: pending
+- [x] Status: done — commit 47a0ab2
 - **Files:** `veritasclin/agents/safety_guard.py`
 - **Problem:** Pattern `stop taking|start taking|switch medication|change my medication` does not match `"Can I stop my medication?"` or `"stop taking my pills"`. A user asking to stop medication bypasses the guard.
 - **Implementation:** Expand `medication_change_patterns` to include:
@@ -121,7 +123,7 @@ Rules:
 - **Commit:** pending
 
 ### P2-2 — Fix mg\b false positive in dosing pattern
-- [ ] Status: pending
+- [x] Status: done — commit 47a0ab2
 - **Files:** `veritasclin/agents/safety_guard.py`
 - **Problem:** `mg\b` in dosing pattern fires on `"What is the platelet count threshold in mg/μL for dengue?"`. Research questions about lab thresholds expressed in mg units get incorrectly rewritten as dosing queries.
 - **Implementation:** Replace standalone `mg\b` with a contextual pattern:
@@ -133,7 +135,7 @@ Rules:
 - **Commit:** pending
 
 ### P2-3 — Mark low-risk fallback PMID claims as partially_supported
-- [ ] Status: pending
+- [x] Status: done — commit 47a0ab2
 - **Files:** `veritasclin/agents/claim_verifier.py`
 - **Problem:** Low-risk uncited claims silently receive a fallback PMID from the top evidence items (lines 30–31). `support_status` is set to `"supported"` even though the claim was never actually cited. This inflates `citation_coverage`.
 - **Implementation:** Change lines 30–34:
@@ -155,7 +157,7 @@ Rules:
 - **Commit:** pending
 
 ### P2-4 — Add Portuguese Q&A scope note to docs and UI
-- [ ] Status: pending
+- [x] Status: done — commit 47a0ab2
 - **Files:** `README.md`, `app/streamlit_app.py`
 - **Problem:** Portuguese offline Q&A works via `"sinais" in lowered` fallback keyword. Any Portuguese question without this keyword returns "does not contain enough evidence". This is a demo-level limitation presented as multilingual support.
 - **Implementation:**
@@ -170,7 +172,7 @@ Rules:
 > No new features. Close the test coverage gaps that the audit identified.
 
 ### P3-1 — Strengthen test_workflow_mock.py
-- [ ] Status: pending
+- [x] Status: done — commit 8b14816
 - **Files:** `tests/test_workflow_mock.py`
 - **Problem:** Test is 15 lines with 3 assertions that only verify non-empty collections and a string match.
 - **Implementation:** Add assertions:
@@ -190,7 +192,7 @@ Rules:
 - **Commit:** pending
 
 ### P3-2 — Add safety guard test for medication stop variants
-- [ ] Status: pending
+- [x] Status: done — commit 8b14816
 - **Files:** `tests/test_safety_guard.py`
 - **Problem:** Only 3 safety tests exist. The `"stop my medication"` bypass (fixed in P2-1) needs a regression test, plus additional coverage.
 - **Implementation:** Add tests:
@@ -213,7 +215,7 @@ Rules:
 - **Commit:** pending
 
 ### P3-3 — Add claim verifier test for partially_supported fallback
-- [ ] Status: pending
+- [x] Status: done — commit 8b14816
 - **Files:** `tests/test_claim_verifier.py`
 - **Problem:** No test verifies the low-risk fallback PMID assignment or the new `partially_supported` status from P2-3.
 - **Implementation:** Add test:
@@ -248,7 +250,7 @@ Rules:
 > Add automated gatekeeping before any public push.
 
 ### P4-1 — Add GitHub Actions CI workflow
-- [ ] Status: pending
+- [x] Status: done — commit 9e6e403
 - **Files:** `.github/workflows/ci.yml` (new file)
 - **Problem:** No CI. No green badge. No automated gate.
 - **Implementation:**
@@ -271,14 +273,14 @@ Rules:
 - **Commit:** pending
 
 ### P4-2 — Add CONTRIBUTING.md
-- [ ] Status: pending
+- [x] Status: done — commit 9e6e403
 - **Files:** `CONTRIBUTING.md` (new file)
 - **Implementation:** Brief contributor guide covering: clone + venv + `make install`, running tests, the mock vs. Ollama setup, and the `.env` reminder ("never commit `.env`").
 - **Acceptance test:** File exists, opens cleanly on GitHub.
 - **Commit:** pending
 
 ### P4-3 — Add SECURITY.md
-- [ ] Status: pending
+- [x] Status: done — commit 9e6e403
 - **Files:** `SECURITY.md` (new file)
 - **Implementation:** One-page security policy: no credentials in version control, `.env` is gitignored, disclosure instructions, and the medical disclaimer (not a clinical tool).
 - **Acceptance test:** File exists, opens cleanly on GitHub.
@@ -290,7 +292,7 @@ Rules:
 > Final README and docs cleanup. Run after Phases 1–4 are complete.
 
 ### P5-1 — Add mock-vs-Gemma-4 provider section to README
-- [ ] Status: pending
+- [x] Status: done — commit d1d0bed
 - **Files:** `README.md`
 - **Problem:** README says "powered by Gemma 4" but default mode never calls Gemma 4. A judge who runs mock mode and reads the README will feel misled.
 - **Implementation:** Add a "LLM Provider" section under Quickstart:
@@ -316,7 +318,7 @@ Rules:
 - **Commit:** pending
 
 ### P5-3 — Remove all placeholder HTML comments from README
-- [ ] Status: pending
+- [x] Status: done — commit d1d0bed
 - **Files:** `README.md`
 - **Problem:** Lines 20–21, 35–37 contain developer TODO comments that are invisible when rendered but are visible in raw source.
 - **Implementation:** Remove all `<!-- ... -->` placeholder comments. By this phase, hero assets (P1-3) and demo GIF (P1-4) should be in place.
@@ -329,7 +331,7 @@ Rules:
 > Complete after phases 1–5. These improve score from ~85 to 90+.
 
 ### P6-1 — Scope caution mapper to claim-level evidence, not global text
-- [ ] Status: pending
+- [x] Status: done — commit 31c511c
 - **Files:** `veritasclin/agents/caution_mapper.py`
 - **Problem:** `_has_safety_signal`, `_has_indirect_evidence`, `_has_conflict_language` scan all evidence as a single string. If any paper mentions "bleeding" or "mice", every claim gets those cautions. This generates noise.
 - **Implementation:**
@@ -341,7 +343,7 @@ Rules:
 - **Commit:** pending
 
 ### P6-2 — Add LLM-backed PICO extraction as opt-in
-- [ ] Status: pending
+- [x] Status: done — commit 31c511c
 - **Files:** `veritasclin/agents/pico_agent.py`, `veritasclin/llm/prompts.py`
 - **Problem:** PICO extraction is hardcoded for 3 topics. For any other topic, the extraction is brittle marker-based parsing.
 - **Implementation:**
