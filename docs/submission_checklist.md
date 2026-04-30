@@ -7,6 +7,6 @@
 - [ ] Three-minute video.
 - [ ] Example packs.
 - [ ] Tests passing.
+- [ ] PubMed credentialed smoke test passing locally.
 - [ ] Screenshots.
 - [ ] Optional Kaggle notebook.
-

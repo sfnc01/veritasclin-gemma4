@@ -1,10 +1,10 @@
 # VeritasClin Field Evidence Pack
 
 ## Pack Metadata
-- Pack ID: vfield-2a5a1c625d10
+- Pack ID: vfield-380a2c4ba472
 - Title: Evidence Pack: What does evidence say about medical cannabis for neuropathic pain in adults
 - Topic: What does evidence say about medical cannabis for neuropathic pain in adults?
-- Created: 2026-04-30T02:28:48.624094+00:00
+- Created: 2026-04-30T02:50:16.071976+00:00
 - Source: Mock demo data - not real PubMed retrieval
 - Language: en
 
@@ -27,15 +27,15 @@ No rewrite required.
 
 ## PubMed Search Strategy
 ```text
-("adults with neuropathic pain"[Title/Abstract] OR "adults with neuropathic pain"[MeSH Terms]) AND ("medical cannabis"[Title/Abstract] OR "medical cannabis"[MeSH Terms]) AND ("cannabinoids"[Title/Abstract] OR "cannabinoids"[MeSH Terms]) AND ("placebo"[Title/Abstract] OR "placebo"[MeSH Terms]) AND ("standard care"[Title/Abstract] OR "standard care"[MeSH Terms]) AND ("pain relief"[Title/Abstract] OR "pain relief"[MeSH Terms]) AND ("adverse events"[Title/Abstract] OR "adverse events"[MeSH Terms]) AND ("What does evidence say about medical cannabis for neuropathic pain in adults"[Title/Abstract] OR "What does evidence say about medical cannabis for neuropathic pain in adults"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])
+(cannabis[Title/Abstract] OR cannabinoids[MeSH Terms] OR cannabinoid*[Title/Abstract]) AND ("neuropathic pain"[Title/Abstract] OR neuralgia[MeSH Terms]) AND (adult[Title/Abstract] OR humans[MeSH Terms])
 ```
 
 ## Evidence Freshness
-- Score: 0.4
+- Score: 0.7
 - Last search date: 2026-04-30
 - Newest publication year: 2021
-- Recommended refresh days: 60
-- Rationale: Newest loaded publication year is 2021; refresh interval reflects evidence age.
+- Recommended refresh days: 90
+- Rationale: Newest loaded publication year is 2021 and oldest is 2021; the pack is 5 years from the newest included evidence.
 
 ## Evidence Map
 | PMID/ID | Level | Study Type | Score | Title |
@@ -53,7 +53,10 @@ No rewrite required.
 ## Caution & Conflict Map
 | Caution ID | Claim ID | Type | Severity | Explanation |
 | --- | --- | --- | --- | --- |
+| CAU001 | C001 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
+| CAU002 | C002 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
 | CAU003 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
+| CAU004 | C004 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
 
 ## Executive Summary
 The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).

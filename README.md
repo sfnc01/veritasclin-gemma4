@@ -1,5 +1,7 @@
 # VeritasClin Field
 
+![VeritasClin Field logo](app/assets/veritasclin-field-logo.png)
+
 Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 
 VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams working under low-connectivity, privacy-sensitive, and high-accountability conditions.
@@ -89,6 +91,10 @@ NCBI_MAX_RPS=3
 
 Secrets are never committed or printed. Tests pass without credentials.
 
+Credentialed local verification runs when both `NCBI_API_KEY` and `NCBI_EMAIL` are set.
+The PubMed integration tests are skipped without credentials, but with credentials they must
+return real numeric PMIDs for the dengue demo query.
+
 ## Demo Workflow
 
 1. Build a pack for: `What does recent evidence say about warning signs for severe dengue in adults?`
@@ -123,6 +129,14 @@ make test
 make lint
 ```
 
+For the full local gate with PubMed credentials:
+
+```bash
+pytest
+ruff check .
+streamlit run app/streamlit_app.py
+```
+
 ## Architecture
 
 ```mermaid
@@ -149,4 +163,3 @@ flowchart LR
 ## License
 
 MIT.
-

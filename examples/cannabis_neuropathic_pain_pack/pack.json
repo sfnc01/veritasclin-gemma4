@@ -1,9 +1,9 @@
 {
-  "pack_id": "vfield-2a5a1c625d10",
+  "pack_id": "vfield-380a2c4ba472",
   "title": "Evidence Pack: What does evidence say about medical cannabis for neuropathic pain in adults",
   "topic": "What does evidence say about medical cannabis for neuropathic pain in adults?",
-  "created_at": "2026-04-30T02:28:48.624094+00:00",
-  "last_pubmed_search_at": "2026-04-30T02:28:48.624094+00:00",
+  "created_at": "2026-04-30T02:50:16.071976+00:00",
+  "last_pubmed_search_at": "2026-04-30T02:50:16.071976+00:00",
   "language": "en",
   "source": "Mock demo data - not real PubMed retrieval",
   "pico": {
@@ -22,7 +22,7 @@
     ],
     "language": "en"
   },
-  "pubmed_query": "(\"adults with neuropathic pain\"[Title/Abstract] OR \"adults with neuropathic pain\"[MeSH Terms]) AND (\"medical cannabis\"[Title/Abstract] OR \"medical cannabis\"[MeSH Terms]) AND (\"cannabinoids\"[Title/Abstract] OR \"cannabinoids\"[MeSH Terms]) AND (\"placebo\"[Title/Abstract] OR \"placebo\"[MeSH Terms]) AND (\"standard care\"[Title/Abstract] OR \"standard care\"[MeSH Terms]) AND (\"pain relief\"[Title/Abstract] OR \"pain relief\"[MeSH Terms]) AND (\"adverse events\"[Title/Abstract] OR \"adverse events\"[MeSH Terms]) AND (\"What does evidence say about medical cannabis for neuropathic pain in adults\"[Title/Abstract] OR \"What does evidence say about medical cannabis for neuropathic pain in adults\"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])",
+  "pubmed_query": "(cannabis[Title/Abstract] OR cannabinoids[MeSH Terms] OR cannabinoid*[Title/Abstract]) AND (\"neuropathic pain\"[Title/Abstract] OR neuralgia[MeSH Terms]) AND (adult[Title/Abstract] OR humans[MeSH Terms])",
   "papers": [
     {
       "pmid": "MOCK-CANNABIS-001",
@@ -131,6 +131,32 @@
   ],
   "caution_map": [
     {
+      "id": "CAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "cautionary_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "cautionary_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
       "id": "CAU003",
       "claim_id": "C003",
       "supporting_pmids": [],
@@ -138,15 +164,28 @@
       "caution_type": "insufficient_data",
       "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
       "severity": "high"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "cautionary_pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
     }
   ],
   "freshness": {
-    "score": 0.4,
+    "score": 0.7,
     "last_search_date": "2026-04-30",
     "newest_publication_year": 2021,
     "oldest_publication_year": 2021,
-    "recommended_refresh_days": 60,
-    "rationale": "Newest loaded publication year is 2021; refresh interval reflects evidence age."
+    "recommended_refresh_days": 90,
+    "rationale": "Newest loaded publication year is 2021 and oldest is 2021; the pack is 5 years from the newest included evidence."
   },
   "executive_summary": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
   "clinical_interpretation": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",

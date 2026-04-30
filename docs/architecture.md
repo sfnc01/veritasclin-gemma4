@@ -23,7 +23,9 @@ flowchart TD
 
 The build path performs safety checking, PICO extraction, auditable query generation, PubMed retrieval when configured, ranking, synthesis, claim verification, caution mapping, and export.
 
+If PubMed credentials are configured, the app uses NCBI E-utilities and caches responses.
+If credentials or retrieval fail, the UI clearly labels mock fallback data.
+
 ## Offline Query Mode
 
 Offline mode loads `pack.json` and answers only from the included papers, evidence items, and Claim Ledger. It does not call PubMed or any external retrieval service.
-

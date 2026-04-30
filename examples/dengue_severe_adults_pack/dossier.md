@@ -1,10 +1,10 @@
 # VeritasClin Field Evidence Pack
 
 ## Pack Metadata
-- Pack ID: vfield-f579a7ee8709
+- Pack ID: vfield-6d755b06db0e
 - Title: Evidence Pack: What does recent evidence say about warning signs for severe dengue in adults
 - Topic: What does recent evidence say about warning signs for severe dengue in adults?
-- Created: 2026-04-30T02:28:48.616837+00:00
+- Created: 2026-04-30T02:50:16.066444+00:00
 - Source: Mock demo data - not real PubMed retrieval
 - Language: en
 
@@ -27,15 +27,15 @@ No rewrite required.
 
 ## PubMed Search Strategy
 ```text
-("adults with suspected"[Title/Abstract] OR "adults with suspected"[MeSH Terms]) AND ("confirmed dengue"[Title/Abstract] OR "confirmed dengue"[MeSH Terms]) AND ("warning signs"[Title/Abstract] OR "warning signs"[MeSH Terms]) AND ("clinical indicators"[Title/Abstract] OR "clinical indicators"[MeSH Terms]) AND ("progression to severe dengue"[Title/Abstract] OR "progression to severe dengue"[MeSH Terms]) AND ("recent evidence"[Title/Abstract] OR "recent evidence"[MeSH Terms]) AND ("What does recent evidence say about warning signs for severe dengue in adults"[Title/Abstract] OR "What does recent evidence say about warning signs for severe dengue in adults"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])
+("Dengue"[MeSH Terms] OR dengue[Title/Abstract]) AND ("warning signs"[Title/Abstract] OR "warning sign"[Title/Abstract] OR severe[Title/Abstract] OR severity[Title/Abstract]) AND (adult[Title/Abstract] OR adults[Title/Abstract] OR "Adult"[MeSH Terms] OR humans[MeSH Terms])
 ```
 
 ## Evidence Freshness
-- Score: 0.64
+- Score: 0.85
 - Last search date: 2026-04-30
 - Newest publication year: 2023
-- Recommended refresh days: 60
-- Rationale: Newest loaded publication year is 2023; refresh interval reflects evidence age.
+- Recommended refresh days: 120
+- Rationale: Newest loaded publication year is 2023 and oldest is 2019; the pack is 3 years from the newest included evidence.
 
 ## Evidence Map
 | PMID/ID | Level | Study Type | Score | Title |
@@ -56,8 +56,14 @@ No rewrite required.
 ## Caution & Conflict Map
 | Caution ID | Claim ID | Type | Severity | Explanation |
 | --- | --- | --- | --- | --- |
-| CAU003 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
-| CAU005 | C005 | insufficient_data | medium | This claim is not supported by a PMID or loaded mock evidence ID. |
+| CAU001 | C001 | outcome_mismatch | medium | Some evidence emphasizes surrogate or laboratory outcomes rather than the claim. |
+| CAU002 | C001 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
+| CAU003 | C002 | outcome_mismatch | medium | Some evidence emphasizes surrogate or laboratory outcomes rather than the claim. |
+| CAU004 | C002 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
+| CAU005 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
+| CAU006 | C004 | outcome_mismatch | medium | Some evidence emphasizes surrogate or laboratory outcomes rather than the claim. |
+| CAU007 | C004 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
+| CAU008 | C005 | insufficient_data | medium | This claim is not supported by a PMID or loaded mock evidence ID. |
 
 ## Executive Summary
 Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).

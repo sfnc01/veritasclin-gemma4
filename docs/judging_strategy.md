@@ -17,13 +17,16 @@ The primary user is a public health worker, clinician, researcher, or educator w
 
 ## Technical Depth
 
-The project combines retrieval, safety classification, PICO extraction, ranking, synthesis, claim verification, export, and offline pack Q&A.
+The project combines retrieval, safety classification, PICO extraction, ranking,
+synthesis, claim verification, caution mapping, evidence freshness, export,
+baseline comparison, and offline pack Q&A.
 
 ## Accessibility
 
 Mock mode runs without credentials. PubMed and Ollama/Gemma are optional enhancements.
+Credentialed PubMed tests can run locally with `.env`, while public contributors
+still get a deterministic no-key path.
 
 ## Safety
 
 The app refuses diagnosis, prescription, emergency triage, and patient-identifiable data.
-

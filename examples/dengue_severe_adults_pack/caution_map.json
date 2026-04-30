@@ -1,6 +1,74 @@
 [
   {
+    "id": "CAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
     "id": "CAU003",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU005",
     "claim_id": "C003",
     "supporting_pmids": [],
     "cautionary_pmids": [],
@@ -9,7 +77,41 @@
     "severity": "high"
   },
   {
-    "id": "CAU005",
+    "id": "CAU006",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU007",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "cautionary_pmids": [
+      "MOCK-DENGUE-001",
+      "MOCK-DENGUE-003",
+      "MOCK-DENGUE-002"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU008",
     "claim_id": "C005",
     "supporting_pmids": [],
     "cautionary_pmids": [],

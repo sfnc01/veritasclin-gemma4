@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -11,9 +12,14 @@ from veritasclin.config import get_settings
 from veritasclin.exporters.csv import caution_map_to_json, claims_to_csv
 from veritasclin.exporters.json_export import pack_to_json
 from veritasclin.exporters.markdown import pack_to_markdown
+from veritasclin.packs.builder import PackBuilder
 from veritasclin.packs.loader import PackLoader
 from veritasclin.packs.offline_qa import ask_offline_pack
 from veritasclin.schemas.pack import EvidencePack
+
+ASSET_DIR = Path(__file__).parent / "assets"
+LOGO_PATH = ASSET_DIR / "veritasclin-field-logo.png"
+MARK_PATH = ASSET_DIR / "veritasclin-field-mark.png"
 
 st.set_page_config(page_title="VeritasClin Field", page_icon="VC", layout="wide")
 
@@ -21,30 +27,85 @@ st.markdown(
     """
     <style>
     :root {
-      --vc-ink: #1e2623;
-      --vc-muted: #5a6762;
-      --vc-line: #d7ded8;
-      --vc-panel: #f7f8f5;
-      --vc-accent: #0b6b58;
+      --vc-navy: #061e42;
+      --vc-ink: #11263b;
+      --vc-muted: #526676;
+      --vc-line: #d9e7e4;
+      --vc-panel: #f6fbfa;
+      --vc-panel-strong: #e7f7f5;
+      --vc-teal: #08a895;
+      --vc-cyan: #0891b2;
       --vc-alert: #9a3412;
+      --vc-danger: #991b1b;
     }
-    .block-container { padding-top: 1.5rem; }
-    .vc-title {
+    html, body, [class*="css"] {
+      color: var(--vc-ink);
+      font-size: 16px;
+    }
+    .block-container {
+      padding-top: 1.1rem;
+      max-width: 1280px;
+    }
+    .vc-shell {
       border-bottom: 1px solid var(--vc-line);
-      padding-bottom: 0.8rem;
+      padding-bottom: 1rem;
       margin-bottom: 1rem;
     }
-    .vc-title h1 {
-      color: var(--vc-ink);
-      letter-spacing: 0;
-      margin-bottom: 0.15rem;
+    .vc-kicker {
+      color: var(--vc-teal);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
-    .vc-title p { color: var(--vc-muted); margin: 0; }
+    .vc-title h1 {
+      color: var(--vc-navy);
+      letter-spacing: 0;
+      margin: 0;
+      line-height: 1.08;
+    }
+    .vc-title p {
+      color: var(--vc-muted);
+      margin: 0.3rem 0 0 0;
+      max-width: 74ch;
+    }
+    .vc-status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+    .vc-status {
+      background: var(--vc-panel);
+      border: 1px solid var(--vc-line);
+      padding: 0.65rem 0.8rem;
+      min-height: 4.25rem;
+    }
+    .vc-status span {
+      color: var(--vc-muted);
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 0.18rem;
+    }
+    .vc-status b {
+      color: var(--vc-navy);
+      font-size: 0.95rem;
+    }
+    .vc-section {
+      border-bottom: 1px solid var(--vc-line);
+      padding-bottom: 0.65rem;
+      margin: 1.1rem 0 0.85rem 0;
+    }
+    .vc-section h2, .vc-section h3 {
+      color: var(--vc-navy);
+      margin-bottom: 0.2rem;
+    }
     .vc-safety {
       border-left: 4px solid var(--vc-alert);
       background: #fff7ed;
       padding: 0.75rem 1rem;
-      margin: 0.75rem 0 1rem 0;
+      margin: 0.5rem 0 1rem 0;
       color: #431407;
     }
     .metric-card {
@@ -53,22 +114,30 @@ st.markdown(
       padding: 0.9rem;
       min-height: 5.5rem;
     }
-    .metric-card b { color: var(--vc-accent); font-size: 1.35rem; }
+    .metric-card b { color: var(--vc-teal); font-size: 1.35rem; }
+    .metric-card span {
+      color: var(--vc-muted);
+      display: block;
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+    }
+    div[data-testid="stDataFrame"] {
+      border: 1px solid var(--vc-line);
+    }
+    .stButton button, .stDownloadButton button {
+      min-height: 44px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .stButton button:focus, .stDownloadButton button:focus {
+      outline: 3px solid rgba(8, 168, 149, 0.35);
+      outline-offset: 2px;
+    }
+    @media (max-width: 760px) {
+      .vc-status-grid { grid-template-columns: 1fr; }
+      .block-container { padding-left: 1rem; padding-right: 1rem; }
+    }
     </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <div class="vc-title">
-      <h1>VeritasClin Field</h1>
-      <p>Offline-first, audit-ready medical evidence packs powered by Gemma 4.</p>
-    </div>
-    <div class="vc-safety">
-      Not a diagnostic, prescription, or emergency triage tool.
-      No PMID/PMCID or explicit mock evidence ID, no strong clinical claim.
-    </div>
     """,
     unsafe_allow_html=True,
 )
@@ -76,6 +145,8 @@ st.markdown(
 settings = get_settings()
 
 with st.sidebar:
+    if MARK_PATH.exists():
+        st.image(str(MARK_PATH), width=120)
     st.header("Controls")
     mode = st.radio(
         "Mode",
@@ -90,6 +161,10 @@ with st.sidebar:
         "Use PubMed when configured",
         value=settings.pubmed_configured,
         help="When off, the app uses deterministic mock demo data.",
+    )
+    st.caption(
+        "PubMed credentials: "
+        + ("configured" if settings.pubmed_configured else "not configured")
     )
     st.divider()
     st.caption("Demo questions")
@@ -117,9 +192,59 @@ DEMO_QUESTIONS = {
     "Unsafe dosing demo": "What dose of semaglutide should I take if I have CKD?",
 }
 
+source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Mock fallback"
+offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
+provider_label = provider.replace("_", " ")
+
+header_logo, header_text = st.columns([1, 2.4], vertical_alignment="center")
+with header_logo:
+    if LOGO_PATH.exists():
+        st.image(str(LOGO_PATH), width="stretch")
+    else:
+        st.title("VeritasClin Field")
+with header_text:
+    st.markdown(
+        f"""
+        <div class="vc-shell">
+          <div class="vc-title">
+            <div class="vc-kicker">Offline-first evidence pack console</div>
+            <h1>Audit-ready medical evidence for field teams</h1>
+            <p>
+              Build PubMed-backed Evidence Packs online, carry their Claim Ledger offline,
+              and answer only from loaded evidence in English, Portuguese, or Spanish.
+            </p>
+          </div>
+          <div class="vc-status-grid">
+            <div class="vc-status"><span>Provider</span><b>{provider_label}</b></div>
+            <div class="vc-status"><span>Retrieval</span><b>{source_mode}</b></div>
+            <div class="vc-status"><span>Offline pack</span><b>{offline_state}</b></div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+st.markdown(
+    """
+    <div class="vc-safety">
+      Not a diagnostic, prescription, or emergency triage tool.
+      No PMID/PMCID or explicit mock evidence ID, no strong clinical claim.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 def render_pack(pack: EvidencePack) -> None:
-    st.subheader(pack.title)
+    st.markdown(
+        f"""
+        <div class="vc-section">
+          <h2>{pack.title}</h2>
+          <p>Evidence Pack source: <b>{pack.source}</b></p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     c1, c2, c3, c4 = st.columns(4)
     unsupported = [claim for claim in pack.claim_ledger if claim.support_status == "unsupported"]
     high_unsupported = [claim for claim in unsupported if claim.risk_level == "high"]
@@ -136,7 +261,8 @@ def render_pack(pack: EvidencePack) -> None:
         unsafe_allow_html=True,
     )
     c4.markdown(
-        f'<div class="metric-card">Freshness score<br><b>{pack.freshness.score:.0%}</b></div>',
+        f'<div class="metric-card">Freshness score<br><b>{pack.freshness.score:.0%}</b>'
+        f"<span>Refresh in {pack.freshness.recommended_refresh_days} days</span></div>",
         unsafe_allow_html=True,
     )
 
@@ -216,7 +342,10 @@ def render_pack(pack: EvidencePack) -> None:
 
 
 if mode == "Build Evidence Pack":
-    st.header("Build Evidence Pack")
+    st.markdown(
+        '<div class="vc-section"><h2>Build Evidence Pack</h2></div>',
+        unsafe_allow_html=True,
+    )
     question = st.text_area("Clinical evidence question", value=DEMO_QUESTIONS[demo], height=90)
     safety = SafetyGuard().check(question)
     with st.expander("Safety decision", expanded=True):
@@ -249,8 +378,6 @@ if mode == "Build Evidence Pack":
                     include_baseline=True,
                 )
                 if not use_pubmed:
-                    from veritasclin.packs.builder import PackBuilder
-
                     pack, baseline = PackBuilder().build(
                         question,
                         language=language,
@@ -267,7 +394,7 @@ if mode == "Build Evidence Pack":
         render_pack(st.session_state["pack"])
 
 elif mode == "Load Offline Pack":
-    st.header("Load Offline Pack")
+    st.markdown('<div class="vc-section"><h2>Load Offline Pack</h2></div>', unsafe_allow_html=True)
     uploaded = st.file_uploader("Upload pack.json", type=["json"])
     pack = st.session_state.get("pack")
     if uploaded:
@@ -288,7 +415,10 @@ elif mode == "Load Offline Pack":
         st.info("Build a pack first or upload a pack.json.")
 
 else:
-    st.header("Plain Gemma vs VeritasClin Demo")
+    st.markdown(
+        '<div class="vc-section"><h2>Plain Gemma vs VeritasClin Demo</h2></div>',
+        unsafe_allow_html=True,
+    )
     pack = st.session_state.get("pack")
     baseline = st.session_state.get("baseline")
     if not pack:

@@ -19,16 +19,32 @@ class FreshnessScorer:
         newest = max(years) if years else None
         oldest = min(years) if years else None
         if newest is None:
-            score = 0.25
+            score = 0.2
             refresh_days = 30
-            rationale = "No publication years were available, so freshness is uncertain."
+            rationale = (
+                "No publication years were available, so freshness is uncertain and should "
+                "be refreshed before field use."
+            )
         else:
             age = max(0, now.year - newest)
-            score = max(0.1, min(1.0, 1.0 - age * 0.12))
-            refresh_days = 90 if age <= 2 else 60 if age <= 5 else 30
+            if age <= 1:
+                score = 1.0
+                refresh_days = 180
+            elif age <= 3:
+                score = 0.85
+                refresh_days = 120
+            elif age <= 5:
+                score = 0.7
+                refresh_days = 90
+            elif age <= 10:
+                score = 0.5
+                refresh_days = 60
+            else:
+                score = 0.3
+                refresh_days = 30
             rationale = (
-                f"Newest loaded publication year is {newest}; "
-                "refresh interval reflects evidence age."
+                f"Newest loaded publication year is {newest} and oldest is {oldest}; "
+                f"the pack is {age} years from the newest included evidence."
             )
         return EvidenceFreshness(
             score=round(score, 2),

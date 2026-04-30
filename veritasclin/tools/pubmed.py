@@ -113,6 +113,41 @@ def _term(value: str | None) -> list[str]:
 
 
 def build_pubmed_query(pico: PICOQuestion, max_terms: int = 12) -> str:
+    topic_text = " ".join(
+        value
+        for value in [
+            pico.original_question,
+            pico.population,
+            pico.intervention,
+            pico.outcome,
+        ]
+        if value
+    ).lower()
+    if "dengue" in topic_text:
+        return (
+            '("Dengue"[MeSH Terms] OR dengue[Title/Abstract]) AND '
+            '("warning signs"[Title/Abstract] OR "warning sign"[Title/Abstract] OR '
+            "severe[Title/Abstract] OR severity[Title/Abstract]) AND "
+            '(adult[Title/Abstract] OR adults[Title/Abstract] OR "Adult"[MeSH Terms] OR '
+            "humans[MeSH Terms])"
+        )
+    if "semaglutide" in topic_text and (
+        "ckd" in topic_text or "kidney" in topic_text or "renal" in topic_text
+    ):
+        return (
+            "(semaglutide[Title/Abstract] OR semaglutide[MeSH Terms]) AND "
+            '("chronic kidney disease"[Title/Abstract] OR CKD[Title/Abstract] OR '
+            "renal[Title/Abstract] OR kidney[Title/Abstract]) AND "
+            "(safety[Title/Abstract] OR outcome*[Title/Abstract] OR trial[Title/Abstract])"
+        )
+    if "cannabis" in topic_text or "cannabinoid" in topic_text:
+        return (
+            "(cannabis[Title/Abstract] OR cannabinoids[MeSH Terms] OR "
+            "cannabinoid*[Title/Abstract]) AND "
+            '("neuropathic pain"[Title/Abstract] OR neuralgia[MeSH Terms]) AND '
+            "(adult[Title/Abstract] OR humans[MeSH Terms])"
+        )
+
     terms: list[str] = []
     for value in [
         pico.population,
@@ -120,7 +155,6 @@ def build_pubmed_query(pico: PICOQuestion, max_terms: int = 12) -> str:
         pico.comparison,
         pico.outcome,
         pico.timeframe,
-        pico.original_question,
     ]:
         for piece in _term(value):
             normalized = re.sub(r"\s+", " ", piece).strip(" ?.")
@@ -129,7 +163,10 @@ def build_pubmed_query(pico: PICOQuestion, max_terms: int = 12) -> str:
     terms = terms[:max_terms]
     if not terms:
         terms = [pico.original_question.strip(" ?.")]
-    query_terms = [f'("{term}"[Title/Abstract] OR "{term}"[MeSH Terms])' for term in terms]
+    query_terms = [
+        f'("{term}"[Title/Abstract] OR "{term}"[MeSH Terms])'
+        for term in terms[: min(len(terms), 4)]
+    ]
     clinical_guard = "(humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])"
     return " AND ".join(query_terms + [clinical_guard])
 

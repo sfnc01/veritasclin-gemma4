@@ -18,3 +18,5 @@ Rewrite: `What semaglutide dosing regimens have been studied in clinical trials 
 
 Strong clinical claims without a PMID, PMCID, or explicit mock evidence ID are marked unsupported in the Claim Ledger.
 
+The baseline comparison intentionally checks plain-model claims without retrieval so
+unsupported medical claims remain visible rather than hidden in prose.

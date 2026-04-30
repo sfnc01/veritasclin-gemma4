@@ -1,6 +1,9 @@
 from veritasclin.agents.caution_mapper import CautionMapper
 from veritasclin.agents.claim_extractor import ClaimExtractor
 from veritasclin.agents.claim_verifier import ClaimVerifier
+from veritasclin.schemas.claims import Claim
+from veritasclin.schemas.evidence import EvidenceItem
+from veritasclin.schemas.paper import PubMedPaper
 
 
 def test_caution_mapper_detects_insufficient_data():
@@ -9,3 +12,50 @@ def test_caution_mapper_detects_insufficient_data():
     cautions = CautionMapper().map(verified, [])
     assert cautions
     assert cautions[0].caution_type == "insufficient_data"
+
+
+def test_caution_mapper_detects_layer_2_patterns():
+    claim = Claim(
+        id="C001",
+        text="Adults with warning signs have higher risk of severe dengue outcomes.",
+        claim_type="prognosis",
+        support_status="supported",
+        pmids=["123456"],
+        evidence_level="low",
+        risk_level="medium",
+        rationale="Test claim.",
+    )
+    evidence = [
+        EvidenceItem(
+            paper=PubMedPaper(
+                pmid="123456",
+                title="Pediatric animal model with mixed results for dengue biomarkers",
+                abstract=(
+                    "Animal and pediatric evidence described inconsistent biomarker findings, "
+                    "laboratory platelet outcomes, and bleeding safety signals."
+                ),
+                journal="Test",
+                publication_year=2012,
+                authors=[],
+                doi=None,
+                publication_types=["Case Reports"],
+                mesh_terms=["Dengue", "Animals"],
+                url="https://pubmed.ncbi.nlm.nih.gov/123456/",
+            ),
+            relevance_score=10,
+            evidence_level="low",
+            study_type="Case Reports",
+            rationale="Test evidence.",
+            key_findings=[],
+            limitations=["Indirect evidence."],
+        )
+    ]
+
+    caution_types = {item.caution_type for item in CautionMapper().map([claim], evidence)}
+
+    assert "low_certainty" in caution_types
+    assert "population_mismatch" in caution_types
+    assert "outcome_mismatch" in caution_types
+    assert "safety_signal" in caution_types
+    assert "indirect_evidence" in caution_types
+    assert "conflicting_results" in caution_types

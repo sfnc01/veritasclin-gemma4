@@ -1,10 +1,10 @@
 # VeritasClin Field Evidence Pack
 
 ## Pack Metadata
-- Pack ID: vfield-1cffe3810869
+- Pack ID: vfield-d0ff54340ef1
 - Title: Evidence Pack: What does evidence say about semaglutide safety and renal outcomes in ckd
 - Topic: What does evidence say about semaglutide safety and renal outcomes in CKD?
-- Created: 2026-04-30T02:28:48.625086+00:00
+- Created: 2026-04-30T02:50:16.073082+00:00
 - Source: Mock demo data - not real PubMed retrieval
 - Language: en
 
@@ -27,15 +27,15 @@ No rewrite required.
 
 ## PubMed Search Strategy
 ```text
-("patients with chronic kidney disease"[Title/Abstract] OR "patients with chronic kidney disease"[MeSH Terms]) AND ("semaglutide"[Title/Abstract] OR "semaglutide"[MeSH Terms]) AND ("safety"[Title/Abstract] OR "safety"[MeSH Terms]) AND ("renal outcomes"[Title/Abstract] OR "renal outcomes"[MeSH Terms]) AND ("studied dosing regimens"[Title/Abstract] OR "studied dosing regimens"[MeSH Terms]) AND ("What does evidence say about semaglutide safety"[Title/Abstract] OR "What does evidence say about semaglutide safety"[MeSH Terms]) AND ("renal outcomes in CKD"[Title/Abstract] OR "renal outcomes in CKD"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])
+(semaglutide[Title/Abstract] OR semaglutide[MeSH Terms]) AND ("chronic kidney disease"[Title/Abstract] OR CKD[Title/Abstract] OR renal[Title/Abstract] OR kidney[Title/Abstract]) AND (safety[Title/Abstract] OR outcome*[Title/Abstract] OR trial[Title/Abstract])
 ```
 
 ## Evidence Freshness
-- Score: 0.76
+- Score: 0.85
 - Last search date: 2026-04-30
 - Newest publication year: 2024
-- Recommended refresh days: 90
-- Rationale: Newest loaded publication year is 2024; refresh interval reflects evidence age.
+- Recommended refresh days: 120
+- Rationale: Newest loaded publication year is 2024 and oldest is 2024; the pack is 2 years from the newest included evidence.
 
 ## Evidence Map
 | PMID/ID | Level | Study Type | Score | Title |
@@ -53,7 +53,7 @@ No rewrite required.
 ## Caution & Conflict Map
 | Caution ID | Claim ID | Type | Severity | Explanation |
 | --- | --- | --- | --- | --- |
-| CAU003 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
+| CAU001 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
 
 ## Executive Summary
 The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).

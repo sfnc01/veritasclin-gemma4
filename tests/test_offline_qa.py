@@ -12,6 +12,17 @@ def test_offline_qa_uses_loaded_pack_only(monkeypatch):
         pack, "Quais sinais indicam maior risco de dengue grave?", language="pt"
     )
     assert "Modo offline" in answer
+    assert "Claim Ledger" in answer
+    assert "MOCK-DENGUE" in answer
+
+
+def test_offline_qa_spanish_cites_loaded_claims():
+    pack, _ = PackBuilder().build("Dengue warning signs in adults", force_mock_retrieval=True)
+    answer = ask_offline_pack(
+        pack, "Que signos indican mayor riesgo de dengue grave?", language="es"
+    )
+    assert "Modo offline" in answer
+    assert "Claim Ledger" in answer
     assert "MOCK-DENGUE" in answer
 
 

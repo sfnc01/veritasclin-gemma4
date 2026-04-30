@@ -69,10 +69,10 @@ def _patient_explanation(language: str, dengue: bool, citations: str) -> str:
     if language == "pt":
         if dengue:
             return (
-                "O pacote indica que dor abdominal forte, vomitos persistentes, sangramento, "
-                "sonolencia ou inquietacao, aumento do figado e sinais de perda de liquido "
-                f"podem ser sinais de alerta para dengue grave ({citations}). Procure cuidado "
-                "clinico local se houver sinais de gravidade."
+                "O pacote carregado indica que dor abdominal forte, vomitos persistentes, "
+                "sangramento de mucosa, sonolencia ou inquietacao, aumento do figado, perda "
+                f"de liquido e queda de plaquetas aparecem como sinais de alerta ({citations}). "
+                "Isso e educacao baseada em evidencias, nao triagem individual."
             )
         return (
             f"Este pacote resume evidencias publicadas e cita as fontes carregadas ({citations})."
@@ -80,9 +80,10 @@ def _patient_explanation(language: str, dengue: bool, citations: str) -> str:
     if language == "es":
         if dengue:
             return (
-                "El paquete indica que dolor abdominal intenso, vomitos persistentes, sangrado, "
-                "letargo o inquietud y signos de fuga de liquidos pueden ser signos de alarma "
-                f"para dengue grave ({citations}). Busque atencion clinica local si aparecen."
+                "El paquete cargado indica que dolor abdominal intenso, vomitos persistentes, "
+                "sangrado de mucosas, letargo o inquietud, hepatomegalia, fuga de liquidos "
+                f"y cambios en plaquetas aparecen como signos de alarma ({citations}). "
+                "Esto es educacion basada en evidencia, no triaje individual."
             )
         return f"Este paquete resume evidencia publicada y cita las fuentes cargadas ({citations})."
     if dengue:

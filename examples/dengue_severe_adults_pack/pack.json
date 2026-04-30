@@ -1,9 +1,9 @@
 {
-  "pack_id": "vfield-f579a7ee8709",
+  "pack_id": "vfield-6d755b06db0e",
   "title": "Evidence Pack: What does recent evidence say about warning signs for severe dengue in adults",
   "topic": "What does recent evidence say about warning signs for severe dengue in adults?",
-  "created_at": "2026-04-30T02:28:48.616837+00:00",
-  "last_pubmed_search_at": "2026-04-30T02:28:48.616837+00:00",
+  "created_at": "2026-04-30T02:50:16.066444+00:00",
+  "last_pubmed_search_at": "2026-04-30T02:50:16.066444+00:00",
   "language": "en",
   "source": "Mock demo data - not real PubMed retrieval",
   "pico": {
@@ -22,7 +22,7 @@
     ],
     "language": "en"
   },
-  "pubmed_query": "(\"adults with suspected\"[Title/Abstract] OR \"adults with suspected\"[MeSH Terms]) AND (\"confirmed dengue\"[Title/Abstract] OR \"confirmed dengue\"[MeSH Terms]) AND (\"warning signs\"[Title/Abstract] OR \"warning signs\"[MeSH Terms]) AND (\"clinical indicators\"[Title/Abstract] OR \"clinical indicators\"[MeSH Terms]) AND (\"progression to severe dengue\"[Title/Abstract] OR \"progression to severe dengue\"[MeSH Terms]) AND (\"recent evidence\"[Title/Abstract] OR \"recent evidence\"[MeSH Terms]) AND (\"What does recent evidence say about warning signs for severe dengue in adults\"[Title/Abstract] OR \"What does recent evidence say about warning signs for severe dengue in adults\"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])",
+  "pubmed_query": "(\"Dengue\"[MeSH Terms] OR dengue[Title/Abstract]) AND (\"warning signs\"[Title/Abstract] OR \"warning sign\"[Title/Abstract] OR severe[Title/Abstract] OR severity[Title/Abstract]) AND (adult[Title/Abstract] OR adults[Title/Abstract] OR \"Adult\"[MeSH Terms] OR humans[MeSH Terms])",
   "papers": [
     {
       "pmid": "MOCK-DENGUE-001",
@@ -252,7 +252,75 @@
   ],
   "caution_map": [
     {
+      "id": "CAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
       "id": "CAU003",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU005",
       "claim_id": "C003",
       "supporting_pmids": [],
       "cautionary_pmids": [],
@@ -261,7 +329,41 @@
       "severity": "high"
     },
     {
-      "id": "CAU005",
+      "id": "CAU006",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU007",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "cautionary_pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU008",
       "claim_id": "C005",
       "supporting_pmids": [],
       "cautionary_pmids": [],
@@ -271,12 +373,12 @@
     }
   ],
   "freshness": {
-    "score": 0.64,
+    "score": 0.85,
     "last_search_date": "2026-04-30",
     "newest_publication_year": 2023,
     "oldest_publication_year": 2019,
-    "recommended_refresh_days": 60,
-    "rationale": "Newest loaded publication year is 2023; refresh interval reflects evidence age."
+    "recommended_refresh_days": 120,
+    "rationale": "Newest loaded publication year is 2023 and oldest is 2019; the pack is 3 years from the newest included evidence."
   },
   "executive_summary": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
   "clinical_interpretation": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",

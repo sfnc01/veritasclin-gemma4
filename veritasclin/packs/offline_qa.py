@@ -26,15 +26,20 @@ def ask_offline_pack(pack: EvidencePack, question: str, language: str = "en") ->
     )
     if language == "pt":
         return (
-            "Modo offline: nao foi feita busca no PubMed. Com base apenas no pacote carregado, "
-            f"os sinais de maior risco descritos sao: {cited}"
+            "Modo offline: nao foi feita busca no PubMed nem em fontes externas. "
+            "Com base apenas no Claim Ledger do pacote carregado, os sinais descritos sao: "
+            f"{cited}"
         )
     if language == "es":
         return (
-            "Modo offline: no se realizo una busqueda en PubMed. Solo con el paquete cargado: "
+            "Modo offline: no se realizo busqueda en PubMed ni en fuentes externas. "
+            "Con base solo en el Claim Ledger del paquete cargado: "
             f"{cited}"
         )
-    return f"Offline mode: no PubMed retrieval was used. Based only on the loaded pack: {cited}"
+    return (
+        "Offline mode: no PubMed or external retrieval was used. Based only on the loaded "
+        f"pack Claim Ledger: {cited}"
+    )
 
 
 class OfflineQA:
