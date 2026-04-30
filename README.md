@@ -135,7 +135,7 @@ What does recent evidence say about warning signs for severe dengue in adults?
 | Mode | `GEMMA_PROVIDER` | Gemma 4 active | Requires |
 | --- | --- | --- | --- |
 | Default (demo) | `mock` | No — deterministic mock responses | Nothing |
-| Local inference | `ollama` | Yes — synthesis, explanation, baseline | Ollama + `gemma4:e4b` |
+| Local inference | `ollama` | Yes — synthesis, explanation, baseline | Ollama + `gemma4:31b` |
 | API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
 
 **In mock mode**, synthesis uses deterministic template responses that include mock evidence IDs. All other pipeline steps (safety guard, PICO extraction, evidence ranking, claim verification, offline Q&A) use deterministic rule-based logic in all modes — Gemma 4 is used for the generative synthesis and patient explanation steps.
@@ -158,7 +158,7 @@ Use local Gemma through Ollama:
 
 ```bash
 GEMMA_PROVIDER=ollama
-GEMMA_MODEL=gemma4:e4b
+GEMMA_MODEL=gemma4:31b
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 

@@ -75,53 +75,74 @@ def mock_pubmed_papers(topic: str = "dengue") -> list[PubMedPaper]:
                 url="mock://semaglutide-ckd-001",
             )
         ]
+    if "dengue" in topic.lower():
+        return [
+            PubMedPaper(
+                pmid="MOCK-DENGUE-001",
+                title=f"{label} Warning signs associated with progression to severe dengue",
+                abstract=(
+                    "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, "
+                    "lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma "
+                    "leakage are warning signs associated with severe dengue risk."
+                ),
+                journal="VeritasClin Mock Evidence",
+                publication_year=2023,
+                authors=["Mock Evidence Team"],
+                doi=None,
+                publication_types=["Systematic Review"],
+                mesh_terms=["Dengue", "Warning Signs", "Adult"],
+                url="mock://dengue-warning-signs-001",
+            ),
+            PubMedPaper(
+                pmid="MOCK-DENGUE-002",
+                title=f"{label} Clinical warning signs for severe dengue: adult cohort study",
+                abstract=(
+                    "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, "
+                    "clinical fluid accumulation, and laboratory changes were associated with "
+                    "higher risk of severe dengue outcomes."
+                ),
+                journal="VeritasClin Mock Evidence",
+                publication_year=2020,
+                authors=["Mock Evidence Team"],
+                doi=None,
+                publication_types=["Clinical Study"],
+                mesh_terms=["Dengue", "Adult", "Prognosis"],
+                url="mock://dengue-warning-signs-002",
+            ),
+            PubMedPaper(
+                pmid="MOCK-DENGUE-003",
+                title=f"{label} Dengue warning signs guideline summary",
+                abstract=(
+                    "Mock evidence summary: guidelines recommend urgent evaluation for warning "
+                    "signs while emphasizing that triage decisions require local clinical care."
+                ),
+                journal="VeritasClin Mock Evidence",
+                publication_year=2019,
+                authors=["Mock Evidence Team"],
+                doi=None,
+                publication_types=["Practice Guideline"],
+                mesh_terms=["Dengue", "Practice Guideline"],
+                url="mock://dengue-guideline-003",
+            ),
+        ]
+    # Generic fallback: honest placeholder that does not fake topic-specific content
     return [
         PubMedPaper(
-            pmid="MOCK-DENGUE-001",
-            title=f"{label} Warning signs associated with progression to severe dengue in adults",
+            pmid="MOCK-GENERIC-001",
+            title=f"{label} Evidence summary for the queried clinical topic",
             abstract=(
-                "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, "
-                "lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma "
-                "leakage are warning signs associated with severe dengue risk."
+                "Mock demo data: no real PubMed retrieval was performed. "
+                "Configure NCBI credentials and set GEMMA_PROVIDER=ollama to retrieve "
+                "live evidence for this topic. This placeholder is returned when the topic "
+                "does not match a pre-loaded demo pack."
             ),
             journal="VeritasClin Mock Evidence",
-            publication_year=2023,
+            publication_year=2024,
             authors=["Mock Evidence Team"],
             doi=None,
-            publication_types=["Systematic Review"],
-            mesh_terms=["Dengue", "Warning Signs", "Adult"],
-            url="mock://dengue-warning-signs-001",
-        ),
-        PubMedPaper(
-            pmid="MOCK-DENGUE-002",
-            title=f"{label} Clinical warning signs for severe dengue: adult cohort study",
-            abstract=(
-                "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, "
-                "clinical fluid accumulation, and laboratory changes were associated with "
-                "higher risk of severe dengue outcomes."
-            ),
-            journal="VeritasClin Mock Evidence",
-            publication_year=2020,
-            authors=["Mock Evidence Team"],
-            doi=None,
-            publication_types=["Clinical Study"],
-            mesh_terms=["Dengue", "Adult", "Prognosis"],
-            url="mock://dengue-warning-signs-002",
-        ),
-        PubMedPaper(
-            pmid="MOCK-DENGUE-003",
-            title=f"{label} Dengue warning signs guideline summary",
-            abstract=(
-                "Mock evidence summary: guidelines recommend urgent evaluation for warning "
-                "signs while emphasizing that triage decisions require local clinical care."
-            ),
-            journal="VeritasClin Mock Evidence",
-            publication_year=2019,
-            authors=["Mock Evidence Team"],
-            doi=None,
-            publication_types=["Practice Guideline"],
-            mesh_terms=["Dengue", "Practice Guideline"],
-            url="mock://dengue-guideline-003",
+            publication_types=["Other"],
+            mesh_terms=[],
+            url="mock://generic-placeholder-001",
         ),
     ]
 
