@@ -1,0 +1,120 @@
+[
+  {
+    "id": "CAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "cautionary_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "cautionary_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU003",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "cautionary_pmids": [
+      "40162642",
+      "40156843"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+    "severity": "low"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "39455729"
+    ],
+    "cautionary_pmids": [
+      "39455729"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU005",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "40156843",
+      "39455729"
+    ],
+    "cautionary_pmids": [
+      "40156843",
+      "39455729"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU006",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "40156843",
+      "39455729"
+    ],
+    "cautionary_pmids": [
+      "40156843",
+      "39455729"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+    "severity": "low"
+  },
+  {
+    "id": "CAU007",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "40316962",
+      "38806171"
+    ],
+    "cautionary_pmids": [
+      "40316962",
+      "38806171"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU008",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "40316962",
+      "38806171"
+    ],
+    "cautionary_pmids": [
+      "40316962",
+      "38806171"
+    ],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
+    "severity": "medium"
+  }
+]

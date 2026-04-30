@@ -1,15 +1,15 @@
 # VeritasClin Field Evidence Pack
 
 ## Pack Metadata
-- Pack ID: vfield-380a2c4ba472
-- Title: Evidence Pack: What does evidence say about medical cannabis for neuropathic pain in adults
-- Topic: What does evidence say about medical cannabis for neuropathic pain in adults?
-- Created: 2026-04-30T02:50:16.071976+00:00
-- Source: Mock demo data - not real PubMed retrieval
+- Pack ID: vfield-b441357e6eb0
+- Title: Evidence Pack: What does evidence say about medical cannabis or cannabinoids for neuropathic pain in a...
+- Topic: What does evidence say about medical cannabis or cannabinoids for neuropathic pain in adults?
+- Created: 2026-04-30T15:20:09.089419+00:00
+- Source: PubMed/NCBI
 - Language: en
 
 ## Clinical Question
-What does evidence say about medical cannabis for neuropathic pain in adults?
+What does evidence say about medical cannabis or cannabinoids for neuropathic pain in adults?
 
 ## Safety Decision
 This pack is for biomedical evidence review only.
@@ -21,48 +21,56 @@ No rewrite required.
 ## PICO
 - Population: adults with neuropathic pain
 - Intervention/Exposure: medical cannabis or cannabinoids
-- Comparison: placebo or standard care
-- Outcome: pain relief and adverse events
+- Comparison: Not specified
+- Outcome: pain relief/management
 - Timeframe: Not specified
 
 ## PubMed Search Strategy
 ```text
-(cannabis[Title/Abstract] OR cannabinoids[MeSH Terms] OR cannabinoid*[Title/Abstract]) AND ("neuropathic pain"[Title/Abstract] OR neuralgia[MeSH Terms]) AND (adult[Title/Abstract] OR humans[MeSH Terms])
+("Neuropathic Pain"[MeSH Terms] OR "neuropathic pain"[Title/Abstract]) AND ("Medical Marijuana"[MeSH Terms] OR "Cannabinoids"[MeSH Terms] OR "cannabis"[Title/Abstract] OR "cannabinoid*"[Title/Abstract] OR "medical cannabis"[Title/Abstract]) AND ("Pain Management"[MeSH Terms] OR "pain relief"[Title/Abstract] OR "pain management"[Title/Abstract] OR "analgesia"[Title/Abstract])
 ```
 
 ## Evidence Freshness
-- Score: 0.7
+- Score: 1.0
 - Last search date: 2026-04-30
-- Newest publication year: 2021
-- Recommended refresh days: 90
-- Rationale: Newest loaded publication year is 2021 and oldest is 2021; the pack is 5 years from the newest included evidence.
+- Newest publication year: 2026
+- Recommended refresh days: 180
+- Rationale: Newest loaded publication year is 2026 and oldest is 2018; the pack is 0 years from the newest included evidence.
 
 ## Evidence Map
 | PMID/ID | Level | Study Type | Score | Title |
 | --- | --- | --- | ---: | --- |
-| MOCK-CANNABIS-001 | high | Systematic Review | 80.0 | [MOCK DEMO DATA - NOT A REAL PMID] Cannabinoids for chronic neuropathic pain systematic review |
+| 41548880 | high | Systematic Review | 93.0 | Cannabis-based medicines for chronic neuropathic pain in adults. |
+| 34802112 | high | Systematic Review | 85.0 | Cannabis-Based Medicines and Medical Cannabis for Chronic Neuropathic Pain. |
+| 35510826 | high | Systematic Review | 85.0 | Cannabis and cannabinoids for symptomatic treatment for people with multiple sclerosis. |
+| 29513392 | high | Systematic Review | 81.0 | Cannabis-based medicines for chronic neuropathic pain in adults. |
+| 39385859 | high | Systematic Review | 79.0 | Neuropharmacology of Neuropathic Pain: A Systematic Review. |
+| 39029988 | uncertain | Other | 52.0 | Cannabidiol and pain. |
+| 33238607 | uncertain | Other | 48.0 | Cannabidiol for Pain Treatment: Focus on Pharmacology and Mechanism of Action. |
+| 30522140 | uncertain | Other | 38.0 | Neuropathic Pain. |
+| 39445926 | low | Case Report | 32.0 | Central Neuropathic Pain. |
+| 38710218 | uncertain | Other | 25.0 | Neuropathic pain in cats: Mechanisms and multimodal management. |
 
 ## Claim Ledger
 | Claim ID | Status | Risk | PMIDs/IDs | Claim |
 | --- | --- | --- | --- | --- |
-| C001 | supported | low | MOCK-CANNABIS-001 | The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). |
-| C002 | supported | low | MOCK-CANNABIS-001 | The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). |
-| C003 | unsupported | high | None | These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions. |
-| C004 | supported | low | MOCK-CANNABIS-001 | This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001). |
+| C001 | supported | low | 29513392, 41548880 | While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880]. |
+| C002 | supported | high | 41548880, 35510826, 29513392 | Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392]. |
+| C003 | supported | low | 34802112, 35510826 | Research suggests that medical cannabis or cannabinoids may provide some relief for neuropathic pain, but the evidence is often limited or inconsistent [34802112, 35510826]. |
 
 ## Caution & Conflict Map
 | Caution ID | Claim ID | Type | Severity | Explanation |
 | --- | --- | --- | --- | --- |
-| CAU001 | C001 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
-| CAU002 | C002 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
-| CAU003 | C003 | insufficient_data | high | This claim is not supported by a PMID or loaded mock evidence ID. |
-| CAU004 | C004 | safety_signal | medium | Loaded evidence includes safety or adverse-event language relevant to this claim. |
+| CAU001 | C001 | conflicting_results | low | Cited evidence uses cautious language suggesting mixed or inconsistent results. |
+| CAU002 | C002 | safety_signal | high | Cited evidence includes safety or adverse-event language relevant to this claim. |
+| CAU003 | C002 | conflicting_results | low | Cited evidence uses cautious language suggesting mixed or inconsistent results. |
+| CAU004 | C003 | conflicting_results | low | Cited evidence uses cautious language suggesting mixed or inconsistent results. |
 
 ## Executive Summary
-The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).
+Evidence regarding medical cannabis and cannabinoids for adult neuropathic pain is generally uncertain and characterized by low-certainty data [41548880, 34802112]. While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880]. Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392].
 
 ## Clinical Interpretation
-The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.
+Evidence regarding medical cannabis and cannabinoids for adult neuropathic pain is generally uncertain and characterized by low-certainty data [41548880, 34802112]. While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880]. Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.
 
 ## What the Evidence Does Not Prove
 - It does not diagnose any individual patient.
@@ -70,10 +78,10 @@ The loaded evidence addresses medical cannabis or cannabinoids with a limited, c
 - It does not prove that every warning sign has equal predictive value in every setting.
 
 ## Patient-Friendly Explanation
-This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001).
+Research suggests that medical cannabis or cannabinoids may provide some relief for neuropathic pain, but the evidence is often limited or inconsistent [34802112, 35510826]. Because of this, more high-quality studies are needed to fully understand how effective these treatments are and to manage potential side effects [41548880].
 
 ## Unsupported Claims
-- C003: These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.
+No unsupported claims identified in the Claim Ledger.
 
 ## Safety Notice
 VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "CAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "29513392",
+      "41548880"
+    ],
+    "cautionary_pmids": [
+      "29513392",
+      "41548880"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+    "severity": "low"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "41548880",
+      "35510826",
+      "29513392"
+    ],
+    "cautionary_pmids": [
+      "41548880",
+      "35510826",
+      "29513392"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "high"
+  },
+  {
+    "id": "CAU003",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "41548880",
+      "35510826",
+      "29513392"
+    ],
+    "cautionary_pmids": [
+      "41548880",
+      "35510826",
+      "29513392"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+    "severity": "low"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "34802112",
+      "35510826"
+    ],
+    "cautionary_pmids": [
+      "34802112",
+      "35510826"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+    "severity": "low"
+  }
+]

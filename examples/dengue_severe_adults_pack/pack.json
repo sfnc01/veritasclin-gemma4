@@ -1,18 +1,18 @@
 {
-  "pack_id": "vfield-6d755b06db0e",
+  "pack_id": "vfield-03f2a6297253",
   "title": "Evidence Pack: What does recent evidence say about warning signs for severe dengue in adults",
   "topic": "What does recent evidence say about warning signs for severe dengue in adults?",
-  "created_at": "2026-04-30T02:50:16.066444+00:00",
-  "last_pubmed_search_at": "2026-04-30T02:50:16.066444+00:00",
+  "created_at": "2026-04-30T15:17:53.691411+00:00",
+  "last_pubmed_search_at": "2026-04-30T15:17:53.691411+00:00",
   "language": "en",
-  "source": "Mock demo data - not real PubMed retrieval",
+  "source": "PubMed/NCBI",
   "pico": {
     "original_question": "What does recent evidence say about warning signs for severe dengue in adults?",
     "safe_rewritten_question": null,
-    "population": "adults with suspected or confirmed dengue",
-    "intervention": "warning signs and clinical indicators",
+    "population": "adults with dengue",
+    "intervention": "warning signs",
     "comparison": null,
-    "outcome": "progression to severe dengue",
+    "outcome": "severe dengue",
     "timeframe": "recent evidence",
     "preferred_study_types": [
       "Systematic Review",
@@ -22,216 +22,1042 @@
     ],
     "language": "en"
   },
-  "pubmed_query": "(\"Dengue\"[MeSH Terms] OR dengue[Title/Abstract]) AND (\"warning signs\"[Title/Abstract] OR \"warning sign\"[Title/Abstract] OR severe[Title/Abstract] OR severity[Title/Abstract]) AND (adult[Title/Abstract] OR adults[Title/Abstract] OR \"Adult\"[MeSH Terms] OR humans[MeSH Terms])",
+  "pubmed_query": "(Dengue[MeSH Terms] OR dengue[Title/Abstract]) AND (adults[MeSH Terms] OR adult[Title/Abstract]) AND (\"warning signs\"[Title/Abstract] OR \"predictive factors\"[MeSH Terms] OR \"prognosis\"[MeSH Terms] OR \"risk factors\"[MeSH Terms]) AND (\"severe dengue\"[MeSH Terms] OR \"severe dengue\"[Title/Abstract] OR \"dengue hemorrhagic fever\"[MeSH Terms] OR \"dengue shock syndrome\"[MeSH Terms])",
+  "pubmed_query_method": "gemma4-function-calling",
   "papers": [
     {
-      "pmid": "MOCK-DENGUE-001",
+      "pmid": "39039529",
+      "pmcid": "PMC8730386",
+      "title": "Early-phase factors associated with pediatric severe dengue in the Thai-Myanmar cross-border region.",
+      "abstract": "Dengue disease is caused by dengue virus, which is transmitted by Aedes mosquitoes in tropical and subtropical regions worldwide. Although most infected individuals have benign febrile illness or no apparent symptoms, a small percentage develop severe dengue, a potentially fatal condition that occurs after a febrile stage. Many studies have identified factors predicting dengue severity among different populations and time courses. To help find practical approaches applicable in remote settings, we focused on the investigation of early factors associated with severe dengue in Thai-Myanmar cross-border region. This retrospective case-control study was performed to determine factors contributing to severe dengue in the pediatric population. We reviewed the hospital records of patients with dengue infection aged 0-19 years who were admitted to Maesot General Hospital, situated near the Thai-Myanmar cross-border region, between 2017 and 2022. Medical data during the first 5 days of illness and outcomes were collected and analyzed. This study included 144 patients with a serologically confirmed diagnosis of dengue infection, with 43 severe and 101 non-severe cases. Among biological factors, being an infant and belonging to an ethnic group in Myanmar showed a significant association with severe dengue in the univariable analysis. Multivariable logistic regression revealed that the presence of mucosal bleeding (adjusted OR 5.39, 95% CI 1.06-27.52, P = 0.043), a change in hematocrit ≥ 10% (adjusted OR 3.68, 95% CI 1.15-11.74, P = 0.028), and serum albumin < 35 g/L (adjusted OR 8.10, 95% CI 2.55-25.72, P < 0.001) during the first 5 days of illness were significantly associated with developing severe dengue. This study supports the use of certain WHO warning signs and hematocrit change during febrile phase to predict pediatric severe dengue in low-resource settings. Potential factors such as very young age and ethnic groups warrant further exploration to identify risks contributing to severe dengue infection.",
+      "journal": "BMC public health",
+      "publication_year": 2024,
+      "authors": [
+        "May Thu Thu Aung",
+        "Noppadon Tangpukdee",
+        "Kriengsak Limkittikul",
+        "Ramparat Keeratiwasin",
+        "Rungrat Sukharom",
+        "Weerawan Hattasingh",
+        "Salin Sirinam"
+      ],
+      "doi": "10.1093/aje/kwk052",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Myanmar",
+        "Retrospective Studies",
+        "Thailand",
+        "Infant",
+        "Male",
+        "Female",
+        "Child",
+        "Adolescent",
+        "Child, Preschool",
+        "Severe Dengue",
+        "Case-Control Studies",
+        "Risk Factors",
+        "Infant, Newborn",
+        "Young Adult",
+        "Severity of Illness Index",
+        "Southeast Asian People"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39039529/"
+    },
+    {
+      "pmid": "38917093",
+      "pmcid": "PMC6686869",
+      "title": "Risk factors associated with dengue complications and death: A cohort study in Peru.",
+      "abstract": "Dengue has emerged as an unprecedented epidemic in Peru, and it is anticipated that this issue will escalate further owing to climate change. This study aimed to determine the risk factors associated with death from dengue in patients treated at Hospital II in Pucallpa, Peru. This retrospective cohort study collected information from the medical records of patients with a diagnosis of dengue treated at Hospital II Pucallpa-Peru between January 2019 and March 2023. The primary outcome was death, and the secondary outcome was death, development of severe dengue, or Intensive Care Unit (ICU) admission. Cox regression models were used to determine risk factors. The clinical records of 152 patients were evaluated, with a median age of 27.5 years (interquartile range, 11-45). Among all patients, 29 (19.1%) developed severe dengue, 31 (20.4%) were admitted to the ICU, and 13 (8.6%) died during follow-up. In the survival analysis, bilirubin >1.2 mg/dL was associated with a higher risk of death aHR: 11.38 (95% CI: 1.2 106.8). Additionally, factors associated with poor prognosis included having 1 to 3 comorbidities aRR: 1.92 (1.2 to 3.2), AST ≥251 U/L aRR: 6.79 (2.2 to 21.4), history of previous dengue aRR: 1.84 (1.0 to 3.3), and fibrinogen ≥400 mg/dL aRR: 2.23 (1.2 to 4.1). Elevated bilirubin was associated with death from dengue, whereas an increase in comorbidities and a history of previous dengue were related to a poor prognosis of the disease. Early identification of severe dengue would be more feasible with improved access to laboratory testing, particularly in tropical areas with a high dengue incidence.",
+      "journal": "PloS one",
+      "publication_year": 2024,
+      "authors": [
+        "Cesar Copaja-Corzo",
+        "Javier Flores-Cohaila",
+        "Gustavo Tapia-Sequeiros",
+        "Jennifer Vilchez-Cornejo",
+        "Miguel Hueda-Zavaleta",
+        "Stalin Vilcarromero",
+        "Tomas Santana-Téllez",
+        "José F Parodi",
+        "Sujey Gomez-Colque",
+        "Vicente A Benites-Zapata"
+      ],
+      "doi": "10.1016/j.cll.2019.05.008",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Peru",
+        "Risk Factors",
+        "Male",
+        "Adult",
+        "Female",
+        "Middle Aged",
+        "Dengue",
+        "Retrospective Studies",
+        "Adolescent",
+        "Young Adult",
+        "Child",
+        "Intensive Care Units",
+        "Severe Dengue",
+        "Prognosis",
+        "Cohort Studies"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38917093/"
+    },
+    {
+      "pmid": "40320430",
+      "pmcid": "PMC3911562",
+      "title": "Cytokine and chemokine kinetics in natural human dengue infection as predictors of disease outcome.",
+      "abstract": "Dengue is an important tropical disease with considerable global impact. Despite this, there remains an urgent need for reliable biomarkers to predict disease severity, as well as effective antiviral drugs and targeted treatments. In this study, we conducted a comprehensive profiling of 41 plasma mediators in patients with asymptomatic dengue (AD) and symptomatic dengue (SD), which includes mild dengue fever (DF) and severe dengue hemorrhagic fever (DHF). Our findings revealed that the levels of nearly all measured mediators were consistently lower in AD compared to SD patients, suggesting a potential protective cytokine response signature. Time-course cytokine analysis in SD shown significantly elevated levels of pro-inflammatory cytokines and chemokines associated with inflammation and viral clearance upon the acute phase, while various growth factors were elevated during the convalescence. Notably, we identified elevated IL-15 levels in DHF patients three days before fever subsidence, highlighting its potential as an early prognostic biomarker for severe disease outcomes. Furthermore, prolonged high levels of IL-8 and IP-10 in DHF during the critical period may contribute to dengue immunopathogenesis. This study advances the understanding of cytokine dynamics in the natural course of human dengue infection, providing valuable insights for the development of targeted treatments and prognostic biomarkers.",
+      "journal": "Scientific reports",
+      "publication_year": 2025,
+      "authors": [
+        "Natnicha Jiravejchakul",
+        "Wilawan Chan-In",
+        "Walairat Thuncharoen",
+        "DENFREE Thailand",
+        "Waradon Sungnak",
+        "Varodom Charoensawan",
+        "Vimvara Vacharathit",
+        "Ponpan Matangkasombut"
+      ],
+      "doi": "10.18637/jss.v025.i01",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Dengue",
+        "Male",
+        "Cytokines",
+        "Female",
+        "Biomarkers",
+        "Adult",
+        "Chemokines",
+        "Middle Aged",
+        "Prognosis",
+        "Dengue Virus",
+        "Severe Dengue",
+        "Kinetics",
+        "Young Adult"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40320430/"
+    },
+    {
+      "pmid": "40704559",
+      "pmcid": "PMC10813939",
+      "title": "Risk Stratification of Dengue Cases Requiring Hospitalization.",
+      "abstract": "Dengue pathogenesis involves immune-driven inflammation that contributes to severe disease progression. This study assessed a machine learning model to identify a minimal, yet highly predictive biomarker set, aiming to support clinical decision-making and patient triage. A total of 48 inflammatory mediators were quantified from plasma samples collected at admission from confirmed dengue patients, classified as either dengue without warning signs (DF) or dengue with warning signs/severe dengue (DWS/SD). A random forest approach was applied to identify the most predictive biomarkers associated with disease severity requiring hospitalization, based on admission-time variables. Among the 48 immune mediators, 43 were differentially expressed in dengue patients versus healthy controls, and 26 showed significant differences between DF and DWS/SD cases. Lymphocyte counts negatively correlated with IL-1RA, while liver enzymes showed positive correlations with HGF and SCGF-beta; platelet counts also negatively correlated with these markers. Key severity-associated markers included HGF, TNF-beta, MIP-1-beta, and SCGF-beta. A model incorporating these markers and fever duration achieved nearly 80% accuracy in distinguishing DWS/SD from DF cases, independent of clinical examination. The findings suggest that targeted cytokine profiling may guide early hospitalization decisions and ease healthcare burdens in dengue-endemic regions.",
+      "journal": "Journal of medical virology",
+      "publication_year": 2025,
+      "authors": [
+        "Do Duc Anh",
+        "Mario Recker",
+        "Nguyen Trong The",
+        "Sanjeev Krishna",
+        "Peter G Kremsner",
+        "Le Huu Song",
+        "Thirumalaisamy P Velavan"
+      ],
+      "doi": "10.1002/jmv.70511",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Hospitalization",
+        "Dengue",
+        "Biomarkers",
+        "Male",
+        "Female",
+        "Adult",
+        "Middle Aged",
+        "Machine Learning",
+        "Cytokines",
+        "Risk Assessment",
+        "Young Adult",
+        "Severity of Illness Index",
+        "Severe Dengue",
+        "Adolescent"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40704559/"
+    },
+    {
+      "pmid": "40708402",
       "pmcid": null,
-      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Warning signs associated with progression to severe dengue in adults",
-      "abstract": "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk.",
-      "journal": "VeritasClin Mock Evidence",
+      "title": "Safety of Low-Dose Ibuprofen in Non-Severe Dengue Patients for Managing Fever Is Consistent With Acetaminophen: A Retrospective Observational Study.",
+      "abstract": "Dengue fever is an acute infectious disease caused by the dengue virus (DENV). Data on the safety of ibuprofen in patients with dengue fever remains scarce. This study included hospitalized patients with dengue fever who were treated with ibuprofen and/or acetaminophen for fever management. At admission, none of the patients were diagnosed with severe dengue. The patients were divided into three groups: ibuprofen-exposed group (those receiving ibuprofen alone or in combination with acetaminophen), ibuprofen group (patients who received ibuprofen alone), and acetaminophen group (patients who received acetaminophen alone for fever management). Key safety parameters were compared across groups. A total of 262 patients participated. The cumulative dose of ibuprofen administered during hospitalization was 0.6 (0.4-0.8) g. No significant differences were found between ibuprofen-exposed/ibuprofen groups and acetaminophen group in terms of platelet reduction, bleeding events, severe thrombocytopenia, or the incidence of severe dengue (all p > 0.05). Ibuprofen group had a significantly shorter fever duration (p = 0.046), while acetaminophen group showed a significantly greater elevation in alanine aminotransferase levels (p = 0.029). All patients were followed up post-discharge, and none experienced gastrointestinal bleeding within 3 months. This study suggests that safety of low-dose ibuprofen is consistent with acetaminophen for fever management in non-severe dengue patients.",
+      "journal": "Journal of medical virology",
+      "publication_year": 2025,
+      "authors": [
+        "Xiaoting Liang",
+        "Shuyuan Dang",
+        "Shuzhen Liang",
+        "Zhilan Li",
+        "Ruiqi Su",
+        "Jingzhang Wu",
+        "Haohui Deng"
+      ],
+      "doi": "10.1002/jmv.70513",
+      "publication_types": [
+        "Journal Article",
+        "Observational Study"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Ibuprofen",
+        "Acetaminophen",
+        "Dengue",
+        "Male",
+        "Female",
+        "Retrospective Studies",
+        "Adult",
+        "Middle Aged",
+        "Young Adult",
+        "Fever",
+        "Adolescent",
+        "Aged",
+        "Treatment Outcome"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40708402/"
+    },
+    {
+      "pmid": "41781546",
+      "pmcid": "4532697",
+      "title": "Long-term efficacy and safety of the single-dose tetravalent Butantan dengue vaccine.",
+      "abstract": "In individuals with prior dengue virus (DENV) exposure, subsequent heterotypic infection can increase the risk of severe disease. A single-dose dengue vaccine that protects against the four DENV serotypes across a wide age range and regardless of DENV serostatus is needed. Here we report the long-term safety and efficacy of Butantan dengue vaccine (Butantan-DV), a live, attenuated, tetravalent dengue vaccine, among participants ages 2-59 who were randomized 2:1 in a double-blind, placebo-controlled, phase 3 trial in Brazil. A primary objective was to evaluate vaccine efficacy (VE) against reverse transcription-PCR-positive symptomatic dengue 28 days after vaccination because of any DENV serotype, regardless of serostatus. Prespecified secondary endpoints included VE by serotype, by serostatus and against severe dengue or dengue with warning signs (combined). The primary and secondary objectives were met if the lower bound of the two-sided 95% confidence interval (CI) for VE was above 25%. Between 2016 and 2019, 16,235 participants received Butantan-DV (n = 10,259) or placebo (n = 5,976). The trial met the primary and secondary objectives. During the 5 years of follow-up, between 2016 and 2024, overall VE (95% CI) was 65.0% (57.8-71.0%). Secondary VE endpoints (95% CI) were 77.1% (67.6-83.9%) in dengue-experienced participants, 58.9% (48.0-67.6%) in dengue-naive participants, 73.0% (64.3-79.7%) against DENV-1 and 55.7% (42.3-66.1%) against DENV-2. Cases of DENV-3 or DENV-4 were not observed. VE (95% CI) against dengue with warning signs or severe dengue (secondary endpoint) was 80.5% (50.8-92.4%). The most commonly reported solicited systemic adverse event (AE) was headache (36.7% of vaccine recipients and 31.1% of placebo recipients), most of which were grade 1. The proportions of participants with unsolicited vaccine-related AEs (including serious AEs) were comparable between intervention groups. A single dose of Butantan-DV was efficacious against symptomatic virologically confirmed dengue because of DENV-1 or DENV-2, regardless of dengue serostatus at baseline, with no safety concerns observed during the 5-year follow-up (ClinicalTrials.gov: NCT02406729 ).",
+      "journal": "Nature medicine",
+      "publication_year": 2026,
+      "authors": [
+        "Esper G Kallás",
+        "José A Moreira",
+        "Elizabeth G Patiño",
+        "Patricia Emilia Braga",
+        "Juliana C V Tenório",
+        "Lucas Bassolli de Oliveira Alves",
+        "Vanessa Infante",
+        "Daniela Haydee Ramos Silveira",
+        "João Luiz Miraglia",
+        "Monica A T Cintra",
+        "Dhelio Batista Pereira",
+        "Allex Jardim da Fonseca",
+        "Ricardo Queiroz Gurgel",
+        "Ivo Castelo-Branco Coelho",
+        "Cor Jesus Fernandes Fontes",
+        "Ernesto T A Marques",
+        "Gustavo Adolfo Sierra Romero",
+        "Mauro Martins Teixeira",
+        "André M Siqueira",
+        "Viviane Sampaio Boaventura",
+        "Fabiano Ramos",
+        "Erivaldo Elias Júnior",
+        "José Cassio de Moraes",
+        "Cássia Fernanda Estofolete",
+        "Angela Carvalho Freitas",
+        "Cecilia Luiza Simoes Dos Santos",
+        "Maria do Carmo S T Timenetsky",
+        "Stephen S Whitehead",
+        "Anna P Durbin",
+        "Alejandra Esteves-Jaramillo",
+        "Tulin Shekar",
+        "Jung-Jin Lee",
+        "Qiuxu Chen",
+        "Julieta Macey",
+        "Sanskruti Vaidya",
+        "Beth-Ann G Coller",
+        "Fernanda Castro Boulos",
+        "Mauricio L Nogueira",
+        "Marcus Vínicius Guimarães de Lacerda"
+      ],
+      "doi": "10.2307/3315916",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Dengue Vaccines",
+        "Adult",
+        "Dengue",
+        "Male",
+        "Middle Aged",
+        "Dengue Virus",
+        "Female",
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Double-Blind Method",
+        "Young Adult",
+        "Vaccine Efficacy",
+        "Brazil",
+        "Vaccines, Attenuated",
+        "Serogroup"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781546/"
+    },
+    {
+      "pmid": "40910405",
+      "pmcid": "PMC11722146",
+      "title": "Elevated Soluble HLA-G Levels Associate With Dengue Severity in Vietnamese Patients.",
+      "abstract": "The pathogenesis of dengue remains complex and incompletely understood. One proposed mechanism involves the virus evading host immune responses through the upregulation and/or secretion of immune-inhibitory molecules. This study investigates the association between plasma levels of soluble human leukocyte antigen G (sHLA-G), a known immunoregulatory molecule, and dengue severity in hospitalized patients. A total of 238 dengue patients and 118 healthy controls were enrolled. Dengue infection was confirmed by real-time RT-PCR, and patients were clinically categorized as having dengue fever without warning signs (DF), dengue with warning signs (DWS), or severe dengue (SD), according to WHO guidelines. Laboratory parameters were assessed upon hospital admission, and plasma sHLA-G levels were measured using ELISA. sHLA-G levels were significantly elevated in dengue patients compared to healthy controls (median [range]: 42.7 [7.10-1300] U/mL vs. 11.1 [4.7-620] U/mL; p  <  0.001). After adjusting for age, sex and disease severity, a significant association was observed between sHLA-G levels and days of illness (β = 0.1, p = 0.03). Patients requiring close medical monitoring (DWS/SD) showed higher sHLA-G levels (51.0 [7.17-525] U/mL) than those having dengue fever without warning signs (38.0 [7.10-1300] U/mL); p = 0.011. While ALT and AST were positively correlated with sHLA-G levels in all patients, total lymphocyte counts were inversely correlated with sHLA-G in severe cases (r = -0.78, p = 0.002). Elevated sHLA-G levels are associated with dengue severity and may serve as a useful marker for identifying high-risk cases and for guiding clinical monitoring. Clinical trial registration: Not applicable.",
+      "journal": "Journal of medical virology",
+      "publication_year": 2025,
+      "authors": [
+        "Do Duc Anh",
+        "Nguyen Trong The",
+        "Le Huu Song",
+        "Anja Mueller",
+        "Thirumalaisamy P Velavan",
+        "Barbara Seliger"
+      ],
+      "doi": "10.1002/jmv.70594",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Female",
+        "HLA-G Antigens",
+        "Adult",
+        "Dengue",
+        "Middle Aged",
+        "Severity of Illness Index",
+        "Vietnam",
+        "Young Adult",
+        "Adolescent",
+        "Biomarkers",
+        "Aged",
+        "Enzyme-Linked Immunosorbent Assay",
+        "Severe Dengue",
+        "Southeast Asian People"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40910405/"
+    },
+    {
+      "pmid": "36593636",
+      "pmcid": "PMC6698353",
+      "title": "Routine blood parameters of dengue infected children and adults. A meta-analysis.",
+      "abstract": "The World Health Organization (WHO) has revised dengue case classification in 2009 to better reflect the severity of the disease. However, there was no comprehensive meta-analysis of pooled routine blood parameters according to the age or the categories of the 2009 WHO classification. This study aimed to meta-analyze the routine blood parameters of dengue infected children and adults. Electronic search was performed with eligible articles included for review. Meta-analysis was conducted for six blood parameters stratified into children, adults and all ages, which were further grouped into the three 2009 WHO case classifications (dengue without warning signs, DwoWS; dengue with warning signs, DwWS; severe dengue, SD), non-severe dengue (non-SD) and 'All' cases. A total of 55 articles were included in the meta-analysis. Fifteen studies were conducted in the children's age category, 31 studies in the adult category and nine studies in all ages. The four selected pooled blood parameters for children were white blood cell (WBC) (×103/L) with 5.11 (SD), 5.64 (DwWS), 5.52 (DwoWS) and 4.68 (Non-SD) hematocrit (HCT) (%) with 36.78 (SD), 40.70 (DwWS), 35.00 (DwoWS) and 29.78 (Non-SD) platelet (PLT) (×103/µL) with 78.66 (SD), 108.01 (DwWS), 153.47 (DwoWS) and 108.29 (non-SD); and aspartate aminotransferase (AST) (/µL) with 248.88 (SD), 170.83 (DwWS), 83.24 (DwoWS) and 102.99 (non-SD). For adult, WBC were 4.96 (SD), 6.44 (DwWS), 7.74 (DwoWS) and 3.61 (non-SD); HCT were 39.50 (SD), 39.00 (DwWS), 37.45 (DwoWS) and 41.68 (non-SD); PLT were 49.62 (SD), 96.60 (DwWS), 114.37 (DwoWS) and 71.13 (non-SD); and AST were 399.50 (SD), 141.01 (DwWS), 96.19 (DwoWS) and 118.13 (non-SD). These blood parameters could not differentiate between each dengue severity according to the WHO 2009 classification, SD, DwoWS, DwWS and non-SD, because the timing of blood drawing was not known and there was an overlapping confidence interval among the clinical classification. Hence, these pooled blood parameter values could not be used to guide clinicians in management and did not correlate with severity as in previous scientific literatures and guidelines.",
+      "journal": "Pathogens and global health",
       "publication_year": 2023,
       "authors": [
-        "Mock Evidence Team"
+        "Gary Kk Low",
+        "Sam Froze Jiee",
+        "Retneswari Masilamani",
+        "Selvanaayagam Shanmuganathan",
+        "Pramila Rai",
+        "Mitali Manda",
+        "Osamudiamen Favour Omosumwen",
+        "Jackob Kagize",
+        "Alex I Gavino",
+        "Aizad Azahar",
+        "Mohammed Abdulrazzaq Jabbar"
       ],
-      "doi": null,
+      "doi": "10.5005/jp-journals-10071-23178",
       "publication_types": [
-        "Systematic Review"
+        "Meta-Analysis",
+        "Journal Article"
       ],
       "mesh_terms": [
-        "Dengue",
-        "Warning Signs",
-        "Adult"
-      ],
-      "url": "mock://dengue-warning-signs-001"
-    },
-    {
-      "pmid": "MOCK-DENGUE-002",
-      "pmcid": null,
-      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Clinical warning signs for severe dengue: adult cohort study",
-      "abstract": "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes.",
-      "journal": "VeritasClin Mock Evidence",
-      "publication_year": 2020,
-      "authors": [
-        "Mock Evidence Team"
-      ],
-      "doi": null,
-      "publication_types": [
-        "Clinical Study"
-      ],
-      "mesh_terms": [
-        "Dengue",
+        "Humans",
         "Adult",
-        "Prognosis"
+        "Child",
+        "Dengue",
+        "Blood Platelets",
+        "World Health Organization",
+        "Severity of Illness Index"
       ],
-      "url": "mock://dengue-warning-signs-002"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36593636/"
     },
     {
-      "pmid": "MOCK-DENGUE-003",
+      "pmid": "11892494",
       "pmcid": null,
-      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Dengue warning signs guideline summary",
-      "abstract": "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care.",
-      "journal": "VeritasClin Mock Evidence",
-      "publication_year": 2019,
+      "title": "Dengue: an update.",
+      "abstract": "This review is an update of dengue and dengue haemorrhagic fever (DHF) based on international and Cuban experience. We describe the virus characteristics and risk factors for dengue and DHF, and compare incidence and the case fatality rates in endemic regions (southeast Asia, western Pacific, and the Americas). The clinical picture and the pathogenesis of the severe disease are explained. We also discuss the viral, individual, and environmental factors that determine severe disease. Much more research is necessary to clarify these mechanisms. Also reviewed are methods for viral isolation and the serological, immunohistochemical, and molecular methods applied in the diagnosis of the disease. We describe the status of vaccine development and emphasise that the only alternative that we have today to control the disease is through control of its vector Aedes aegypti.",
+      "journal": "The Lancet. Infectious diseases",
+      "publication_year": 2002,
       "authors": [
-        "Mock Evidence Team"
+        "María G Guzmán",
+        "Gustavo Kourí"
       ],
-      "doi": null,
+      "doi": "10.1016/s1473-3099(01)00171-2",
       "publication_types": [
-        "Practice Guideline"
+        "Journal Article",
+        "Review"
       ],
       "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Age Distribution",
+        "Antibodies, Viral",
+        "Asia, Southeastern",
+        "Child",
+        "Child, Preschool",
+        "Cuba",
         "Dengue",
-        "Practice Guideline"
+        "Dengue Virus",
+        "Humans",
+        "Incidence",
+        "Risk Factors",
+        "Severe Dengue"
       ],
-      "url": "mock://dengue-guideline-003"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11892494/"
+    },
+    {
+      "pmid": "40090592",
+      "pmcid": null,
+      "title": "Circulating lncRNAs as biomarkers for severe dengue using a machine learning approach.",
+      "abstract": "Dengue virus (DENV) infection is a significant global health concern, causing severe morbidity and mortality. While many cases present as a mild febrile illness, some progress to life-threatening severe dengue (SD). Early intervention is essential to improve outcomes, but current predictive methods lack specificity, burdening healthcare systems in endemic regions. Circulating long non-coding RNAs (lncRNAs) have emerged as stable and promising biomarkers. This study explored the use of lncRNAs as predictive markers for SD. Differential expression and qPCR arrays were employed to identify lncRNAs associated with SD. Candidate lncRNAs were validated, and their plasma levels were measured in a cohort of Vietnamese dengue patients (n =377) and healthy controls (n=128) at admission. Machine learning algorithms were applied to predict the probability of SD progression. The predictive model demonstrated high sensitivity and specificity, with an area under the curve (AUC) of 0.98 (95% CI: 0.96-1.0). At admission, it accurately identified 17 of 18 patients who later died as high-risk, compared to traditional warning signs, which flagged only 9 of these cases. Our findings suggest that this panel of lncRNAs has the potential to predict SD, which could help reduce healthcare burden and improve patient management in endemic countries.",
+      "journal": "The Journal of infection",
+      "publication_year": 2025,
+      "authors": [
+        "Rodolfo Katz",
+        "Nguyen Minh Nam",
+        "Tulio de Lima Campos",
+        "Victoria Indenbaum",
+        "Sophie Terenteva",
+        "Dinh Thi Thu Hang",
+        "Le Thi Hoi",
+        "Amos Danielli",
+        "Yaniv Lustig",
+        "Eli Schwartz",
+        "Hoang Van Tong",
+        "Ella H Sklan"
+      ],
+      "doi": "10.1016/j.jinf.2025.106471",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "RNA, Long Noncoding",
+        "Machine Learning",
+        "Male",
+        "Biomarkers",
+        "Female",
+        "Adult",
+        "Severe Dengue",
+        "Middle Aged",
+        "Vietnam",
+        "Young Adult",
+        "Sensitivity and Specificity",
+        "Adolescent",
+        "Case-Control Studies",
+        "Dengue Virus",
+        "Dengue"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40090592/"
     }
   ],
   "evidence_items": [
     {
       "paper": {
-        "pmid": "MOCK-DENGUE-001",
-        "pmcid": null,
-        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Warning signs associated with progression to severe dengue in adults",
-        "abstract": "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk.",
-        "journal": "VeritasClin Mock Evidence",
+        "pmid": "36593636",
+        "pmcid": "PMC6698353",
+        "title": "Routine blood parameters of dengue infected children and adults. A meta-analysis.",
+        "abstract": "The World Health Organization (WHO) has revised dengue case classification in 2009 to better reflect the severity of the disease. However, there was no comprehensive meta-analysis of pooled routine blood parameters according to the age or the categories of the 2009 WHO classification. This study aimed to meta-analyze the routine blood parameters of dengue infected children and adults. Electronic search was performed with eligible articles included for review. Meta-analysis was conducted for six blood parameters stratified into children, adults and all ages, which were further grouped into the three 2009 WHO case classifications (dengue without warning signs, DwoWS; dengue with warning signs, DwWS; severe dengue, SD), non-severe dengue (non-SD) and 'All' cases. A total of 55 articles were included in the meta-analysis. Fifteen studies were conducted in the children's age category, 31 studies in the adult category and nine studies in all ages. The four selected pooled blood parameters for children were white blood cell (WBC) (×103/L) with 5.11 (SD), 5.64 (DwWS), 5.52 (DwoWS) and 4.68 (Non-SD) hematocrit (HCT) (%) with 36.78 (SD), 40.70 (DwWS), 35.00 (DwoWS) and 29.78 (Non-SD) platelet (PLT) (×103/µL) with 78.66 (SD), 108.01 (DwWS), 153.47 (DwoWS) and 108.29 (non-SD); and aspartate aminotransferase (AST) (/µL) with 248.88 (SD), 170.83 (DwWS), 83.24 (DwoWS) and 102.99 (non-SD). For adult, WBC were 4.96 (SD), 6.44 (DwWS), 7.74 (DwoWS) and 3.61 (non-SD); HCT were 39.50 (SD), 39.00 (DwWS), 37.45 (DwoWS) and 41.68 (non-SD); PLT were 49.62 (SD), 96.60 (DwWS), 114.37 (DwoWS) and 71.13 (non-SD); and AST were 399.50 (SD), 141.01 (DwWS), 96.19 (DwoWS) and 118.13 (non-SD). These blood parameters could not differentiate between each dengue severity according to the WHO 2009 classification, SD, DwoWS, DwWS and non-SD, because the timing of blood drawing was not known and there was an overlapping confidence interval among the clinical classification. Hence, these pooled blood parameter values could not be used to guide clinicians in management and did not correlate with severity as in previous scientific literatures and guidelines.",
+        "journal": "Pathogens and global health",
         "publication_year": 2023,
         "authors": [
-          "Mock Evidence Team"
+          "Gary Kk Low",
+          "Sam Froze Jiee",
+          "Retneswari Masilamani",
+          "Selvanaayagam Shanmuganathan",
+          "Pramila Rai",
+          "Mitali Manda",
+          "Osamudiamen Favour Omosumwen",
+          "Jackob Kagize",
+          "Alex I Gavino",
+          "Aizad Azahar",
+          "Mohammed Abdulrazzaq Jabbar"
         ],
-        "doi": null,
+        "doi": "10.5005/jp-journals-10071-23178",
         "publication_types": [
-          "Systematic Review"
+          "Meta-Analysis",
+          "Journal Article"
         ],
         "mesh_terms": [
-          "Dengue",
-          "Warning Signs",
-          "Adult"
-        ],
-        "url": "mock://dengue-warning-signs-001"
-      },
-      "relevance_score": 86.0,
-      "evidence_level": "high",
-      "study_type": "Systematic Review",
-      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (6), abstract availability, and publication year.",
-      "key_findings": [
-        "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk."
-      ],
-      "limitations": []
-    },
-    {
-      "paper": {
-        "pmid": "MOCK-DENGUE-003",
-        "pmcid": null,
-        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Dengue warning signs guideline summary",
-        "abstract": "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care.",
-        "journal": "VeritasClin Mock Evidence",
-        "publication_year": 2019,
-        "authors": [
-          "Mock Evidence Team"
-        ],
-        "doi": null,
-        "publication_types": [
-          "Practice Guideline"
-        ],
-        "mesh_terms": [
-          "Dengue",
-          "Practice Guideline"
-        ],
-        "url": "mock://dengue-guideline-003"
-      },
-      "relevance_score": 67.0,
-      "evidence_level": "high",
-      "study_type": "Practice Guideline",
-      "rationale": "Ranked by study type (Practice Guideline), PICO term overlap (3), abstract availability, and publication year.",
-      "key_findings": [
-        "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care."
-      ],
-      "limitations": []
-    },
-    {
-      "paper": {
-        "pmid": "MOCK-DENGUE-002",
-        "pmcid": null,
-        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Clinical warning signs for severe dengue: adult cohort study",
-        "abstract": "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes.",
-        "journal": "VeritasClin Mock Evidence",
-        "publication_year": 2020,
-        "authors": [
-          "Mock Evidence Team"
-        ],
-        "doi": null,
-        "publication_types": [
-          "Clinical Study"
-        ],
-        "mesh_terms": [
-          "Dengue",
+          "Humans",
           "Adult",
-          "Prognosis"
+          "Child",
+          "Dengue",
+          "Blood Platelets",
+          "World Health Organization",
+          "Severity of Illness Index"
         ],
-        "url": "mock://dengue-warning-signs-002"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36593636/"
       },
-      "relevance_score": 56.0,
+      "relevance_score": 82.0,
+      "evidence_level": "high",
+      "study_type": "Meta-Analysis",
+      "rationale": "Ranked by study type (Meta-Analysis), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "The World Health Organization (WHO) has revised dengue case classification in 2009 to better reflect the severity of the disease.",
+        "However, there was no comprehensive meta-analysis of pooled routine blood parameters according to the age or the categories of the 2009 WHO classification."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40910405",
+        "pmcid": "PMC11722146",
+        "title": "Elevated Soluble HLA-G Levels Associate With Dengue Severity in Vietnamese Patients.",
+        "abstract": "The pathogenesis of dengue remains complex and incompletely understood. One proposed mechanism involves the virus evading host immune responses through the upregulation and/or secretion of immune-inhibitory molecules. This study investigates the association between plasma levels of soluble human leukocyte antigen G (sHLA-G), a known immunoregulatory molecule, and dengue severity in hospitalized patients. A total of 238 dengue patients and 118 healthy controls were enrolled. Dengue infection was confirmed by real-time RT-PCR, and patients were clinically categorized as having dengue fever without warning signs (DF), dengue with warning signs (DWS), or severe dengue (SD), according to WHO guidelines. Laboratory parameters were assessed upon hospital admission, and plasma sHLA-G levels were measured using ELISA. sHLA-G levels were significantly elevated in dengue patients compared to healthy controls (median [range]: 42.7 [7.10-1300] U/mL vs. 11.1 [4.7-620] U/mL; p  <  0.001). After adjusting for age, sex and disease severity, a significant association was observed between sHLA-G levels and days of illness (β = 0.1, p = 0.03). Patients requiring close medical monitoring (DWS/SD) showed higher sHLA-G levels (51.0 [7.17-525] U/mL) than those having dengue fever without warning signs (38.0 [7.10-1300] U/mL); p = 0.011. While ALT and AST were positively correlated with sHLA-G levels in all patients, total lymphocyte counts were inversely correlated with sHLA-G in severe cases (r = -0.78, p = 0.002). Elevated sHLA-G levels are associated with dengue severity and may serve as a useful marker for identifying high-risk cases and for guiding clinical monitoring. Clinical trial registration: Not applicable.",
+        "journal": "Journal of medical virology",
+        "publication_year": 2025,
+        "authors": [
+          "Do Duc Anh",
+          "Nguyen Trong The",
+          "Le Huu Song",
+          "Anja Mueller",
+          "Thirumalaisamy P Velavan",
+          "Barbara Seliger"
+        ],
+        "doi": "10.1002/jmv.70594",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Male",
+          "Female",
+          "HLA-G Antigens",
+          "Adult",
+          "Dengue",
+          "Middle Aged",
+          "Severity of Illness Index",
+          "Vietnam",
+          "Young Adult",
+          "Adolescent",
+          "Biomarkers",
+          "Aged",
+          "Enzyme-Linked Immunosorbent Assay",
+          "Severe Dengue",
+          "Southeast Asian People"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40910405/"
+      },
+      "relevance_score": 75.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "The pathogenesis of dengue remains complex and incompletely understood.",
+        "One proposed mechanism involves the virus evading host immune responses through the upregulation and/or secretion of immune-inhibitory molecules."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "41781546",
+        "pmcid": "4532697",
+        "title": "Long-term efficacy and safety of the single-dose tetravalent Butantan dengue vaccine.",
+        "abstract": "In individuals with prior dengue virus (DENV) exposure, subsequent heterotypic infection can increase the risk of severe disease. A single-dose dengue vaccine that protects against the four DENV serotypes across a wide age range and regardless of DENV serostatus is needed. Here we report the long-term safety and efficacy of Butantan dengue vaccine (Butantan-DV), a live, attenuated, tetravalent dengue vaccine, among participants ages 2-59 who were randomized 2:1 in a double-blind, placebo-controlled, phase 3 trial in Brazil. A primary objective was to evaluate vaccine efficacy (VE) against reverse transcription-PCR-positive symptomatic dengue 28 days after vaccination because of any DENV serotype, regardless of serostatus. Prespecified secondary endpoints included VE by serotype, by serostatus and against severe dengue or dengue with warning signs (combined). The primary and secondary objectives were met if the lower bound of the two-sided 95% confidence interval (CI) for VE was above 25%. Between 2016 and 2019, 16,235 participants received Butantan-DV (n = 10,259) or placebo (n = 5,976). The trial met the primary and secondary objectives. During the 5 years of follow-up, between 2016 and 2024, overall VE (95% CI) was 65.0% (57.8-71.0%). Secondary VE endpoints (95% CI) were 77.1% (67.6-83.9%) in dengue-experienced participants, 58.9% (48.0-67.6%) in dengue-naive participants, 73.0% (64.3-79.7%) against DENV-1 and 55.7% (42.3-66.1%) against DENV-2. Cases of DENV-3 or DENV-4 were not observed. VE (95% CI) against dengue with warning signs or severe dengue (secondary endpoint) was 80.5% (50.8-92.4%). The most commonly reported solicited systemic adverse event (AE) was headache (36.7% of vaccine recipients and 31.1% of placebo recipients), most of which were grade 1. The proportions of participants with unsolicited vaccine-related AEs (including serious AEs) were comparable between intervention groups. A single dose of Butantan-DV was efficacious against symptomatic virologically confirmed dengue because of DENV-1 or DENV-2, regardless of dengue serostatus at baseline, with no safety concerns observed during the 5-year follow-up (ClinicalTrials.gov: NCT02406729 ).",
+        "journal": "Nature medicine",
+        "publication_year": 2026,
+        "authors": [
+          "Esper G Kallás",
+          "José A Moreira",
+          "Elizabeth G Patiño",
+          "Patricia Emilia Braga",
+          "Juliana C V Tenório",
+          "Lucas Bassolli de Oliveira Alves",
+          "Vanessa Infante",
+          "Daniela Haydee Ramos Silveira",
+          "João Luiz Miraglia",
+          "Monica A T Cintra",
+          "Dhelio Batista Pereira",
+          "Allex Jardim da Fonseca",
+          "Ricardo Queiroz Gurgel",
+          "Ivo Castelo-Branco Coelho",
+          "Cor Jesus Fernandes Fontes",
+          "Ernesto T A Marques",
+          "Gustavo Adolfo Sierra Romero",
+          "Mauro Martins Teixeira",
+          "André M Siqueira",
+          "Viviane Sampaio Boaventura",
+          "Fabiano Ramos",
+          "Erivaldo Elias Júnior",
+          "José Cassio de Moraes",
+          "Cássia Fernanda Estofolete",
+          "Angela Carvalho Freitas",
+          "Cecilia Luiza Simoes Dos Santos",
+          "Maria do Carmo S T Timenetsky",
+          "Stephen S Whitehead",
+          "Anna P Durbin",
+          "Alejandra Esteves-Jaramillo",
+          "Tulin Shekar",
+          "Jung-Jin Lee",
+          "Qiuxu Chen",
+          "Julieta Macey",
+          "Sanskruti Vaidya",
+          "Beth-Ann G Coller",
+          "Fernanda Castro Boulos",
+          "Mauricio L Nogueira",
+          "Marcus Vínicius Guimarães de Lacerda"
+        ],
+        "doi": "10.2307/3315916",
+        "publication_types": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Clinical Trial, Phase III"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Dengue Vaccines",
+          "Adult",
+          "Dengue",
+          "Male",
+          "Middle Aged",
+          "Dengue Virus",
+          "Female",
+          "Adolescent",
+          "Child",
+          "Child, Preschool",
+          "Double-Blind Method",
+          "Young Adult",
+          "Vaccine Efficacy",
+          "Brazil",
+          "Vaccines, Attenuated",
+          "Serogroup"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41781546/"
+      },
+      "relevance_score": 74.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "In individuals with prior dengue virus (DENV) exposure, subsequent heterotypic infection can increase the risk of severe disease.",
+        "A single-dose dengue vaccine that protects against the four DENV serotypes across a wide age range and regardless of DENV serostatus is needed."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40090592",
+        "pmcid": null,
+        "title": "Circulating lncRNAs as biomarkers for severe dengue using a machine learning approach.",
+        "abstract": "Dengue virus (DENV) infection is a significant global health concern, causing severe morbidity and mortality. While many cases present as a mild febrile illness, some progress to life-threatening severe dengue (SD). Early intervention is essential to improve outcomes, but current predictive methods lack specificity, burdening healthcare systems in endemic regions. Circulating long non-coding RNAs (lncRNAs) have emerged as stable and promising biomarkers. This study explored the use of lncRNAs as predictive markers for SD. Differential expression and qPCR arrays were employed to identify lncRNAs associated with SD. Candidate lncRNAs were validated, and their plasma levels were measured in a cohort of Vietnamese dengue patients (n =377) and healthy controls (n=128) at admission. Machine learning algorithms were applied to predict the probability of SD progression. The predictive model demonstrated high sensitivity and specificity, with an area under the curve (AUC) of 0.98 (95% CI: 0.96-1.0). At admission, it accurately identified 17 of 18 patients who later died as high-risk, compared to traditional warning signs, which flagged only 9 of these cases. Our findings suggest that this panel of lncRNAs has the potential to predict SD, which could help reduce healthcare burden and improve patient management in endemic countries.",
+        "journal": "The Journal of infection",
+        "publication_year": 2025,
+        "authors": [
+          "Rodolfo Katz",
+          "Nguyen Minh Nam",
+          "Tulio de Lima Campos",
+          "Victoria Indenbaum",
+          "Sophie Terenteva",
+          "Dinh Thi Thu Hang",
+          "Le Thi Hoi",
+          "Amos Danielli",
+          "Yaniv Lustig",
+          "Eli Schwartz",
+          "Hoang Van Tong",
+          "Ella H Sklan"
+        ],
+        "doi": "10.1016/j.jinf.2025.106471",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "RNA, Long Noncoding",
+          "Machine Learning",
+          "Male",
+          "Biomarkers",
+          "Female",
+          "Adult",
+          "Severe Dengue",
+          "Middle Aged",
+          "Vietnam",
+          "Young Adult",
+          "Sensitivity and Specificity",
+          "Adolescent",
+          "Case-Control Studies",
+          "Dengue Virus",
+          "Dengue"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40090592/"
+      },
+      "relevance_score": 61.0,
       "evidence_level": "moderate",
       "study_type": "Cohort",
       "rationale": "Ranked by study type (Cohort), PICO term overlap (4), abstract availability, and publication year.",
       "key_findings": [
-        "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes."
+        "Dengue virus (DENV) infection is a significant global health concern, causing severe morbidity and mortality.",
+        "While many cases present as a mild febrile illness, some progress to life-threatening severe dengue (SD)."
       ],
       "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "38917093",
+        "pmcid": "PMC6686869",
+        "title": "Risk factors associated with dengue complications and death: A cohort study in Peru.",
+        "abstract": "Dengue has emerged as an unprecedented epidemic in Peru, and it is anticipated that this issue will escalate further owing to climate change. This study aimed to determine the risk factors associated with death from dengue in patients treated at Hospital II in Pucallpa, Peru. This retrospective cohort study collected information from the medical records of patients with a diagnosis of dengue treated at Hospital II Pucallpa-Peru between January 2019 and March 2023. The primary outcome was death, and the secondary outcome was death, development of severe dengue, or Intensive Care Unit (ICU) admission. Cox regression models were used to determine risk factors. The clinical records of 152 patients were evaluated, with a median age of 27.5 years (interquartile range, 11-45). Among all patients, 29 (19.1%) developed severe dengue, 31 (20.4%) were admitted to the ICU, and 13 (8.6%) died during follow-up. In the survival analysis, bilirubin >1.2 mg/dL was associated with a higher risk of death aHR: 11.38 (95% CI: 1.2 106.8). Additionally, factors associated with poor prognosis included having 1 to 3 comorbidities aRR: 1.92 (1.2 to 3.2), AST ≥251 U/L aRR: 6.79 (2.2 to 21.4), history of previous dengue aRR: 1.84 (1.0 to 3.3), and fibrinogen ≥400 mg/dL aRR: 2.23 (1.2 to 4.1). Elevated bilirubin was associated with death from dengue, whereas an increase in comorbidities and a history of previous dengue were related to a poor prognosis of the disease. Early identification of severe dengue would be more feasible with improved access to laboratory testing, particularly in tropical areas with a high dengue incidence.",
+        "journal": "PloS one",
+        "publication_year": 2024,
+        "authors": [
+          "Cesar Copaja-Corzo",
+          "Javier Flores-Cohaila",
+          "Gustavo Tapia-Sequeiros",
+          "Jennifer Vilchez-Cornejo",
+          "Miguel Hueda-Zavaleta",
+          "Stalin Vilcarromero",
+          "Tomas Santana-Téllez",
+          "José F Parodi",
+          "Sujey Gomez-Colque",
+          "Vicente A Benites-Zapata"
+        ],
+        "doi": "10.1016/j.cll.2019.05.008",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Peru",
+          "Risk Factors",
+          "Male",
+          "Adult",
+          "Female",
+          "Middle Aged",
+          "Dengue",
+          "Retrospective Studies",
+          "Adolescent",
+          "Young Adult",
+          "Child",
+          "Intensive Care Units",
+          "Severe Dengue",
+          "Prognosis",
+          "Cohort Studies"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38917093/"
+      },
+      "relevance_score": 52.0,
+      "evidence_level": "moderate",
+      "study_type": "Cohort",
+      "rationale": "Ranked by study type (Cohort), PICO term overlap (2), abstract availability, and publication year.",
+      "key_findings": [
+        "Dengue has emerged as an unprecedented epidemic in Peru, and it is anticipated that this issue will escalate further owing to climate change.",
+        "This study aimed to determine the risk factors associated with death from dengue in patients treated at Hospital II in Pucallpa, Peru."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40708402",
+        "pmcid": null,
+        "title": "Safety of Low-Dose Ibuprofen in Non-Severe Dengue Patients for Managing Fever Is Consistent With Acetaminophen: A Retrospective Observational Study.",
+        "abstract": "Dengue fever is an acute infectious disease caused by the dengue virus (DENV). Data on the safety of ibuprofen in patients with dengue fever remains scarce. This study included hospitalized patients with dengue fever who were treated with ibuprofen and/or acetaminophen for fever management. At admission, none of the patients were diagnosed with severe dengue. The patients were divided into three groups: ibuprofen-exposed group (those receiving ibuprofen alone or in combination with acetaminophen), ibuprofen group (patients who received ibuprofen alone), and acetaminophen group (patients who received acetaminophen alone for fever management). Key safety parameters were compared across groups. A total of 262 patients participated. The cumulative dose of ibuprofen administered during hospitalization was 0.6 (0.4-0.8) g. No significant differences were found between ibuprofen-exposed/ibuprofen groups and acetaminophen group in terms of platelet reduction, bleeding events, severe thrombocytopenia, or the incidence of severe dengue (all p > 0.05). Ibuprofen group had a significantly shorter fever duration (p = 0.046), while acetaminophen group showed a significantly greater elevation in alanine aminotransferase levels (p = 0.029). All patients were followed up post-discharge, and none experienced gastrointestinal bleeding within 3 months. This study suggests that safety of low-dose ibuprofen is consistent with acetaminophen for fever management in non-severe dengue patients.",
+        "journal": "Journal of medical virology",
+        "publication_year": 2025,
+        "authors": [
+          "Xiaoting Liang",
+          "Shuyuan Dang",
+          "Shuzhen Liang",
+          "Zhilan Li",
+          "Ruiqi Su",
+          "Jingzhang Wu",
+          "Haohui Deng"
+        ],
+        "doi": "10.1002/jmv.70513",
+        "publication_types": [
+          "Journal Article",
+          "Observational Study"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Ibuprofen",
+          "Acetaminophen",
+          "Dengue",
+          "Male",
+          "Female",
+          "Retrospective Studies",
+          "Adult",
+          "Middle Aged",
+          "Young Adult",
+          "Fever",
+          "Adolescent",
+          "Aged",
+          "Treatment Outcome"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40708402/"
+      },
+      "relevance_score": 49.0,
+      "evidence_level": "moderate",
+      "study_type": "Observational Study",
+      "rationale": "Ranked by study type (Observational Study), PICO term overlap (2), abstract availability, and publication year.",
+      "key_findings": [
+        "Dengue fever is an acute infectious disease caused by the dengue virus (DENV).",
+        "Data on the safety of ibuprofen in patients with dengue fever remains scarce."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40704559",
+        "pmcid": "PMC10813939",
+        "title": "Risk Stratification of Dengue Cases Requiring Hospitalization.",
+        "abstract": "Dengue pathogenesis involves immune-driven inflammation that contributes to severe disease progression. This study assessed a machine learning model to identify a minimal, yet highly predictive biomarker set, aiming to support clinical decision-making and patient triage. A total of 48 inflammatory mediators were quantified from plasma samples collected at admission from confirmed dengue patients, classified as either dengue without warning signs (DF) or dengue with warning signs/severe dengue (DWS/SD). A random forest approach was applied to identify the most predictive biomarkers associated with disease severity requiring hospitalization, based on admission-time variables. Among the 48 immune mediators, 43 were differentially expressed in dengue patients versus healthy controls, and 26 showed significant differences between DF and DWS/SD cases. Lymphocyte counts negatively correlated with IL-1RA, while liver enzymes showed positive correlations with HGF and SCGF-beta; platelet counts also negatively correlated with these markers. Key severity-associated markers included HGF, TNF-beta, MIP-1-beta, and SCGF-beta. A model incorporating these markers and fever duration achieved nearly 80% accuracy in distinguishing DWS/SD from DF cases, independent of clinical examination. The findings suggest that targeted cytokine profiling may guide early hospitalization decisions and ease healthcare burdens in dengue-endemic regions.",
+        "journal": "Journal of medical virology",
+        "publication_year": 2025,
+        "authors": [
+          "Do Duc Anh",
+          "Mario Recker",
+          "Nguyen Trong The",
+          "Sanjeev Krishna",
+          "Peter G Kremsner",
+          "Le Huu Song",
+          "Thirumalaisamy P Velavan"
+        ],
+        "doi": "10.1002/jmv.70511",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Hospitalization",
+          "Dengue",
+          "Biomarkers",
+          "Male",
+          "Female",
+          "Adult",
+          "Middle Aged",
+          "Machine Learning",
+          "Cytokines",
+          "Risk Assessment",
+          "Young Adult",
+          "Severity of Illness Index",
+          "Severe Dengue",
+          "Adolescent"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40704559/"
+      },
+      "relevance_score": 45.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Dengue pathogenesis involves immune-driven inflammation that contributes to severe disease progression.",
+        "This study assessed a machine learning model to identify a minimal, yet highly predictive biomarker set, aiming to support clinical decision-making and patient triage."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "39039529",
+        "pmcid": "PMC8730386",
+        "title": "Early-phase factors associated with pediatric severe dengue in the Thai-Myanmar cross-border region.",
+        "abstract": "Dengue disease is caused by dengue virus, which is transmitted by Aedes mosquitoes in tropical and subtropical regions worldwide. Although most infected individuals have benign febrile illness or no apparent symptoms, a small percentage develop severe dengue, a potentially fatal condition that occurs after a febrile stage. Many studies have identified factors predicting dengue severity among different populations and time courses. To help find practical approaches applicable in remote settings, we focused on the investigation of early factors associated with severe dengue in Thai-Myanmar cross-border region. This retrospective case-control study was performed to determine factors contributing to severe dengue in the pediatric population. We reviewed the hospital records of patients with dengue infection aged 0-19 years who were admitted to Maesot General Hospital, situated near the Thai-Myanmar cross-border region, between 2017 and 2022. Medical data during the first 5 days of illness and outcomes were collected and analyzed. This study included 144 patients with a serologically confirmed diagnosis of dengue infection, with 43 severe and 101 non-severe cases. Among biological factors, being an infant and belonging to an ethnic group in Myanmar showed a significant association with severe dengue in the univariable analysis. Multivariable logistic regression revealed that the presence of mucosal bleeding (adjusted OR 5.39, 95% CI 1.06-27.52, P = 0.043), a change in hematocrit ≥ 10% (adjusted OR 3.68, 95% CI 1.15-11.74, P = 0.028), and serum albumin < 35 g/L (adjusted OR 8.10, 95% CI 2.55-25.72, P < 0.001) during the first 5 days of illness were significantly associated with developing severe dengue. This study supports the use of certain WHO warning signs and hematocrit change during febrile phase to predict pediatric severe dengue in low-resource settings. Potential factors such as very young age and ethnic groups warrant further exploration to identify risks contributing to severe dengue infection.",
+        "journal": "BMC public health",
+        "publication_year": 2024,
+        "authors": [
+          "May Thu Thu Aung",
+          "Noppadon Tangpukdee",
+          "Kriengsak Limkittikul",
+          "Ramparat Keeratiwasin",
+          "Rungrat Sukharom",
+          "Weerawan Hattasingh",
+          "Salin Sirinam"
+        ],
+        "doi": "10.1093/aje/kwk052",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Myanmar",
+          "Retrospective Studies",
+          "Thailand",
+          "Infant",
+          "Male",
+          "Female",
+          "Child",
+          "Adolescent",
+          "Child, Preschool",
+          "Severe Dengue",
+          "Case-Control Studies",
+          "Risk Factors",
+          "Infant, Newborn",
+          "Young Adult",
+          "Severity of Illness Index",
+          "Southeast Asian People"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39039529/"
+      },
+      "relevance_score": 44.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Dengue disease is caused by dengue virus, which is transmitted by Aedes mosquitoes in tropical and subtropical regions worldwide.",
+        "Although most infected individuals have benign febrile illness or no apparent symptoms, a small percentage develop severe dengue, a potentially fatal condition that occurs after a febrile stage."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "40320430",
+        "pmcid": "PMC3911562",
+        "title": "Cytokine and chemokine kinetics in natural human dengue infection as predictors of disease outcome.",
+        "abstract": "Dengue is an important tropical disease with considerable global impact. Despite this, there remains an urgent need for reliable biomarkers to predict disease severity, as well as effective antiviral drugs and targeted treatments. In this study, we conducted a comprehensive profiling of 41 plasma mediators in patients with asymptomatic dengue (AD) and symptomatic dengue (SD), which includes mild dengue fever (DF) and severe dengue hemorrhagic fever (DHF). Our findings revealed that the levels of nearly all measured mediators were consistently lower in AD compared to SD patients, suggesting a potential protective cytokine response signature. Time-course cytokine analysis in SD shown significantly elevated levels of pro-inflammatory cytokines and chemokines associated with inflammation and viral clearance upon the acute phase, while various growth factors were elevated during the convalescence. Notably, we identified elevated IL-15 levels in DHF patients three days before fever subsidence, highlighting its potential as an early prognostic biomarker for severe disease outcomes. Furthermore, prolonged high levels of IL-8 and IP-10 in DHF during the critical period may contribute to dengue immunopathogenesis. This study advances the understanding of cytokine dynamics in the natural course of human dengue infection, providing valuable insights for the development of targeted treatments and prognostic biomarkers.",
+        "journal": "Scientific reports",
+        "publication_year": 2025,
+        "authors": [
+          "Natnicha Jiravejchakul",
+          "Wilawan Chan-In",
+          "Walairat Thuncharoen",
+          "DENFREE Thailand",
+          "Waradon Sungnak",
+          "Varodom Charoensawan",
+          "Vimvara Vacharathit",
+          "Ponpan Matangkasombut"
+        ],
+        "doi": "10.18637/jss.v025.i01",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Dengue",
+          "Male",
+          "Cytokines",
+          "Female",
+          "Biomarkers",
+          "Adult",
+          "Chemokines",
+          "Middle Aged",
+          "Prognosis",
+          "Dengue Virus",
+          "Severe Dengue",
+          "Kinetics",
+          "Young Adult"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40320430/"
+      },
+      "relevance_score": 37.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (2), abstract availability, and publication year.",
+      "key_findings": [
+        "Dengue is an important tropical disease with considerable global impact.",
+        "Despite this, there remains an urgent need for reliable biomarkers to predict disease severity, as well as effective antiviral drugs and targeted treatments."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "11892494",
+        "pmcid": null,
+        "title": "Dengue: an update.",
+        "abstract": "This review is an update of dengue and dengue haemorrhagic fever (DHF) based on international and Cuban experience. We describe the virus characteristics and risk factors for dengue and DHF, and compare incidence and the case fatality rates in endemic regions (southeast Asia, western Pacific, and the Americas). The clinical picture and the pathogenesis of the severe disease are explained. We also discuss the viral, individual, and environmental factors that determine severe disease. Much more research is necessary to clarify these mechanisms. Also reviewed are methods for viral isolation and the serological, immunohistochemical, and molecular methods applied in the diagnosis of the disease. We describe the status of vaccine development and emphasise that the only alternative that we have today to control the disease is through control of its vector Aedes aegypti.",
+        "journal": "The Lancet. Infectious diseases",
+        "publication_year": 2002,
+        "authors": [
+          "María G Guzmán",
+          "Gustavo Kourí"
+        ],
+        "doi": "10.1016/s1473-3099(01)00171-2",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Adolescent",
+          "Adult",
+          "Age Distribution",
+          "Antibodies, Viral",
+          "Asia, Southeastern",
+          "Child",
+          "Child, Preschool",
+          "Cuba",
+          "Dengue",
+          "Dengue Virus",
+          "Humans",
+          "Incidence",
+          "Risk Factors",
+          "Severe Dengue"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11892494/"
+      },
+      "relevance_score": 26.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (2), abstract availability, and publication year.",
+      "key_findings": [
+        "This review is an update of dengue and dengue haemorrhagic fever (DHF) based on international and Cuban experience.",
+        "We describe the virus characteristics and risk factors for dengue and DHF, and compare incidence and the case fatality rates in endemic regions (southeast Asia, western Pacific, and the Americas)."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
     }
   ],
   "claim_ledger": [
     {
       "id": "C001",
-      "text": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
-      "claim_type": "prognosis",
+      "text": "Recent evidence suggests that traditional routine blood parameters may not reliably differentiate between dengue severity levels due to overlapping values and unknown timing of collection [36593636].",
+      "claim_type": "epidemiology",
       "support_status": "supported",
       "pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "36593636"
       ],
       "evidence_level": "high",
-      "risk_level": "medium",
+      "risk_level": "low",
       "rationale": "Claim has cited support in the loaded Evidence Pack.",
       "limitation_note": null
     },
     {
       "id": "C002",
-      "text": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+      "text": "Specific markers such as elevated sHLA-G levels [40910405], a panel of circulating long non-coding RNAs (lncRNAs) [40090592], and high AST (≥251 U/L) or bilirubin (>1.2 mg/dL) levels [38917093] have been associated with increased disease severity or poor prognosis.",
       "claim_type": "prognosis",
       "support_status": "supported",
       "pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "40910405",
+        "40090592",
+        "38917093"
       ],
       "evidence_level": "high",
-      "risk_level": "medium",
+      "risk_level": "low",
       "rationale": "Claim has cited support in the loaded Evidence Pack.",
       "limitation_note": null
     },
     {
       "id": "C003",
-      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
-      "claim_type": "diagnosis",
-      "support_status": "unsupported",
-      "pmids": [],
-      "evidence_level": "uncertain",
-      "risk_level": "high",
-      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
-      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
-    },
-    {
-      "id": "C004",
-      "text": "The pack indicates that severe abdominal pain, persistent vomiting, bleeding, lethargy or restlessness, enlarged liver, and signs of fluid leakage may be warning signs for severe dengue (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+      "text": "Additionally, a history of previous dengue infection is linked to a higher risk of poor outcomes [38917093].",
       "claim_type": "prognosis",
       "support_status": "supported",
       "pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "38917093"
+      ],
+      "evidence_level": "moderate",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C004",
+      "text": "Recent evidence indicates that warning signs for severe dengue in adults include persistent vomiting, severe abdominal pain, fluid buildup, and a sudden drop in platelet counts [36593636, 40910405].",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "36593636",
+        "40910405"
       ],
       "evidence_level": "high",
       "risk_level": "medium",
@@ -240,154 +1066,79 @@
     },
     {
       "id": "C005",
-      "text": "Seek local care if warning signs occur.",
+      "text": "Monitoring these signs and identifying high-risk factors, such as older age or existing health conditions, is critical for timely medical intervention [41781546].",
       "claim_type": "prognosis",
-      "support_status": "unsupported",
-      "pmids": [],
-      "evidence_level": "uncertain",
+      "support_status": "supported",
+      "pmids": [
+        "41781546"
+      ],
+      "evidence_level": "high",
       "risk_level": "medium",
-      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
-      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
     }
   ],
   "caution_map": [
     {
       "id": "CAU001",
-      "claim_id": "C001",
+      "claim_id": "C003",
       "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "38917093"
       ],
       "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "38917093"
       ],
       "caution_type": "outcome_mismatch",
-      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
+      "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
       "severity": "medium"
     },
     {
       "id": "CAU002",
-      "claim_id": "C001",
+      "claim_id": "C004",
       "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "36593636",
+        "40910405"
       ],
       "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "36593636",
+        "40910405"
       ],
-      "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
       "severity": "medium"
     },
     {
       "id": "CAU003",
-      "claim_id": "C002",
-      "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "caution_type": "outcome_mismatch",
-      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
-      "severity": "medium"
-    },
-    {
-      "id": "CAU004",
-      "claim_id": "C002",
-      "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
-      "severity": "medium"
-    },
-    {
-      "id": "CAU005",
-      "claim_id": "C003",
-      "supporting_pmids": [],
-      "cautionary_pmids": [],
-      "caution_type": "insufficient_data",
-      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
-      "severity": "high"
-    },
-    {
-      "id": "CAU006",
       "claim_id": "C004",
       "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "36593636",
+        "40910405"
       ],
       "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
+        "36593636",
+        "40910405"
       ],
       "caution_type": "outcome_mismatch",
-      "explanation": "Some evidence emphasizes surrogate or laboratory outcomes rather than the claim.",
-      "severity": "medium"
-    },
-    {
-      "id": "CAU007",
-      "claim_id": "C004",
-      "supporting_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "cautionary_pmids": [
-        "MOCK-DENGUE-001",
-        "MOCK-DENGUE-003",
-        "MOCK-DENGUE-002"
-      ],
-      "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
-      "severity": "medium"
-    },
-    {
-      "id": "CAU008",
-      "claim_id": "C005",
-      "supporting_pmids": [],
-      "cautionary_pmids": [],
-      "caution_type": "insufficient_data",
-      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
       "severity": "medium"
     }
   ],
   "freshness": {
-    "score": 0.85,
+    "score": 1.0,
     "last_search_date": "2026-04-30",
-    "newest_publication_year": 2023,
-    "oldest_publication_year": 2019,
-    "recommended_refresh_days": 120,
-    "rationale": "Newest loaded publication year is 2023 and oldest is 2019; the pack is 3 years from the newest included evidence."
+    "newest_publication_year": 2026,
+    "oldest_publication_year": 2002,
+    "recommended_refresh_days": 180,
+    "rationale": "Newest loaded publication year is 2026 and oldest is 2002; the pack is 0 years from the newest included evidence."
   },
-  "executive_summary": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
-  "clinical_interpretation": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "executive_summary": "Recent evidence suggests that traditional routine blood parameters may not reliably differentiate between dengue severity levels due to overlapping values and unknown timing of collection [36593636]. However, specific markers such as elevated sHLA-G levels [40910405], a panel of circulating long non-coding RNAs (lncRNAs) [40090592], and high AST (≥251 U/L) or bilirubin (>1.2 mg/dL) levels [38917093] have been associated with increased disease severity or poor prognosis. Additionally, a history of previous dengue infection is linked to a higher risk of poor outcomes [38917093].",
+  "clinical_interpretation": "Recent evidence suggests that traditional routine blood parameters may not reliably differentiate between dengue severity levels due to overlapping values and unknown timing of collection [36593636]. However, specific markers such as elevated sHLA-G levels [40910405], a panel of circulating long non-coding RNAs (lncRNAs) [40090592], and high AST (≥251 U/L) or bilirubin (>1.2 mg/dL) levels [38917093] have been associated with increased disease severity or poor prognosis. Additionally, a history of previous dengue infection is linked to a higher risk of poor outcomes [38917093]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
   "what_the_evidence_does_not_prove": [
     "It does not diagnose any individual patient.",
     "It does not replace urgent clinical evaluation for warning signs.",
     "It does not prove that every warning sign has equal predictive value in every setting."
   ],
-  "patient_friendly_explanation": "The pack indicates that severe abdominal pain, persistent vomiting, bleeding, lethargy or restlessness, enlarged liver, and signs of fluid leakage may be warning signs for severe dengue (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002). Seek local care if warning signs occur.",
+  "patient_friendly_explanation": "Recent evidence indicates that warning signs for severe dengue in adults include persistent vomiting, severe abdominal pain, fluid buildup, and a sudden drop in platelet counts [36593636, 40910405]. Monitoring these signs and identifying high-risk factors, such as older age or existing health conditions, is critical for timely medical intervention [41781546].",
   "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
-  "citation_coverage": 0.6
+  "citation_coverage": 1.0
 }

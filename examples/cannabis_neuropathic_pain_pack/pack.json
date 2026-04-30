@@ -1,18 +1,18 @@
 {
-  "pack_id": "vfield-380a2c4ba472",
-  "title": "Evidence Pack: What does evidence say about medical cannabis for neuropathic pain in adults",
-  "topic": "What does evidence say about medical cannabis for neuropathic pain in adults?",
-  "created_at": "2026-04-30T02:50:16.071976+00:00",
-  "last_pubmed_search_at": "2026-04-30T02:50:16.071976+00:00",
+  "pack_id": "vfield-b441357e6eb0",
+  "title": "Evidence Pack: What does evidence say about medical cannabis or cannabinoids for neuropathic pain in a...",
+  "topic": "What does evidence say about medical cannabis or cannabinoids for neuropathic pain in adults?",
+  "created_at": "2026-04-30T15:20:09.089419+00:00",
+  "last_pubmed_search_at": "2026-04-30T15:20:09.089419+00:00",
   "language": "en",
-  "source": "Mock demo data - not real PubMed retrieval",
+  "source": "PubMed/NCBI",
   "pico": {
-    "original_question": "What does evidence say about medical cannabis for neuropathic pain in adults?",
+    "original_question": "What does evidence say about medical cannabis or cannabinoids for neuropathic pain in adults?",
     "safe_rewritten_question": null,
     "population": "adults with neuropathic pain",
     "intervention": "medical cannabis or cannabinoids",
-    "comparison": "placebo or standard care",
-    "outcome": "pain relief and adverse events",
+    "comparison": null,
+    "outcome": "pain relief/management",
     "timeframe": null,
     "preferred_study_types": [
       "Systematic Review",
@@ -22,69 +22,745 @@
     ],
     "language": "en"
   },
-  "pubmed_query": "(cannabis[Title/Abstract] OR cannabinoids[MeSH Terms] OR cannabinoid*[Title/Abstract]) AND (\"neuropathic pain\"[Title/Abstract] OR neuralgia[MeSH Terms]) AND (adult[Title/Abstract] OR humans[MeSH Terms])",
+  "pubmed_query": "(\"Neuropathic Pain\"[MeSH Terms] OR \"neuropathic pain\"[Title/Abstract]) AND (\"Medical Marijuana\"[MeSH Terms] OR \"Cannabinoids\"[MeSH Terms] OR \"cannabis\"[Title/Abstract] OR \"cannabinoid*\"[Title/Abstract] OR \"medical cannabis\"[Title/Abstract]) AND (\"Pain Management\"[MeSH Terms] OR \"pain relief\"[Title/Abstract] OR \"pain management\"[Title/Abstract] OR \"analgesia\"[Title/Abstract])",
+  "pubmed_query_method": "gemma4-function-calling",
   "papers": [
     {
-      "pmid": "MOCK-CANNABIS-001",
-      "pmcid": null,
-      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Cannabinoids for chronic neuropathic pain systematic review",
-      "abstract": "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events.",
-      "journal": "VeritasClin Mock Evidence",
-      "publication_year": 2021,
+      "pmid": "38710218",
+      "pmcid": "PMC11148885",
+      "title": "Neuropathic pain in cats: Mechanisms and multimodal management.",
+      "abstract": "Chronic pain is a significant welfare concern in cats, and neuropathic pain, which arises from aberrant processing of sensory signals within the nervous system, is a subcategory of this type of pain. To comprehend this condition and how multimodal pharmacotherapy plays a central role in alleviating discomfort, it is crucial to delve into the anatomy of nociception and pain perception. In addition, there is an intricate interplay between emotional health and chronic pain in cats, and understanding and addressing the emotional factors that contribute to pain perception, and vice versa, is essential for comprehensive care.Clinical approach:Neuropathic pain is suspected if there is abnormal sensation in the area of the distribution of pain, together with a positive response to trial treatment with drugs effective for neuropathic pain. Ideally, this clinical suspicion would be supported by confirmation of a lesion at this neurolocalisation using diagnostic modalities such as MRI and neuroelectrophysiology. Alternatively, there may be a history of known trauma at that site. A variety of therapies, including analgesic, anti-inflammatory and adjuvant drugs, and neuromodulation (eg, TENS or acupuncture), can be employed to address different facets of pain pathways.Aim:This review article, aimed at primary care/ general practitioners, focuses on the identification and management of neuropathic pain in cats. Three case vignettes are included and a structured treatment algorithm is presented to guide veterinarians in tailoring interventions.Evidence base:The review draws on current literature, where available, along with the author's extensive experience and research.",
+      "journal": "Journal of feline medicine and surgery",
+      "publication_year": 2024,
       "authors": [
-        "Mock Evidence Team"
+        "Clare Rusbridge"
       ],
-      "doi": null,
+      "doi": "10.1016/j.lfs.2023.121838",
       "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Cats",
+        "Animals",
+        "Neuralgia",
+        "Cat Diseases",
+        "Pain Management",
+        "Analgesics",
+        "Combined Modality Therapy"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38710218/"
+    },
+    {
+      "pmid": "39029988",
+      "pmcid": null,
+      "title": "Cannabidiol and pain.",
+      "abstract": "Chronic pain presents significant personal, psychological, and socioeconomic hurdles, impacting over 30% of adults worldwide and substantially contributing to disability. Unfortunately, current pharmacotherapy often proves inadequate, leaving fewer than 70% of patients with relief. This shortfall has sparked a drive to seek alternative treatments offering superior safety and efficacy profiles. Cannabinoid-based pharmaceuticals, notably cannabidiol (CBD), hold promise in pain management, driven by their natural origins, versatility, and reduced risk of addiction. As we navigate the opioid crisis, ongoing research plunges into CBD's therapeutic potential, buoyed by animal studies revealing its pain-relieving prowess through various system tweaks. However, the efficacy of cannabis in chronic pain management remains a contentious and stigmatized issue. The International Association for the Study of Pain (IASP) presently refrains from endorsing cannabinoid use for pain relief. Nevertheless, evidence indicates their potential in alleviating cancer-related, neuropathic, arthritis, and musculoskeletal pain, necessitating further investigation. Crucially, our comprehension of CBD's role in pain management is a journey still unfolding, with animal studies illustrating its analgesic effects through interactions with the endocannabinoid, inflammatory, and nociceptive systems. As the plot thickens, it's clear: the saga of chronic pain and CBD's potential offers a compelling narrative ripe for further exploration and understanding.",
+      "journal": "International review of neurobiology",
+      "publication_year": 2024,
+      "authors": [
+        "Glauce Crivelaro Nascimento",
+        "Daniela Escobar-Espinal",
+        "Gabriela Gonçalves Bálico",
+        "Nicole Rodrigues Silva",
+        "Elaine Del-Bel"
+      ],
+      "doi": "10.1016/bs.irn.2024.04.016",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Cannabidiol",
+        "Humans",
+        "Animals",
+        "Chronic Pain",
+        "Analgesics",
+        "Pain Management"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39029988/"
+    },
+    {
+      "pmid": "39445926",
+      "pmcid": null,
+      "title": "Central Neuropathic Pain.",
+      "abstract": "This article provides an approach to the assessment, diagnosis, and treatment of central neuropathic pain. Recent studies of the pathophysiology of central neuropathic pain, including evidence of changes in the expression of voltage-gated sodium channels and N-methyl-d-aspartate (NMDA) receptors, may provide the basis for new therapies. Other areas of current research include the role of cannabinoid-receptor activity and microglial cell activation in various animal models of central neuropathic pain. New observations regarding changes in primary afferent neuronal activity in central neuropathic pain and the preliminary observation that peripheral nerve blocks may relieve pain due to central neuropathic etiologies provide new insights into both the mechanism and treatment of central neuropathic pain. In the patient populations treated by neurologists, central neuropathic pain develops most frequently following spinal cord injury, multiple sclerosis, or stroke. A multimodal, individualized approach to the management of central neuropathic pain is necessary to optimize pain relief and may require multiple treatment trials to achieve the best outcome.",
+      "journal": "Continuum (Minneapolis, Minn.)",
+      "publication_year": 2024,
+      "authors": [
+        "Charles E Argoff"
+      ],
+      "doi": "10.1038/s41572-023-00484-9",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Case Reports"
+      ],
+      "mesh_terms": [
+        "Animals",
+        "Humans",
+        "Neuralgia",
+        "Pain Management"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39445926/"
+    },
+    {
+      "pmid": "34802112",
+      "pmcid": "PMC7496774",
+      "title": "Cannabis-Based Medicines and Medical Cannabis for Chronic Neuropathic Pain.",
+      "abstract": "Neuropathic pain represents a broad category of pain syndromes that include a wide variety of peripheral and central disorders. The overall prevalence of neuropathic pain in the general population is reported to be between 7 and 10%. Management of neuropathic pain presents an unmet clinical need, with less than 50% of patients achieving substantial pain relief with medications currently recommended such as pregabalin, gabapentin, duloxetine and various tricyclic antidepressants. It has been suggested that cannabis-based medicines (CbMs) and medical cannabis (MC) may be a treatment option for those with chronic neuropathic pain. CbMs/MC are available in different forms: licensed medications or medical products (plant-derived and/or synthetic products such as tetrahydrocannabinol or cannabidiol); magistral preparations of cannabis plant derivatives with defined molecular content such as dronabinol (tetrahydrocannabinol); and herbal cannabis with a defined content of tetrahydrocannabinol and/or cannabidiol, together with other active ingredients (phytocannabinoids other than cannabidiol/tetrahydrocannabinol, terpenes and flavonoids). The availability of different types of CbMs/MC varies between countries worldwide. Systematic reviews of available randomised controlled trials have stated low-quality evidence for CbMs and MC for chronic neuropathic pain. Depending on the studies included in the various quantitative syntheses, authors have reached divergent conclusions on the efficacy of CbMs/MC for chronic neuropathic pain (from not effective to a clinically meaningful benefit). Clinically relevant side effects of CbMs/MC, especially for central nervous system and psychiatric disorders, have been reported by some systematic reviews. Recommendations for the use of CbMs/MC for chronic neuropathic pain by various medical associations also differ, from negative recommendations, no recommendation possible, recommended as third-line therapy, or recommended as an alternative in selected cases failing standard therapies within a multimodal concept. After reading this paper, readers are invited to formulate their own conclusions regarding the potential benefits and harms of CbMs/MC for the treatment of chronic neuropathic pain.",
+      "journal": "CNS drugs",
+      "publication_year": 2022,
+      "authors": [
+        "Frank Petzke",
+        "Thomas Tölle",
+        "Mary-Ann Fitzcharles",
+        "Winfried Häuser"
+      ],
+      "doi": "10.1002/ejp.1605",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Medical Marijuana",
+        "Neuralgia",
+        "Pain Management"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34802112/"
+    },
+    {
+      "pmid": "29513392",
+      "pmcid": "PMC6494210",
+      "title": "Cannabis-based medicines for chronic neuropathic pain in adults.",
+      "abstract": "This review is one of a series on drugs used to treat chronic neuropathic pain. Estimates of the population prevalence of chronic pain with neuropathic components range between 6% and 10%. Current pharmacological treatment options for neuropathic pain afford substantial benefit for only a few people, often with adverse effects that outweigh the benefits. There is a need to explore other treatment options, with different mechanisms of action for treatment of conditions with chronic neuropathic pain. Cannabis has been used for millennia to reduce pain. Herbal cannabis is currently strongly promoted by some patients and their advocates to treat any type of chronic pain. To assess the efficacy, tolerability, and safety of cannabis-based medicines (herbal, plant-derived, synthetic) compared to placebo or conventional drugs for conditions with chronic neuropathic pain in adults. In November 2017 we searched CENTRAL, MEDLINE, Embase, and two trials registries for published and ongoing trials, and examined the reference lists of reviewed articles. We selected randomised, double-blind controlled trials of medical cannabis, plant-derived and synthetic cannabis-based medicines against placebo or any other active treatment of conditions with chronic neuropathic pain in adults, with a treatment duration of at least two weeks and at least 10 participants per treatment arm. Three review authors independently extracted data of study characteristics and outcomes of efficacy, tolerability and safety, examined issues of study quality, and assessed risk of bias. We resolved discrepancies by discussion. For efficacy, we calculated the number needed to treat for an additional beneficial outcome (NNTB) for pain relief of 30% and 50% or greater, patient's global impression to be much or very much improved, dropout rates due to lack of efficacy, and the standardised mean differences for pain intensity, sleep problems, health-related quality of life (HRQoL), and psychological distress. For tolerability, we calculated number needed to treat for an additional harmful outcome (NNTH) for withdrawal due to adverse events and specific adverse events, nervous system disorders and psychiatric disorders. For safety, we calculated NNTH for serious adverse events. Meta-analysis was undertaken using a random-effects model. We assessed the quality of evidence using GRADE and created a 'Summary of findings' table. We included 16 studies with 1750 participants. The studies were 2 to 26 weeks long and compared an oromucosal spray with a plant-derived combination of tetrahydrocannabinol (THC) and cannabidiol (CBD) (10 studies), a synthetic cannabinoid mimicking THC (nabilone) (two studies), inhaled herbal cannabis (two studies) and plant-derived THC (dronabinol) (two studies) against placebo (15 studies) and an analgesic (dihydrocodeine) (one study). We used the Cochrane 'Risk of bias' tool to assess study quality. We defined studies with zero to two unclear or high risks of bias judgements to be high-quality studies, with three to five unclear or high risks of bias to be moderate-quality studies, and with six to eight unclear or high risks of bias to be low-quality studies. Study quality was low in two studies, moderate in 12 studies and high in two studies. Nine studies were at high risk of bias for study size. We rated the quality of the evidence according to GRADE as very low to moderate.Primary outcomesCannabis-based medicines may increase the number of people achieving 50% or greater pain relief compared with placebo (21% versus 17%; risk difference (RD) 0.05 (95% confidence interval (CI) 0.00 to 0.09); NNTB 20 (95% CI 11 to 100); 1001 participants, eight studies, low-quality evidence). We rated the evidence for improvement in Patient Global Impression of Change (PGIC) with cannabis to be of very low quality (26% versus 21%;RD 0.09 (95% CI 0.01 to 0.17); NNTB 11 (95% CI 6 to 100); 1092 participants, six studies). More participants withdrew from the studies due to adverse events with cannabis-based medicines (10% of participants) than with placebo (5% of participants) (RD 0.04 (95% CI 0.02 to 0.07); NNTH 25 (95% CI 16 to 50); 1848 participants, 13 studies, moderate-quality evidence). We did not have enough evidence to determine if cannabis-based medicines increase the frequency of serious adverse events compared with placebo (RD 0.01 (95% CI -0.01 to 0.03); 1876 participants, 13 studies, low-quality evidence).Secondary outcomesCannabis-based medicines probably increase the number of people achieving pain relief of 30% or greater compared with placebo (39% versus 33%; RD 0.09 (95% CI 0.03 to 0.15); NNTB 11 (95% CI 7 to 33); 1586 participants, 10 studies, moderate quality evidence). Cannabis-based medicines may increase nervous system adverse events compared with placebo (61% versus 29%; RD 0.38 (95% CI 0.18 to 0.58); NNTH 3 (95% CI 2 to 6); 1304 participants, nine studies, low-quality evidence). Psychiatric disorders occurred in 17% of participants using cannabis-based medicines and in 5% using placebo (RD 0.10 (95% CI 0.06 to 0.15); NNTH 10 (95% CI 7 to 16); 1314 participants, nine studies, low-quality evidence).We found no information about long-term risks in the studies analysed.Subgroup analysesWe are uncertain whether herbal cannabis reduces mean pain intensity (very low-quality evidence). Herbal cannabis and placebo did not differ in tolerability (very low-quality evidence). The potential benefits of cannabis-based medicine (herbal cannabis, plant-derived or synthetic THC, THC/CBD oromucosal spray) in chronic neuropathic pain might be outweighed by their potential harms. The quality of evidence for pain relief outcomes reflects the exclusion of participants with a history of substance abuse and other significant comorbidities from the studies, together with their small sample sizes.",
+      "journal": "The Cochrane database of systematic reviews",
+      "publication_year": 2018,
+      "authors": [
+        "Martin Mücke",
+        "Tudor Phillips",
+        "Lukas Radbruch",
+        "Frank Petzke",
+        "Winfried Häuser"
+      ],
+      "doi": "10.1002/14651858.CD012182",
+      "publication_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Research Support, Non-U.S. Gov't",
         "Systematic Review"
       ],
       "mesh_terms": [
+        "Adult",
+        "Analgesics, Non-Narcotic",
+        "Analgesics, Opioid",
+        "Cannabidiol",
+        "Chronic Pain",
+        "Codeine",
+        "Dronabinol",
+        "Humans",
+        "Medical Marijuana",
         "Neuralgia",
-        "Cannabinoids"
+        "Numbers Needed To Treat",
+        "Randomized Controlled Trials as Topic"
       ],
-      "url": "mock://cannabis-neuropathic-pain-001"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29513392/"
+    },
+    {
+      "pmid": "39385859",
+      "pmcid": "PMC8347233",
+      "title": "Neuropharmacology of Neuropathic Pain: A Systematic Review.",
+      "abstract": "Neuropathic pain, a debilitating condition, remains challenging to manage effectively. An insight into neuropharmacological mechanisms is critical for optimizing treatment strategies. This systematic review aims to evaluate the role of neuropharmacological agents based on their efficacy, involved neurotransmitters, and receptors. A manual literature search was undertaken in PubMed including Medline, Cochrane Library, Google Scholar, Plos One, Science Direct, and clinicaltrials.gov from 2013 until 2023. Out of the 13 included studies, seven evaluated the role of gabapentinoids. Two main drugs from this group, gabapentin and pregabalin, function by binding voltage-gated calcium channels, lowering neuronal hyperexcitability and pain signal transmission, thereby relieving neuropathic pain. Four of the pooled studies reported the use of tricyclic antidepressants (TCAs) including amitriptyline and nortriptyline which work by blocking the reuptake of norepinephrine and serotonin, their increased concentration is thought to be central to their analgesic effect. Three articles assessed the use of serotonin-norepinephrine reuptake inhibitors (SNRIs) and reported them as effective as the TCAs in managing neuropathic pain. They work by augmenting serotonin and norepinephrine. Three studies focused on the use of selective serotonin reuptake inhibitors (SSRIs), modulating their effect by increasing serotonin levels; however, they were reported as not a highly effective treatment option for neuropathic pain. One of the studies outlined the use of cannabinoids for neuropathic pain by binding to cannabinoid receptors with only mild adverse effects. It is concluded that gabapentinoids, TCAs, and SNRIs were reported as the most effective therapy for neuropathic pain; however, for trigeminal neuralgia, anticonvulsants like carbamazepine were considered the most effective. Opioids were considered second-line drugs for neuropathic pain as they come with adverse effects and a risk of dependence. Ongoing research is exploring novel drugs like ion channels and agents modulating pain pathways for neuropathic pain management. Our review hopes to inspire further research into patient stratification by their physiology, aiding quicker and more accurate management of neuropathic pain while minimizing inadvertent side effects.",
+      "journal": "Cureus",
+      "publication_year": 2024,
+      "authors": [
+        "Muhammad Umar Mian",
+        "Mishal Afzal",
+        "Aqsa A Butt",
+        "Muniba Ijaz",
+        "Kashaf Khalil",
+        "Maryam Abbasi",
+        "Marhaba Fatima",
+        "Mariam Asif",
+        "Saad Nadeem",
+        "Shivangi Jha",
+        "Binay K Panjiyar"
+      ],
+      "doi": "10.7759/cureus.69028",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39385859/"
+    },
+    {
+      "pmid": "35510826",
+      "pmcid": "PMC9069991",
+      "title": "Cannabis and cannabinoids for symptomatic treatment for people with multiple sclerosis.",
+      "abstract": "Spasticity and chronic neuropathic pain are common and serious symptoms in people with multiple sclerosis (MS). These symptoms increase with disease progression and lead to worsening disability, impaired activities of daily living and quality of life. Anti-spasticity medications and analgesics are of limited benefit or poorly tolerated. Cannabinoids may reduce spasticity and pain in people with MS. Demand for symptomatic treatment with cannabinoids is high. A thorough understanding of the current body of evidence regarding benefits and harms of these drugs is required. To assess benefit and harms of cannabinoids, including synthetic, or herbal and plant-derived cannabinoids, for reducing symptoms for adults with MS. We searched the following databases from inception to December 2021: MEDLINE, Embase, the Cochrane Central Register of Controlled Trials (CENTRAL, the Cochrane Library), CINAHL (EBSCO host), LILACS, the Physiotherapy Evidence Database (PEDro), the World Health Organisation International Clinical Trials Registry Platform, the US National Institutes of Health clinical trial register, the European Union Clinical Trials Register, the International Association for Cannabinoid Medicines databank. We hand searched citation lists of included studies and relevant reviews. We included randomised parallel or cross-over trials (RCTs) evaluating any cannabinoid (including herbal Cannabis, Cannabis flowers, plant-based cannabinoids, or synthetic cannabinoids) irrespective of dose, route, frequency, or duration of use for adults with MS. We followed standard Cochrane methodology. To assess bias in included studies, we used the Cochrane Risk of bias 2 tool for parallel RCTs and crossover trials. We rated the certainty of evidence using the GRADE approach for the following outcomes: reduction of 30% in the spasticity Numeric Rating Scale, pain relief of 50% or greater in the Numeric Rating Scale-Pain Intensity, much or very much improvement in the Patient Global Impression of Change (PGIC), Health-Related Quality of Life (HRQoL), withdrawals due to adverse events (AEs) (tolerability), serious adverse events (SAEs), nervous system disorders, psychiatric disorders, physical dependence. We included 25 RCTs with 3763 participants of whom 2290 received cannabinoids. Age ranged from 18 to 60 years, and between 50% and 88% participants across the studies were female.  The included studies were 3 to 48 weeks long and compared nabiximols, an oromucosal spray with a plant derived equal (1:1) combination of tetrahydrocannabinol (THC) and cannabidiol (CBD) (13 studies), synthetic cannabinoids mimicking THC (7 studies), an oral THC extract of Cannabis sativa (2 studies), inhaled herbal Cannabis (1 study) against placebo. One study compared dronabinol, THC extract of Cannabis sativa and placebo, one compared inhaled herbal Cannabis, dronabinol and placebo. We identified eight ongoing studies. Critical outcomes • Spasticity: nabiximols probably increases the number of people who report an important reduction of perceived severity of spasticity compared with placebo (odds ratio (OR) 2.51, 95% confidence interval (CI) 1.56 to 4.04; 5 RCTs, 1143 participants; I2 = 67%; moderate-certainty evidence). The absolute effect was 216 more people (95% CI 99 more to 332 more) per 1000 reporting benefit with cannabinoids than with placebo. • Chronic neuropathic pain: we found only one small trial that measured the number of participants reporting substantial pain relief with a synthetic cannabinoid compared with placebo (OR 4.23, 95% CI 1.11 to 16.17; 1 study, 48 participants; very low-certainty evidence). We are uncertain whether cannabinoids reduce chronic neuropathic pain intensity. • Treatment discontinuation due to AEs: cannabinoids may increase slightly the number of participants who discontinue treatment compared with placebo (OR 2.41, 95% CI 1.51 to 3.84; 21 studies, 3110 participants; I² = 17%; low-certainty evidence); the absolute effect is 39 more people (95% CI 15 more to 76 more) per 1000 people. Important outcomes • PGIC: cannabinoids probably increase the number of people who report 'very much' or 'much' improvement in health status compared with placebo (OR 1.80, 95% CI 1.37 to 2.36; 8 studies, 1215 participants; I² = 0%; moderate-certainty evidence). The absolute effect is 113 more people (95% CI 57 more to 175 more) per 1000 people reporting improvement. • HRQoL: cannabinoids may have little to no effect on HRQoL (SMD -0.08, 95% CI -0.17 to 0.02; 8 studies, 1942 participants; I2 = 0%; low-certainty evidence); • SAEs: cannabinoids may result in little to no difference in the number of participants who have SAEs compared with placebo (OR 1.38, 95% CI 0.96 to 1.99; 20 studies, 3124 participants; I² = 0%; low-certainty evidence); • AEs of the nervous system: cannabinoids may increase nervous system disorders compared with placebo (OR 2.61, 95% CI 1.53 to 4.44; 7 studies, 1154 participants; I² = 63%; low-certainty evidence); • Psychiatric disorders: cannabinoids may increase psychiatric disorders compared with placebo (OR 1.94, 95% CI 1.31 to 2.88; 6 studies, 1122 participants; I² = 0%; low-certainty evidence); • Drug tolerance: the evidence is very uncertain about the effect of cannabinoids on drug tolerance (OR 3.07, 95% CI 0.12 to 75.95; 2 studies, 458 participants; very low-certainty evidence). Compared with placebo, nabiximols probably reduces the severity of spasticity in the short-term in people with MS. We are uncertain about the effect on chronic neurological pain and health-related quality of life. Cannabinoids may increase slightly treatment discontinuation due to AEs, nervous system and psychiatric disorders compared with placebo. We are uncertain about the effect on drug tolerance. The overall certainty of evidence is limited by short-term duration of the included studies.",
+      "journal": "The Cochrane database of systematic reviews",
+      "publication_year": 2022,
+      "authors": [
+        "Graziella Filippini",
+        "Silvia Minozzi",
+        "Francesca Borrelli",
+        "Michela Cinquini",
+        "Kerry Dwan"
+      ],
+      "doi": "10.1002/14651858.CD013444",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "mesh_terms": [
+        "Activities of Daily Living",
+        "Adolescent",
+        "Adult",
+        "Analgesics",
+        "Cannabinoids",
+        "Cannabis",
+        "Chronic Pain",
+        "Dronabinol",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Multiple Sclerosis",
+        "Neuralgia",
+        "Plant Extracts",
+        "Quality of Life",
+        "Young Adult"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35510826/"
+    },
+    {
+      "pmid": "41548880",
+      "pmcid": "PMC12812441",
+      "title": "Cannabis-based medicines for chronic neuropathic pain in adults.",
+      "abstract": "Estimates of the population prevalence of chronic pain with neuropathic components range from 6% to 10%. Current pharmacological treatments for neuropathic pain help only a minority. New treatments are needed. Cannabis is increasingly promoted in the media as a treatment for chronic pain. This is an update of a review first published in 2018. To assess the benefits and harms of cannabis-based medicines (herbal, plant-based, synthetic) compared to placebo or conventional drugs for chronic neuropathic pain conditions in adults. We searched CENTRAL, MEDLINE, Embase, and three trial registries, together with reference checking. The latest search date was 29 January 2025. We selected randomised, double-blind controlled trials of medical cannabis, plant-derived and synthetic cannabinoids, against placebo or any other active treatment for chronic neuropathic pain conditions in adults, with a treatment duration of at least two weeks. We excluded studies whose double-blind duration was less than two weeks and studies which did not explicitly state that the pain was of a neuropathic nature. Critical outcomes were the number of participants reporting pain relief of at least 50%, a Patient Global Impression of Change (PGIC) rating of 'much' or 'very much' improved, serious adverse events, and withdrawals due to adverse events. We assessed the risk of bias (RoB) for seven outcomes reported in three summary of findings tables using the Cochrane RoB 1 tool. We synthesised results for each outcome using meta-analysis with a random-effects model by calculating absolute risk differences (RD) and standardised mean differences (SMD) with 95% confidence intervals (CI) for dichotomous outcomes and continuous outcomes, respectively. We used GRADE to assess the certainty of evidence for prespecified outcomes. We included six new studies involving 450 participants, along with 15 studies involving 1737 participants from the 2018 review, for a total of 21 studies with 2187 participants. The studies ranged from two to 26 weeks in duration. Sample sizes ranged from 18 to 339 participants. Participants' mean age ranged from 34 to 61 years, and the proportion of women ranged from 0% to 90%. Five studies included participants with central neuropathic pain, 14 studies included participants with peripheral neuropathic pain, and two studies included both types. Seven studies administered tetrahydrocannabinol (THC)-dominant medicines; nine studies, balanced THC and cannabidiol (CBD) medicines; and five studies, CBD-dominant medicines. Twenty studies compared cannabis-based medicine to placebo, and one study's comparator was dihydrocodeine. We judged the overall risk of bias to be low in six studies, unclear in 10 studies, and high in five studies. THC-dominant medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD 0.14, 95% CI -0.07 to 0.37; 7 studies, 534 participants), PGIC rating of 'much' or 'very much' improved (RD 0.17, 95% CI -0.24 to 0.58; 2 studies, 72 participants), withdrawals due to adverse events (RD 0.03, 95% CI -0.02 to 0.08; 6 studies, 511 participants), serious adverse events (RD 0.02, 95% CI -0.01 to 0.06; 7 studies, 537 participants), pain relief of at least 30% (RD 0.16, 95% CI -0.08 to 0.40; 7 studies, 566 participants), and psychiatric disorder-related adverse events (RD 0.01, 95% CI -0.01 to 0.03; 4 studies, 368 participants), all with very low-certainty evidence. They may increase nervous system adverse events (RD 0.25, 95% CI 0.14 to 0.37; 5 studies, 439 participants; low-certainty evidence). THC/CBD-balanced medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD 0.04, 95% CI 0.00 to 0.08; 8 studies, 746 participants) and serious adverse events (RD 0.01, 95% CI -0.02 to 0.03; 11 studies, 1449 participants), both with very low-certainty evidence. The evidence is very uncertain about the effect on nervous system-related (RD 0.39, 95% CI 0.23 to 0.55; 11 studies, 1445 participants) and psychiatric disorder-related adverse events (RD 0.08, 95% CI 0.03 to 0.13; 9 studies, 1375 participants), both very low-certainty evidence. They may increase PGIC ratings of 'much' or 'very much' improved (RD 0.07, 95% CI 0.02 to 0.11; 7 studies, 1145 participants), pain relief of at least 30% (RD 0.07, 95% CI 0.02 to 0.12; 10 studies, 1285 participants), and withdrawals due to adverse events (RD 0.05, 95% CI 0.02 to 0.09; 11 studies, 1449 participants), all with low-certainty evidence, though these effects were not clinically relevant. CBD-dominant medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD -0.08, 95% CI -0.20 to 0.05; 5 studies, 208 participants; very low-certainty evidence). They may increase or decrease PGIC ratings of 'much' or 'very much' improved (RD -0.03, 95% CI -0.22 to 0.16; 2 studies, 79 participants), withdrawals due to adverse events (RD 0.02, 95% CI -0.03 to 0.06; 5 studies, 213 participants), serious adverse events (RD 0.02, 95% CI -0.03 to 0.06; 5 studies, 213 participants), pain relief of at least 30% (RD -0.04, 95% CI -0.17 to 0.09; 5 studies, 218 participants), nervous system-related adverse events (RD -0.03, 95% CI -0.10 to 0.03; 5 studies, 208 participants), and psychiatric disorder-related adverse events (RD -0.01, 95% CI -0.06 to 0.04; 5 studies, 208 participants), all with low-certainty evidence. There is no clear evidence for an effect of THC-dominant medicines on pain relief of 50% or greater, PGIC ratings of 'much' or 'very much' improved, withdrawals due to adverse events, and serious adverse events (very low-certainty evidence). There is no clear evidence for an effect of THC/CBD-balanced medicines on pain relief of 50% or greater and serious adverse events (very low-certainty evidence). They may increase PGIC ratings of 'much' or 'very much' improved, and withdrawals due to adverse events (low-certainty evidence). There is no clear evidence for an effect of CBD-dominant medicines on pain relief of 50% or greater (very low-certainty evidence). They may increase or decrease PGIC ratings of 'much' or 'very much' improved, serious adverse events, and withdrawals due to adverse events (low-certainty evidence). No funding. DOI 2018 review: 10.1002/14651858.CD012182.pub2.",
+      "journal": "The Cochrane database of systematic reviews",
+      "publication_year": 2026,
+      "authors": [
+        "Gülay Ateş",
+        "Patrick Welsch",
+        "Petra Klose",
+        "Tudor Phillips",
+        "Britta Lambers",
+        "Winfried Häuser",
+        "Lukas Radbruch"
+      ],
+      "doi": "10.1002/14651858.CD012182",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Randomized Controlled Trials as Topic",
+        "Neuralgia",
+        "Chronic Pain",
+        "Medical Marijuana",
+        "Adult",
+        "Cannabinoids",
+        "Dronabinol",
+        "Bias",
+        "Cannabidiol"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41548880/"
+    },
+    {
+      "pmid": "30522140",
+      "pmcid": null,
+      "title": "Neuropathic Pain.",
+      "abstract": "Neuropathic pain management is challenging, and typically requires a multifaceted approach. There are several treatment options, both pharmacologic and nonpharmacologic. Of the available pharmacologic agents, those with the strongest supporting evidence include tricyclic antidepressants, serotonin-norepinephrine reuptake inhibitors, and certain antiseizure agents. There is emerging evidence for the use of cannabinoids, but conclusive studies are not available. Nonpharmacologic therapies that have been utilized in the management of neuropathic pain include acupuncture, massage therapy, and reflexology. Despite their use as adjunctive therapies in clinical practice, the current evidence supporting their use is not strong. For the management of neuropathic pain, combination therapies are generally employed. Additional studies for emerging therapies are still needed.",
+      "journal": "Seminars in neurology",
+      "publication_year": 2018,
+      "authors": [
+        "Amanda Macone",
+        "James A D Otis"
+      ],
+      "doi": "10.1055/s-0038-1673679",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Acupuncture Therapy",
+        "Analgesics",
+        "Humans",
+        "Massage",
+        "Neuralgia",
+        "Pain Management"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30522140/"
+    },
+    {
+      "pmid": "33238607",
+      "pmcid": "PMC6430597",
+      "title": "Cannabidiol for Pain Treatment: Focus on Pharmacology and Mechanism of Action.",
+      "abstract": "Cannabis has a long history of medical use. Although there are many cannabinoids present in cannabis, Δ9tetrahydrocannabinol (Δ9-THC) and cannabidiol (CBD) are the two components found in the highest concentrations. CBD itself does not produce typical behavioral cannabimimetic effects and was thought not to be responsible for psychotropic effects of cannabis. Numerous anecdotal findings testify to the therapeutic effects of CBD, which in some cases were further supported by research findings. However, data regarding CBD's mechanism of action and therapeutic potential are abundant and omnifarious. Therefore, we review the basic research regarding molecular mechanism of CBD's action with particular focus on its analgesic potential. Moreover, this article describes the detailed analgesic and anti-inflammatory effects of CBD in various models, including neuropathic pain, inflammatory pain, osteoarthritis and others. The dose and route of the administration-dependent effect of CBD, on the reduction in pain, hyperalgesia or allodynia, as well as the production of pro and anti-inflammatory cytokines, were described depending on the disease model. The clinical applications of CBD-containing drugs are also mentioned. The data presented herein unravel what is known about CBD's pharmacodynamics and analgesic effects to provide the reader with current state-of-art knowledge regarding CBD's action and future perspectives for research.",
+      "journal": "International journal of molecular sciences",
+      "publication_year": 2020,
+      "authors": [
+        "Jakub Mlost",
+        "Marta Bryk",
+        "Katarzyna Starowicz"
+      ],
+      "doi": "10.1016/j.yebeh.2018.07.027",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Analgesics",
+        "Cannabidiol",
+        "Cannabinoids",
+        "Dronabinol",
+        "Humans",
+        "Hyperalgesia",
+        "Neuralgia",
+        "Pain Management"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33238607/"
     }
   ],
   "evidence_items": [
     {
       "paper": {
-        "pmid": "MOCK-CANNABIS-001",
-        "pmcid": null,
-        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Cannabinoids for chronic neuropathic pain systematic review",
-        "abstract": "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events.",
-        "journal": "VeritasClin Mock Evidence",
-        "publication_year": 2021,
+        "pmid": "41548880",
+        "pmcid": "PMC12812441",
+        "title": "Cannabis-based medicines for chronic neuropathic pain in adults.",
+        "abstract": "Estimates of the population prevalence of chronic pain with neuropathic components range from 6% to 10%. Current pharmacological treatments for neuropathic pain help only a minority. New treatments are needed. Cannabis is increasingly promoted in the media as a treatment for chronic pain. This is an update of a review first published in 2018. To assess the benefits and harms of cannabis-based medicines (herbal, plant-based, synthetic) compared to placebo or conventional drugs for chronic neuropathic pain conditions in adults. We searched CENTRAL, MEDLINE, Embase, and three trial registries, together with reference checking. The latest search date was 29 January 2025. We selected randomised, double-blind controlled trials of medical cannabis, plant-derived and synthetic cannabinoids, against placebo or any other active treatment for chronic neuropathic pain conditions in adults, with a treatment duration of at least two weeks. We excluded studies whose double-blind duration was less than two weeks and studies which did not explicitly state that the pain was of a neuropathic nature. Critical outcomes were the number of participants reporting pain relief of at least 50%, a Patient Global Impression of Change (PGIC) rating of 'much' or 'very much' improved, serious adverse events, and withdrawals due to adverse events. We assessed the risk of bias (RoB) for seven outcomes reported in three summary of findings tables using the Cochrane RoB 1 tool. We synthesised results for each outcome using meta-analysis with a random-effects model by calculating absolute risk differences (RD) and standardised mean differences (SMD) with 95% confidence intervals (CI) for dichotomous outcomes and continuous outcomes, respectively. We used GRADE to assess the certainty of evidence for prespecified outcomes. We included six new studies involving 450 participants, along with 15 studies involving 1737 participants from the 2018 review, for a total of 21 studies with 2187 participants. The studies ranged from two to 26 weeks in duration. Sample sizes ranged from 18 to 339 participants. Participants' mean age ranged from 34 to 61 years, and the proportion of women ranged from 0% to 90%. Five studies included participants with central neuropathic pain, 14 studies included participants with peripheral neuropathic pain, and two studies included both types. Seven studies administered tetrahydrocannabinol (THC)-dominant medicines; nine studies, balanced THC and cannabidiol (CBD) medicines; and five studies, CBD-dominant medicines. Twenty studies compared cannabis-based medicine to placebo, and one study's comparator was dihydrocodeine. We judged the overall risk of bias to be low in six studies, unclear in 10 studies, and high in five studies. THC-dominant medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD 0.14, 95% CI -0.07 to 0.37; 7 studies, 534 participants), PGIC rating of 'much' or 'very much' improved (RD 0.17, 95% CI -0.24 to 0.58; 2 studies, 72 participants), withdrawals due to adverse events (RD 0.03, 95% CI -0.02 to 0.08; 6 studies, 511 participants), serious adverse events (RD 0.02, 95% CI -0.01 to 0.06; 7 studies, 537 participants), pain relief of at least 30% (RD 0.16, 95% CI -0.08 to 0.40; 7 studies, 566 participants), and psychiatric disorder-related adverse events (RD 0.01, 95% CI -0.01 to 0.03; 4 studies, 368 participants), all with very low-certainty evidence. They may increase nervous system adverse events (RD 0.25, 95% CI 0.14 to 0.37; 5 studies, 439 participants; low-certainty evidence). THC/CBD-balanced medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD 0.04, 95% CI 0.00 to 0.08; 8 studies, 746 participants) and serious adverse events (RD 0.01, 95% CI -0.02 to 0.03; 11 studies, 1449 participants), both with very low-certainty evidence. The evidence is very uncertain about the effect on nervous system-related (RD 0.39, 95% CI 0.23 to 0.55; 11 studies, 1445 participants) and psychiatric disorder-related adverse events (RD 0.08, 95% CI 0.03 to 0.13; 9 studies, 1375 participants), both very low-certainty evidence. They may increase PGIC ratings of 'much' or 'very much' improved (RD 0.07, 95% CI 0.02 to 0.11; 7 studies, 1145 participants), pain relief of at least 30% (RD 0.07, 95% CI 0.02 to 0.12; 10 studies, 1285 participants), and withdrawals due to adverse events (RD 0.05, 95% CI 0.02 to 0.09; 11 studies, 1449 participants), all with low-certainty evidence, though these effects were not clinically relevant. CBD-dominant medicines versus placebo. There is no clear evidence for an effect on pain relief of at least 50% (RD -0.08, 95% CI -0.20 to 0.05; 5 studies, 208 participants; very low-certainty evidence). They may increase or decrease PGIC ratings of 'much' or 'very much' improved (RD -0.03, 95% CI -0.22 to 0.16; 2 studies, 79 participants), withdrawals due to adverse events (RD 0.02, 95% CI -0.03 to 0.06; 5 studies, 213 participants), serious adverse events (RD 0.02, 95% CI -0.03 to 0.06; 5 studies, 213 participants), pain relief of at least 30% (RD -0.04, 95% CI -0.17 to 0.09; 5 studies, 218 participants), nervous system-related adverse events (RD -0.03, 95% CI -0.10 to 0.03; 5 studies, 208 participants), and psychiatric disorder-related adverse events (RD -0.01, 95% CI -0.06 to 0.04; 5 studies, 208 participants), all with low-certainty evidence. There is no clear evidence for an effect of THC-dominant medicines on pain relief of 50% or greater, PGIC ratings of 'much' or 'very much' improved, withdrawals due to adverse events, and serious adverse events (very low-certainty evidence). There is no clear evidence for an effect of THC/CBD-balanced medicines on pain relief of 50% or greater and serious adverse events (very low-certainty evidence). They may increase PGIC ratings of 'much' or 'very much' improved, and withdrawals due to adverse events (low-certainty evidence). There is no clear evidence for an effect of CBD-dominant medicines on pain relief of 50% or greater (very low-certainty evidence). They may increase or decrease PGIC ratings of 'much' or 'very much' improved, serious adverse events, and withdrawals due to adverse events (low-certainty evidence). No funding. DOI 2018 review: 10.1002/14651858.CD012182.pub2.",
+        "journal": "The Cochrane database of systematic reviews",
+        "publication_year": 2026,
         "authors": [
-          "Mock Evidence Team"
+          "Gülay Ateş",
+          "Patrick Welsch",
+          "Petra Klose",
+          "Tudor Phillips",
+          "Britta Lambers",
+          "Winfried Häuser",
+          "Lukas Radbruch"
         ],
-        "doi": null,
+        "doi": "10.1002/14651858.CD012182",
         "publication_types": [
+          "Journal Article",
+          "Systematic Review",
+          "Meta-Analysis"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Randomized Controlled Trials as Topic",
+          "Neuralgia",
+          "Chronic Pain",
+          "Medical Marijuana",
+          "Adult",
+          "Cannabinoids",
+          "Dronabinol",
+          "Bias",
+          "Cannabidiol"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41548880/"
+      },
+      "relevance_score": 93.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (7), abstract availability, and publication year.",
+      "key_findings": [
+        "Estimates of the population prevalence of chronic pain with neuropathic components range from 6% to 10%.",
+        "Current pharmacological treatments for neuropathic pain help only a minority."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "34802112",
+        "pmcid": "PMC7496774",
+        "title": "Cannabis-Based Medicines and Medical Cannabis for Chronic Neuropathic Pain.",
+        "abstract": "Neuropathic pain represents a broad category of pain syndromes that include a wide variety of peripheral and central disorders. The overall prevalence of neuropathic pain in the general population is reported to be between 7 and 10%. Management of neuropathic pain presents an unmet clinical need, with less than 50% of patients achieving substantial pain relief with medications currently recommended such as pregabalin, gabapentin, duloxetine and various tricyclic antidepressants. It has been suggested that cannabis-based medicines (CbMs) and medical cannabis (MC) may be a treatment option for those with chronic neuropathic pain. CbMs/MC are available in different forms: licensed medications or medical products (plant-derived and/or synthetic products such as tetrahydrocannabinol or cannabidiol); magistral preparations of cannabis plant derivatives with defined molecular content such as dronabinol (tetrahydrocannabinol); and herbal cannabis with a defined content of tetrahydrocannabinol and/or cannabidiol, together with other active ingredients (phytocannabinoids other than cannabidiol/tetrahydrocannabinol, terpenes and flavonoids). The availability of different types of CbMs/MC varies between countries worldwide. Systematic reviews of available randomised controlled trials have stated low-quality evidence for CbMs and MC for chronic neuropathic pain. Depending on the studies included in the various quantitative syntheses, authors have reached divergent conclusions on the efficacy of CbMs/MC for chronic neuropathic pain (from not effective to a clinically meaningful benefit). Clinically relevant side effects of CbMs/MC, especially for central nervous system and psychiatric disorders, have been reported by some systematic reviews. Recommendations for the use of CbMs/MC for chronic neuropathic pain by various medical associations also differ, from negative recommendations, no recommendation possible, recommended as third-line therapy, or recommended as an alternative in selected cases failing standard therapies within a multimodal concept. After reading this paper, readers are invited to formulate their own conclusions regarding the potential benefits and harms of CbMs/MC for the treatment of chronic neuropathic pain.",
+        "journal": "CNS drugs",
+        "publication_year": 2022,
+        "authors": [
+          "Frank Petzke",
+          "Thomas Tölle",
+          "Mary-Ann Fitzcharles",
+          "Winfried Häuser"
+        ],
+        "doi": "10.1002/ejp.1605",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Medical Marijuana",
+          "Neuralgia",
+          "Pain Management"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34802112/"
+      },
+      "relevance_score": 85.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Neuropathic pain represents a broad category of pain syndromes that include a wide variety of peripheral and central disorders.",
+        "The overall prevalence of neuropathic pain in the general population is reported to be between 7 and 10%."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "35510826",
+        "pmcid": "PMC9069991",
+        "title": "Cannabis and cannabinoids for symptomatic treatment for people with multiple sclerosis.",
+        "abstract": "Spasticity and chronic neuropathic pain are common and serious symptoms in people with multiple sclerosis (MS). These symptoms increase with disease progression and lead to worsening disability, impaired activities of daily living and quality of life. Anti-spasticity medications and analgesics are of limited benefit or poorly tolerated. Cannabinoids may reduce spasticity and pain in people with MS. Demand for symptomatic treatment with cannabinoids is high. A thorough understanding of the current body of evidence regarding benefits and harms of these drugs is required. To assess benefit and harms of cannabinoids, including synthetic, or herbal and plant-derived cannabinoids, for reducing symptoms for adults with MS. We searched the following databases from inception to December 2021: MEDLINE, Embase, the Cochrane Central Register of Controlled Trials (CENTRAL, the Cochrane Library), CINAHL (EBSCO host), LILACS, the Physiotherapy Evidence Database (PEDro), the World Health Organisation International Clinical Trials Registry Platform, the US National Institutes of Health clinical trial register, the European Union Clinical Trials Register, the International Association for Cannabinoid Medicines databank. We hand searched citation lists of included studies and relevant reviews. We included randomised parallel or cross-over trials (RCTs) evaluating any cannabinoid (including herbal Cannabis, Cannabis flowers, plant-based cannabinoids, or synthetic cannabinoids) irrespective of dose, route, frequency, or duration of use for adults with MS. We followed standard Cochrane methodology. To assess bias in included studies, we used the Cochrane Risk of bias 2 tool for parallel RCTs and crossover trials. We rated the certainty of evidence using the GRADE approach for the following outcomes: reduction of 30% in the spasticity Numeric Rating Scale, pain relief of 50% or greater in the Numeric Rating Scale-Pain Intensity, much or very much improvement in the Patient Global Impression of Change (PGIC), Health-Related Quality of Life (HRQoL), withdrawals due to adverse events (AEs) (tolerability), serious adverse events (SAEs), nervous system disorders, psychiatric disorders, physical dependence. We included 25 RCTs with 3763 participants of whom 2290 received cannabinoids. Age ranged from 18 to 60 years, and between 50% and 88% participants across the studies were female.  The included studies were 3 to 48 weeks long and compared nabiximols, an oromucosal spray with a plant derived equal (1:1) combination of tetrahydrocannabinol (THC) and cannabidiol (CBD) (13 studies), synthetic cannabinoids mimicking THC (7 studies), an oral THC extract of Cannabis sativa (2 studies), inhaled herbal Cannabis (1 study) against placebo. One study compared dronabinol, THC extract of Cannabis sativa and placebo, one compared inhaled herbal Cannabis, dronabinol and placebo. We identified eight ongoing studies. Critical outcomes • Spasticity: nabiximols probably increases the number of people who report an important reduction of perceived severity of spasticity compared with placebo (odds ratio (OR) 2.51, 95% confidence interval (CI) 1.56 to 4.04; 5 RCTs, 1143 participants; I2 = 67%; moderate-certainty evidence). The absolute effect was 216 more people (95% CI 99 more to 332 more) per 1000 reporting benefit with cannabinoids than with placebo. • Chronic neuropathic pain: we found only one small trial that measured the number of participants reporting substantial pain relief with a synthetic cannabinoid compared with placebo (OR 4.23, 95% CI 1.11 to 16.17; 1 study, 48 participants; very low-certainty evidence). We are uncertain whether cannabinoids reduce chronic neuropathic pain intensity. • Treatment discontinuation due to AEs: cannabinoids may increase slightly the number of participants who discontinue treatment compared with placebo (OR 2.41, 95% CI 1.51 to 3.84; 21 studies, 3110 participants; I² = 17%; low-certainty evidence); the absolute effect is 39 more people (95% CI 15 more to 76 more) per 1000 people. Important outcomes • PGIC: cannabinoids probably increase the number of people who report 'very much' or 'much' improvement in health status compared with placebo (OR 1.80, 95% CI 1.37 to 2.36; 8 studies, 1215 participants; I² = 0%; moderate-certainty evidence). The absolute effect is 113 more people (95% CI 57 more to 175 more) per 1000 people reporting improvement. • HRQoL: cannabinoids may have little to no effect on HRQoL (SMD -0.08, 95% CI -0.17 to 0.02; 8 studies, 1942 participants; I2 = 0%; low-certainty evidence); • SAEs: cannabinoids may result in little to no difference in the number of participants who have SAEs compared with placebo (OR 1.38, 95% CI 0.96 to 1.99; 20 studies, 3124 participants; I² = 0%; low-certainty evidence); • AEs of the nervous system: cannabinoids may increase nervous system disorders compared with placebo (OR 2.61, 95% CI 1.53 to 4.44; 7 studies, 1154 participants; I² = 63%; low-certainty evidence); • Psychiatric disorders: cannabinoids may increase psychiatric disorders compared with placebo (OR 1.94, 95% CI 1.31 to 2.88; 6 studies, 1122 participants; I² = 0%; low-certainty evidence); • Drug tolerance: the evidence is very uncertain about the effect of cannabinoids on drug tolerance (OR 3.07, 95% CI 0.12 to 75.95; 2 studies, 458 participants; very low-certainty evidence). Compared with placebo, nabiximols probably reduces the severity of spasticity in the short-term in people with MS. We are uncertain about the effect on chronic neurological pain and health-related quality of life. Cannabinoids may increase slightly treatment discontinuation due to AEs, nervous system and psychiatric disorders compared with placebo. We are uncertain about the effect on drug tolerance. The overall certainty of evidence is limited by short-term duration of the included studies.",
+        "journal": "The Cochrane database of systematic reviews",
+        "publication_year": 2022,
+        "authors": [
+          "Graziella Filippini",
+          "Silvia Minozzi",
+          "Francesca Borrelli",
+          "Michela Cinquini",
+          "Kerry Dwan"
+        ],
+        "doi": "10.1002/14651858.CD013444",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
           "Systematic Review"
         ],
         "mesh_terms": [
+          "Activities of Daily Living",
+          "Adolescent",
+          "Adult",
+          "Analgesics",
+          "Cannabinoids",
+          "Cannabis",
+          "Chronic Pain",
+          "Dronabinol",
+          "Female",
+          "Humans",
+          "Male",
+          "Middle Aged",
+          "Multiple Sclerosis",
           "Neuralgia",
-          "Cannabinoids"
+          "Plant Extracts",
+          "Quality of Life",
+          "Young Adult"
         ],
-        "url": "mock://cannabis-neuropathic-pain-001"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35510826/"
       },
-      "relevance_score": 80.0,
+      "relevance_score": 85.0,
       "evidence_level": "high",
       "study_type": "Systematic Review",
-      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (5), abstract availability, and publication year.",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (6), abstract availability, and publication year.",
       "key_findings": [
-        "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events."
+        "Spasticity and chronic neuropathic pain are common and serious symptoms in people with multiple sclerosis (MS).",
+        "These symptoms increase with disease progression and lead to worsening disability, impaired activities of daily living and quality of life."
       ],
       "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "29513392",
+        "pmcid": "PMC6494210",
+        "title": "Cannabis-based medicines for chronic neuropathic pain in adults.",
+        "abstract": "This review is one of a series on drugs used to treat chronic neuropathic pain. Estimates of the population prevalence of chronic pain with neuropathic components range between 6% and 10%. Current pharmacological treatment options for neuropathic pain afford substantial benefit for only a few people, often with adverse effects that outweigh the benefits. There is a need to explore other treatment options, with different mechanisms of action for treatment of conditions with chronic neuropathic pain. Cannabis has been used for millennia to reduce pain. Herbal cannabis is currently strongly promoted by some patients and their advocates to treat any type of chronic pain. To assess the efficacy, tolerability, and safety of cannabis-based medicines (herbal, plant-derived, synthetic) compared to placebo or conventional drugs for conditions with chronic neuropathic pain in adults. In November 2017 we searched CENTRAL, MEDLINE, Embase, and two trials registries for published and ongoing trials, and examined the reference lists of reviewed articles. We selected randomised, double-blind controlled trials of medical cannabis, plant-derived and synthetic cannabis-based medicines against placebo or any other active treatment of conditions with chronic neuropathic pain in adults, with a treatment duration of at least two weeks and at least 10 participants per treatment arm. Three review authors independently extracted data of study characteristics and outcomes of efficacy, tolerability and safety, examined issues of study quality, and assessed risk of bias. We resolved discrepancies by discussion. For efficacy, we calculated the number needed to treat for an additional beneficial outcome (NNTB) for pain relief of 30% and 50% or greater, patient's global impression to be much or very much improved, dropout rates due to lack of efficacy, and the standardised mean differences for pain intensity, sleep problems, health-related quality of life (HRQoL), and psychological distress. For tolerability, we calculated number needed to treat for an additional harmful outcome (NNTH) for withdrawal due to adverse events and specific adverse events, nervous system disorders and psychiatric disorders. For safety, we calculated NNTH for serious adverse events. Meta-analysis was undertaken using a random-effects model. We assessed the quality of evidence using GRADE and created a 'Summary of findings' table. We included 16 studies with 1750 participants. The studies were 2 to 26 weeks long and compared an oromucosal spray with a plant-derived combination of tetrahydrocannabinol (THC) and cannabidiol (CBD) (10 studies), a synthetic cannabinoid mimicking THC (nabilone) (two studies), inhaled herbal cannabis (two studies) and plant-derived THC (dronabinol) (two studies) against placebo (15 studies) and an analgesic (dihydrocodeine) (one study). We used the Cochrane 'Risk of bias' tool to assess study quality. We defined studies with zero to two unclear or high risks of bias judgements to be high-quality studies, with three to five unclear or high risks of bias to be moderate-quality studies, and with six to eight unclear or high risks of bias to be low-quality studies. Study quality was low in two studies, moderate in 12 studies and high in two studies. Nine studies were at high risk of bias for study size. We rated the quality of the evidence according to GRADE as very low to moderate.Primary outcomesCannabis-based medicines may increase the number of people achieving 50% or greater pain relief compared with placebo (21% versus 17%; risk difference (RD) 0.05 (95% confidence interval (CI) 0.00 to 0.09); NNTB 20 (95% CI 11 to 100); 1001 participants, eight studies, low-quality evidence). We rated the evidence for improvement in Patient Global Impression of Change (PGIC) with cannabis to be of very low quality (26% versus 21%;RD 0.09 (95% CI 0.01 to 0.17); NNTB 11 (95% CI 6 to 100); 1092 participants, six studies). More participants withdrew from the studies due to adverse events with cannabis-based medicines (10% of participants) than with placebo (5% of participants) (RD 0.04 (95% CI 0.02 to 0.07); NNTH 25 (95% CI 16 to 50); 1848 participants, 13 studies, moderate-quality evidence). We did not have enough evidence to determine if cannabis-based medicines increase the frequency of serious adverse events compared with placebo (RD 0.01 (95% CI -0.01 to 0.03); 1876 participants, 13 studies, low-quality evidence).Secondary outcomesCannabis-based medicines probably increase the number of people achieving pain relief of 30% or greater compared with placebo (39% versus 33%; RD 0.09 (95% CI 0.03 to 0.15); NNTB 11 (95% CI 7 to 33); 1586 participants, 10 studies, moderate quality evidence). Cannabis-based medicines may increase nervous system adverse events compared with placebo (61% versus 29%; RD 0.38 (95% CI 0.18 to 0.58); NNTH 3 (95% CI 2 to 6); 1304 participants, nine studies, low-quality evidence). Psychiatric disorders occurred in 17% of participants using cannabis-based medicines and in 5% using placebo (RD 0.10 (95% CI 0.06 to 0.15); NNTH 10 (95% CI 7 to 16); 1314 participants, nine studies, low-quality evidence).We found no information about long-term risks in the studies analysed.Subgroup analysesWe are uncertain whether herbal cannabis reduces mean pain intensity (very low-quality evidence). Herbal cannabis and placebo did not differ in tolerability (very low-quality evidence). The potential benefits of cannabis-based medicine (herbal cannabis, plant-derived or synthetic THC, THC/CBD oromucosal spray) in chronic neuropathic pain might be outweighed by their potential harms. The quality of evidence for pain relief outcomes reflects the exclusion of participants with a history of substance abuse and other significant comorbidities from the studies, together with their small sample sizes.",
+        "journal": "The Cochrane database of systematic reviews",
+        "publication_year": 2018,
+        "authors": [
+          "Martin Mücke",
+          "Tudor Phillips",
+          "Lukas Radbruch",
+          "Frank Petzke",
+          "Winfried Häuser"
+        ],
+        "doi": "10.1002/14651858.CD012182",
+        "publication_types": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, Non-U.S. Gov't",
+          "Systematic Review"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Analgesics, Non-Narcotic",
+          "Analgesics, Opioid",
+          "Cannabidiol",
+          "Chronic Pain",
+          "Codeine",
+          "Dronabinol",
+          "Humans",
+          "Medical Marijuana",
+          "Neuralgia",
+          "Numbers Needed To Treat",
+          "Randomized Controlled Trials as Topic"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29513392/"
+      },
+      "relevance_score": 81.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "This review is one of a series on drugs used to treat chronic neuropathic pain.",
+        "Estimates of the population prevalence of chronic pain with neuropathic components range between 6% and 10%."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "39385859",
+        "pmcid": "PMC8347233",
+        "title": "Neuropharmacology of Neuropathic Pain: A Systematic Review.",
+        "abstract": "Neuropathic pain, a debilitating condition, remains challenging to manage effectively. An insight into neuropharmacological mechanisms is critical for optimizing treatment strategies. This systematic review aims to evaluate the role of neuropharmacological agents based on their efficacy, involved neurotransmitters, and receptors. A manual literature search was undertaken in PubMed including Medline, Cochrane Library, Google Scholar, Plos One, Science Direct, and clinicaltrials.gov from 2013 until 2023. Out of the 13 included studies, seven evaluated the role of gabapentinoids. Two main drugs from this group, gabapentin and pregabalin, function by binding voltage-gated calcium channels, lowering neuronal hyperexcitability and pain signal transmission, thereby relieving neuropathic pain. Four of the pooled studies reported the use of tricyclic antidepressants (TCAs) including amitriptyline and nortriptyline which work by blocking the reuptake of norepinephrine and serotonin, their increased concentration is thought to be central to their analgesic effect. Three articles assessed the use of serotonin-norepinephrine reuptake inhibitors (SNRIs) and reported them as effective as the TCAs in managing neuropathic pain. They work by augmenting serotonin and norepinephrine. Three studies focused on the use of selective serotonin reuptake inhibitors (SSRIs), modulating their effect by increasing serotonin levels; however, they were reported as not a highly effective treatment option for neuropathic pain. One of the studies outlined the use of cannabinoids for neuropathic pain by binding to cannabinoid receptors with only mild adverse effects. It is concluded that gabapentinoids, TCAs, and SNRIs were reported as the most effective therapy for neuropathic pain; however, for trigeminal neuralgia, anticonvulsants like carbamazepine were considered the most effective. Opioids were considered second-line drugs for neuropathic pain as they come with adverse effects and a risk of dependence. Ongoing research is exploring novel drugs like ion channels and agents modulating pain pathways for neuropathic pain management. Our review hopes to inspire further research into patient stratification by their physiology, aiding quicker and more accurate management of neuropathic pain while minimizing inadvertent side effects.",
+        "journal": "Cureus",
+        "publication_year": 2024,
+        "authors": [
+          "Muhammad Umar Mian",
+          "Mishal Afzal",
+          "Aqsa A Butt",
+          "Muniba Ijaz",
+          "Kashaf Khalil",
+          "Maryam Abbasi",
+          "Marhaba Fatima",
+          "Mariam Asif",
+          "Saad Nadeem",
+          "Shivangi Jha",
+          "Binay K Panjiyar"
+        ],
+        "doi": "10.7759/cureus.69028",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39385859/"
+      },
+      "relevance_score": 79.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Neuropathic pain, a debilitating condition, remains challenging to manage effectively.",
+        "An insight into neuropharmacological mechanisms is critical for optimizing treatment strategies."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "39029988",
+        "pmcid": null,
+        "title": "Cannabidiol and pain.",
+        "abstract": "Chronic pain presents significant personal, psychological, and socioeconomic hurdles, impacting over 30% of adults worldwide and substantially contributing to disability. Unfortunately, current pharmacotherapy often proves inadequate, leaving fewer than 70% of patients with relief. This shortfall has sparked a drive to seek alternative treatments offering superior safety and efficacy profiles. Cannabinoid-based pharmaceuticals, notably cannabidiol (CBD), hold promise in pain management, driven by their natural origins, versatility, and reduced risk of addiction. As we navigate the opioid crisis, ongoing research plunges into CBD's therapeutic potential, buoyed by animal studies revealing its pain-relieving prowess through various system tweaks. However, the efficacy of cannabis in chronic pain management remains a contentious and stigmatized issue. The International Association for the Study of Pain (IASP) presently refrains from endorsing cannabinoid use for pain relief. Nevertheless, evidence indicates their potential in alleviating cancer-related, neuropathic, arthritis, and musculoskeletal pain, necessitating further investigation. Crucially, our comprehension of CBD's role in pain management is a journey still unfolding, with animal studies illustrating its analgesic effects through interactions with the endocannabinoid, inflammatory, and nociceptive systems. As the plot thickens, it's clear: the saga of chronic pain and CBD's potential offers a compelling narrative ripe for further exploration and understanding.",
+        "journal": "International review of neurobiology",
+        "publication_year": 2024,
+        "authors": [
+          "Glauce Crivelaro Nascimento",
+          "Daniela Escobar-Espinal",
+          "Gabriela Gonçalves Bálico",
+          "Nicole Rodrigues Silva",
+          "Elaine Del-Bel"
+        ],
+        "doi": "10.1016/bs.irn.2024.04.016",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Cannabidiol",
+          "Humans",
+          "Animals",
+          "Chronic Pain",
+          "Analgesics",
+          "Pain Management"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39029988/"
+      },
+      "relevance_score": 52.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Chronic pain presents significant personal, psychological, and socioeconomic hurdles, impacting over 30% of adults worldwide and substantially contributing to disability.",
+        "Unfortunately, current pharmacotherapy often proves inadequate, leaving fewer than 70% of patients with relief."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "33238607",
+        "pmcid": "PMC6430597",
+        "title": "Cannabidiol for Pain Treatment: Focus on Pharmacology and Mechanism of Action.",
+        "abstract": "Cannabis has a long history of medical use. Although there are many cannabinoids present in cannabis, Δ9tetrahydrocannabinol (Δ9-THC) and cannabidiol (CBD) are the two components found in the highest concentrations. CBD itself does not produce typical behavioral cannabimimetic effects and was thought not to be responsible for psychotropic effects of cannabis. Numerous anecdotal findings testify to the therapeutic effects of CBD, which in some cases were further supported by research findings. However, data regarding CBD's mechanism of action and therapeutic potential are abundant and omnifarious. Therefore, we review the basic research regarding molecular mechanism of CBD's action with particular focus on its analgesic potential. Moreover, this article describes the detailed analgesic and anti-inflammatory effects of CBD in various models, including neuropathic pain, inflammatory pain, osteoarthritis and others. The dose and route of the administration-dependent effect of CBD, on the reduction in pain, hyperalgesia or allodynia, as well as the production of pro and anti-inflammatory cytokines, were described depending on the disease model. The clinical applications of CBD-containing drugs are also mentioned. The data presented herein unravel what is known about CBD's pharmacodynamics and analgesic effects to provide the reader with current state-of-art knowledge regarding CBD's action and future perspectives for research.",
+        "journal": "International journal of molecular sciences",
+        "publication_year": 2020,
+        "authors": [
+          "Jakub Mlost",
+          "Marta Bryk",
+          "Katarzyna Starowicz"
+        ],
+        "doi": "10.1016/j.yebeh.2018.07.027",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Analgesics",
+          "Cannabidiol",
+          "Cannabinoids",
+          "Dronabinol",
+          "Humans",
+          "Hyperalgesia",
+          "Neuralgia",
+          "Pain Management"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33238607/"
+      },
+      "relevance_score": 48.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Cannabis has a long history of medical use.",
+        "Although there are many cannabinoids present in cannabis, Δ9tetrahydrocannabinol (Δ9-THC) and cannabidiol (CBD) are the two components found in the highest concentrations."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "30522140",
+        "pmcid": null,
+        "title": "Neuropathic Pain.",
+        "abstract": "Neuropathic pain management is challenging, and typically requires a multifaceted approach. There are several treatment options, both pharmacologic and nonpharmacologic. Of the available pharmacologic agents, those with the strongest supporting evidence include tricyclic antidepressants, serotonin-norepinephrine reuptake inhibitors, and certain antiseizure agents. There is emerging evidence for the use of cannabinoids, but conclusive studies are not available. Nonpharmacologic therapies that have been utilized in the management of neuropathic pain include acupuncture, massage therapy, and reflexology. Despite their use as adjunctive therapies in clinical practice, the current evidence supporting their use is not strong. For the management of neuropathic pain, combination therapies are generally employed. Additional studies for emerging therapies are still needed.",
+        "journal": "Seminars in neurology",
+        "publication_year": 2018,
+        "authors": [
+          "Amanda Macone",
+          "James A D Otis"
+        ],
+        "doi": "10.1055/s-0038-1673679",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Acupuncture Therapy",
+          "Analgesics",
+          "Humans",
+          "Massage",
+          "Neuralgia",
+          "Pain Management"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30522140/"
+      },
+      "relevance_score": 38.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Neuropathic pain management is challenging, and typically requires a multifaceted approach.",
+        "There are several treatment options, both pharmacologic and nonpharmacologic."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "39445926",
+        "pmcid": null,
+        "title": "Central Neuropathic Pain.",
+        "abstract": "This article provides an approach to the assessment, diagnosis, and treatment of central neuropathic pain. Recent studies of the pathophysiology of central neuropathic pain, including evidence of changes in the expression of voltage-gated sodium channels and N-methyl-d-aspartate (NMDA) receptors, may provide the basis for new therapies. Other areas of current research include the role of cannabinoid-receptor activity and microglial cell activation in various animal models of central neuropathic pain. New observations regarding changes in primary afferent neuronal activity in central neuropathic pain and the preliminary observation that peripheral nerve blocks may relieve pain due to central neuropathic etiologies provide new insights into both the mechanism and treatment of central neuropathic pain. In the patient populations treated by neurologists, central neuropathic pain develops most frequently following spinal cord injury, multiple sclerosis, or stroke. A multimodal, individualized approach to the management of central neuropathic pain is necessary to optimize pain relief and may require multiple treatment trials to achieve the best outcome.",
+        "journal": "Continuum (Minneapolis, Minn.)",
+        "publication_year": 2024,
+        "authors": [
+          "Charles E Argoff"
+        ],
+        "doi": "10.1038/s41572-023-00484-9",
+        "publication_types": [
+          "Journal Article",
+          "Review",
+          "Case Reports"
+        ],
+        "mesh_terms": [
+          "Animals",
+          "Humans",
+          "Neuralgia",
+          "Pain Management"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39445926/"
+      },
+      "relevance_score": 32.0,
+      "evidence_level": "low",
+      "study_type": "Case Report",
+      "rationale": "Ranked by study type (Case Report), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "This article provides an approach to the assessment, diagnosis, and treatment of central neuropathic pain.",
+        "Recent studies of the pathophysiology of central neuropathic pain, including evidence of changes in the expression of voltage-gated sodium channels and N-methyl-d-aspartate (NMDA) receptors, may provide the basis for new therapies."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "38710218",
+        "pmcid": "PMC11148885",
+        "title": "Neuropathic pain in cats: Mechanisms and multimodal management.",
+        "abstract": "Chronic pain is a significant welfare concern in cats, and neuropathic pain, which arises from aberrant processing of sensory signals within the nervous system, is a subcategory of this type of pain. To comprehend this condition and how multimodal pharmacotherapy plays a central role in alleviating discomfort, it is crucial to delve into the anatomy of nociception and pain perception. In addition, there is an intricate interplay between emotional health and chronic pain in cats, and understanding and addressing the emotional factors that contribute to pain perception, and vice versa, is essential for comprehensive care.Clinical approach:Neuropathic pain is suspected if there is abnormal sensation in the area of the distribution of pain, together with a positive response to trial treatment with drugs effective for neuropathic pain. Ideally, this clinical suspicion would be supported by confirmation of a lesion at this neurolocalisation using diagnostic modalities such as MRI and neuroelectrophysiology. Alternatively, there may be a history of known trauma at that site. A variety of therapies, including analgesic, anti-inflammatory and adjuvant drugs, and neuromodulation (eg, TENS or acupuncture), can be employed to address different facets of pain pathways.Aim:This review article, aimed at primary care/ general practitioners, focuses on the identification and management of neuropathic pain in cats. Three case vignettes are included and a structured treatment algorithm is presented to guide veterinarians in tailoring interventions.Evidence base:The review draws on current literature, where available, along with the author's extensive experience and research.",
+        "journal": "Journal of feline medicine and surgery",
+        "publication_year": 2024,
+        "authors": [
+          "Clare Rusbridge"
+        ],
+        "doi": "10.1016/j.lfs.2023.121838",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Cats",
+          "Animals",
+          "Neuralgia",
+          "Cat Diseases",
+          "Pain Management",
+          "Analgesics",
+          "Combined Modality Therapy"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38710218/"
+      },
+      "relevance_score": 25.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [
+        "Chronic pain is a significant welfare concern in cats, and neuropathic pain, which arises from aberrant processing of sensory signals within the nervous system, is a subcategory of this type of pain.",
+        "To comprehend this condition and how multimodal pharmacotherapy plays a central role in alleviating discomfort, it is crucial to delve into the anatomy of nociception and pain perception."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
     }
   ],
   "claim_ledger": [
     {
       "id": "C001",
-      "text": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
-      "claim_type": "limitation",
+      "text": "While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880].",
+      "claim_type": "epidemiology",
       "support_status": "supported",
       "pmids": [
-        "MOCK-CANNABIS-001"
+        "29513392",
+        "41548880"
       ],
       "evidence_level": "high",
       "risk_level": "low",
@@ -93,35 +769,27 @@
     },
     {
       "id": "C002",
-      "text": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
-      "claim_type": "limitation",
+      "text": "Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392].",
+      "claim_type": "prognosis",
       "support_status": "supported",
       "pmids": [
-        "MOCK-CANNABIS-001"
+        "41548880",
+        "35510826",
+        "29513392"
       ],
       "evidence_level": "high",
-      "risk_level": "low",
+      "risk_level": "high",
       "rationale": "Claim has cited support in the loaded Evidence Pack.",
       "limitation_note": null
     },
     {
       "id": "C003",
-      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
-      "claim_type": "diagnosis",
-      "support_status": "unsupported",
-      "pmids": [],
-      "evidence_level": "uncertain",
-      "risk_level": "high",
-      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
-      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
-    },
-    {
-      "id": "C004",
-      "text": "This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001).",
-      "claim_type": "epidemiology",
+      "text": "Research suggests that medical cannabis or cannabinoids may provide some relief for neuropathic pain, but the evidence is often limited or inconsistent [34802112, 35510826].",
+      "claim_type": "limitation",
       "support_status": "supported",
       "pmids": [
-        "MOCK-CANNABIS-001"
+        "34802112",
+        "35510826"
       ],
       "evidence_level": "high",
       "risk_level": "low",
@@ -134,67 +802,83 @@
       "id": "CAU001",
       "claim_id": "C001",
       "supporting_pmids": [
-        "MOCK-CANNABIS-001"
+        "29513392",
+        "41548880"
       ],
       "cautionary_pmids": [
-        "MOCK-CANNABIS-001"
+        "29513392",
+        "41548880"
       ],
-      "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
-      "severity": "medium"
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+      "severity": "low"
     },
     {
       "id": "CAU002",
       "claim_id": "C002",
       "supporting_pmids": [
-        "MOCK-CANNABIS-001"
+        "41548880",
+        "35510826",
+        "29513392"
       ],
       "cautionary_pmids": [
-        "MOCK-CANNABIS-001"
+        "41548880",
+        "35510826",
+        "29513392"
       ],
       "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
-      "severity": "medium"
-    },
-    {
-      "id": "CAU003",
-      "claim_id": "C003",
-      "supporting_pmids": [],
-      "cautionary_pmids": [],
-      "caution_type": "insufficient_data",
-      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
       "severity": "high"
     },
     {
-      "id": "CAU004",
-      "claim_id": "C004",
+      "id": "CAU003",
+      "claim_id": "C002",
       "supporting_pmids": [
-        "MOCK-CANNABIS-001"
+        "41548880",
+        "35510826",
+        "29513392"
       ],
       "cautionary_pmids": [
-        "MOCK-CANNABIS-001"
+        "41548880",
+        "35510826",
+        "29513392"
       ],
-      "caution_type": "safety_signal",
-      "explanation": "Loaded evidence includes safety or adverse-event language relevant to this claim.",
-      "severity": "medium"
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+      "severity": "low"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "34802112",
+        "35510826"
+      ],
+      "cautionary_pmids": [
+        "34802112",
+        "35510826"
+      ],
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+      "severity": "low"
     }
   ],
   "freshness": {
-    "score": 0.7,
+    "score": 1.0,
     "last_search_date": "2026-04-30",
-    "newest_publication_year": 2021,
-    "oldest_publication_year": 2021,
-    "recommended_refresh_days": 90,
-    "rationale": "Newest loaded publication year is 2021 and oldest is 2021; the pack is 5 years from the newest included evidence."
+    "newest_publication_year": 2026,
+    "oldest_publication_year": 2018,
+    "recommended_refresh_days": 180,
+    "rationale": "Newest loaded publication year is 2026 and oldest is 2018; the pack is 0 years from the newest included evidence."
   },
-  "executive_summary": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
-  "clinical_interpretation": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "executive_summary": "Evidence regarding medical cannabis and cannabinoids for adult neuropathic pain is generally uncertain and characterized by low-certainty data [41548880, 34802112]. While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880]. Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392].",
+  "clinical_interpretation": "Evidence regarding medical cannabis and cannabinoids for adult neuropathic pain is generally uncertain and characterized by low-certainty data [41548880, 34802112]. While some reviews suggest a potential for modest pain relief or improved patient global impression of change [29513392, 41548880], other high-level evidence indicates no clear effect on substantial pain relief (≥50%) for THC-dominant, balanced THC/CBD, or CBD-dominant medicines [41548880]. Cannabinoids may increase the risk of nervous system and psychiatric adverse events, as well as treatment discontinuation due to side effects [41548880, 35510826, 29513392]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
   "what_the_evidence_does_not_prove": [
     "It does not diagnose any individual patient.",
     "It does not replace urgent clinical evaluation for warning signs.",
     "It does not prove that every warning sign has equal predictive value in every setting."
   ],
-  "patient_friendly_explanation": "This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001).",
+  "patient_friendly_explanation": "Research suggests that medical cannabis or cannabinoids may provide some relief for neuropathic pain, but the evidence is often limited or inconsistent [34802112, 35510826]. Because of this, more high-quality studies are needed to fully understand how effective these treatments are and to manage potential side effects [41548880].",
   "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
-  "citation_coverage": 0.75
+  "citation_coverage": 1.0
 }

@@ -1,18 +1,18 @@
 {
-  "pack_id": "vfield-d0ff54340ef1",
-  "title": "Evidence Pack: What does evidence say about semaglutide safety and renal outcomes in ckd",
-  "topic": "What does evidence say about semaglutide safety and renal outcomes in CKD?",
-  "created_at": "2026-04-30T02:50:16.073082+00:00",
-  "last_pubmed_search_at": "2026-04-30T02:50:16.073082+00:00",
+  "pack_id": "vfield-faa0772c4baf",
+  "title": "Evidence Pack: What does evidence say about semaglutide safety and renal outcomes in patients with chr...",
+  "topic": "What does evidence say about semaglutide safety and renal outcomes in patients with chronic kidney disease?",
+  "created_at": "2026-04-30T15:18:37.769047+00:00",
+  "last_pubmed_search_at": "2026-04-30T15:18:37.769047+00:00",
   "language": "en",
-  "source": "Mock demo data - not real PubMed retrieval",
+  "source": "PubMed/NCBI",
   "pico": {
-    "original_question": "What does evidence say about semaglutide safety and renal outcomes in CKD?",
+    "original_question": "What does evidence say about semaglutide safety and renal outcomes in patients with chronic kidney disease?",
     "safe_rewritten_question": null,
     "population": "patients with chronic kidney disease",
     "intervention": "semaglutide",
     "comparison": null,
-    "outcome": "safety, renal outcomes, and studied dosing regimens",
+    "outcome": "safety and renal outcomes",
     "timeframe": null,
     "preferred_study_types": [
       "Systematic Review",
@@ -22,82 +22,1180 @@
     ],
     "language": "en"
   },
-  "pubmed_query": "(semaglutide[Title/Abstract] OR semaglutide[MeSH Terms]) AND (\"chronic kidney disease\"[Title/Abstract] OR CKD[Title/Abstract] OR renal[Title/Abstract] OR kidney[Title/Abstract]) AND (safety[Title/Abstract] OR outcome*[Title/Abstract] OR trial[Title/Abstract])",
+  "pubmed_query": "(\"semaglutide\"[MeSH Terms] OR \"semaglutide\"[Title/Abstract]) AND (\"Renal Insufficiency, Chronic\"[MeSH Terms] OR \"chronic kidney disease\"[Title/Abstract] OR \"CKD\"[Title/Abstract]) AND (\"Renal function\"[MeSH Terms] OR \"Kidney Failure, Acute\"[MeSH Terms] OR \"renal outcomes\"[Title/Abstract] OR \"safety\"[Title/Abstract] OR \"adverse effects\"[MeSH Terms])",
+  "pubmed_query_method": "gemma4-function-calling",
   "papers": [
     {
-      "pmid": "MOCK-SEMAGLUTIDE-001",
+      "pmid": "27633186",
       "pmcid": null,
-      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Semaglutide kidney outcomes in chronic kidney disease",
-      "abstract": "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice.",
-      "journal": "VeritasClin Mock Evidence",
-      "publication_year": 2024,
+      "title": "Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes.",
+      "abstract": "Regulatory guidance specifies the need to establish cardiovascular safety of new diabetes therapies in patients with type 2 diabetes in order to rule out excess cardiovascular risk. The cardiovascular effects of semaglutide, a glucagon-like peptide 1 analogue with an extended half-life of approximately 1 week, in type 2 diabetes are unknown. We randomly assigned 3297 patients with type 2 diabetes who were on a standard-care regimen to receive once-weekly semaglutide (0.5 mg or 1.0 mg) or placebo for 104 weeks. The primary composite outcome was the first occurrence of cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke. We hypothesized that semaglutide would be noninferior to placebo for the primary outcome. The noninferiority margin was 1.8 for the upper boundary of the 95% confidence interval of the hazard ratio. At baseline, 2735 of the patients (83.0%) had established cardiovascular disease, chronic kidney disease, or both. The primary outcome occurred in 108 of 1648 patients (6.6%) in the semaglutide group and in 146 of 1649 patients (8.9%) in the placebo group (hazard ratio, 0.74; 95% confidence interval [CI], 0.58 to 0.95; P<0.001 for noninferiority). Nonfatal myocardial infarction occurred in 2.9% of the patients receiving semaglutide and in 3.9% of those receiving placebo (hazard ratio, 0.74; 95% CI, 0.51 to 1.08; P=0.12); nonfatal stroke occurred in 1.6% and 2.7%, respectively (hazard ratio, 0.61; 95% CI, 0.38 to 0.99; P=0.04). Rates of death from cardiovascular causes were similar in the two groups. Rates of new or worsening nephropathy were lower in the semaglutide group, but rates of retinopathy complications (vitreous hemorrhage, blindness, or conditions requiring treatment with an intravitreal agent or photocoagulation) were significantly higher (hazard ratio, 1.76; 95% CI, 1.11 to 2.78; P=0.02). Fewer serious adverse events occurred in the semaglutide group, although more patients discontinued treatment because of adverse events, mainly gastrointestinal. In patients with type 2 diabetes who were at high cardiovascular risk, the rate of cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke was significantly lower among patients receiving semaglutide than among those receiving placebo, an outcome that confirmed the noninferiority of semaglutide. (Funded by Novo Nordisk; SUSTAIN-6 ClinicalTrials.gov number, NCT01720446 .).",
+      "journal": "The New England journal of medicine",
+      "publication_year": 2016,
       "authors": [
-        "Mock Evidence Team"
+        "Steven P Marso",
+        "Stephen C Bain",
+        "Agostino Consoli",
+        "Freddy G Eliaschewitz",
+        "Esteban Jódar",
+        "Lawrence A Leiter",
+        "Ildiko Lingvay",
+        "Julio Rosenstock",
+        "Jochen Seufert",
+        "Mark L Warren",
+        "Vincent Woo",
+        "Oluf Hansen",
+        "Anders G Holst",
+        "Jonas Pettersson",
+        "Tina Vilsbøll",
+        "SUSTAIN-6 Investigators"
       ],
-      "doi": null,
+      "doi": "10.1056/NEJMoa1607141",
       "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
         "Randomized Controlled Trial"
       ],
       "mesh_terms": [
-        "Semaglutide",
-        "Renal Insufficiency, Chronic"
+        "Aged",
+        "Cardiovascular Diseases",
+        "Diabetes Mellitus, Type 2",
+        "Diabetic Nephropathies",
+        "Diabetic Retinopathy",
+        "Female",
+        "Gastrointestinal Diseases",
+        "Glucagon-Like Peptide 1",
+        "Glucagon-Like Peptides",
+        "Glycated Hemoglobin",
+        "Humans",
+        "Kaplan-Meier Estimate",
+        "Male",
+        "Middle Aged",
+        "Semaglutide"
       ],
-      "url": "mock://semaglutide-ckd-001"
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27633186/"
+    },
+    {
+      "pmid": "38806171",
+      "pmcid": "PMC9306514",
+      "title": "2024 update in heart failure.",
+      "abstract": "In the last years, major progress has occurred in heart failure (HF) management. The 2023 ESC focused update of the 2021 HF guidelines introduced new key recommendations based on the results of the last years of science. First, two drugs, sodium-glucose co-transporter-2 (SGLT2) inhibitors and finerenone, a novel nonsteroidal, selective mineralocorticoid receptor antagonist (MRA), are recommended for the prevention of HF in patients with diabetic chronic kidney disease (CKD). Second, SGLT2 inhibitors are now recommended for the treatment of HF across the entire left ventricular ejection fraction spectrum. The benefits of quadruple therapy in patients with HF with reduced ejection fraction (HFrEF) are well established. Its rapid and early up-titration along with a close follow-up with frequent clinical and laboratory re-assessment after an episode of acute HF (the so-called 'high-intensity care' strategy) was associated with better outcomes in the STRONG-HF trial. Patients experiencing an episode of worsening HF might require a fifth drug, vericiguat. In the STEP-HFpEF-DM and STEP-HFpEF trials, semaglutide 2.4 mg once weekly administered for 1 year decreased body weight and significantly improved quality of life and the 6 min walk distance in obese patients with HF with preserved ejection fraction (HFpEF) with or without a history of diabetes. Further data on safety and efficacy, including also hard endpoints, are needed to support the addition of acetazolamide or hydrochlorothiazide to a standard diuretic regimen in patients hospitalized due to acute HF. In the meantime, PUSH-AHF supported the use of natriuresis-guided diuretic therapy. Further options and most recent evidence for the treatment of HF, including specific drugs for cardiomyopathies (i.e., mavacamten in hypertrophic cardiomyopathy and tafamidis in transthyretin cardiac amyloidosis), device therapies, cardiac contractility modulation and percutaneous treatment of valvulopathies, with the recent finding from the TRILUMINATE Pivotal trial, are also reviewed in this article.",
+      "journal": "ESC heart failure",
+      "publication_year": 2025,
+      "authors": [
+        "Alberto Beghini",
+        "Antonio Maria Sammartino",
+        "Zoltán Papp",
+        "Stephan von Haehling",
+        "Jan Biegus",
+        "Piotr Ponikowski",
+        "Marianna Adamo",
+        "Luigi Falco",
+        "Carlo Mario Lombardi",
+        "Matteo Pagnesi",
+        "Gianluigi Savarese",
+        "Marco Metra",
+        "Daniela Tomasoni"
+      ],
+      "doi": "10.1002/EJHF.2822",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Heart Failure",
+        "Sodium-Glucose Transporter 2 Inhibitors",
+        "Stroke Volume",
+        "Mineralocorticoid Receptor Antagonists",
+        "Disease Management",
+        "Practice Guidelines as Topic"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38806171/"
+    },
+    {
+      "pmid": "40162642",
+      "pmcid": null,
+      "title": "Oral Semaglutide and Cardiovascular Outcomes in High-Risk Type 2 Diabetes.",
+      "abstract": "The cardiovascular safety of oral semaglutide, a glucagon-like peptide 1 receptor agonist, has been established in persons with type 2 diabetes and high cardiovascular risk. An assessment of the cardiovascular efficacy of oral semaglutide in persons with type 2 diabetes and atherosclerotic cardiovascular disease, chronic kidney disease, or both is needed. In this double-blind, placebo-controlled, event-driven, superiority trial, we randomly assigned participants who were 50 years of age or older, had type 2 diabetes with a glycated hemoglobin level of 6.5 to 10.0%, and had known atherosclerotic cardiovascular disease, chronic kidney disease, or both to receive either once-daily oral semaglutide (maximal dose, 14 mg) or placebo, in addition to standard care. The primary outcome was major adverse cardiovascular events (a composite of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke), assessed in a time-to-first-event analysis. The confirmatory secondary outcomes included major kidney disease events (a five-point composite outcome). Among the 9650 participants who had undergone randomization, the mean (±SD) follow-up was 47.5±10.9 months, and the median follow-up was 49.5 months. A primary-outcome event occurred in 579 of the 4825 participants (12.0%; incidence, 3.1 events per 100 person-years) in the oral semaglutide group, as compared with 668 of the 4825 participants (13.8%; incidence, 3.7 events per 100 person-years) in the placebo group (hazard ratio, 0.86; 95% confidence interval, 0.77 to 0.96; P = 0.006). The results for the confirmatory secondary outcomes did not differ significantly between the two groups. The incidence of serious adverse events was 47.9% in the oral semaglutide group and 50.3% in the placebo group; the incidence of gastrointestinal disorders was 5.0% and 4.4%, respectively. Among persons with type 2 diabetes and atherosclerotic cardiovascular disease, chronic kidney disease, or both, the use of oral semaglutide was associated with a significantly lower risk of major adverse cardiovascular events than placebo, without an increase in the incidence of serious adverse events. (Funded by Novo Nordisk; SOUL ClinicalTrials.gov number, NCT03914326.).",
+      "journal": "The New England journal of medicine",
+      "publication_year": 2025,
+      "authors": [
+        "Darren K McGuire",
+        "Nikolaus Marx",
+        "Sharon L Mulvagh",
+        "John E Deanfield",
+        "Silvio E Inzucchi",
+        "Rodica Pop-Busui",
+        "Johannes F E Mann",
+        "Scott S Emerson",
+        "Neil R Poulter",
+        "Mads D M Engelmann",
+        "Maria Sejersten Ripa",
+        "G Kees Hovingh",
+        "Kirstine Brown-Frandsen",
+        "Stephen C Bain",
+        "Matthew A Cavender",
+        "Mette Gislum",
+        "Jens-Peter David",
+        "John B Buse",
+        "SOUL Study Group"
+      ],
+      "doi": "10.1056/NEJMoa2501006",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Equivalence Trial"
+      ],
+      "mesh_terms": [
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Administration, Oral",
+        "Atherosclerosis",
+        "Cardiovascular Diseases",
+        "Diabetes Mellitus, Type 2",
+        "Double-Blind Method",
+        "Glucagon-Like Peptide-1 Receptor Agonists",
+        "Glycated Hemoglobin",
+        "Renal Insufficiency, Chronic",
+        "Follow-Up Studies",
+        "Glucagon-Like Peptide 1",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40162642/"
+    },
+    {
+      "pmid": "31185157",
+      "pmcid": null,
+      "title": "Oral Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes.",
+      "abstract": "Establishing cardiovascular safety of new therapies for type 2 diabetes is important. Safety data are available for the subcutaneous form of the glucagon-like peptide-1 receptor agonist semaglutide but are needed for oral semaglutide. We assessed cardiovascular outcomes of once-daily oral semaglutide in an event-driven, randomized, double-blind, placebo-controlled trial involving patients at high cardiovascular risk (age of ≥50 years with established cardiovascular or chronic kidney disease, or age of ≥60 years with cardiovascular risk factors only). The primary outcome in a time-to-event analysis was the first occurrence of a major adverse cardiovascular event (death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke). The trial was designed to rule out 80% excess cardiovascular risk as compared with placebo (noninferiority margin of 1.8 for the upper boundary of the 95% confidence interval for the hazard ratio for the primary outcome). A total of 3183 patients were randomly assigned to receive oral semaglutide or placebo. The mean age of the patients was 66 years; 2695 patients (84.7%) were 50 years of age or older and had cardiovascular or chronic kidney disease. The median time in the trial was 15.9 months. Major adverse cardiovascular events occurred in 61 of 1591 patients (3.8%) in the oral semaglutide group and 76 of 1592 (4.8%) in the placebo group (hazard ratio, 0.79; 95% confidence interval [CI], 0.57 to 1.11; P<0.001 for noninferiority). Results for components of the primary outcome were as follows: death from cardiovascular causes, 15 of 1591 patients (0.9%) in the oral semaglutide group and 30 of 1592 (1.9%) in the placebo group (hazard ratio, 0.49; 95% CI, 0.27 to 0.92); nonfatal myocardial infarction, 37 of 1591 patients (2.3%) and 31 of 1592 (1.9%), respectively (hazard ratio, 1.18; 95% CI, 0.73 to 1.90); and nonfatal stroke, 12 of 1591 patients (0.8%) and 16 of 1592 (1.0%), respectively (hazard ratio, 0.74; 95% CI, 0.35 to 1.57). Death from any cause occurred in 23 of 1591 patients (1.4%) in the oral semaglutide group and 45 of 1592 (2.8%) in the placebo group (hazard ratio, 0.51; 95% CI, 0.31 to 0.84). Gastrointestinal adverse events leading to discontinuation of oral semaglutide or placebo were more common with oral semaglutide. In this trial involving patients with type 2 diabetes, the cardiovascular risk profile of oral semaglutide was not inferior to that of placebo. (Funded by Novo Nordisk; PIONEER 6 ClinicalTrials.gov number, NCT02692716.).",
+      "journal": "The New England journal of medicine",
+      "publication_year": 2019,
+      "authors": [
+        "Mansoor Husain",
+        "Andreas L Birkenfeld",
+        "Morten Donsmark",
+        "Kathleen Dungan",
+        "Freddy G Eliaschewitz",
+        "Denise R Franco",
+        "Ole K Jeppesen",
+        "Ildiko Lingvay",
+        "Ofri Mosenzon",
+        "Sue D Pedersen",
+        "Cees J Tack",
+        "Mette Thomsen",
+        "Tina Vilsbøll",
+        "Mark L Warren",
+        "Stephen C Bain",
+        "PIONEER 6 Investigators"
+      ],
+      "doi": "10.1056/NEJMoa1901118",
+      "publication_types": [
+        "Clinical Trial, Phase III",
+        "Equivalence Trial",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Administration, Oral",
+        "Aged",
+        "Cardiovascular Diseases",
+        "Diabetes Mellitus, Type 2",
+        "Double-Blind Method",
+        "Female",
+        "Glucagon-Like Peptides",
+        "Glycated Hemoglobin",
+        "Humans",
+        "Hypoglycemic Agents",
+        "Male",
+        "Middle Aged",
+        "Risk",
+        "Glucagon-Like Peptide-1 Receptor Agonists",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31185157/"
+    },
+    {
+      "pmid": "39222642",
+      "pmcid": null,
+      "title": "Semaglutide versus placebo in patients with heart failure and mildly reduced or preserved ejection fraction: a pooled analysis of the SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM randomised trials.",
+      "abstract": "Heart failure with mildly reduced or preserved ejection fraction (hereafter referred to as HFpEF) is the most common type of heart failure and is associated with a high risk of hospitalisation and death, especially in patients with overweight, obesity, or type 2 diabetes. In the STEP-HFpEF and STEP-HFpEF DM trials, semaglutide improved heart failure-related symptoms and physical limitations in participants with HFpEF. Whether semaglutide also reduces clinical heart failure events in this group remains to be established. We conducted a post-hoc pooled, participant-level analysis of four randomised, placebo-controlled trials (SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM) to examine the effects of once-weekly subcutaneous semaglutide (2·4 mg in SELECT, STEP-HFpEF, and STEP-HFpEF DM; 1·0 mg in FLOW) on heart failure events. The STEP-HFpEF and STEP-HFpF DM trials enrolled participants with obesity-related HFpEF, the SELECT trial enrolled participants with atherosclerotic cardiovascular disease and overweight or obesity, and the FLOW trial enrolled participants with type 2 diabetes and chronic kidney disease. Hence, for this analysis, we include all participants from the STEP-HFpEF trials and those with an investigator-reported history of HFpEF from SELECT and FLOW. The main outcomes for this analysis were the composite endpoint of time to cardiovascular death or first worsening heart failure event (defined as hospitalisation or urgent visit due to heart failure), time to first worsening heart failure event, and time to cardiovascular death. Efficacy and safety endpoints were analysed with the full analysis set (ie, all participants randomly assigned to treatment, according to the intention-to-treat principle). The SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM trials are registered at ClinicalTrials.gov, NCT03574597, NCT03819153, NCT04788511, and NCT04916470, respectively, and all are complete. Across the four trials, 3743 (16·8%) of 22 282 participants had a history of HFpEF (1914 assigned to semaglutide and 1829 assigned to placebo). In this group of participants with HFpEF, semaglutide reduced the risk of the combined endpoint of cardiovascular death or heart failure events (103 [5·4%] of 1914 in the semaglutide group had events vs 138 [7·5%] of 1829 in the placebo group; hazard ratio [HR] 0·69 [95% CI 0·53-0·89]; p=0·0045). Semaglutide also reduced the risk of worsening heart failure events (54 [2·8%] vs 86 [4·7%]; HR 0·59 [0·41-0·82]; p=0·0019). No significant effect on cardiovascular death alone was seen (59 [3·1%] vs 67 [3·7%]; HR 0·82 [0·57-1·16]; p=0·25). A lower proportion of patients treated with semaglutide had serious adverse events than did those who were treated with placebo (572 [29·9%] vs 708 [38·7%]). In patients with HFpEF, semaglutide reduced the risk of the combined endpoint of cardiovascular death or worsening heart failure events, and worsening heart failure events alone, whereas its effect on cardiovascular death alone was not significant. These data support the use of semaglutide as an efficacious therapy to reduce the risk of clinical heart failure events in patients with HFpEF, for whom few treatment options are currently available. Novo Nordisk.",
+      "journal": "Lancet (London, England)",
+      "publication_year": 2024,
+      "authors": [
+        "Mikhail N Kosiborod",
+        "John Deanfield",
+        "Richard Pratley",
+        "Barry A Borlaug",
+        "Javed Butler",
+        "Melanie J Davies",
+        "Scott S Emerson",
+        "Steven E Kahn",
+        "Dalane W Kitzman",
+        "Ildiko Lingvay",
+        "Kenneth W Mahaffey",
+        "Mark C Petrie",
+        "Jorge Plutzky",
+        "Søren Rasmussen",
+        "Cecilia Rönnbäck",
+        "Sanjiv J Shah",
+        "Subodh Verma",
+        "Peter E Weeke",
+        "A Michael Lincoff",
+        "SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM Trial Committees and Investigators"
+      ],
+      "doi": "10.1016/S0140-6736(24)01643-X",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Intramural"
+      ],
+      "mesh_terms": [
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Diabetes Mellitus, Type 2",
+        "Glucagon-Like Peptides",
+        "Heart Failure",
+        "Hospitalization",
+        "Obesity",
+        "Stroke Volume",
+        "Treatment Outcome",
+        "Glucagon-Like Peptide-1 Receptor Agonists",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39222642/"
+    },
+    {
+      "pmid": "40156843",
+      "pmcid": "PMC11635050",
+      "title": "Oral Semaglutide and Cardiovascular Outcomes in People With Type 2 Diabetes, According to SGLT2i Use: Prespecified Analyses of the SOUL Randomized Trial.",
+      "abstract": "Both GLP-1 (glucagon-like peptide-1) receptor agonists and SGLT2 (sodium-glucose cotransporter-2) inhibitors (SGLT2i) improve cardiovascular outcomes in people with type 2 diabetes and cardiovascular or chronic kidney disease. However, there are limited data about the effect of combining these agents on cardiovascular and safety outcomes. The SOUL trial (Semaglutide Cardiovascular Outcomes Trial; NCT03914326) randomized 9650 participants with type 2 diabetes and atherosclerotic cardiovascular disease and/or chronic kidney disease to oral semaglutide or placebo. As prespecified, participants were analyzed according to baseline use of SGLT2i (yes, n=2596; no, n=7054), and subsequently for any use of SGLT2i during the trial (yes, n=4718; no, n=4932). The primary outcome was time to first major adverse cardiovascular event, defined as cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke. Safety was evaluated by comparing the incidence of serious adverse events. Over a mean follow-up of 47.5±10.9 months, the risk of the primary outcome in the overall trial population was 14% lower for oral semaglutide versus placebo (hazard ratio, 0.86; 95% CI, 0.77-0.96). In those taking SGLT2i at baseline, there were 143 of 1296 (semaglutide) versus 158 of 1300 (placebo) primary outcome events (hazard ratio, 0.89; 95% CI, 0.71-1.11); and 436 of 3529 versus 510 of 3525, respectively, in participants not taking SGLT2i at baseline (hazard ratio, 0.84; 95% CI, 0.74-0.95; P-interaction, 0.66). An analysis of major adverse cardiovascular events by any in-trial SGLT2i use versus no use also showed no evidence of heterogeneity in the effects of oral semaglutide. The adverse event profiles of oral semaglutide with or without concomitant SGLT2i were similar. Oral semaglutide reduced major adverse cardiovascular event outcomes independently of concomitant SGLT2i treatment, and this combination appeared to be safe. URL: https://www.clinicaltrials.gov; Unique identifier: NCT03914326.",
+      "journal": "Circulation",
+      "publication_year": 2025,
+      "authors": [
+        "Nikolaus Marx",
+        "John E Deanfield",
+        "Johannes F E Mann",
+        "Rosario Arechavaleta",
+        "Stephen C Bain",
+        "Harpreet S Bajaj",
+        "Katrine Bayer Tanggaard",
+        "Andreas L Birkenfeld",
+        "John B Buse",
+        "Zaklina Davicevic-Elez",
+        "Cyrus Desouza",
+        "Scott S Emerson",
+        "Mads D M Engelmann",
+        "G Kees Hovingh",
+        "Silvio E Inzucchi",
+        "Pardeep S Jhund",
+        "Sharon L Mulvagh",
+        "Rodica Pop-Busui",
+        "Neil R Poulter",
+        "Søren Rasmussen",
+        "Shih-Te Tu",
+        "Darren K McGuire",
+        "SOUL Study Group"
+      ],
+      "doi": "10.1056/NEJMoa2501006",
+      "publication_types": [
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial"
+      ],
+      "mesh_terms": [
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Administration, Oral",
+        "Cardiovascular Diseases",
+        "Diabetes Mellitus, Type 2",
+        "Glucagon-Like Peptides",
+        "Sodium-Glucose Transporter 2 Inhibitors",
+        "Treatment Outcome",
+        "Glucagon-Like Peptide 1",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40156843/"
+    },
+    {
+      "pmid": "39455729",
+      "pmcid": "10993191",
+      "title": "Semaglutide in patients with overweight or obesity and chronic kidney disease without diabetes: a randomized double-blind placebo-controlled clinical trial.",
+      "abstract": "Semaglutide reduces albuminuria and the risk of kidney disease progression in patients with type 2 diabetes and chronic kidney disease (CKD). We conducted a randomized placebo-controlled double-blind clinical trial in adults with CKD (estimated glomerular filtration rate (eGFR) ≥25 ml min-1 1.73 m-2 and urine albumin-to-creatinine ratio (UACR) ≥30 and <3,500 mg g-1) and body mass index ≥27 kg m-2. Participants were randomized to semaglutide 2.4 mg per week or placebo. The primary endpoint was percentage change from baseline in UACR at week 24. Safety was monitored throughout. Overall, 125 participants were screened, of whom 101 were randomized to semaglutide (n = 51) or placebo (n = 50). Mean age was 55.8 (s.d. 12) years; 40 participants (39.6%) were female; median UACR was 251 mg g-1 (interquartile range 100, 584); mean eGFR was 65.0 (s.d. 25) ml min-1 1.73 m-2; and mean body mass index was 36.2 (s.d. 5.6) kg m-2. Chronic glomerulonephritis (n = 25) and hypertensive CKD (n = 27) were the most common CKD etiologies. Treatment for 24 weeks with semaglutide compared to placebo reduced UACR by -52.1% (95% confidence interval -65.5, -33.4; P < 0.0001). Gastrointestinal adverse events were more often reported with semaglutide (n = 30) than with placebo (n = 15). Semaglutide treatment for 24 weeks resulted in a clinically meaningful reduction in albuminuria in patients with overweight/obesity and non-diabetic CKD. ClinicalTrials.gov registration: NCT04889183 .",
+      "journal": "Nature medicine",
+      "publication_year": 2025,
+      "authors": [
+        "Ellen M Apperloo",
+        "Jose L Gorriz",
+        "Maria Jose Soler",
+        "Secundino Cigarrán Guldris",
+        "Josep M Cruzado",
+        "Maria Jesús Puchades",
+        "Marina López-Martínez",
+        "Femke Waanders",
+        "Gozewijn D Laverman",
+        "Annemarie van der Aart-van der Beek",
+        "Klaas Hoogenberg",
+        "André P van Beek",
+        "Jacobien Verhave",
+        "Sofia B Ahmed",
+        "Roland E Schmieder",
+        "Christoph Wanner",
+        "David Z I Cherney",
+        "Niels Jongs",
+        "Hiddo J L Heerspink"
+      ],
+      "doi": "10.1016/S0140-6736(23)00569-X",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Glucagon-Like Peptides",
+        "Female",
+        "Male",
+        "Renal Insufficiency, Chronic",
+        "Middle Aged",
+        "Double-Blind Method",
+        "Obesity",
+        "Overweight",
+        "Glomerular Filtration Rate",
+        "Albuminuria",
+        "Aged",
+        "Adult",
+        "Diabetes Mellitus, Type 2",
+        "Body Mass Index",
+        "Glucagon-Like Peptide 1",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39455729/"
+    },
+    {
+      "pmid": "40458885",
+      "pmcid": "PMC6245208",
+      "title": "Semaglutide: a key medication for managing cardiovascular-kidney-metabolic syndrome.",
+      "abstract": "Recent trials underscore the cardiovascular (CV), renal, and metabolic benefits of semaglutide in individuals with and without type 2 diabetes (T2D). In T2D, semaglutide enhances glycemic control, reduces major adverse CV events (MACE), and slows chronic kidney disease (CKD) progression. The SUSTAIN-6 trial demonstrated a 26% MACE reduction (HR 0.74; 95% CI: 0.58-0.95; p = 0.02) in high CV-risk patients with T2D using semaglutide (0.5 or 1.0 mg weekly). Similarly, the FLOW trial showed a 24% reduction in major kidney disease events (HR 0.76; 95% CI: 0.66-0.88; p = 0.002) with weekly 1.0 mg semaglutide in individuals with T2D with CKD. Beyond T2D, the SELECT trial highlighted semaglutide's efficacy in reducing MACE by 20% (HR 0.80; 95% CI: 0.72-0.90; p < 0.001) and slowing kidney function loss in overweight or obese individuals with preexisting CV disease using 2.4 mg weekly. Additionally, semaglutide alleviates heart failure symptoms and reduces hospitalizations in obese individuals regardless of T2D status. These findings underscore semaglutide's role in improving kidney, CV, and survival outcomes among high-risk patients. This review highlights the cardio-kidney-metabolic benefits of semaglutide in individuals with and without T2D to inform cardiologists about its potential to enhance patient care.",
+      "journal": "Future cardiology",
+      "publication_year": 2025,
+      "authors": [
+        "Richard J MacIsaac"
+      ],
+      "doi": "10.1016/S2213-8587(19)30249-9",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Glucagon-Like Peptides",
+        "Cardiovascular Diseases",
+        "Metabolic Syndrome",
+        "Diabetes Mellitus, Type 2",
+        "Hypoglycemic Agents",
+        "Renal Insufficiency, Chronic",
+        "Glucagon-Like Peptide 1",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40458885/"
+    },
+    {
+      "pmid": "39025300",
+      "pmcid": null,
+      "title": "The Use of Semaglutide in Patients With Renal Failure-A Retrospective Cohort Study.",
+      "abstract": "Semaglutide, a glucagon-like peptide-1 receptor agonist is approved for weight loss and diabetes treatment, but limited literature exists regarding semaglutide use in patients with advanced chronic kidney disease (CKD). Therefore, this project assessed the safety and efficacy of semaglutide among patients with estimated glomerular filtration rate (eGFR) 15-29 mL/min/1.73 m2 (CKD stage 4), eGFR<15 mL/min/1.73 m2 (CKD stage 5) or on dialysis. This is a retrospective electronic medical record based analysis of consecutive patients with advanced CKD (defined as CKD 4 or greater) who were started on semaglutide (injectable or oral). Data was collected between January 2018 and January 2023. Investigators verified CKD diagnosis and manually extracted data. Data were analyzed using Fisher's exact test, paired t test, linear mixed effects models and Wilcoxon signed rank test. Seventy-six patients with CKD 4 or greater who initiated semaglutide were included. Most patients had a history of type 2 diabetes mellitus (96.0%), and most were males (53.9%). The mean age was 66.8 y (SD 11.5) with the mean body mass index was 36.2 (SD 7.5). The initial doses were 3 mg orally and 0.25 mg by injection. Maximum prescribed dose was 1 mg (injectable) in 28 (45.2%) patients and 14 mg (orally) in 2 (14.2%) patients. Patients received semaglutide for a median duration of 17.4 (IQR 0.43, 48.8) months. Forty-eight (63.1%) patients reported no adverse effects associated with the therapy. Mean weight decreased from 106.2 (SD 24.2) to 101.3 (SD 27.3) kg (P < .001). Eight patients (16%) with type 2 diabetes mellitus T2DM discontinued insulin after starting semaglutide. Mean hemoglobin A1c (HbA1c) decreased from 8.0% (SD 1.7) to 7.1% (SD 1.3) (P < .001). Adverse effects were the primary reason for semaglutide discontinuation (37.0%), with nausea, vomiting, and abdominal pain being the most common complaints. Based on this retrospective study semaglutide appears to be tolerated by most individuals with CKD 4 or greater despite associated gastrointestinal side effects similar to those observed in patients with better kidney function and leads to an improvement of glycemic control and insulin discontinuation in patients with T2DM. Modest weight loss (approximately 4.6% of the total body weight) was observed on the prescribed doses. Larger prospective randomized studies are needed to comprehensively assess the risks and benefits of semaglutide in patients with CKD 4 or greater and obesity.",
+      "journal": "Endocrine practice : official journal of the American College of Endocrinology and the American Association of Clinical Endocrinologists",
+      "publication_year": 2024,
+      "authors": [
+        "Jane J Long",
+        "Sukhdeep S Sahi",
+        "Adley I Lemke",
+        "Jie Na",
+        "Oscar A Garcia Valencia",
+        "Pooja Budhiraja",
+        "Hani M Wadei",
+        "Vineeth Sudhindran",
+        "Roberto Benzo",
+        "Matthew M Clark",
+        "Meera Shah",
+        "David Fipps",
+        "Pavel Navratil",
+        "Ahmed A Abdelrheem",
+        "Afsana A Shaik",
+        "Dustin J Duffy",
+        "Niv Pencovich",
+        "Pankaj Shah",
+        "Yogish C Kudva",
+        "Aleksandra Kukla",
+        "Tayyab S Diwan"
+      ],
+      "doi": "10.1016/j.eprac.2024.07.008",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Retrospective Studies",
+        "Male",
+        "Female",
+        "Glucagon-Like Peptides",
+        "Aged",
+        "Middle Aged",
+        "Diabetes Mellitus, Type 2",
+        "Renal Insufficiency, Chronic",
+        "Hypoglycemic Agents",
+        "Glomerular Filtration Rate",
+        "Cohort Studies",
+        "Renal Insufficiency",
+        "Aged, 80 and over",
+        "Renal Dialysis",
+        "Semaglutide"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39025300/"
+    },
+    {
+      "pmid": "40316962",
+      "pmcid": "PMC5579706",
+      "title": "CVOT summit report 2024: new cardiovascular, kidney, and metabolic outcomes.",
+      "abstract": "The 10th Cardiovascular Outcome Trial (CVOT) Summit: Congress on Cardiovascular, Kidney, and Metabolic Outcomes was held virtually on December 5-6, 2024. This year, discussions about cardiovascular (CV) and kidney outcome trials centered on the recent findings from studies involving empagliflozin (EMPACT-MI), semaglutide (STEP-HFpEF-DM and FLOW), tirzepatide (SURMOUNT-OSA and SUMMIT), and finerenone (FINEARTS-HF). These studies represent significant advances in reducing the risk of major adverse cardiovascular events (MACE) and improving metabolic outcomes in heart failure with preserved ejection fraction (HFpEF), chronic kidney disease (CKD), and obstructive sleep apnea (OSA). The congress also comprised sessions on novel and established therapies for managing HFpEF, CKD, and obesity; guidelines for managing CKD and metabolic dysfunction-associated steatotic liver disease (MASLD); organ crosstalk and the development of cardio-kidney-metabolic (CKM) syndrome; precision medicine and person-centered management of diabetes, obesity, cardiovascular disease (CVD) and CKD; early detection of type 1 diabetes (T1D) and strategies to delay its onset; continuous glucose monitoring (CGM) and automated insulin delivery (AID); cardiovascular autonomic neuropathy (CAN) and the diabetic heart; and the role of primary care in the early detection, prevention and management of CKM diseases. The contribution of environmental plastic pollution to CVD risk, the increasing understanding of the efficacy and safety of incretin therapies in the treatment of CKM diseases, and the latest updates on nutrition strategies for CKM management under incretin-based therapies were also topics of interest for a vast audience of endocrinologists, diabetologists, cardiologists, nephrologists and primary care physicians, who actively engaged in online discussions. The 11th CVOT Summit will be held virtually on November 20-21, 2025 ( http://www.cvot.org ).",
+      "journal": "Cardiovascular diabetology",
+      "publication_year": 2025,
+      "authors": [
+        "Oliver Schnell",
+        "Jaime Almandoz",
+        "Lisa Anderson",
+        "Katharine Barnard-Kelly",
+        "Tadej Battelino",
+        "Matthias Blüher",
+        "Luca Busetto",
+        "Doina Catrinou",
+        "Antonio Ceriello",
+        "Xavier Cos",
+        "Thomas Danne",
+        "Colin M Dayan",
+        "Stefano Del Prato",
+        "Beatriz Fernández-Fernández",
+        "Paola Fioretto",
+        "Thomas Forst",
+        "James R Gavin",
+        "Francesco Giorgino",
+        "Per-Henrik Groop",
+        "Igor A Harsch",
+        "Hiddo J L Heerspink",
+        "Lutz Heinemann",
+        "Mahmoud Ibrahim",
+        "Michel Jadoul",
+        "Sarah Jarvis",
+        "Linong Ji",
+        "Naresh Kanumilli",
+        "Mikhail Kosiborod",
+        "Ulf Landmesser",
+        "Sofia Macieira",
+        "Boris Mankovsky",
+        "Nikolaus Marx",
+        "Chantal Mathieu",
+        "Barbara McGowan",
+        "Tatjana Milenkovic",
+        "Othmar Moser",
+        "Dirk Müller-Wieland",
+        "Nikolaos Papanas",
+        "Dipesh C Patel",
+        "Andreas F H Pfeiffer",
+        "Dario Rahelić",
+        "Helena W Rodbard",
+        "Lars Rydén",
+        "Elke Schaeffner",
+        "C Wendy Spearman",
+        "Alin Stirban",
+        "Frank Tacke",
+        "Pinar Topsever",
+        "Luc Van Gaal",
+        "Eberhard Standl"
+      ],
+      "doi": "10.1002/oby.24067",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Cardiovascular Diseases",
+        "Kidney",
+        "Renal Insufficiency, Chronic",
+        "Risk Assessment",
+        "Risk Factors",
+        "Treatment Outcome",
+        "Congresses as Topic"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40316962/"
     }
   ],
   "evidence_items": [
     {
       "paper": {
-        "pmid": "MOCK-SEMAGLUTIDE-001",
-        "pmcid": null,
-        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Semaglutide kidney outcomes in chronic kidney disease",
-        "abstract": "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice.",
-        "journal": "VeritasClin Mock Evidence",
-        "publication_year": 2024,
+        "pmid": "40316962",
+        "pmcid": "PMC5579706",
+        "title": "CVOT summit report 2024: new cardiovascular, kidney, and metabolic outcomes.",
+        "abstract": "The 10th Cardiovascular Outcome Trial (CVOT) Summit: Congress on Cardiovascular, Kidney, and Metabolic Outcomes was held virtually on December 5-6, 2024. This year, discussions about cardiovascular (CV) and kidney outcome trials centered on the recent findings from studies involving empagliflozin (EMPACT-MI), semaglutide (STEP-HFpEF-DM and FLOW), tirzepatide (SURMOUNT-OSA and SUMMIT), and finerenone (FINEARTS-HF). These studies represent significant advances in reducing the risk of major adverse cardiovascular events (MACE) and improving metabolic outcomes in heart failure with preserved ejection fraction (HFpEF), chronic kidney disease (CKD), and obstructive sleep apnea (OSA). The congress also comprised sessions on novel and established therapies for managing HFpEF, CKD, and obesity; guidelines for managing CKD and metabolic dysfunction-associated steatotic liver disease (MASLD); organ crosstalk and the development of cardio-kidney-metabolic (CKM) syndrome; precision medicine and person-centered management of diabetes, obesity, cardiovascular disease (CVD) and CKD; early detection of type 1 diabetes (T1D) and strategies to delay its onset; continuous glucose monitoring (CGM) and automated insulin delivery (AID); cardiovascular autonomic neuropathy (CAN) and the diabetic heart; and the role of primary care in the early detection, prevention and management of CKM diseases. The contribution of environmental plastic pollution to CVD risk, the increasing understanding of the efficacy and safety of incretin therapies in the treatment of CKM diseases, and the latest updates on nutrition strategies for CKM management under incretin-based therapies were also topics of interest for a vast audience of endocrinologists, diabetologists, cardiologists, nephrologists and primary care physicians, who actively engaged in online discussions. The 11th CVOT Summit will be held virtually on November 20-21, 2025 ( http://www.cvot.org ).",
+        "journal": "Cardiovascular diabetology",
+        "publication_year": 2025,
         "authors": [
-          "Mock Evidence Team"
+          "Oliver Schnell",
+          "Jaime Almandoz",
+          "Lisa Anderson",
+          "Katharine Barnard-Kelly",
+          "Tadej Battelino",
+          "Matthias Blüher",
+          "Luca Busetto",
+          "Doina Catrinou",
+          "Antonio Ceriello",
+          "Xavier Cos",
+          "Thomas Danne",
+          "Colin M Dayan",
+          "Stefano Del Prato",
+          "Beatriz Fernández-Fernández",
+          "Paola Fioretto",
+          "Thomas Forst",
+          "James R Gavin",
+          "Francesco Giorgino",
+          "Per-Henrik Groop",
+          "Igor A Harsch",
+          "Hiddo J L Heerspink",
+          "Lutz Heinemann",
+          "Mahmoud Ibrahim",
+          "Michel Jadoul",
+          "Sarah Jarvis",
+          "Linong Ji",
+          "Naresh Kanumilli",
+          "Mikhail Kosiborod",
+          "Ulf Landmesser",
+          "Sofia Macieira",
+          "Boris Mankovsky",
+          "Nikolaus Marx",
+          "Chantal Mathieu",
+          "Barbara McGowan",
+          "Tatjana Milenkovic",
+          "Othmar Moser",
+          "Dirk Müller-Wieland",
+          "Nikolaos Papanas",
+          "Dipesh C Patel",
+          "Andreas F H Pfeiffer",
+          "Dario Rahelić",
+          "Helena W Rodbard",
+          "Lars Rydén",
+          "Elke Schaeffner",
+          "C Wendy Spearman",
+          "Alin Stirban",
+          "Frank Tacke",
+          "Pinar Topsever",
+          "Luc Van Gaal",
+          "Eberhard Standl"
         ],
-        "doi": null,
+        "doi": "10.1002/oby.24067",
         "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Cardiovascular Diseases",
+          "Kidney",
+          "Renal Insufficiency, Chronic",
+          "Risk Assessment",
+          "Risk Factors",
+          "Treatment Outcome",
+          "Congresses as Topic"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40316962/"
+      },
+      "relevance_score": 87.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (7), abstract availability, and publication year.",
+      "key_findings": [
+        "The 10th Cardiovascular Outcome Trial (CVOT) Summit: Congress on Cardiovascular, Kidney, and Metabolic Outcomes was held virtually on December 5-6, 2024.",
+        "This year, discussions about cardiovascular (CV) and kidney outcome trials centered on the recent findings from studies involving empagliflozin (EMPACT-MI), semaglutide (STEP-HFpEF-DM and FLOW), tirzepatide (SURMOUNT-OSA and SUMMIT), and finerenone (FINEARTS-HF)."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "38806171",
+        "pmcid": "PMC9306514",
+        "title": "2024 update in heart failure.",
+        "abstract": "In the last years, major progress has occurred in heart failure (HF) management. The 2023 ESC focused update of the 2021 HF guidelines introduced new key recommendations based on the results of the last years of science. First, two drugs, sodium-glucose co-transporter-2 (SGLT2) inhibitors and finerenone, a novel nonsteroidal, selective mineralocorticoid receptor antagonist (MRA), are recommended for the prevention of HF in patients with diabetic chronic kidney disease (CKD). Second, SGLT2 inhibitors are now recommended for the treatment of HF across the entire left ventricular ejection fraction spectrum. The benefits of quadruple therapy in patients with HF with reduced ejection fraction (HFrEF) are well established. Its rapid and early up-titration along with a close follow-up with frequent clinical and laboratory re-assessment after an episode of acute HF (the so-called 'high-intensity care' strategy) was associated with better outcomes in the STRONG-HF trial. Patients experiencing an episode of worsening HF might require a fifth drug, vericiguat. In the STEP-HFpEF-DM and STEP-HFpEF trials, semaglutide 2.4 mg once weekly administered for 1 year decreased body weight and significantly improved quality of life and the 6 min walk distance in obese patients with HF with preserved ejection fraction (HFpEF) with or without a history of diabetes. Further data on safety and efficacy, including also hard endpoints, are needed to support the addition of acetazolamide or hydrochlorothiazide to a standard diuretic regimen in patients hospitalized due to acute HF. In the meantime, PUSH-AHF supported the use of natriuresis-guided diuretic therapy. Further options and most recent evidence for the treatment of HF, including specific drugs for cardiomyopathies (i.e., mavacamten in hypertrophic cardiomyopathy and tafamidis in transthyretin cardiac amyloidosis), device therapies, cardiac contractility modulation and percutaneous treatment of valvulopathies, with the recent finding from the TRILUMINATE Pivotal trial, are also reviewed in this article.",
+        "journal": "ESC heart failure",
+        "publication_year": 2025,
+        "authors": [
+          "Alberto Beghini",
+          "Antonio Maria Sammartino",
+          "Zoltán Papp",
+          "Stephan von Haehling",
+          "Jan Biegus",
+          "Piotr Ponikowski",
+          "Marianna Adamo",
+          "Luigi Falco",
+          "Carlo Mario Lombardi",
+          "Matteo Pagnesi",
+          "Gianluigi Savarese",
+          "Marco Metra",
+          "Daniela Tomasoni"
+        ],
+        "doi": "10.1002/EJHF.2822",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Heart Failure",
+          "Sodium-Glucose Transporter 2 Inhibitors",
+          "Stroke Volume",
+          "Mineralocorticoid Receptor Antagonists",
+          "Disease Management",
+          "Practice Guidelines as Topic"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38806171/"
+      },
+      "relevance_score": 85.0,
+      "evidence_level": "high",
+      "study_type": "Practice Guideline",
+      "rationale": "Ranked by study type (Practice Guideline), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "In the last years, major progress has occurred in heart failure (HF) management.",
+        "The 2023 ESC focused update of the 2021 HF guidelines introduced new key recommendations based on the results of the last years of science."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40162642",
+        "pmcid": null,
+        "title": "Oral Semaglutide and Cardiovascular Outcomes in High-Risk Type 2 Diabetes.",
+        "abstract": "The cardiovascular safety of oral semaglutide, a glucagon-like peptide 1 receptor agonist, has been established in persons with type 2 diabetes and high cardiovascular risk. An assessment of the cardiovascular efficacy of oral semaglutide in persons with type 2 diabetes and atherosclerotic cardiovascular disease, chronic kidney disease, or both is needed. In this double-blind, placebo-controlled, event-driven, superiority trial, we randomly assigned participants who were 50 years of age or older, had type 2 diabetes with a glycated hemoglobin level of 6.5 to 10.0%, and had known atherosclerotic cardiovascular disease, chronic kidney disease, or both to receive either once-daily oral semaglutide (maximal dose, 14 mg) or placebo, in addition to standard care. The primary outcome was major adverse cardiovascular events (a composite of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke), assessed in a time-to-first-event analysis. The confirmatory secondary outcomes included major kidney disease events (a five-point composite outcome). Among the 9650 participants who had undergone randomization, the mean (±SD) follow-up was 47.5±10.9 months, and the median follow-up was 49.5 months. A primary-outcome event occurred in 579 of the 4825 participants (12.0%; incidence, 3.1 events per 100 person-years) in the oral semaglutide group, as compared with 668 of the 4825 participants (13.8%; incidence, 3.7 events per 100 person-years) in the placebo group (hazard ratio, 0.86; 95% confidence interval, 0.77 to 0.96; P = 0.006). The results for the confirmatory secondary outcomes did not differ significantly between the two groups. The incidence of serious adverse events was 47.9% in the oral semaglutide group and 50.3% in the placebo group; the incidence of gastrointestinal disorders was 5.0% and 4.4%, respectively. Among persons with type 2 diabetes and atherosclerotic cardiovascular disease, chronic kidney disease, or both, the use of oral semaglutide was associated with a significantly lower risk of major adverse cardiovascular events than placebo, without an increase in the incidence of serious adverse events. (Funded by Novo Nordisk; SOUL ClinicalTrials.gov number, NCT03914326.).",
+        "journal": "The New England journal of medicine",
+        "publication_year": 2025,
+        "authors": [
+          "Darren K McGuire",
+          "Nikolaus Marx",
+          "Sharon L Mulvagh",
+          "John E Deanfield",
+          "Silvio E Inzucchi",
+          "Rodica Pop-Busui",
+          "Johannes F E Mann",
+          "Scott S Emerson",
+          "Neil R Poulter",
+          "Mads D M Engelmann",
+          "Maria Sejersten Ripa",
+          "G Kees Hovingh",
+          "Kirstine Brown-Frandsen",
+          "Stephen C Bain",
+          "Matthew A Cavender",
+          "Mette Gislum",
+          "Jens-Peter David",
+          "John B Buse",
+          "SOUL Study Group"
+        ],
+        "doi": "10.1056/NEJMoa2501006",
+        "publication_types": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Equivalence Trial"
+        ],
+        "mesh_terms": [
+          "Aged",
+          "Female",
+          "Humans",
+          "Male",
+          "Middle Aged",
+          "Administration, Oral",
+          "Atherosclerosis",
+          "Cardiovascular Diseases",
+          "Diabetes Mellitus, Type 2",
+          "Double-Blind Method",
+          "Glucagon-Like Peptide-1 Receptor Agonists",
+          "Glycated Hemoglobin",
+          "Renal Insufficiency, Chronic",
+          "Follow-Up Studies",
+          "Glucagon-Like Peptide 1",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40162642/"
+      },
+      "relevance_score": 85.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (7), abstract availability, and publication year.",
+      "key_findings": [
+        "The cardiovascular safety of oral semaglutide, a glucagon-like peptide 1 receptor agonist, has been established in persons with type 2 diabetes and high cardiovascular risk.",
+        "An assessment of the cardiovascular efficacy of oral semaglutide in persons with type 2 diabetes and atherosclerotic cardiovascular disease, chronic kidney disease, or both is needed."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40156843",
+        "pmcid": "PMC11635050",
+        "title": "Oral Semaglutide and Cardiovascular Outcomes in People With Type 2 Diabetes, According to SGLT2i Use: Prespecified Analyses of the SOUL Randomized Trial.",
+        "abstract": "Both GLP-1 (glucagon-like peptide-1) receptor agonists and SGLT2 (sodium-glucose cotransporter-2) inhibitors (SGLT2i) improve cardiovascular outcomes in people with type 2 diabetes and cardiovascular or chronic kidney disease. However, there are limited data about the effect of combining these agents on cardiovascular and safety outcomes. The SOUL trial (Semaglutide Cardiovascular Outcomes Trial; NCT03914326) randomized 9650 participants with type 2 diabetes and atherosclerotic cardiovascular disease and/or chronic kidney disease to oral semaglutide or placebo. As prespecified, participants were analyzed according to baseline use of SGLT2i (yes, n=2596; no, n=7054), and subsequently for any use of SGLT2i during the trial (yes, n=4718; no, n=4932). The primary outcome was time to first major adverse cardiovascular event, defined as cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke. Safety was evaluated by comparing the incidence of serious adverse events. Over a mean follow-up of 47.5±10.9 months, the risk of the primary outcome in the overall trial population was 14% lower for oral semaglutide versus placebo (hazard ratio, 0.86; 95% CI, 0.77-0.96). In those taking SGLT2i at baseline, there were 143 of 1296 (semaglutide) versus 158 of 1300 (placebo) primary outcome events (hazard ratio, 0.89; 95% CI, 0.71-1.11); and 436 of 3529 versus 510 of 3525, respectively, in participants not taking SGLT2i at baseline (hazard ratio, 0.84; 95% CI, 0.74-0.95; P-interaction, 0.66). An analysis of major adverse cardiovascular events by any in-trial SGLT2i use versus no use also showed no evidence of heterogeneity in the effects of oral semaglutide. The adverse event profiles of oral semaglutide with or without concomitant SGLT2i were similar. Oral semaglutide reduced major adverse cardiovascular event outcomes independently of concomitant SGLT2i treatment, and this combination appeared to be safe. URL: https://www.clinicaltrials.gov; Unique identifier: NCT03914326.",
+        "journal": "Circulation",
+        "publication_year": 2025,
+        "authors": [
+          "Nikolaus Marx",
+          "John E Deanfield",
+          "Johannes F E Mann",
+          "Rosario Arechavaleta",
+          "Stephen C Bain",
+          "Harpreet S Bajaj",
+          "Katrine Bayer Tanggaard",
+          "Andreas L Birkenfeld",
+          "John B Buse",
+          "Zaklina Davicevic-Elez",
+          "Cyrus Desouza",
+          "Scott S Emerson",
+          "Mads D M Engelmann",
+          "G Kees Hovingh",
+          "Silvio E Inzucchi",
+          "Pardeep S Jhund",
+          "Sharon L Mulvagh",
+          "Rodica Pop-Busui",
+          "Neil R Poulter",
+          "Søren Rasmussen",
+          "Shih-Te Tu",
+          "Darren K McGuire",
+          "SOUL Study Group"
+        ],
+        "doi": "10.1056/NEJMoa2501006",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Journal Article",
+          "Multicenter Study",
           "Randomized Controlled Trial"
         ],
         "mesh_terms": [
-          "Semaglutide",
-          "Renal Insufficiency, Chronic"
+          "Aged",
+          "Female",
+          "Humans",
+          "Male",
+          "Middle Aged",
+          "Administration, Oral",
+          "Cardiovascular Diseases",
+          "Diabetes Mellitus, Type 2",
+          "Glucagon-Like Peptides",
+          "Sodium-Glucose Transporter 2 Inhibitors",
+          "Treatment Outcome",
+          "Glucagon-Like Peptide 1",
+          "Semaglutide"
         ],
-        "url": "mock://semaglutide-ckd-001"
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40156843/"
       },
-      "relevance_score": 84.0,
+      "relevance_score": 81.0,
       "evidence_level": "high",
       "study_type": "Randomized Controlled Trial",
-      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (9), abstract availability, and publication year.",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (6), abstract availability, and publication year.",
       "key_findings": [
-        "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice."
+        "Both GLP-1 (glucagon-like peptide-1) receptor agonists and SGLT2 (sodium-glucose cotransporter-2) inhibitors (SGLT2i) improve cardiovascular outcomes in people with type 2 diabetes and cardiovascular or chronic kidney disease.",
+        "However, there are limited data about the effect of combining these agents on cardiovascular and safety outcomes."
       ],
       "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "39455729",
+        "pmcid": "10993191",
+        "title": "Semaglutide in patients with overweight or obesity and chronic kidney disease without diabetes: a randomized double-blind placebo-controlled clinical trial.",
+        "abstract": "Semaglutide reduces albuminuria and the risk of kidney disease progression in patients with type 2 diabetes and chronic kidney disease (CKD). We conducted a randomized placebo-controlled double-blind clinical trial in adults with CKD (estimated glomerular filtration rate (eGFR) ≥25 ml min-1 1.73 m-2 and urine albumin-to-creatinine ratio (UACR) ≥30 and <3,500 mg g-1) and body mass index ≥27 kg m-2. Participants were randomized to semaglutide 2.4 mg per week or placebo. The primary endpoint was percentage change from baseline in UACR at week 24. Safety was monitored throughout. Overall, 125 participants were screened, of whom 101 were randomized to semaglutide (n = 51) or placebo (n = 50). Mean age was 55.8 (s.d. 12) years; 40 participants (39.6%) were female; median UACR was 251 mg g-1 (interquartile range 100, 584); mean eGFR was 65.0 (s.d. 25) ml min-1 1.73 m-2; and mean body mass index was 36.2 (s.d. 5.6) kg m-2. Chronic glomerulonephritis (n = 25) and hypertensive CKD (n = 27) were the most common CKD etiologies. Treatment for 24 weeks with semaglutide compared to placebo reduced UACR by -52.1% (95% confidence interval -65.5, -33.4; P < 0.0001). Gastrointestinal adverse events were more often reported with semaglutide (n = 30) than with placebo (n = 15). Semaglutide treatment for 24 weeks resulted in a clinically meaningful reduction in albuminuria in patients with overweight/obesity and non-diabetic CKD. ClinicalTrials.gov registration: NCT04889183 .",
+        "journal": "Nature medicine",
+        "publication_year": 2025,
+        "authors": [
+          "Ellen M Apperloo",
+          "Jose L Gorriz",
+          "Maria Jose Soler",
+          "Secundino Cigarrán Guldris",
+          "Josep M Cruzado",
+          "Maria Jesús Puchades",
+          "Marina López-Martínez",
+          "Femke Waanders",
+          "Gozewijn D Laverman",
+          "Annemarie van der Aart-van der Beek",
+          "Klaas Hoogenberg",
+          "André P van Beek",
+          "Jacobien Verhave",
+          "Sofia B Ahmed",
+          "Roland E Schmieder",
+          "Christoph Wanner",
+          "David Z I Cherney",
+          "Niels Jongs",
+          "Hiddo J L Heerspink"
+        ],
+        "doi": "10.1016/S0140-6736(23)00569-X",
+        "publication_types": [
+          "Journal Article",
+          "Randomized Controlled Trial"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Glucagon-Like Peptides",
+          "Female",
+          "Male",
+          "Renal Insufficiency, Chronic",
+          "Middle Aged",
+          "Double-Blind Method",
+          "Obesity",
+          "Overweight",
+          "Glomerular Filtration Rate",
+          "Albuminuria",
+          "Aged",
+          "Adult",
+          "Diabetes Mellitus, Type 2",
+          "Body Mass Index",
+          "Glucagon-Like Peptide 1",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39455729/"
+      },
+      "relevance_score": 81.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Semaglutide reduces albuminuria and the risk of kidney disease progression in patients with type 2 diabetes and chronic kidney disease (CKD).",
+        "We conducted a randomized placebo-controlled double-blind clinical trial in adults with CKD (estimated glomerular filtration rate (eGFR) ≥25 ml min-1 1.73 m-2 and urine albumin-to-creatinine ratio (UACR) ≥30 and <3,500 mg g-1) and body mass index ≥27 kg m-2."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "39222642",
+        "pmcid": null,
+        "title": "Semaglutide versus placebo in patients with heart failure and mildly reduced or preserved ejection fraction: a pooled analysis of the SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM randomised trials.",
+        "abstract": "Heart failure with mildly reduced or preserved ejection fraction (hereafter referred to as HFpEF) is the most common type of heart failure and is associated with a high risk of hospitalisation and death, especially in patients with overweight, obesity, or type 2 diabetes. In the STEP-HFpEF and STEP-HFpEF DM trials, semaglutide improved heart failure-related symptoms and physical limitations in participants with HFpEF. Whether semaglutide also reduces clinical heart failure events in this group remains to be established. We conducted a post-hoc pooled, participant-level analysis of four randomised, placebo-controlled trials (SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM) to examine the effects of once-weekly subcutaneous semaglutide (2·4 mg in SELECT, STEP-HFpEF, and STEP-HFpEF DM; 1·0 mg in FLOW) on heart failure events. The STEP-HFpEF and STEP-HFpF DM trials enrolled participants with obesity-related HFpEF, the SELECT trial enrolled participants with atherosclerotic cardiovascular disease and overweight or obesity, and the FLOW trial enrolled participants with type 2 diabetes and chronic kidney disease. Hence, for this analysis, we include all participants from the STEP-HFpEF trials and those with an investigator-reported history of HFpEF from SELECT and FLOW. The main outcomes for this analysis were the composite endpoint of time to cardiovascular death or first worsening heart failure event (defined as hospitalisation or urgent visit due to heart failure), time to first worsening heart failure event, and time to cardiovascular death. Efficacy and safety endpoints were analysed with the full analysis set (ie, all participants randomly assigned to treatment, according to the intention-to-treat principle). The SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM trials are registered at ClinicalTrials.gov, NCT03574597, NCT03819153, NCT04788511, and NCT04916470, respectively, and all are complete. Across the four trials, 3743 (16·8%) of 22 282 participants had a history of HFpEF (1914 assigned to semaglutide and 1829 assigned to placebo). In this group of participants with HFpEF, semaglutide reduced the risk of the combined endpoint of cardiovascular death or heart failure events (103 [5·4%] of 1914 in the semaglutide group had events vs 138 [7·5%] of 1829 in the placebo group; hazard ratio [HR] 0·69 [95% CI 0·53-0·89]; p=0·0045). Semaglutide also reduced the risk of worsening heart failure events (54 [2·8%] vs 86 [4·7%]; HR 0·59 [0·41-0·82]; p=0·0019). No significant effect on cardiovascular death alone was seen (59 [3·1%] vs 67 [3·7%]; HR 0·82 [0·57-1·16]; p=0·25). A lower proportion of patients treated with semaglutide had serious adverse events than did those who were treated with placebo (572 [29·9%] vs 708 [38·7%]). In patients with HFpEF, semaglutide reduced the risk of the combined endpoint of cardiovascular death or worsening heart failure events, and worsening heart failure events alone, whereas its effect on cardiovascular death alone was not significant. These data support the use of semaglutide as an efficacious therapy to reduce the risk of clinical heart failure events in patients with HFpEF, for whom few treatment options are currently available. Novo Nordisk.",
+        "journal": "Lancet (London, England)",
+        "publication_year": 2024,
+        "authors": [
+          "Mikhail N Kosiborod",
+          "John Deanfield",
+          "Richard Pratley",
+          "Barry A Borlaug",
+          "Javed Butler",
+          "Melanie J Davies",
+          "Scott S Emerson",
+          "Steven E Kahn",
+          "Dalane W Kitzman",
+          "Ildiko Lingvay",
+          "Kenneth W Mahaffey",
+          "Mark C Petrie",
+          "Jorge Plutzky",
+          "Søren Rasmussen",
+          "Cecilia Rönnbäck",
+          "Sanjiv J Shah",
+          "Subodh Verma",
+          "Peter E Weeke",
+          "A Michael Lincoff",
+          "SELECT, FLOW, STEP-HFpEF, and STEP-HFpEF DM Trial Committees and Investigators"
+        ],
+        "doi": "10.1016/S0140-6736(24)01643-X",
+        "publication_types": [
+          "Journal Article",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, N.I.H., Intramural"
+        ],
+        "mesh_terms": [
+          "Aged",
+          "Female",
+          "Humans",
+          "Male",
+          "Middle Aged",
+          "Diabetes Mellitus, Type 2",
+          "Glucagon-Like Peptides",
+          "Heart Failure",
+          "Hospitalization",
+          "Obesity",
+          "Stroke Volume",
+          "Treatment Outcome",
+          "Glucagon-Like Peptide-1 Receptor Agonists",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39222642/"
+      },
+      "relevance_score": 80.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Heart failure with mildly reduced or preserved ejection fraction (hereafter referred to as HFpEF) is the most common type of heart failure and is associated with a high risk of hospitalisation and death, especially in patients with overweight, obesity, or type 2 diabetes.",
+        "In the STEP-HFpEF and STEP-HFpEF DM trials, semaglutide improved heart failure-related symptoms and physical limitations in participants with HFpEF."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "31185157",
+        "pmcid": null,
+        "title": "Oral Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes.",
+        "abstract": "Establishing cardiovascular safety of new therapies for type 2 diabetes is important. Safety data are available for the subcutaneous form of the glucagon-like peptide-1 receptor agonist semaglutide but are needed for oral semaglutide. We assessed cardiovascular outcomes of once-daily oral semaglutide in an event-driven, randomized, double-blind, placebo-controlled trial involving patients at high cardiovascular risk (age of ≥50 years with established cardiovascular or chronic kidney disease, or age of ≥60 years with cardiovascular risk factors only). The primary outcome in a time-to-event analysis was the first occurrence of a major adverse cardiovascular event (death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke). The trial was designed to rule out 80% excess cardiovascular risk as compared with placebo (noninferiority margin of 1.8 for the upper boundary of the 95% confidence interval for the hazard ratio for the primary outcome). A total of 3183 patients were randomly assigned to receive oral semaglutide or placebo. The mean age of the patients was 66 years; 2695 patients (84.7%) were 50 years of age or older and had cardiovascular or chronic kidney disease. The median time in the trial was 15.9 months. Major adverse cardiovascular events occurred in 61 of 1591 patients (3.8%) in the oral semaglutide group and 76 of 1592 (4.8%) in the placebo group (hazard ratio, 0.79; 95% confidence interval [CI], 0.57 to 1.11; P<0.001 for noninferiority). Results for components of the primary outcome were as follows: death from cardiovascular causes, 15 of 1591 patients (0.9%) in the oral semaglutide group and 30 of 1592 (1.9%) in the placebo group (hazard ratio, 0.49; 95% CI, 0.27 to 0.92); nonfatal myocardial infarction, 37 of 1591 patients (2.3%) and 31 of 1592 (1.9%), respectively (hazard ratio, 1.18; 95% CI, 0.73 to 1.90); and nonfatal stroke, 12 of 1591 patients (0.8%) and 16 of 1592 (1.0%), respectively (hazard ratio, 0.74; 95% CI, 0.35 to 1.57). Death from any cause occurred in 23 of 1591 patients (1.4%) in the oral semaglutide group and 45 of 1592 (2.8%) in the placebo group (hazard ratio, 0.51; 95% CI, 0.31 to 0.84). Gastrointestinal adverse events leading to discontinuation of oral semaglutide or placebo were more common with oral semaglutide. In this trial involving patients with type 2 diabetes, the cardiovascular risk profile of oral semaglutide was not inferior to that of placebo. (Funded by Novo Nordisk; PIONEER 6 ClinicalTrials.gov number, NCT02692716.).",
+        "journal": "The New England journal of medicine",
+        "publication_year": 2019,
+        "authors": [
+          "Mansoor Husain",
+          "Andreas L Birkenfeld",
+          "Morten Donsmark",
+          "Kathleen Dungan",
+          "Freddy G Eliaschewitz",
+          "Denise R Franco",
+          "Ole K Jeppesen",
+          "Ildiko Lingvay",
+          "Ofri Mosenzon",
+          "Sue D Pedersen",
+          "Cees J Tack",
+          "Mette Thomsen",
+          "Tina Vilsbøll",
+          "Mark L Warren",
+          "Stephen C Bain",
+          "PIONEER 6 Investigators"
+        ],
+        "doi": "10.1056/NEJMoa1901118",
+        "publication_types": [
+          "Clinical Trial, Phase III",
+          "Equivalence Trial",
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "mesh_terms": [
+          "Administration, Oral",
+          "Aged",
+          "Cardiovascular Diseases",
+          "Diabetes Mellitus, Type 2",
+          "Double-Blind Method",
+          "Female",
+          "Glucagon-Like Peptides",
+          "Glycated Hemoglobin",
+          "Humans",
+          "Hypoglycemic Agents",
+          "Male",
+          "Middle Aged",
+          "Risk",
+          "Glucagon-Like Peptide-1 Receptor Agonists",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31185157/"
+      },
+      "relevance_score": 75.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Establishing cardiovascular safety of new therapies for type 2 diabetes is important.",
+        "Safety data are available for the subcutaneous form of the glucagon-like peptide-1 receptor agonist semaglutide but are needed for oral semaglutide."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "27633186",
+        "pmcid": null,
+        "title": "Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes.",
+        "abstract": "Regulatory guidance specifies the need to establish cardiovascular safety of new diabetes therapies in patients with type 2 diabetes in order to rule out excess cardiovascular risk. The cardiovascular effects of semaglutide, a glucagon-like peptide 1 analogue with an extended half-life of approximately 1 week, in type 2 diabetes are unknown. We randomly assigned 3297 patients with type 2 diabetes who were on a standard-care regimen to receive once-weekly semaglutide (0.5 mg or 1.0 mg) or placebo for 104 weeks. The primary composite outcome was the first occurrence of cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke. We hypothesized that semaglutide would be noninferior to placebo for the primary outcome. The noninferiority margin was 1.8 for the upper boundary of the 95% confidence interval of the hazard ratio. At baseline, 2735 of the patients (83.0%) had established cardiovascular disease, chronic kidney disease, or both. The primary outcome occurred in 108 of 1648 patients (6.6%) in the semaglutide group and in 146 of 1649 patients (8.9%) in the placebo group (hazard ratio, 0.74; 95% confidence interval [CI], 0.58 to 0.95; P<0.001 for noninferiority). Nonfatal myocardial infarction occurred in 2.9% of the patients receiving semaglutide and in 3.9% of those receiving placebo (hazard ratio, 0.74; 95% CI, 0.51 to 1.08; P=0.12); nonfatal stroke occurred in 1.6% and 2.7%, respectively (hazard ratio, 0.61; 95% CI, 0.38 to 0.99; P=0.04). Rates of death from cardiovascular causes were similar in the two groups. Rates of new or worsening nephropathy were lower in the semaglutide group, but rates of retinopathy complications (vitreous hemorrhage, blindness, or conditions requiring treatment with an intravitreal agent or photocoagulation) were significantly higher (hazard ratio, 1.76; 95% CI, 1.11 to 2.78; P=0.02). Fewer serious adverse events occurred in the semaglutide group, although more patients discontinued treatment because of adverse events, mainly gastrointestinal. In patients with type 2 diabetes who were at high cardiovascular risk, the rate of cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke was significantly lower among patients receiving semaglutide than among those receiving placebo, an outcome that confirmed the noninferiority of semaglutide. (Funded by Novo Nordisk; SUSTAIN-6 ClinicalTrials.gov number, NCT01720446 .).",
+        "journal": "The New England journal of medicine",
+        "publication_year": 2016,
+        "authors": [
+          "Steven P Marso",
+          "Stephen C Bain",
+          "Agostino Consoli",
+          "Freddy G Eliaschewitz",
+          "Esteban Jódar",
+          "Lawrence A Leiter",
+          "Ildiko Lingvay",
+          "Julio Rosenstock",
+          "Jochen Seufert",
+          "Mark L Warren",
+          "Vincent Woo",
+          "Oluf Hansen",
+          "Anders G Holst",
+          "Jonas Pettersson",
+          "Tina Vilsbøll",
+          "SUSTAIN-6 Investigators"
+        ],
+        "doi": "10.1056/NEJMoa1607141",
+        "publication_types": [
+          "Journal Article",
+          "Multicenter Study",
+          "Randomized Controlled Trial"
+        ],
+        "mesh_terms": [
+          "Aged",
+          "Cardiovascular Diseases",
+          "Diabetes Mellitus, Type 2",
+          "Diabetic Nephropathies",
+          "Diabetic Retinopathy",
+          "Female",
+          "Gastrointestinal Diseases",
+          "Glucagon-Like Peptide 1",
+          "Glucagon-Like Peptides",
+          "Glycated Hemoglobin",
+          "Humans",
+          "Kaplan-Meier Estimate",
+          "Male",
+          "Middle Aged",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27633186/"
+      },
+      "relevance_score": 72.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Regulatory guidance specifies the need to establish cardiovascular safety of new diabetes therapies in patients with type 2 diabetes in order to rule out excess cardiovascular risk.",
+        "The cardiovascular effects of semaglutide, a glucagon-like peptide 1 analogue with an extended half-life of approximately 1 week, in type 2 diabetes are unknown."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "39025300",
+        "pmcid": null,
+        "title": "The Use of Semaglutide in Patients With Renal Failure-A Retrospective Cohort Study.",
+        "abstract": "Semaglutide, a glucagon-like peptide-1 receptor agonist is approved for weight loss and diabetes treatment, but limited literature exists regarding semaglutide use in patients with advanced chronic kidney disease (CKD). Therefore, this project assessed the safety and efficacy of semaglutide among patients with estimated glomerular filtration rate (eGFR) 15-29 mL/min/1.73 m2 (CKD stage 4), eGFR<15 mL/min/1.73 m2 (CKD stage 5) or on dialysis. This is a retrospective electronic medical record based analysis of consecutive patients with advanced CKD (defined as CKD 4 or greater) who were started on semaglutide (injectable or oral). Data was collected between January 2018 and January 2023. Investigators verified CKD diagnosis and manually extracted data. Data were analyzed using Fisher's exact test, paired t test, linear mixed effects models and Wilcoxon signed rank test. Seventy-six patients with CKD 4 or greater who initiated semaglutide were included. Most patients had a history of type 2 diabetes mellitus (96.0%), and most were males (53.9%). The mean age was 66.8 y (SD 11.5) with the mean body mass index was 36.2 (SD 7.5). The initial doses were 3 mg orally and 0.25 mg by injection. Maximum prescribed dose was 1 mg (injectable) in 28 (45.2%) patients and 14 mg (orally) in 2 (14.2%) patients. Patients received semaglutide for a median duration of 17.4 (IQR 0.43, 48.8) months. Forty-eight (63.1%) patients reported no adverse effects associated with the therapy. Mean weight decreased from 106.2 (SD 24.2) to 101.3 (SD 27.3) kg (P < .001). Eight patients (16%) with type 2 diabetes mellitus T2DM discontinued insulin after starting semaglutide. Mean hemoglobin A1c (HbA1c) decreased from 8.0% (SD 1.7) to 7.1% (SD 1.3) (P < .001). Adverse effects were the primary reason for semaglutide discontinuation (37.0%), with nausea, vomiting, and abdominal pain being the most common complaints. Based on this retrospective study semaglutide appears to be tolerated by most individuals with CKD 4 or greater despite associated gastrointestinal side effects similar to those observed in patients with better kidney function and leads to an improvement of glycemic control and insulin discontinuation in patients with T2DM. Modest weight loss (approximately 4.6% of the total body weight) was observed on the prescribed doses. Larger prospective randomized studies are needed to comprehensively assess the risks and benefits of semaglutide in patients with CKD 4 or greater and obesity.",
+        "journal": "Endocrine practice : official journal of the American College of Endocrinology and the American Association of Clinical Endocrinologists",
+        "publication_year": 2024,
+        "authors": [
+          "Jane J Long",
+          "Sukhdeep S Sahi",
+          "Adley I Lemke",
+          "Jie Na",
+          "Oscar A Garcia Valencia",
+          "Pooja Budhiraja",
+          "Hani M Wadei",
+          "Vineeth Sudhindran",
+          "Roberto Benzo",
+          "Matthew M Clark",
+          "Meera Shah",
+          "David Fipps",
+          "Pavel Navratil",
+          "Ahmed A Abdelrheem",
+          "Afsana A Shaik",
+          "Dustin J Duffy",
+          "Niv Pencovich",
+          "Pankaj Shah",
+          "Yogish C Kudva",
+          "Aleksandra Kukla",
+          "Tayyab S Diwan"
+        ],
+        "doi": "10.1016/j.eprac.2024.07.008",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Retrospective Studies",
+          "Male",
+          "Female",
+          "Glucagon-Like Peptides",
+          "Aged",
+          "Middle Aged",
+          "Diabetes Mellitus, Type 2",
+          "Renal Insufficiency, Chronic",
+          "Hypoglycemic Agents",
+          "Glomerular Filtration Rate",
+          "Cohort Studies",
+          "Renal Insufficiency",
+          "Aged, 80 and over",
+          "Renal Dialysis",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39025300/"
+      },
+      "relevance_score": 68.0,
+      "evidence_level": "moderate",
+      "study_type": "Cohort",
+      "rationale": "Ranked by study type (Cohort), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Semaglutide, a glucagon-like peptide-1 receptor agonist is approved for weight loss and diabetes treatment, but limited literature exists regarding semaglutide use in patients with advanced chronic kidney disease (CKD).",
+        "Therefore, this project assessed the safety and efficacy of semaglutide among patients with estimated glomerular filtration rate (eGFR) 15-29 mL/min/1.73 m2 (CKD stage 4), eGFR<15 mL/min/1.73 m2 (CKD stage 5) or on dialysis."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40458885",
+        "pmcid": "PMC6245208",
+        "title": "Semaglutide: a key medication for managing cardiovascular-kidney-metabolic syndrome.",
+        "abstract": "Recent trials underscore the cardiovascular (CV), renal, and metabolic benefits of semaglutide in individuals with and without type 2 diabetes (T2D). In T2D, semaglutide enhances glycemic control, reduces major adverse CV events (MACE), and slows chronic kidney disease (CKD) progression. The SUSTAIN-6 trial demonstrated a 26% MACE reduction (HR 0.74; 95% CI: 0.58-0.95; p = 0.02) in high CV-risk patients with T2D using semaglutide (0.5 or 1.0 mg weekly). Similarly, the FLOW trial showed a 24% reduction in major kidney disease events (HR 0.76; 95% CI: 0.66-0.88; p = 0.002) with weekly 1.0 mg semaglutide in individuals with T2D with CKD. Beyond T2D, the SELECT trial highlighted semaglutide's efficacy in reducing MACE by 20% (HR 0.80; 95% CI: 0.72-0.90; p < 0.001) and slowing kidney function loss in overweight or obese individuals with preexisting CV disease using 2.4 mg weekly. Additionally, semaglutide alleviates heart failure symptoms and reduces hospitalizations in obese individuals regardless of T2D status. These findings underscore semaglutide's role in improving kidney, CV, and survival outcomes among high-risk patients. This review highlights the cardio-kidney-metabolic benefits of semaglutide in individuals with and without T2D to inform cardiologists about its potential to enhance patient care.",
+        "journal": "Future cardiology",
+        "publication_year": 2025,
+        "authors": [
+          "Richard J MacIsaac"
+        ],
+        "doi": "10.1016/S2213-8587(19)30249-9",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Glucagon-Like Peptides",
+          "Cardiovascular Diseases",
+          "Metabolic Syndrome",
+          "Diabetes Mellitus, Type 2",
+          "Hypoglycemic Agents",
+          "Renal Insufficiency, Chronic",
+          "Glucagon-Like Peptide 1",
+          "Semaglutide"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40458885/"
+      },
+      "relevance_score": 53.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Recent trials underscore the cardiovascular (CV), renal, and metabolic benefits of semaglutide in individuals with and without type 2 diabetes (T2D).",
+        "In T2D, semaglutide enhances glycemic control, reduces major adverse CV events (MACE), and slows chronic kidney disease (CKD) progression."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
     }
   ],
   "claim_ledger": [
     {
       "id": "C001",
-      "text": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
-      "claim_type": "limitation",
+      "text": "Evidence indicates that semaglutide is associated with a significantly lower risk of major adverse cardiovascular events in patients with type 2 diabetes and chronic kidney disease (CKD) or atherosclerotic cardiovascular disease, without increasing the incidence of serious adverse events [40162642, 40156843].",
+      "claim_type": "prognosis",
       "support_status": "supported",
       "pmids": [
-        "MOCK-SEMAGLUTIDE-001"
+        "40162642",
+        "40156843"
       ],
       "evidence_level": "high",
-      "risk_level": "low",
+      "risk_level": "medium",
       "rationale": "Claim has cited support in the loaded Evidence Pack.",
       "limitation_note": null
     },
     {
       "id": "C002",
-      "text": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
-      "claim_type": "limitation",
+      "text": "In patients with non-diabetic CKD and overweight/obesity, semaglutide significantly reduced albuminuria [39455729].",
+      "claim_type": "epidemiology",
       "support_status": "supported",
       "pmids": [
-        "MOCK-SEMAGLUTIDE-001"
+        "39455729"
       ],
       "evidence_level": "high",
       "risk_level": "low",
@@ -106,22 +1204,39 @@
     },
     {
       "id": "C003",
-      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
-      "claim_type": "diagnosis",
-      "support_status": "unsupported",
-      "pmids": [],
-      "evidence_level": "uncertain",
-      "risk_level": "high",
-      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
-      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+      "text": "Safety profiles remain consistent regardless of concomitant SGLT2 inhibitor use, although gastrointestinal adverse events are more frequently reported with semaglutide [40156843, 39455729].",
+      "claim_type": "safety",
+      "support_status": "supported",
+      "pmids": [
+        "40156843",
+        "39455729"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
     },
     {
       "id": "C004",
-      "text": "This pack summarizes published evidence and cites the loaded sources (MOCK-SEMAGLUTIDE-001).",
-      "claim_type": "epidemiology",
+      "text": "Research suggests that semaglutide may help protect the kidneys and reduce the risk of kidney failure or death in patients with chronic kidney disease [40316962, 38806171].",
+      "claim_type": "prognosis",
       "support_status": "supported",
       "pmids": [
-        "MOCK-SEMAGLUTIDE-001"
+        "40316962",
+        "38806171"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C005",
+      "text": "These findings indicate that the medication is generally safe and may slow the progression of kidney disease [40162642].",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "40162642"
       ],
       "evidence_level": "high",
       "risk_level": "low",
@@ -132,30 +1247,139 @@
   "caution_map": [
     {
       "id": "CAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "cautionary_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "cautionary_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU003",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "cautionary_pmids": [
+        "40162642",
+        "40156843"
+      ],
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+      "severity": "low"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "39455729"
+      ],
+      "cautionary_pmids": [
+        "39455729"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU005",
       "claim_id": "C003",
-      "supporting_pmids": [],
-      "cautionary_pmids": [],
-      "caution_type": "insufficient_data",
-      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
-      "severity": "high"
+      "supporting_pmids": [
+        "40156843",
+        "39455729"
+      ],
+      "cautionary_pmids": [
+        "40156843",
+        "39455729"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU006",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "40156843",
+        "39455729"
+      ],
+      "cautionary_pmids": [
+        "40156843",
+        "39455729"
+      ],
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses cautious language suggesting mixed or inconsistent results.",
+      "severity": "low"
+    },
+    {
+      "id": "CAU007",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "40316962",
+        "38806171"
+      ],
+      "cautionary_pmids": [
+        "40316962",
+        "38806171"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU008",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "40316962",
+        "38806171"
+      ],
+      "cautionary_pmids": [
+        "40316962",
+        "38806171"
+      ],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
+      "severity": "medium"
     }
   ],
   "freshness": {
-    "score": 0.85,
+    "score": 1.0,
     "last_search_date": "2026-04-30",
-    "newest_publication_year": 2024,
-    "oldest_publication_year": 2024,
-    "recommended_refresh_days": 120,
-    "rationale": "Newest loaded publication year is 2024 and oldest is 2024; the pack is 2 years from the newest included evidence."
+    "newest_publication_year": 2025,
+    "oldest_publication_year": 2016,
+    "recommended_refresh_days": 180,
+    "rationale": "Newest loaded publication year is 2025 and oldest is 2016; the pack is 1 years from the newest included evidence."
   },
-  "executive_summary": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
-  "clinical_interpretation": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "executive_summary": "Evidence indicates that semaglutide is associated with a significantly lower risk of major adverse cardiovascular events in patients with type 2 diabetes and chronic kidney disease (CKD) or atherosclerotic cardiovascular disease, without increasing the incidence of serious adverse events [40162642, 40156843]. In patients with non-diabetic CKD and overweight/obesity, semaglutide significantly reduced albuminuria [39455729]. Safety profiles remain consistent regardless of concomitant SGLT2 inhibitor use, although gastrointestinal adverse events are more frequently reported with semaglutide [40156843, 39455729].",
+  "clinical_interpretation": "Evidence indicates that semaglutide is associated with a significantly lower risk of major adverse cardiovascular events in patients with type 2 diabetes and chronic kidney disease (CKD) or atherosclerotic cardiovascular disease, without increasing the incidence of serious adverse events [40162642, 40156843]. In patients with non-diabetic CKD and overweight/obesity, semaglutide significantly reduced albuminuria [39455729]. Safety profiles remain consistent regardless of concomitant SGLT2 inhibitor use, although gastrointestinal adverse events are more frequently reported with semaglutide [40156843, 39455729]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
   "what_the_evidence_does_not_prove": [
     "It does not diagnose any individual patient.",
     "It does not replace urgent clinical evaluation for warning signs.",
     "It does not prove that every warning sign has equal predictive value in every setting."
   ],
-  "patient_friendly_explanation": "This pack summarizes published evidence and cites the loaded sources (MOCK-SEMAGLUTIDE-001).",
+  "patient_friendly_explanation": "Research suggests that semaglutide may help protect the kidneys and reduce the risk of kidney failure or death in patients with chronic kidney disease [40316962, 38806171]. These findings indicate that the medication is generally safe and may slow the progression of kidney disease [40162642].",
   "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
-  "citation_coverage": 0.75
+  "citation_coverage": 1.0
 }
