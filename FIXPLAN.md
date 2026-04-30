@@ -34,7 +34,7 @@ Rules:
 
 **Phase:** 7 — Final Submission Prep  
 **Score at audit:** 76 / 100  
-**Estimated current score:** ~94 / 100  
+**Estimated current score:** ~96 / 100  
 **Target score:** 90+ (Ready for serious submission)  
 **Submission deadline:** [Add deadline]  
 
@@ -46,6 +46,7 @@ Rules:
 |---------|------|-------|-----------------|---------|
 | 0 | 2026-04-30 | — | Audit completed, FIXPLAN created | — |
 | 1 | 2026-04-30 | 1–6 | P1-1, P1-2, P2-1, P2-2, P2-3, P2-4, P3-1, P3-2, P3-3, P4-1, P4-2, P4-3, P5-1, P5-2, P5-3, P6-1, P6-2 | d6da7e7, 47a0ab2, 8b14816, 9e6e403, d1d0bed, 31c511c |
+| 2 | 2026-04-30 | 6–7 | P6-3, baseline_agent LLMProviderError, tests/conftest.py mock pinning | 4f6b6cd, 076bfdf |
 
 ---
 
@@ -311,11 +312,11 @@ Rules:
 - **Commit:** pending
 
 ### P5-2 — Add CI badge to README
-- [ ] Status: pending (depends on P4-1)
+- [x] Status: done — commit d1d0bed
 - **Files:** `README.md`
-- **Implementation:** Add `[![CI](https://github.com/{owner}/{repo}/actions/workflows/ci.yml/badge.svg)](https://github.com/{owner}/{repo}/actions/workflows/ci.yml)` to the badge row. Replace `{owner}/{repo}` with the actual GitHub repo path.
+- **Implementation:** CI badge present at line 7 pointing to `sfnc01/veritasclin-gemma4`.
 - **Acceptance test:** Badge appears in README badge row. Link resolves.
-- **Commit:** pending
+- **Commit:** d1d0bed
 
 ### P5-3 — Remove all placeholder HTML comments from README
 - [x] Status: done — commit d1d0bed
@@ -356,15 +357,12 @@ Rules:
 - **Commit:** pending
 
 ### P6-3 — Export architecture diagram as PNG
-- [ ] Status: pending
-- **Files:** `assets/diagrams/veritasclin-field-architecture.png`
+- [x] Status: done — commit 076bfdf
+- **Files:** `assets/diagrams/veritasclin-field-architecture.png`, `README.md`
 - **Problem:** `assets/diagrams/` is empty. The Mermaid diagram in README isn't visible in all contexts.
-- **Implementation:**
-  1. Use `mermaid-js` CLI or an online renderer to export the README Mermaid diagram as PNG
-  2. Save to `assets/diagrams/veritasclin-field-architecture.png`
-  3. Add an img reference in README below the Mermaid block as fallback
-- **Acceptance test:** File exists, size > 5KB.
-- **Commit:** pending
+- **Implementation:** Used `npx @mermaid-js/mermaid-cli` to render 91KB PNG. Added `<img>` fallback tag in README below the Mermaid block.
+- **Acceptance test:** File exists at 91KB (>5KB). `<img>` fallback in README at line 92.
+- **Commit:** 076bfdf
 
 ---
 
