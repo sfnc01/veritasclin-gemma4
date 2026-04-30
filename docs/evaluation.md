@@ -14,6 +14,7 @@ Tests run in mock mode so contributors do not need NCBI or model credentials.
 When `.env` includes `NCBI_API_KEY` and `NCBI_EMAIL`, integration tests also verify:
 
 - PubMed search returns real numeric PMIDs.
+- PubMed search can return Entrez History Server metadata for audit and batched retrieval.
 - PubMed fetch returns parseable paper metadata.
 - The dengue workflow builds a `PubMed/NCBI` Evidence Pack instead of mock fallback.
 - Failure paths do not print or expose secrets.

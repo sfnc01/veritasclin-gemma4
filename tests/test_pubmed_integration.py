@@ -3,7 +3,12 @@ import pytest
 from veritasclin.agents.pico_agent import PICOAgent
 from veritasclin.config import get_settings, reset_settings_cache
 from veritasclin.packs.builder import PackBuilder
-from veritasclin.tools.pubmed import build_pubmed_query, fetch_pubmed_papers, search_pubmed
+from veritasclin.tools.pubmed import (
+    build_pubmed_query,
+    fetch_pubmed_papers,
+    search_pubmed,
+    search_pubmed_details,
+)
 
 
 def _has_pubmed_credentials() -> bool:
@@ -28,6 +33,18 @@ def test_pubmed_integration_search_returns_numeric_pmids():
     pmids = search_pubmed(build_pubmed_query(pico), max_results=5)
     assert pmids
     assert all(pmid.isdigit() for pmid in pmids)
+
+
+def test_pubmed_integration_search_history_returns_audit_metadata():
+    pico = PICOAgent().extract(
+        "What does recent evidence say about warning signs for severe dengue in adults?"
+    )
+    result = search_pubmed_details(build_pubmed_query(pico), max_results=5, use_history=True)
+    assert result.pmids
+    assert all(pmid.isdigit() for pmid in result.pmids)
+    assert result.count is None or result.count >= len(result.pmids)
+    assert result.query_key
+    assert result.webenv
 
 
 def test_pubmed_integration_fetch_returns_pubmed_papers():

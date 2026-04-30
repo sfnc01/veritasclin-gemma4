@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import re
 import xml.etree.ElementTree as ET
+from dataclasses import asdict, dataclass
 from typing import Any
 
 import httpx
@@ -14,6 +15,26 @@ from veritasclin.tools.cache import cache_get, cache_set
 from veritasclin.tools.rate_limit import RateLimiter
 
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+_RATE_LIMITERS: dict[float, RateLimiter] = {}
+
+
+@dataclass(frozen=True)
+class PubMedSearchResult:
+    pmids: list[str]
+    count: int | None = None
+    retmax: int = 0
+    retstart: int = 0
+    query_key: str | None = None
+    webenv: str | None = None
+    query_translation: str | None = None
+
+
+def _rate_limiter(max_rps: float) -> RateLimiter:
+    limiter = _RATE_LIMITERS.get(max_rps)
+    if limiter is None:
+        limiter = RateLimiter(max_rps)
+        _RATE_LIMITERS[max_rps] = limiter
+    return limiter
 
 
 def mock_pubmed_papers(topic: str = "dengue") -> list[PubMedPaper]:
@@ -181,38 +202,86 @@ def _ncbi_params(extra: dict[str, Any]) -> dict[str, Any]:
     return params
 
 
-def search_pubmed(query: str, max_results: int = 10, sort: str = "relevance") -> list[str]:
-    if not query.strip() or max_results <= 0:
-        return []
-    settings = get_settings()
-    cache_key = f"esearch:{query}:{max_results}:{sort}"
-    cached = cache_get(cache_key)
-    if isinstance(cached, list):
-        return [str(item) for item in cached]
+def _parse_int(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
 
-    limiter = RateLimiter(settings.ncbi_max_rps)
+
+def search_pubmed_details(
+    query: str,
+    max_results: int = 10,
+    sort: str = "relevance",
+    retstart: int = 0,
+    use_history: bool = False,
+) -> PubMedSearchResult:
+    normalized_query = query.strip()
+    if not normalized_query or max_results <= 0:
+        return PubMedSearchResult(pmids=[], retmax=max(0, max_results), retstart=max(0, retstart))
+
+    safe_retstart = max(0, retstart)
+    settings = get_settings()
+    cache_key = (
+        f"esearch:{normalized_query}:{max_results}:{sort}:{safe_retstart}:"
+        f"history={int(use_history)}"
+    )
+    cached = cache_get(cache_key)
+    if isinstance(cached, dict):
+        try:
+            return PubMedSearchResult(
+                pmids=[str(item) for item in cached.get("pmids", [])],
+                count=_parse_int(cached.get("count")),
+                retmax=_parse_int(cached.get("retmax")) or max_results,
+                retstart=_parse_int(cached.get("retstart")) or safe_retstart,
+                query_key=cached.get("query_key"),
+                webenv=cached.get("webenv"),
+                query_translation=cached.get("query_translation"),
+            )
+        except (TypeError, ValueError):
+            pass
+
     params = _ncbi_params(
         {
             "db": "pubmed",
-            "term": query,
+            "term": normalized_query,
             "retmode": "json",
             "retmax": max_results,
+            "retstart": safe_retstart,
             "sort": sort,
         }
     )
+    if use_history:
+        params["usehistory"] = "y"
+
+    empty = PubMedSearchResult(pmids=[], retmax=max_results, retstart=safe_retstart)
     try:
-        limiter.wait()
+        _rate_limiter(settings.ncbi_max_rps).wait()
         with httpx.Client(timeout=20) as client:
             response = client.get(f"{EUTILS_BASE}/esearch.fcgi", params=params)
             response.raise_for_status()
             data = response.json()
-            pmids = data.get("esearchresult", {}).get("idlist", [])
-            if isinstance(pmids, list):
-                cache_set(cache_key, pmids)
-                return [str(pmid) for pmid in pmids]
+            result = data.get("esearchresult", {})
+            pmids = result.get("idlist", [])
+            if not isinstance(pmids, list):
+                return empty
+            details = PubMedSearchResult(
+                pmids=[str(pmid) for pmid in pmids],
+                count=_parse_int(result.get("count")),
+                retmax=_parse_int(result.get("retmax")) or max_results,
+                retstart=_parse_int(result.get("retstart")) or safe_retstart,
+                query_key=result.get("querykey"),
+                webenv=result.get("webenv"),
+                query_translation=result.get("querytranslation"),
+            )
+            cache_set(cache_key, asdict(details))
+            return details
     except (httpx.HTTPError, ValueError, KeyError):
-        return []
-    return []
+        return empty
+
+
+def search_pubmed(query: str, max_results: int = 10, sort: str = "relevance") -> list[str]:
+    return search_pubmed_details(query, max_results=max_results, sort=sort).pmids
 
 
 def _text(node: ET.Element | None) -> str | None:
@@ -302,10 +371,19 @@ def _parse_pubmed_xml(xml_text: str) -> list[PubMedPaper]:
     return papers
 
 
-def fetch_pubmed_papers(pmids: list[str]) -> list[PubMedPaper]:
+def _fetch_pubmed_batch(pmids: list[str]) -> list[PubMedPaper]:
+    settings = get_settings()
+    params = _ncbi_params({"db": "pubmed", "id": ",".join(pmids), "retmode": "xml"})
+    _rate_limiter(settings.ncbi_max_rps).wait()
+    with httpx.Client(timeout=25) as client:
+        response = client.get(f"{EUTILS_BASE}/efetch.fcgi", params=params)
+        response.raise_for_status()
+        return _parse_pubmed_xml(response.text)
+
+
+def fetch_pubmed_papers(pmids: list[str], batch_size: int = 200) -> list[PubMedPaper]:
     if not pmids:
         return []
-    settings = get_settings()
     unique_pmids = [pmid for index, pmid in enumerate(pmids) if pmid not in pmids[:index]]
     cache_key = "efetch:" + ",".join(unique_pmids)
     cached = cache_get(cache_key)
@@ -315,14 +393,12 @@ def fetch_pubmed_papers(pmids: list[str]) -> list[PubMedPaper]:
         except ValueError:
             pass
 
-    params = _ncbi_params({"db": "pubmed", "id": ",".join(unique_pmids), "retmode": "xml"})
+    safe_batch_size = max(1, batch_size)
     try:
-        RateLimiter(settings.ncbi_max_rps).wait()
-        with httpx.Client(timeout=25) as client:
-            response = client.get(f"{EUTILS_BASE}/efetch.fcgi", params=params)
-            response.raise_for_status()
-            papers = _parse_pubmed_xml(response.text)
-            cache_set(cache_key, [paper.model_dump(mode="json") for paper in papers])
-            return papers
+        papers: list[PubMedPaper] = []
+        for start in range(0, len(unique_pmids), safe_batch_size):
+            papers.extend(_fetch_pubmed_batch(unique_pmids[start : start + safe_batch_size]))
+        cache_set(cache_key, [paper.model_dump(mode="json") for paper in papers])
+        return papers
     except (httpx.HTTPError, ET.ParseError, ValueError):
         return []

@@ -52,6 +52,8 @@ Gemma 4 is positioned as the local reasoning layer for PICO extraction, safe rew
 
 PubMed is public, trusted, widely recognized, and suitable for an open-source medical evidence demo. VeritasClin keeps the query visible so reviewers can audit how evidence entered the pack.
 
+The PubMed client follows NCBI Entrez E-utilities guidance: requests include `tool` and `email` when configured, honor `NCBI_MAX_RPS`, use ESearch with `retstart`/`retmax` pagination, can request History Server metadata with `usehistory=y`, and batch EFetch calls at about 200 PMIDs per request.
+
 ## Quickstart
 
 ```bash
@@ -93,7 +95,7 @@ Secrets are never committed or printed. Tests pass without credentials.
 
 Credentialed local verification runs when both `NCBI_API_KEY` and `NCBI_EMAIL` are set.
 The PubMed integration tests are skipped without credentials, but with credentials they must
-return real numeric PMIDs for the dengue demo query.
+return real numeric PMIDs and History Server audit metadata for the dengue demo query.
 
 ## Demo Workflow
 
