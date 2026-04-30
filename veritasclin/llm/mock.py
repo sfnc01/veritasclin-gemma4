@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from veritasclin.llm.base import LLMProvider
 
 
@@ -9,8 +11,20 @@ class MockLLMProvider(LLMProvider):
     def generate(self, system_prompt: str, user_prompt: str, temperature: float = 0.2) -> str:
         combined = f"{system_prompt}\n{user_prompt}".lower()
 
-        # PICO extraction call — detected by the JSON response instruction
-        if "pico elements" in combined or '"population"' in combined or "pico_system" in combined:
+        # Claim extraction call — JSON array of clinical assertions
+        if "verifiable clinical" in combined or "json array" in combined:
+            return _mock_claim_extraction(combined)
+
+        # Safety rewrite call
+        if "rewrite" in combined and "research question" in combined:
+            return _mock_safety_rewrite(combined)
+
+        # Offline Q&A call
+        if "claim ledger" in combined and ("offline" in combined or "loaded claims" in combined):
+            return _mock_offline_qa(combined)
+
+        # PICO extraction call
+        if "pico elements" in combined or '"population"' in combined:
             return _mock_pico(combined)
 
         # Synthesis call — detected by the evidence-ID citation instruction
@@ -21,24 +35,64 @@ class MockLLMProvider(LLMProvider):
         if "plain medical assistant" in combined or "without retrieval" in combined:
             return _mock_baseline(combined)
 
-        # Legacy path: direct language hints in prompt
-        if "portuguese" in combined or "portugues" in combined or "quais sinais" in combined:
-            return (
-                "Com base apenas no pacote carregado, sinais de alerta para dengue grave "
-                "incluem dor abdominal intensa, vomitos persistentes, sangramento de mucosa, "
-                "letargia, hepatomegalia e sinais de extravasamento plasmatico. Ver Claim "
-                "Ledger para PMIDs ou IDs mock associados."
-            )
-        if "spanish" in combined or "espanol" in combined:
-            return (
-                "Segun el paquete cargado, los signos de alarma incluyen dolor abdominal, "
-                "vomitos persistentes, sangrado de mucosas, letargo y signos de fuga plasmatica."
-            )
-
         return (
             "Mock Gemma output: the evidence pack should be used to answer with cited, "
             "auditable claims rather than unsupported medical advice."
         )
+
+
+def _mock_claim_extraction(prompt: str) -> str:
+    if "dengue" in prompt:
+        return json.dumps([
+            "Warning signs for severe dengue include abdominal pain, persistent vomiting, "
+            "mucosal bleeding, lethargy, and fluid accumulation (MOCK-DENGUE-001).",
+            "Rising hematocrit with falling platelets is associated with plasma leakage "
+            "and severe dengue risk (MOCK-DENGUE-002).",
+            "Clinical guidelines recommend urgent evaluation for patients presenting with "
+            "multiple dengue warning signs (MOCK-DENGUE-003).",
+        ])
+    if "semaglutide" in prompt or "ckd" in prompt or "kidney" in prompt:
+        return json.dumps([
+            "Studied semaglutide dosing regimens in CKD populations show evidence of "
+            "kidney-protective effects (MOCK-SEMAGLUTIDE-001).",
+            "Trial evidence describes safety outcomes for semaglutide in chronic kidney "
+            "disease, not individualized dosing advice (MOCK-SEMAGLUTIDE-001).",
+        ])
+    if "cannabis" in prompt or "cannabinoid" in prompt or "neuropathic" in prompt:
+        return json.dumps([
+            "Cannabinoids showed modest pain reduction in some neuropathic pain trials "
+            "(MOCK-CANNABIS-001).",
+            "Dizziness and sedation were the most commonly reported adverse events with "
+            "cannabinoid use (MOCK-CANNABIS-001).",
+        ])
+    return json.dumps([
+        "The loaded evidence addresses the clinical question with citation-backed findings.",
+    ])
+
+
+def _mock_safety_rewrite(prompt: str) -> str:
+    if "semaglutide" in prompt and "ckd" in prompt:
+        return (
+            "What semaglutide dosing regimens have been studied in clinical trials "
+            "involving patients with chronic kidney disease?"
+        )
+    if "semaglutide" in prompt:
+        return "What semaglutide regimens have been studied in published clinical research?"
+    return "What does the published evidence say about the studied regimens for this condition?"
+
+
+def _mock_offline_qa(prompt: str) -> str:
+    if "dengue" in prompt:
+        return (
+            "Based on the loaded pack Claim Ledger, warning signs for severe dengue "
+            "include abdominal pain and mucosal bleeding (C001 [MOCK-DENGUE-001], "
+            "C002 [MOCK-DENGUE-002]). These findings are from loaded evidence only — "
+            "no external retrieval was performed."
+        )
+    return (
+        "Based on the loaded pack Claim Ledger, the evidence addresses the queried topic. "
+        "See claim IDs for individual citation details. No external retrieval was performed."
+    )
 
 
 def _mock_synthesis(prompt: str) -> str:
@@ -65,7 +119,6 @@ def _mock_synthesis(prompt: str) -> str:
             "(MOCK-CANNABIS-001). Evidence certainty varies across trial designs "
             "(MOCK-CANNABIS-001)."
         )
-    # Generic topic
     return (
         "The loaded evidence addresses the clinical question with citation-backed findings. "
         "Review the Claim Ledger for individual claim support status and cited evidence IDs."
@@ -73,8 +126,6 @@ def _mock_synthesis(prompt: str) -> str:
 
 
 def _mock_pico(prompt: str) -> str:
-    import json
-
     if "dengue" in prompt:
         data = {
             "population": "adults with dengue",

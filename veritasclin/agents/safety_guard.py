@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import re
 
+from veritasclin.llm.base import LLMProvider, LLMProviderError
+from veritasclin.llm.prompts import SAFETY_REWRITE_SYSTEM_PROMPT
 from veritasclin.schemas.safety import SafetyDecision
 
 
@@ -30,6 +32,9 @@ class SafetyGuard:
         r"\b(mrn|medical record|cpf|ssn|social security|address|phone number)\b",
         flags=re.IGNORECASE,
     )
+
+    def __init__(self, provider: LLMProvider | None = None) -> None:
+        self._provider = provider
 
     def check(self, question: str) -> SafetyDecision:
         clean = question.strip()
@@ -115,6 +120,18 @@ class SafetyGuard:
         )
 
     def _rewrite_to_research(self, question: str) -> str:
+        if self._provider is not None:
+            try:
+                rewritten = self._provider.generate(
+                    SAFETY_REWRITE_SYSTEM_PROMPT, question, temperature=0.1
+                )
+                rewritten = rewritten.strip().strip('"')
+                if rewritten and "?" in rewritten and len(rewritten) > 20:
+                    return rewritten
+            except LLMProviderError:
+                pass
+
+        # Regex fallback
         lowered = question.lower()
         if "semaglutide" in lowered and "ckd" in lowered:
             return (

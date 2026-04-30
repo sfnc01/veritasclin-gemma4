@@ -7,11 +7,11 @@ import pandas as pd
 import streamlit as st
 
 from veritasclin.agents.safety_guard import SafetyGuard
-from veritasclin.agents.workflow import build_evidence_pack
-from veritasclin.config import get_settings
+from veritasclin.config import get_settings, reset_settings_cache
 from veritasclin.exporters.csv import caution_map_to_json, claims_to_csv
 from veritasclin.exporters.json_export import pack_to_json
 from veritasclin.exporters.markdown import pack_to_markdown
+from veritasclin.llm import get_llm_provider
 from veritasclin.packs.builder import PackBuilder
 from veritasclin.packs.loader import PackLoader
 from veritasclin.packs.offline_qa import ask_offline_pack
@@ -142,8 +142,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-settings = get_settings()
-
 with st.sidebar:
     if MARK_PATH.exists():
         st.image(str(MARK_PATH), width=120)
@@ -160,18 +158,22 @@ with st.sidebar:
         else _provider_options.index("mock")
     )
     provider = st.selectbox("Provider", _provider_options, index=_provider_default)
-    os.environ["GEMMA_PROVIDER"] = provider
+    if os.environ.get("GEMMA_PROVIDER") != provider:
+        os.environ["GEMMA_PROVIDER"] = provider
+        reset_settings_cache()
     language_label = st.selectbox("Language", ["English", "Portuguese", "Spanish"], index=0)
     language = {"English": "en", "Portuguese": "pt", "Spanish": "es"}[language_label]
     max_results = st.slider("Max PubMed results", min_value=5, max_value=20, value=10)
+    _s = get_settings()
     use_pubmed = st.toggle(
         "Use PubMed when configured",
-        value=settings.pubmed_configured,
+        value=_s.pubmed_configured,
         help="When off, the app uses deterministic mock demo data.",
     )
+    _settings_sidebar = get_settings()
     st.caption(
         "PubMed credentials: "
-        + ("configured" if settings.pubmed_configured else "not configured")
+        + ("configured" if _settings_sidebar.pubmed_configured else "not configured")
     )
     st.divider()
     st.caption("Demo questions")
@@ -199,12 +201,22 @@ DEMO_QUESTIONS = {
     "Unsafe dosing demo": "What dose of semaglutide should I take if I have CKD?",
 }
 
+settings = get_settings()
 source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Mock fallback"
 offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
 provider_label = provider.replace("_", " ")
 
-# Warn if openai_compatible is selected but not configured
-if provider == "openai_compatible" and not (
+settings = get_settings()
+
+if provider == "ollama" and not settings.ollama_api_key and "ollama.com" in (
+    settings.ollama_base_url or ""
+):
+    st.warning(
+        "Ollama Cloud selected but OLLAMA_API_KEY is not set. "
+        "Get a key at ollama.com/settings/keys and add it to your .env file.",
+        icon="⚠️",
+    )
+elif provider == "openai_compatible" and not (
     settings.openai_compatible_base_url
     and settings.openai_compatible_api_key
     and settings.openai_compatible_model
@@ -212,8 +224,7 @@ if provider == "openai_compatible" and not (
     st.warning(
         "OpenAI-compatible provider selected but not fully configured. "
         "Set OPENAI_COMPATIBLE_BASE_URL, OPENAI_COMPATIBLE_API_KEY, and "
-        "OPENAI_COMPATIBLE_MODEL in your .env file. Synthesis will fall back "
-        "to deterministic responses if the provider is unreachable.",
+        "OPENAI_COMPATIBLE_MODEL in your .env file.",
         icon="⚠️",
     )
 
@@ -362,13 +373,15 @@ def render_pack(pack: EvidencePack) -> None:
         )
 
 
+llm = get_llm_provider(provider)
+
 if mode == "Build Evidence Pack":
     st.markdown(
         '<div class="vc-section"><h2>Build Evidence Pack</h2></div>',
         unsafe_allow_html=True,
     )
     question = st.text_area("Clinical evidence question", value=DEMO_QUESTIONS[demo], height=90)
-    safety = SafetyGuard().check(question)
+    safety = SafetyGuard(provider=llm).check(question)
     with st.expander("Safety decision", expanded=True):
         st.json(safety.model_dump(mode="json"))
     if st.button("Build pack", type="primary"):
@@ -380,11 +393,11 @@ if mode == "Build Evidence Pack":
                 "PICO extraction",
                 "PubMed retrieval or mock fallback",
                 "evidence ranking",
-                "synthesis",
+                "Gemma 4 synthesis",
+                "claim extraction",
                 "claim verification",
                 "caution mapping",
                 "freshness scoring",
-                "pack export",
             ]
             progress = st.progress(0)
             status = st.empty()
@@ -392,20 +405,13 @@ if mode == "Build Evidence Pack":
                 status.write(f"Running {step}...")
                 progress.progress(index / len(steps))
             try:
-                pack, baseline = build_evidence_pack(
+                pack, baseline = PackBuilder(provider=llm).build(
                     question,
                     language=language,
                     max_results=max_results,
                     include_baseline=True,
+                    force_mock_retrieval=not use_pubmed,
                 )
-                if not use_pubmed:
-                    pack, baseline = PackBuilder().build(
-                        question,
-                        language=language,
-                        max_results=max_results,
-                        include_baseline=True,
-                        force_mock_retrieval=True,
-                    )
                 st.session_state["pack"] = pack
                 st.session_state["baseline"] = baseline
                 status.success("Evidence Pack ready.")
@@ -425,16 +431,15 @@ elif mode == "Load Offline Pack":
         st.success("Offline pack loaded. No PubMed retrieval is used in this mode.")
         st.write({"pack_id": pack.pack_id, "title": pack.title, "source": pack.source})
         st.info(
-            "Tip: Offline Q&A matches your question to loaded claim text using term overlap. "
-            "For best results, include clinical keywords from the pack "
-            "(e.g. 'sinais', 'warning signs', the condition name)."
+            "Tip: Offline Q&A matches your question to the loaded Claim Ledger. "
+            "Include clinical keywords from the pack topic for best results."
         )
         offline_question = st.text_input(
             "Ask within the loaded pack",
-            value="Quais sinais indicam maior risco de dengue grave?",
+            value="What are the warning signs for severe dengue in adults?",
         )
         if st.button("Ask offline", type="primary"):
-            answer = ask_offline_pack(pack, offline_question, language=language)
+            answer = ask_offline_pack(pack, offline_question, language=language, provider=llm)
             st.markdown("### Offline Answer")
             st.write(answer)
     else:

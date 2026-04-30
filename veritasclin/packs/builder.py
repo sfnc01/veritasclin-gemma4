@@ -14,12 +14,16 @@ from veritasclin.agents.query_agent import QueryAgent
 from veritasclin.agents.safety_guard import SafetyGuard
 from veritasclin.agents.synthesis_agent import SynthesisAgent
 from veritasclin.config import get_settings
+from veritasclin.llm import LLMProvider, get_llm_provider
 from veritasclin.schemas.baseline import BaselineComparison
 from veritasclin.schemas.pack import EvidencePack
 from veritasclin.tools.pubmed import fetch_pubmed_papers, mock_pubmed_papers, search_pubmed
 
 
 class PackBuilder:
+    def __init__(self, provider: LLMProvider | None = None) -> None:
+        self._provider = provider or get_llm_provider()
+
     def build(
         self,
         question: str,
@@ -30,12 +34,12 @@ class PackBuilder:
     ) -> tuple[EvidencePack, BaselineComparison | None]:
         settings = get_settings()
         now = datetime.now(UTC)
-        safety = SafetyGuard().check(question)
+        safety = SafetyGuard(provider=self._provider).check(question)
         if not safety.allowed:
             raise ValueError(safety.user_message)
 
         research_question = safety.safe_rewritten_question or question
-        pico = PICOAgent().extract(
+        pico = PICOAgent(provider=self._provider).extract(
             question=question,
             safe_rewritten_question=safety.safe_rewritten_question,
             language=language,
@@ -53,7 +57,9 @@ class PackBuilder:
             source = "Mock demo data - not real PubMed retrieval"
 
         evidence_items = EvidenceRanker().rank(papers, pico)[:max_results]
-        synthesis = SynthesisAgent().synthesize(pico, evidence_items, language=language)
+        synthesis = SynthesisAgent(provider=self._provider).synthesize(
+            pico, evidence_items, language=language
+        )
         claim_text = " ".join(
             [
                 synthesis.executive_summary,
@@ -61,7 +67,7 @@ class PackBuilder:
                 synthesis.patient_friendly_explanation,
             ]
         )
-        extracted_claims = ClaimExtractor().extract(claim_text)
+        extracted_claims = ClaimExtractor(provider=self._provider).extract(claim_text)
         claim_ledger = ClaimVerifier().verify(extracted_claims, evidence_items)
         caution_map = CautionMapper().map(claim_ledger, evidence_items)
         freshness = FreshnessScorer().score(evidence_items, search_date=now.date().isoformat())
@@ -87,7 +93,11 @@ class PackBuilder:
             safety_notice=synthesis.safety_notice,
             citation_coverage=_citation_coverage(claim_ledger),
         )
-        baseline = BaselineAgent().compare(question, pack) if include_baseline else None
+        baseline = (
+            BaselineAgent(provider=self._provider).compare(question, pack)
+            if include_baseline
+            else None
+        )
         return pack, baseline
 
 

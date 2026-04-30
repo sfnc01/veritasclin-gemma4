@@ -15,8 +15,20 @@ def test_caution_mapper_detects_insufficient_data():
 
 
 def test_caution_mapper_detects_layer_2_patterns():
-    claim = Claim(
+    # Claim with safety language → safety_signal should fire
+    safety_claim = Claim(
         id="C001",
+        text="Adults with warning signs have higher risk of severe dengue adverse outcomes.",
+        claim_type="safety",
+        support_status="supported",
+        pmids=["123456"],
+        evidence_level="low",
+        risk_level="medium",
+        rationale="Test claim.",
+    )
+    # Claim without safety language → safety_signal should NOT fire from evidence alone
+    prognosis_claim = Claim(
+        id="C002",
         text="Adults with warning signs have higher risk of severe dengue outcomes.",
         claim_type="prognosis",
         support_status="supported",
@@ -51,11 +63,22 @@ def test_caution_mapper_detects_layer_2_patterns():
         )
     ]
 
-    caution_types = {item.caution_type for item in CautionMapper().map([claim], evidence)}
+    safety_cautions = {
+        item.caution_type for item in CautionMapper().map([safety_claim], evidence)
+    }
+    prognosis_cautions = {
+        item.caution_type for item in CautionMapper().map([prognosis_claim], evidence)
+    }
 
-    assert "low_certainty" in caution_types
-    assert "population_mismatch" in caution_types
-    assert "outcome_mismatch" in caution_types
-    assert "safety_signal" in caution_types
-    assert "indirect_evidence" in caution_types
-    assert "conflicting_results" in caution_types
+    # safety_claim mentions "adverse" → safety_signal fires
+    assert "safety_signal" in safety_cautions
+    # prognosis_claim has no safety terms → safety_signal must NOT fire from evidence alone
+    assert "safety_signal" not in prognosis_cautions
+
+    # Other layer-2 cautions still fire for both (evidence-based)
+    for caution_types in (safety_cautions, prognosis_cautions):
+        assert "low_certainty" in caution_types
+        assert "population_mismatch" in caution_types
+        assert "outcome_mismatch" in caution_types
+        assert "indirect_evidence" in caution_types
+        assert "conflicting_results" in caution_types

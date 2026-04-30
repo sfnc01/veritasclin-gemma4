@@ -174,11 +174,10 @@ def _has_safety_signal(claim_text: str, evidence_text: str) -> bool:
         "dizziness",
         "mortality",
     ]
-    claim_lower = claim_text.lower()
-    # Signal requires presence in claim text OR in the claim's cited evidence — not global
-    return any(term in claim_lower for term in safety_terms) or any(
-        term in evidence_text for term in safety_terms
-    )
+    # Only fire when the claim itself contains a safety term.
+    # The per-claim scoped evidence text caused false positives when a cited paper
+    # mentioned e.g. "bleeding" in a context unrelated to the claim's assertion.
+    return any(term in claim_text.lower() for term in safety_terms)
 
 
 def _has_indirect_evidence(evidence_text: str) -> bool:
