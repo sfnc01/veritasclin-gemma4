@@ -403,6 +403,11 @@ elif mode == "Load Offline Pack":
     if pack:
         st.success("Offline pack loaded. No PubMed retrieval is used in this mode.")
         st.write({"pack_id": pack.pack_id, "title": pack.title, "source": pack.source})
+        st.info(
+            "Tip: Offline Q&A matches your question to loaded claim text using term overlap. "
+            "For best results, include clinical keywords from the pack "
+            "(e.g. 'sinais', 'warning signs', the condition name)."
+        )
         offline_question = st.text_input(
             "Ask within the loaded pack",
             value="Quais sinais indicam maior risco de dengue grave?",

@@ -28,7 +28,26 @@ class ClaimVerifier:
                 )
                 continue
             if not pmids and claim.risk_level == "low" and fallback_pmids:
-                pmids = fallback_pmids[:1]
+                fb = fallback_pmids[:1]
+                level = available[fb[0]].evidence_level if fb[0] in available else "uncertain"
+                verified.append(
+                    claim.model_copy(
+                        update={
+                            "support_status": "partially_supported",
+                            "pmids": fb,
+                            "evidence_level": level,
+                            "rationale": (
+                                "Low-risk claim assigned to closest loaded evidence; "
+                                "no direct citation in synthesis text."
+                            ),
+                            "limitation_note": (
+                                "Indirect citation — claim was not explicitly cited "
+                                "in synthesis."
+                            ),
+                        }
+                    )
+                )
+                continue
             levels = [available[pmid].evidence_level for pmid in pmids if pmid in available]
             level = _best_level(levels)
             status = "supported" if pmids else "uncertain"

@@ -12,11 +12,14 @@ class SafetyGuard:
         flags=re.IGNORECASE,
     )
     dosing_patterns = re.compile(
-        r"\b(what dose|which dose|how much|dosage|mg\b|take if|should i take)\b",
+        r"\b(what dose|which dose|how much.*(take|give|prescribe|administer)|dosage|"
+        r"mg\s*(per day|daily|twice|once|dose)|take if|should i take)\b",
         flags=re.IGNORECASE,
     )
     medication_change_patterns = re.compile(
-        r"\b(stop taking|start taking|switch medication|change my medication)\b",
+        r"\b(stop taking|start taking|switch medication|change my medication|"
+        r"stop my medication|stop my treatment|quit my medication|"
+        r"discontinue my|stop using my)\b",
         flags=re.IGNORECASE,
     )
     diagnosis_patterns = re.compile(
