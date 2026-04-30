@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from veritasclin.llm import LLMProvider, get_llm_provider
+from veritasclin.llm.openai_compatible import LLMProviderError
 from veritasclin.llm.prompts import SYNTHESIS_SYSTEM_PROMPT
 from veritasclin.schemas.evidence import EvidenceItem
 from veritasclin.schemas.pico import PICOQuestion
@@ -47,11 +48,17 @@ class SynthesisAgent:
     ) -> SynthesisResult:
         top_items = evidence_items[:5]
         user_prompt = _build_synthesis_prompt(pico, top_items, language)
-        raw = self.provider.generate(SYNTHESIS_SYSTEM_PROMPT, user_prompt, temperature=0.1)
+        try:
+            raw = self.provider.generate(SYNTHESIS_SYSTEM_PROMPT, user_prompt, temperature=0.1)
+        except LLMProviderError:
+            raw = ""  # triggers fallback inside _parse_synthesis
         executive_summary, clinical_interpretation = _parse_synthesis(raw, pico, top_items)
-        patient_explanation = _patient_explanation_prompt(
-            pico, top_items, language, self.provider
-        )
+        try:
+            patient_explanation = _patient_explanation_prompt(
+                pico, top_items, language, self.provider
+            )
+        except LLMProviderError:
+            patient_explanation = _fallback_patient_explanation(pico, top_items)
         return SynthesisResult(
             executive_summary=executive_summary,
             clinical_interpretation=clinical_interpretation,
@@ -106,6 +113,15 @@ def _fallback_summary(pico: PICOQuestion, top_items: list[EvidenceItem]) -> str:
     return (
         f"The loaded evidence addresses {topic} with citation-backed findings ({citations}). "
         "Review the Claim Ledger for individual claim support status and evidence levels."
+    )
+
+
+def _fallback_patient_explanation(pico: PICOQuestion, top_items: list[EvidenceItem]) -> str:
+    citations = ", ".join(item.paper.pmid for item in top_items[:3]) or "no evidence loaded"
+    return (
+        f"This pack summarizes published evidence about {pico.original_question} "
+        f"and cites loaded sources ({citations}). "
+        "Always seek local clinical care for individual health decisions."
     )
 
 

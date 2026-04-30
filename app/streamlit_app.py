@@ -152,7 +152,14 @@ with st.sidebar:
         "Mode",
         ["Build Evidence Pack", "Load Offline Pack", "Plain Gemma vs VeritasClin Demo"],
     )
-    provider = st.selectbox("Provider", ["mock", "ollama", "openai_compatible"], index=0)
+    _provider_options = ["openai_compatible", "ollama", "mock"]
+    _env_provider = os.environ.get("GEMMA_PROVIDER", "mock")
+    _provider_default = (
+        _provider_options.index(_env_provider)
+        if _env_provider in _provider_options
+        else _provider_options.index("mock")
+    )
+    provider = st.selectbox("Provider", _provider_options, index=_provider_default)
     os.environ["GEMMA_PROVIDER"] = provider
     language_label = st.selectbox("Language", ["English", "Portuguese", "Spanish"], index=0)
     language = {"English": "en", "Portuguese": "pt", "Spanish": "es"}[language_label]
@@ -195,6 +202,20 @@ DEMO_QUESTIONS = {
 source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Mock fallback"
 offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
 provider_label = provider.replace("_", " ")
+
+# Warn if openai_compatible is selected but not configured
+if provider == "openai_compatible" and not (
+    settings.openai_compatible_base_url
+    and settings.openai_compatible_api_key
+    and settings.openai_compatible_model
+):
+    st.warning(
+        "OpenAI-compatible provider selected but not fully configured. "
+        "Set OPENAI_COMPATIBLE_BASE_URL, OPENAI_COMPATIBLE_API_KEY, and "
+        "OPENAI_COMPATIBLE_MODEL in your .env file. Synthesis will fall back "
+        "to deterministic responses if the provider is unreachable.",
+        icon="⚠️",
+    )
 
 header_logo, header_text = st.columns([1, 2.4], vertical_alignment="center")
 with header_logo:

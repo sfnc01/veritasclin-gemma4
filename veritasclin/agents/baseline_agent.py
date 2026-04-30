@@ -3,6 +3,7 @@ from __future__ import annotations
 from veritasclin.agents.claim_extractor import ClaimExtractor
 from veritasclin.agents.claim_verifier import ClaimVerifier
 from veritasclin.llm import LLMProvider, get_llm_provider
+from veritasclin.llm.openai_compatible import LLMProviderError
 from veritasclin.schemas.baseline import BaselineComparison
 from veritasclin.schemas.pack import EvidencePack
 
@@ -39,11 +40,14 @@ class BaselineAgent:
         )
 
     def _baseline_answer(self, question: str) -> str:
-        generated = self.provider.generate(
-            "Answer as a plain medical assistant without retrieval.",
-            question,
-            temperature=0.2,
-        )
+        try:
+            generated = self.provider.generate(
+                "Answer as a plain medical assistant without retrieval.",
+                question,
+                temperature=0.2,
+            )
+        except LLMProviderError:
+            generated = None
         if generated and not generated.lower().startswith(
             ("mock gemma output", "ollama unavailable")
         ):

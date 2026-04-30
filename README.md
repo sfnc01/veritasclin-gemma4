@@ -55,20 +55,38 @@ Primary hackathon story:
 ## Architecture
 
 ```mermaid
-flowchart LR
-  Q["Clinical evidence question"] --> S["SafetyGuard"]
-  S --> P["PICOAgent"]
-  P --> R["PubMed query"]
-  R --> N["PubMed/NCBI or mock evidence"]
-  N --> K["EvidenceRanker"]
-  K --> Y["SynthesisAgent"]
-  Y --> C["ClaimExtractor"]
-  C --> V["ClaimVerifier"]
-  V --> M["Caution & Conflict Map"]
-  M --> F["FreshnessScorer"]
-  F --> X["Evidence Pack exports"]
-  X --> O["Offline Pack Loader"]
-  O --> A["Offline Q&A with cited claims"]
+flowchart TD
+    Q(["🩺 Clinical evidence question"])
+
+    subgraph safety["Safety & Framing"]
+        S["SafetyGuard\nblock · rewrite · allow"]
+        P["PICOAgent\npopulation · intervention · outcome"]
+    end
+
+    subgraph retrieval["Evidence Retrieval"]
+        R["PubMed Query Builder\nMeSH + Title/Abstract terms"]
+        N[("PubMed / NCBI\nrate-limited · cached")]
+        K["Evidence Ranker\nstudy type · recency · PICO overlap"]
+    end
+
+    subgraph synthesis["Gemma 4 Synthesis"]
+        Y["SynthesisAgent\nLLM-grounded · citations inline"]
+        C["Claim Extractor\nsentence-level claims"]
+        V["Claim Verifier\nPMID matching · support status"]
+    end
+
+    subgraph audit["Audit Layer"]
+        M["Caution & Conflict Map\n7 signal types"]
+        F["Freshness Scorer\nrefresh recommendation"]
+    end
+
+    subgraph pack["Portable Evidence Pack"]
+        X[/"JSON · Markdown dossier · CSV claim ledger"/]
+        O["Offline Pack Loader"]
+        A["Offline Q&A\ncited claims only · no retrieval"]
+    end
+
+    Q --> S --> P --> R --> N --> K --> Y --> C --> V --> M --> F --> X --> O --> A
 ```
 
 ## Core Concepts
