@@ -1,0 +1,291 @@
+{
+  "pack_id": "vfield-f579a7ee8709",
+  "title": "Evidence Pack: What does recent evidence say about warning signs for severe dengue in adults",
+  "topic": "What does recent evidence say about warning signs for severe dengue in adults?",
+  "created_at": "2026-04-30T02:28:48.616837+00:00",
+  "last_pubmed_search_at": "2026-04-30T02:28:48.616837+00:00",
+  "language": "en",
+  "source": "Mock demo data - not real PubMed retrieval",
+  "pico": {
+    "original_question": "What does recent evidence say about warning signs for severe dengue in adults?",
+    "safe_rewritten_question": null,
+    "population": "adults with suspected or confirmed dengue",
+    "intervention": "warning signs and clinical indicators",
+    "comparison": null,
+    "outcome": "progression to severe dengue",
+    "timeframe": "recent evidence",
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"adults with suspected\"[Title/Abstract] OR \"adults with suspected\"[MeSH Terms]) AND (\"confirmed dengue\"[Title/Abstract] OR \"confirmed dengue\"[MeSH Terms]) AND (\"warning signs\"[Title/Abstract] OR \"warning signs\"[MeSH Terms]) AND (\"clinical indicators\"[Title/Abstract] OR \"clinical indicators\"[MeSH Terms]) AND (\"progression to severe dengue\"[Title/Abstract] OR \"progression to severe dengue\"[MeSH Terms]) AND (\"recent evidence\"[Title/Abstract] OR \"recent evidence\"[MeSH Terms]) AND (\"What does recent evidence say about warning signs for severe dengue in adults\"[Title/Abstract] OR \"What does recent evidence say about warning signs for severe dengue in adults\"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])",
+  "papers": [
+    {
+      "pmid": "MOCK-DENGUE-001",
+      "pmcid": null,
+      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Warning signs associated with progression to severe dengue in adults",
+      "abstract": "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk.",
+      "journal": "VeritasClin Mock Evidence",
+      "publication_year": 2023,
+      "authors": [
+        "Mock Evidence Team"
+      ],
+      "doi": null,
+      "publication_types": [
+        "Systematic Review"
+      ],
+      "mesh_terms": [
+        "Dengue",
+        "Warning Signs",
+        "Adult"
+      ],
+      "url": "mock://dengue-warning-signs-001"
+    },
+    {
+      "pmid": "MOCK-DENGUE-002",
+      "pmcid": null,
+      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Clinical warning signs for severe dengue: adult cohort study",
+      "abstract": "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes.",
+      "journal": "VeritasClin Mock Evidence",
+      "publication_year": 2020,
+      "authors": [
+        "Mock Evidence Team"
+      ],
+      "doi": null,
+      "publication_types": [
+        "Clinical Study"
+      ],
+      "mesh_terms": [
+        "Dengue",
+        "Adult",
+        "Prognosis"
+      ],
+      "url": "mock://dengue-warning-signs-002"
+    },
+    {
+      "pmid": "MOCK-DENGUE-003",
+      "pmcid": null,
+      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Dengue warning signs guideline summary",
+      "abstract": "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care.",
+      "journal": "VeritasClin Mock Evidence",
+      "publication_year": 2019,
+      "authors": [
+        "Mock Evidence Team"
+      ],
+      "doi": null,
+      "publication_types": [
+        "Practice Guideline"
+      ],
+      "mesh_terms": [
+        "Dengue",
+        "Practice Guideline"
+      ],
+      "url": "mock://dengue-guideline-003"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "MOCK-DENGUE-001",
+        "pmcid": null,
+        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Warning signs associated with progression to severe dengue in adults",
+        "abstract": "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk.",
+        "journal": "VeritasClin Mock Evidence",
+        "publication_year": 2023,
+        "authors": [
+          "Mock Evidence Team"
+        ],
+        "doi": null,
+        "publication_types": [
+          "Systematic Review"
+        ],
+        "mesh_terms": [
+          "Dengue",
+          "Warning Signs",
+          "Adult"
+        ],
+        "url": "mock://dengue-warning-signs-001"
+      },
+      "relevance_score": 86.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Mock evidence summary: abdominal pain, persistent vomiting, mucosal bleeding, lethargy, hepatomegaly, rising hematocrit with falling platelets, and plasma leakage are warning signs associated with severe dengue risk."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "MOCK-DENGUE-003",
+        "pmcid": null,
+        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Dengue warning signs guideline summary",
+        "abstract": "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care.",
+        "journal": "VeritasClin Mock Evidence",
+        "publication_year": 2019,
+        "authors": [
+          "Mock Evidence Team"
+        ],
+        "doi": null,
+        "publication_types": [
+          "Practice Guideline"
+        ],
+        "mesh_terms": [
+          "Dengue",
+          "Practice Guideline"
+        ],
+        "url": "mock://dengue-guideline-003"
+      },
+      "relevance_score": 67.0,
+      "evidence_level": "high",
+      "study_type": "Practice Guideline",
+      "rationale": "Ranked by study type (Practice Guideline), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [
+        "Mock evidence summary: guidelines recommend urgent evaluation for warning signs while emphasizing that triage decisions require local clinical care."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "MOCK-DENGUE-002",
+        "pmcid": null,
+        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Clinical warning signs for severe dengue: adult cohort study",
+        "abstract": "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes.",
+        "journal": "VeritasClin Mock Evidence",
+        "publication_year": 2020,
+        "authors": [
+          "Mock Evidence Team"
+        ],
+        "doi": null,
+        "publication_types": [
+          "Clinical Study"
+        ],
+        "mesh_terms": [
+          "Dengue",
+          "Adult",
+          "Prognosis"
+        ],
+        "url": "mock://dengue-warning-signs-002"
+      },
+      "relevance_score": 56.0,
+      "evidence_level": "moderate",
+      "study_type": "Cohort",
+      "rationale": "Ranked by study type (Cohort), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Mock evidence summary: severe abdominal pain, mucosal bleeding, lethargy, clinical fluid accumulation, and laboratory changes were associated with higher risk of severe dengue outcomes."
+      ],
+      "limitations": []
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+      "claim_type": "diagnosis",
+      "support_status": "unsupported",
+      "pmids": [],
+      "evidence_level": "uncertain",
+      "risk_level": "high",
+      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
+      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+    },
+    {
+      "id": "C004",
+      "text": "The pack indicates that severe abdominal pain, persistent vomiting, bleeding, lethargy or restlessness, enlarged liver, and signs of fluid leakage may be warning signs for severe dengue (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-DENGUE-001",
+        "MOCK-DENGUE-003",
+        "MOCK-DENGUE-002"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C005",
+      "text": "Seek local care if warning signs occur.",
+      "claim_type": "prognosis",
+      "support_status": "unsupported",
+      "pmids": [],
+      "evidence_level": "uncertain",
+      "risk_level": "medium",
+      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
+      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "insufficient_data",
+      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "severity": "high"
+    },
+    {
+      "id": "CAU005",
+      "claim_id": "C005",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "insufficient_data",
+      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "severity": "medium"
+    }
+  ],
+  "freshness": {
+    "score": 0.64,
+    "last_search_date": "2026-04-30",
+    "newest_publication_year": 2023,
+    "oldest_publication_year": 2019,
+    "recommended_refresh_days": 60,
+    "rationale": "Newest loaded publication year is 2023; refresh interval reflects evidence age."
+  },
+  "executive_summary": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002).",
+  "clinical_interpretation": "Across the loaded evidence, severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy/restlessness, hepatomegaly, fluid accumulation, and rising hematocrit with falling platelets are treated as warning signs for severe dengue risk (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every warning sign has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "The pack indicates that severe abdominal pain, persistent vomiting, bleeding, lethargy or restlessness, enlarged liver, and signs of fluid leakage may be warning signs for severe dengue (MOCK-DENGUE-001, MOCK-DENGUE-003, MOCK-DENGUE-002). Seek local care if warning signs occur.",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
+  "citation_coverage": 0.6
+}

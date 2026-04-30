@@ -1,0 +1,161 @@
+{
+  "pack_id": "vfield-2a5a1c625d10",
+  "title": "Evidence Pack: What does evidence say about medical cannabis for neuropathic pain in adults",
+  "topic": "What does evidence say about medical cannabis for neuropathic pain in adults?",
+  "created_at": "2026-04-30T02:28:48.624094+00:00",
+  "last_pubmed_search_at": "2026-04-30T02:28:48.624094+00:00",
+  "language": "en",
+  "source": "Mock demo data - not real PubMed retrieval",
+  "pico": {
+    "original_question": "What does evidence say about medical cannabis for neuropathic pain in adults?",
+    "safe_rewritten_question": null,
+    "population": "adults with neuropathic pain",
+    "intervention": "medical cannabis or cannabinoids",
+    "comparison": "placebo or standard care",
+    "outcome": "pain relief and adverse events",
+    "timeframe": null,
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"adults with neuropathic pain\"[Title/Abstract] OR \"adults with neuropathic pain\"[MeSH Terms]) AND (\"medical cannabis\"[Title/Abstract] OR \"medical cannabis\"[MeSH Terms]) AND (\"cannabinoids\"[Title/Abstract] OR \"cannabinoids\"[MeSH Terms]) AND (\"placebo\"[Title/Abstract] OR \"placebo\"[MeSH Terms]) AND (\"standard care\"[Title/Abstract] OR \"standard care\"[MeSH Terms]) AND (\"pain relief\"[Title/Abstract] OR \"pain relief\"[MeSH Terms]) AND (\"adverse events\"[Title/Abstract] OR \"adverse events\"[MeSH Terms]) AND (\"What does evidence say about medical cannabis for neuropathic pain in adults\"[Title/Abstract] OR \"What does evidence say about medical cannabis for neuropathic pain in adults\"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])",
+  "papers": [
+    {
+      "pmid": "MOCK-CANNABIS-001",
+      "pmcid": null,
+      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Cannabinoids for chronic neuropathic pain systematic review",
+      "abstract": "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events.",
+      "journal": "VeritasClin Mock Evidence",
+      "publication_year": 2021,
+      "authors": [
+        "Mock Evidence Team"
+      ],
+      "doi": null,
+      "publication_types": [
+        "Systematic Review"
+      ],
+      "mesh_terms": [
+        "Neuralgia",
+        "Cannabinoids"
+      ],
+      "url": "mock://cannabis-neuropathic-pain-001"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "MOCK-CANNABIS-001",
+        "pmcid": null,
+        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Cannabinoids for chronic neuropathic pain systematic review",
+        "abstract": "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events.",
+        "journal": "VeritasClin Mock Evidence",
+        "publication_year": 2021,
+        "authors": [
+          "Mock Evidence Team"
+        ],
+        "doi": null,
+        "publication_types": [
+          "Systematic Review"
+        ],
+        "mesh_terms": [
+          "Neuralgia",
+          "Cannabinoids"
+        ],
+        "url": "mock://cannabis-neuropathic-pain-001"
+      },
+      "relevance_score": 80.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "Mock evidence summary: modest pain reduction was reported in some trials, with dizziness and sedation as common adverse events."
+      ],
+      "limitations": []
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
+      "claim_type": "limitation",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
+      "claim_type": "limitation",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+      "claim_type": "diagnosis",
+      "support_status": "unsupported",
+      "pmids": [],
+      "evidence_level": "uncertain",
+      "risk_level": "high",
+      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
+      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+    },
+    {
+      "id": "C004",
+      "text": "This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001).",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-CANNABIS-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "insufficient_data",
+      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "severity": "high"
+    }
+  ],
+  "freshness": {
+    "score": 0.4,
+    "last_search_date": "2026-04-30",
+    "newest_publication_year": 2021,
+    "oldest_publication_year": 2021,
+    "recommended_refresh_days": 60,
+    "rationale": "Newest loaded publication year is 2021; refresh interval reflects evidence age."
+  },
+  "executive_summary": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001).",
+  "clinical_interpretation": "The loaded evidence addresses medical cannabis or cannabinoids with a limited, citation-backed summary from the highest-ranked records (MOCK-CANNABIS-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every warning sign has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "This pack summarizes published evidence and cites the loaded sources (MOCK-CANNABIS-001).",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
+  "citation_coverage": 0.75
+}

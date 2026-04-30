@@ -1,0 +1,161 @@
+{
+  "pack_id": "vfield-1cffe3810869",
+  "title": "Evidence Pack: What does evidence say about semaglutide safety and renal outcomes in ckd",
+  "topic": "What does evidence say about semaglutide safety and renal outcomes in CKD?",
+  "created_at": "2026-04-30T02:28:48.625086+00:00",
+  "last_pubmed_search_at": "2026-04-30T02:28:48.625086+00:00",
+  "language": "en",
+  "source": "Mock demo data - not real PubMed retrieval",
+  "pico": {
+    "original_question": "What does evidence say about semaglutide safety and renal outcomes in CKD?",
+    "safe_rewritten_question": null,
+    "population": "patients with chronic kidney disease",
+    "intervention": "semaglutide",
+    "comparison": null,
+    "outcome": "safety, renal outcomes, and studied dosing regimens",
+    "timeframe": null,
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"patients with chronic kidney disease\"[Title/Abstract] OR \"patients with chronic kidney disease\"[MeSH Terms]) AND (\"semaglutide\"[Title/Abstract] OR \"semaglutide\"[MeSH Terms]) AND (\"safety\"[Title/Abstract] OR \"safety\"[MeSH Terms]) AND (\"renal outcomes\"[Title/Abstract] OR \"renal outcomes\"[MeSH Terms]) AND (\"studied dosing regimens\"[Title/Abstract] OR \"studied dosing regimens\"[MeSH Terms]) AND (\"What does evidence say about semaglutide safety\"[Title/Abstract] OR \"What does evidence say about semaglutide safety\"[MeSH Terms]) AND (\"renal outcomes in CKD\"[Title/Abstract] OR \"renal outcomes in CKD\"[MeSH Terms]) AND (humans[MeSH Terms] OR clinical[Title/Abstract] OR adult[Title/Abstract])",
+  "papers": [
+    {
+      "pmid": "MOCK-SEMAGLUTIDE-001",
+      "pmcid": null,
+      "title": "[MOCK DEMO DATA - NOT A REAL PMID] Semaglutide kidney outcomes in chronic kidney disease",
+      "abstract": "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice.",
+      "journal": "VeritasClin Mock Evidence",
+      "publication_year": 2024,
+      "authors": [
+        "Mock Evidence Team"
+      ],
+      "doi": null,
+      "publication_types": [
+        "Randomized Controlled Trial"
+      ],
+      "mesh_terms": [
+        "Semaglutide",
+        "Renal Insufficiency, Chronic"
+      ],
+      "url": "mock://semaglutide-ckd-001"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "MOCK-SEMAGLUTIDE-001",
+        "pmcid": null,
+        "title": "[MOCK DEMO DATA - NOT A REAL PMID] Semaglutide kidney outcomes in chronic kidney disease",
+        "abstract": "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice.",
+        "journal": "VeritasClin Mock Evidence",
+        "publication_year": 2024,
+        "authors": [
+          "Mock Evidence Team"
+        ],
+        "doi": null,
+        "publication_types": [
+          "Randomized Controlled Trial"
+        ],
+        "mesh_terms": [
+          "Semaglutide",
+          "Renal Insufficiency, Chronic"
+        ],
+        "url": "mock://semaglutide-ckd-001"
+      },
+      "relevance_score": 84.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (9), abstract availability, and publication year.",
+      "key_findings": [
+        "Mock evidence summary: trials describe studied dosing regimens and kidney outcomes, but this does not provide individualized dosing advice."
+      ],
+      "limitations": []
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
+      "claim_type": "limitation",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-SEMAGLUTIDE-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
+      "claim_type": "limitation",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-SEMAGLUTIDE-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+      "claim_type": "diagnosis",
+      "support_status": "unsupported",
+      "pmids": [],
+      "evidence_level": "uncertain",
+      "risk_level": "high",
+      "rationale": "Strong clinical claim has no PMID or loaded mock evidence ID.",
+      "limitation_note": "No PMID/PMCID or mock evidence ID, no strong clinical claim."
+    },
+    {
+      "id": "C004",
+      "text": "This pack summarizes published evidence and cites the loaded sources (MOCK-SEMAGLUTIDE-001).",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "MOCK-SEMAGLUTIDE-001"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "insufficient_data",
+      "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+      "severity": "high"
+    }
+  ],
+  "freshness": {
+    "score": 0.76,
+    "last_search_date": "2026-04-30",
+    "newest_publication_year": 2024,
+    "oldest_publication_year": 2024,
+    "recommended_refresh_days": 90,
+    "rationale": "Newest loaded publication year is 2024; refresh interval reflects evidence age."
+  },
+  "executive_summary": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001).",
+  "clinical_interpretation": "The loaded evidence addresses semaglutide with a limited, citation-backed summary from the highest-ranked records (MOCK-SEMAGLUTIDE-001). These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every warning sign has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "This pack summarizes published evidence and cites the loaded sources (MOCK-SEMAGLUTIDE-001).",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require PMID/PMCID or an explicit mock evidence ID.",
+  "citation_coverage": 0.75
+}

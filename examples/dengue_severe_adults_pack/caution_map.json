@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CAU003",
+    "claim_id": "C003",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "insufficient_data",
+    "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+    "severity": "high"
+  },
+  {
+    "id": "CAU005",
+    "claim_id": "C005",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "insufficient_data",
+    "explanation": "This claim is not supported by a PMID or loaded mock evidence ID.",
+    "severity": "medium"
+  }
+]
