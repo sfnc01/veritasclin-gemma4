@@ -10,7 +10,7 @@
 
 ## Code & Tests
 
-- [x] `pytest -q -m "not integration"` — 35/35 pass.
+- [x] `pytest -q -m "not integration"` — 39/39 pass.
 - [x] `ruff check .` — clean.
 - [x] GitHub Actions CI wired (push/PR to main).
 - [x] Gemma 4 (31B) wired through full pipeline via Ollama Cloud.
@@ -30,7 +30,7 @@
 - [x] Offline Q&A (Spanish): `Que signos indican mayor riesgo de dengue grave?`
 - [x] Plain Gemma vs VeritasClin baseline comparison tab works.
 - [x] All 4 exports: pack.json, dossier.md, claim_ledger.csv, caution_map.json.
-- [ ] Example Evidence Pack JSON included in repo (evidence_packs/).
+- [x] Example Evidence Pack JSON included in repo (examples/ — 3 real PubMed packs, 10 papers each).
 
 ## Assets (Manual)
 

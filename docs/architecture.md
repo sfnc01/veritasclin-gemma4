@@ -6,18 +6,20 @@ VeritasClin Field has two paths: an online build path that creates an Evidence P
 
 ```mermaid
 flowchart TD
-  A["Question"] --> B["SafetyGuard"]
+  IMG["Clinical image (optional)"] --> ICA["ImageContextAgent\nGemma 4 multimodal"]
+  A["Clinical evidence question"] --> B["SafetyGuard"]
+  ICA --> A
   B --> C{"Allowed?"}
   C -- "blocked" --> D["Safety message"]
   C -- "rewrite" --> E["Safe research question"]
-  C -- "allowed" --> F["PICOAgent"]
+  C -- "allowed" --> F["PICOAgent\nGemma 4"]
   E --> F
-  F --> G["QueryAgent"]
+  F --> G["FunctionCallingQueryAgent\nGemma 4 calls set_pubmed_query tool"]
   G --> H["PubMed/NCBI ESearch"]
   H --> I["EFetch papers"]
   I --> J["EvidenceRanker"]
-  J --> K["SynthesisAgent"]
-  K --> L["ClaimExtractor"]
+  J --> K["SynthesisAgent\nGemma 4"]
+  K --> L["ClaimExtractor\nGemma 4"]
   L --> M["ClaimVerifier"]
   M --> N["CautionMapper"]
   N --> O["FreshnessScorer"]
@@ -25,7 +27,7 @@ flowchart TD
   P --> Q["JSON / Markdown / CSV"]
 ```
 
-The build path performs safety checking, PICO extraction, auditable query generation, PubMed retrieval when configured, ranking, synthesis, claim verification, caution mapping, freshness scoring, and export.
+The build path performs safety checking, optional multimodal image analysis, PICO extraction, native function-calling query generation, PubMed retrieval when configured, ranking, synthesis, claim verification, caution mapping, freshness scoring, and export.
 
 ## Offline Q&A Flow
 
@@ -50,10 +52,12 @@ Offline mode does not call PubMed, Ollama, OpenAI-compatible APIs, or any extern
 | `veritasclin.llm` | Provider abstraction for mock mode, Ollama/Gemma, and optional OpenAI-compatible endpoints |
 | `veritasclin.tools.pubmed` | NCBI E-utilities client for ESearch, Entrez History metadata, EFetch XML, caching, and rate limiting |
 | `veritasclin.agents.safety_guard` | Deterministic classification, blocking, and safe rewriting |
-| `veritasclin.agents.pico_agent` | Extracts structured PICO fields from the safe research question |
-| `veritasclin.agents.query_agent` | Builds the visible PubMed query |
+| `veritasclin.agents.image_context_agent` | Gemma 4 multimodal — reads clinical images and adds context to the question |
+| `veritasclin.agents.pico_agent` | Gemma 4 — extracts structured PICO fields from the safe research question |
+| `veritasclin.agents.function_calling_query_agent` | Gemma 4 native function calling — calls `set_pubmed_query` tool to build the PubMed query; falls back to `QueryAgent` on failure |
+| `veritasclin.agents.query_agent` | Algorithmic fallback query builder |
 | `veritasclin.agents.evidence_ranker` | Scores papers by study type, abstract availability, term overlap, year, and clinical relevance |
-| `veritasclin.agents.synthesis_agent` | Produces summaries and patient-friendly explanation from ranked evidence |
+| `veritasclin.agents.synthesis_agent` | Gemma 4 — produces executive summary, clinical interpretation, and patient-friendly explanation from ranked evidence |
 | `veritasclin.agents.claim_extractor` | Extracts clinically meaningful claims from generated text |
 | `veritasclin.agents.claim_verifier` | Links claims to PMIDs or flags unsupported strong claims |
 | `veritasclin.agents.caution_mapper` | Detects low certainty, mismatch, safety-signal, and insufficient-data cautions |

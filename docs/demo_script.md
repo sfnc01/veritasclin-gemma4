@@ -16,20 +16,20 @@ Select the dengue demo question:
 What does recent evidence say about warning signs for severe dengue in adults?
 ```
 
-Run the workflow. Point out the safety check, PICO extraction, PubMed query, retrieval mode, and evidence ranking.
+Run the workflow. Point out:
+- The green **ALLOWED** safety badge (question cleared).
+- The pipeline steps — safety check → PICO extraction → Gemma 4 function-calling query build → PubMed retrieval → evidence ranking → Gemma 4 synthesis.
 
 ## 0:45 - 1:20 Evidence Pack
 
-Show the generated pack:
+Show the generated pack using the six tabs:
 
-- Evidence Pack title and metadata.
-- PICO.
-- PubMed query.
-- Evidence Map.
-- Claim Ledger.
-- Caution & Conflict Map.
-- Freshness score.
-- Download buttons for `pack.json`, `dossier.md`, and `claim_ledger.csv`.
+- **Pack Summary** — executive summary, clinical interpretation, what the evidence does not prove, patient-friendly explanation.
+- **PICO & Query** — structured P/I/C/O framework cards; PubMed query string; query method badge showing `Gemma 4 native function calling`.
+- **Evidence Map** — ranked papers table with study type, evidence level, and relevance score.
+- **Claim Ledger** — each clinical claim with support-status pill (Supported / Partial / Unsupported), risk level, evidence level, and cited IDs.
+- **Caution Map** — uncertainty signals with severity indicators.
+- **Exports** — download `pack.json`, `dossier.md`, `claim_ledger.csv`, `caution_map.json`.
 
 Narration: "The answer is not the product. The pack is the product."
 
