@@ -326,7 +326,7 @@ def render_pack(pack: EvidencePack) -> None:
     with tabs[1]:
         st.json(pack.pico.model_dump(mode="json"))
         st.code(pack.pubmed_query, language="text")
-        st.caption(f"Source: {pack.source}")
+        st.caption(f"Source: {pack.source} · Query built by: **{pack.pubmed_query_method}**")
     with tabs[2]:
         st.dataframe(
             pd.DataFrame(
@@ -386,6 +386,21 @@ if mode == "Build Evidence Pack":
         unsafe_allow_html=True,
     )
     question = st.text_area("Clinical evidence question", value=DEMO_QUESTIONS[demo], height=90)
+    uploaded_image = st.file_uploader(
+        "Upload a clinical image, lab report, or chart (optional)",
+        type=["jpg", "jpeg", "png"],
+        help=(
+            "Gemma 4 will read the image and include its findings in the evidence question. "
+            "Requires Ollama or OpenAI-compatible provider."
+        ),
+    )
+    image_bytes: bytes | None = uploaded_image.read() if uploaded_image else None
+    if uploaded_image and provider == "mock":
+        st.warning(
+            "Image analysis requires Ollama or OpenAI-compatible provider. "
+            "The image will be ignored in mock mode.",
+            icon="⚠️",
+        )
     safety = SafetyGuard(provider=llm).check(question)
     with st.expander("Safety decision", expanded=True):
         st.json(safety.model_dump(mode="json"))
@@ -397,7 +412,9 @@ if mode == "Build Evidence Pack":
         else:
             steps = [
                 "safety check",
+                "image analysis" if image_bytes else "PICO extraction",
                 "PICO extraction",
+                "Gemma 4 function-calling query build",
                 "PubMed retrieval or mock fallback",
                 "evidence ranking",
                 "Gemma 4 synthesis",
@@ -418,6 +435,7 @@ if mode == "Build Evidence Pack":
                     max_results=max_results,
                     include_baseline=True,
                     force_mock_retrieval=not use_pubmed,
+                    image_bytes=image_bytes,
                 )
                 st.session_state["pack"] = pack
                 st.session_state["baseline"] = baseline

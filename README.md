@@ -10,6 +10,7 @@ Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 [![Pydantic v2](https://img.shields.io/badge/Schemas-Pydantic%20v2-E92063)](https://docs.pydantic.dev/)
 [![PubMed NCBI](https://img.shields.io/badge/Evidence-PubMed%2FNCBI-0B5CAD)](https://pubmed.ncbi.nlm.nih.gov/)
 [![Offline First](https://img.shields.io/badge/Mode-Offline--first-0E7C66)](#offline-mode)
+[![Ollama](https://img.shields.io/badge/Inference-Ollama-black)](https://ollama.com)
 [![License MIT](https://img.shields.io/badge/License-MIT-black)](LICENSE)
 
 ![VeritasClin Field logo](app/assets/veritasclin-field-logo.png)
@@ -17,6 +18,17 @@ Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 **VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams working under low-connectivity, high-risk, and high-accountability conditions.**
 
 It is not a generic PubMed chatbot, an AI doctor, a diagnosis tool, a prescription tool, or a clone of Elicit, Consensus, Perplexity, Semantic Scholar, or scite.
+
+## Runs on Ollama
+
+VeritasClin Field runs Gemma 4 locally or via Ollama Cloud — no data sent to third-party APIs.
+
+```bash
+ollama pull gemma4:31b
+GEMMA_PROVIDER=ollama streamlit run app/streamlit_app.py
+```
+
+For Ollama Cloud, add `OLLAMA_API_KEY` to `.env` — the app switches automatically between local and cloud. Gemma 4's **multimodal** capability (image input), **native function calling** (PubMed query construction), and **long-context reasoning** (evidence synthesis over multiple abstracts) are all used in the live pipeline.
 
 ## Demo
 
@@ -154,15 +166,28 @@ It works without external keys, Ollama, or network access. Mock evidence is clea
 
 ## Ollama / Gemma Mode
 
-Use local Gemma through Ollama:
+Use local Gemma 4 through Ollama:
 
 ```bash
 GEMMA_PROVIDER=ollama
 GEMMA_MODEL=gemma4:31b
-OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_BASE_URL=http://localhost:11434   # or https://ollama.com for Ollama Cloud
+OLLAMA_API_KEY=your_key                 # required for Ollama Cloud
 ```
 
-Gemma 4 is used for evidence synthesis and patient-friendly explanation. Deterministic code handles safety checks, PICO extraction, evidence ranking, citation coverage, unsupported claim detection, and pack serialization.
+In Ollama mode, Gemma 4 is called at seven points in the pipeline:
+
+| Step | Gemma 4 capability used |
+| --- | --- |
+| Image input (optional) | Multimodal — reads clinical images, lab reports, charts |
+| PICO extraction | Text reasoning — extracts population, intervention, outcome |
+| Safety rewrite | Text reasoning — rewrites unsafe prompts as research questions |
+| PubMed query | **Native function calling** — calls `set_pubmed_query` tool with optimal MeSH terms |
+| Evidence synthesis | Long-context reasoning — synthesises over multiple PubMed abstracts |
+| Patient explanation | Text generation — plain-language summary |
+| Offline Q&A | Retrieval-augmented generation — answers from loaded pack claims only |
+
+Deterministic code handles evidence ranking, citation coverage, claim verification, caution mapping, freshness scoring, and pack serialization — Gemma 4 is not given free rein over safety-critical outputs.
 
 ## PubMed / NCBI Mode
 

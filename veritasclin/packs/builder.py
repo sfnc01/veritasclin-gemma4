@@ -9,8 +9,9 @@ from veritasclin.agents.claim_extractor import ClaimExtractor
 from veritasclin.agents.claim_verifier import ClaimVerifier
 from veritasclin.agents.evidence_ranker import EvidenceRanker
 from veritasclin.agents.freshness_scorer import FreshnessScorer
+from veritasclin.agents.function_calling_query_agent import FunctionCallingQueryAgent
+from veritasclin.agents.image_context_agent import ImageContextAgent
 from veritasclin.agents.pico_agent import PICOAgent
-from veritasclin.agents.query_agent import QueryAgent
 from veritasclin.agents.safety_guard import SafetyGuard
 from veritasclin.agents.synthesis_agent import SynthesisAgent
 from veritasclin.config import get_settings
@@ -32,6 +33,7 @@ class PackBuilder:
         max_results: int = 10,
         include_baseline: bool = True,
         force_mock_retrieval: bool = False,
+        image_bytes: bytes | None = None,
     ) -> tuple[EvidencePack, BaselineComparison | None]:
         settings = get_settings()
         now = datetime.now(UTC)
@@ -40,12 +42,21 @@ class PackBuilder:
             raise ValueError(safety.user_message)
 
         research_question = safety.safe_rewritten_question or question
+
+        if image_bytes:
+            image_context = ImageContextAgent(provider=self._provider).describe(image_bytes)
+            if image_context:
+                research_question = (
+                    f"[Clinical image context: {image_context}]\n\n{research_question}"
+                )
+
         pico = PICOAgent(provider=self._provider).extract(
             question=question,
             safe_rewritten_question=safety.safe_rewritten_question,
             language=language,
         )
-        query = QueryAgent().build(pico)
+        fc_agent = FunctionCallingQueryAgent(provider=self._provider)
+        query = fc_agent.build(pico)
         papers = []
         source = "PubMed/NCBI"
 
@@ -82,6 +93,9 @@ class PackBuilder:
             source=source,
             pico=pico,
             pubmed_query=query,
+            pubmed_query_method=(
+                "gemma4-function-calling" if fc_agent.used_function_calling else "algorithmic"
+            ),
             papers=papers,
             evidence_items=evidence_items,
             claim_ledger=claim_ledger,

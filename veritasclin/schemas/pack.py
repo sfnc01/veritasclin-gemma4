@@ -21,6 +21,7 @@ class EvidencePack(BaseModel):
     source: str = "PubMed/NCBI"
     pico: PICOQuestion
     pubmed_query: str
+    pubmed_query_method: str = "algorithmic"
     papers: list[PubMedPaper] = Field(default_factory=list)
     evidence_items: list[EvidenceItem] = Field(default_factory=list)
     claim_ledger: list[Claim] = Field(default_factory=list)
