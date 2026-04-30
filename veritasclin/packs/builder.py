@@ -14,6 +14,7 @@ from veritasclin.agents.query_agent import QueryAgent
 from veritasclin.agents.safety_guard import SafetyGuard
 from veritasclin.agents.synthesis_agent import SynthesisAgent
 from veritasclin.config import get_settings
+from veritasclin.evaluation.faithfulness import citation_coverage as eval_citation_coverage
 from veritasclin.llm import LLMProvider, get_llm_provider
 from veritasclin.schemas.baseline import BaselineComparison
 from veritasclin.schemas.pack import EvidencePack
@@ -91,7 +92,7 @@ class PackBuilder:
             what_the_evidence_does_not_prove=synthesis.what_the_evidence_does_not_prove,
             patient_friendly_explanation=synthesis.patient_friendly_explanation,
             safety_notice=synthesis.safety_notice,
-            citation_coverage=_citation_coverage(claim_ledger),
+            citation_coverage=eval_citation_coverage(claim_ledger),
         )
         baseline = (
             BaselineAgent(provider=self._provider).compare(question, pack)
@@ -106,10 +107,3 @@ def _title_from_question(question: str) -> str:
     if len(cleaned) > 90:
         cleaned = cleaned[:87].rstrip() + "..."
     return f"Evidence Pack: {cleaned}"
-
-
-def _citation_coverage(claims: list) -> float:
-    if not claims:
-        return 0.0
-    cited = sum(1 for claim in claims if claim.pmids)
-    return round(cited / len(claims), 2)

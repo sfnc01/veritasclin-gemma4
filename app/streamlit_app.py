@@ -8,6 +8,11 @@ import streamlit as st
 
 from veritasclin.agents.safety_guard import SafetyGuard
 from veritasclin.config import get_settings, reset_settings_cache
+from veritasclin.evaluation.faithfulness import (
+    high_risk_unsupported_claim_count,
+    unsupported_claim_count,
+)
+from veritasclin.evaluation.safety_eval import safety_rewrite_success
 from veritasclin.exporters.csv import caution_map_to_json, claims_to_csv
 from veritasclin.exporters.json_export import pack_to_json
 from veritasclin.exporters.markdown import pack_to_markdown
@@ -278,18 +283,18 @@ def render_pack(pack: EvidencePack) -> None:
         unsafe_allow_html=True,
     )
     c1, c2, c3, c4 = st.columns(4)
-    unsupported = [claim for claim in pack.claim_ledger if claim.support_status == "unsupported"]
-    high_unsupported = [claim for claim in unsupported if claim.risk_level == "high"]
+    n_unsupported = unsupported_claim_count(pack.claim_ledger)
+    n_high_unsupported = high_risk_unsupported_claim_count(pack.claim_ledger)
     c1.markdown(
         f'<div class="metric-card">Citation coverage<br><b>{pack.citation_coverage:.0%}</b></div>',
         unsafe_allow_html=True,
     )
     c2.markdown(
-        f'<div class="metric-card">Unsupported claims<br><b>{len(unsupported)}</b></div>',
+        f'<div class="metric-card">Unsupported claims<br><b>{n_unsupported}</b></div>',
         unsafe_allow_html=True,
     )
     c3.markdown(
-        f'<div class="metric-card">High-risk unsupported<br><b>{len(high_unsupported)}</b></div>',
+        f'<div class="metric-card">High-risk unsupported<br><b>{n_high_unsupported}</b></div>',
         unsafe_allow_html=True,
     )
     c4.markdown(
@@ -384,6 +389,8 @@ if mode == "Build Evidence Pack":
     safety = SafetyGuard(provider=llm).check(question)
     with st.expander("Safety decision", expanded=True):
         st.json(safety.model_dump(mode="json"))
+        if safety.safe_rewritten_question:
+            st.metric("Rewrite successful", "Yes" if safety_rewrite_success(safety) else "No")
     if st.button("Build pack", type="primary"):
         if not safety.allowed:
             st.error(safety.user_message)

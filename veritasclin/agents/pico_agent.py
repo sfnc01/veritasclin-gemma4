@@ -10,8 +10,6 @@ from veritasclin.schemas.pico import PICOQuestion
 
 class PICOAgent:
     def __init__(self, provider: LLMProvider | None = None) -> None:
-        # If a provider is passed, attempt LLM-backed extraction for unknown topics.
-        # The hardcoded templates always take precedence for the 3 demo topics.
         self._provider = provider
 
     def extract(
@@ -30,31 +28,16 @@ class PICOAgent:
         ]
         timeframe = "recent evidence" if re.search(r"\brecent\b|\bcurrent\b", lowered) else None
 
-        # Hardcoded templates for the 3 known demo topics (always preferred)
         population = intervention = comparison = outcome = None
-        if "dengue" in lowered:
-            population = "adults with suspected or confirmed dengue"
-            intervention = "warning signs and clinical indicators"
-            outcome = "progression to severe dengue"
-        elif "semaglutide" in lowered:
-            population = "patients with chronic kidney disease" if "ckd" in lowered else "patients"
-            intervention = "semaglutide"
-            outcome = "safety, renal outcomes, and studied dosing regimens"
-        elif "cannabis" in lowered or "cannabinoid" in lowered:
-            population = "adults with neuropathic pain"
-            intervention = "medical cannabis or cannabinoids"
-            comparison = "placebo or standard care"
-            outcome = "pain relief and adverse events"
-        elif self._provider is not None:
-            # LLM-backed extraction for unknown topics
-            population, intervention, comparison, outcome = _llm_extract(
-                self._provider, source
-            )
-        else:
-            # Marker-based fallback for unknown topics without a provider
-            population = _phrase_after(source, ["in ", "among "])
-            intervention = _phrase_after(source, ["about ", "of "])
-            outcome = _phrase_after(source, ["for ", "on "])
+
+        # LLM extraction is primary when a provider is available
+        if self._provider is not None:
+            population, intervention, comparison, outcome = _llm_extract(self._provider, source)
+
+        # Templates fill in any gaps the LLM left, or act as primary when no provider is set.
+        # They are domain-optimised fallbacks, not overrides.
+        if not any([population, intervention, outcome]):
+            population, intervention, comparison, outcome = _template_extract(lowered)
 
         return PICOQuestion(
             original_question=question,
@@ -67,6 +50,36 @@ class PICOAgent:
             preferred_study_types=preferred,
             language=language,
         )
+
+
+def _template_extract(
+    lowered: str,
+) -> tuple[str | None, str | None, str | None, str | None]:
+    """Domain-optimised templates for the 3 demo topics, then regex for everything else."""
+    if "dengue" in lowered:
+        return (
+            "adults with suspected or confirmed dengue",
+            "warning signs and clinical indicators",
+            None,
+            "progression to severe dengue",
+        )
+    if "semaglutide" in lowered:
+        population = "patients with chronic kidney disease" if "ckd" in lowered else "patients"
+        return population, "semaglutide", None, "safety, renal outcomes, and studied dosing regimens"  # noqa: E501
+    if "cannabis" in lowered or "cannabinoid" in lowered:
+        return (
+            "adults with neuropathic pain",
+            "medical cannabis or cannabinoids",
+            "placebo or standard care",
+            "pain relief and adverse events",
+        )
+    # Marker-based last-resort fallback
+    return (
+        _phrase_after(lowered, ["in ", "among "]),
+        _phrase_after(lowered, ["about ", "of "]),
+        None,
+        _phrase_after(lowered, ["for ", "on "]),
+    )
 
 
 def _llm_extract(
@@ -89,7 +102,6 @@ def _llm_extract(
 
 
 def _parse_json(text: str) -> dict | None:
-    # Try to extract a JSON object from the LLM response
     match = re.search(r"\{.*\}", text, re.DOTALL)
     if match:
         try:
@@ -100,9 +112,8 @@ def _parse_json(text: str) -> dict | None:
 
 
 def _phrase_after(text: str, markers: list[str]) -> str | None:
-    lowered = text.lower()
     for marker in markers:
-        index = lowered.find(marker)
+        index = text.find(marker)
         if index >= 0:
             phrase = text[index + len(marker) :].strip(" ?.")
             return phrase[:120] if phrase else None
