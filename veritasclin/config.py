@@ -17,6 +17,7 @@ class Settings:
     gemma_provider: str
     gemma_model: str
     ollama_base_url: str
+    ollama_api_key: str | None
     openai_compatible_base_url: str | None
     openai_compatible_api_key: str | None
     openai_compatible_model: str | None
@@ -42,6 +43,7 @@ def get_settings() -> Settings:
         gemma_provider=os.getenv("GEMMA_PROVIDER", "mock"),
         gemma_model=os.getenv("GEMMA_MODEL", "gemma4:e4b"),
         ollama_base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
+        ollama_api_key=_empty_to_none(os.getenv("OLLAMA_API_KEY")),
         openai_compatible_base_url=_empty_to_none(os.getenv("OPENAI_COMPATIBLE_BASE_URL")),
         openai_compatible_api_key=_empty_to_none(os.getenv("OPENAI_COMPATIBLE_API_KEY")),
         openai_compatible_model=_empty_to_none(os.getenv("OPENAI_COMPATIBLE_MODEL")),

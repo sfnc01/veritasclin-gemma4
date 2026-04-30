@@ -3,11 +3,9 @@ from __future__ import annotations
 import httpx
 
 from veritasclin.config import get_settings
-from veritasclin.llm.base import LLMProvider
+from veritasclin.llm.base import LLMProvider, LLMProviderError
 
-
-class LLMProviderError(Exception):
-    """Raised when an LLM provider call fails and cannot be retried."""
+__all__ = ["LLMProviderError", "OpenAICompatibleProvider"]
 
 
 class OpenAICompatibleProvider(LLMProvider):

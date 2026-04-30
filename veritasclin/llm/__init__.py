@@ -1,5 +1,5 @@
 from veritasclin.config import get_settings
-from veritasclin.llm.base import LLMProvider
+from veritasclin.llm.base import LLMProvider, LLMProviderError
 from veritasclin.llm.mock import MockLLMProvider
 from veritasclin.llm.ollama import OllamaProvider
 from veritasclin.llm.openai_compatible import OpenAICompatibleProvider
@@ -17,6 +17,7 @@ def get_llm_provider(provider_name: str | None = None) -> LLMProvider:
 
 __all__ = [
     "LLMProvider",
+    "LLMProviderError",
     "MockLLMProvider",
     "OllamaProvider",
     "OpenAICompatibleProvider",
