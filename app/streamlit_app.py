@@ -858,9 +858,9 @@ def render_pack(pack: EvidencePack) -> None:
             _css, _label = _status_map.get(
                 claim.support_status, ("pill pill-uncertain", claim.support_status)
             )
-            _suffix = "…" if len(claim.claim_text) > 80 else ""
+            _suffix = "…" if len(claim.text) > 80 else ""
             with st.expander(
-                f"Claim {i + 1} — {claim.claim_text[:80]}{_suffix}",
+                f"Claim {i + 1} — {claim.text[:80]}{_suffix}",
                 expanded=False,
             ):
                 st.markdown(
@@ -869,13 +869,13 @@ def render_pack(pack: EvidencePack) -> None:
                     f'Evidence: <b>{claim.evidence_level}</b>',
                     unsafe_allow_html=True,
                 )
-                st.write(claim.claim_text)
-                if claim.cited_pmids:
-                    st.caption(f"Cited IDs: {', '.join(claim.cited_pmids)}")
+                st.write(claim.text)
+                if claim.pmids:
+                    st.caption(f"Cited IDs: {', '.join(claim.pmids)}")
                 if claim.rationale:
                     st.caption(f"Rationale: {claim.rationale}")
-                if claim.limitations:
-                    st.caption(f"Limitations: {claim.limitations}")
+                if claim.limitation_note:
+                    st.caption(f"Limitations: {claim.limitation_note}")
 
         # Also show full table for download / review
         with st.expander("Full table view"):
