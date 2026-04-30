@@ -4,6 +4,7 @@ Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 
 > Medical AI should not just answer. It should carry its evidence with it.
 
+[![CI](https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml/badge.svg)](https://github.com/sfnc01/veritasclin-gemma4/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Pydantic v2](https://img.shields.io/badge/Schemas-Pydantic%20v2-E92063)](https://docs.pydantic.dev/)
@@ -17,9 +18,6 @@ Offline-first, audit-ready medical evidence packs powered by Gemma 4.
 
 It is not a generic PubMed chatbot, an AI doctor, a diagnosis tool, a prescription tool, or a clone of Elicit, Consensus, Perplexity, Semantic Scholar, or scite.
 
-<!-- Add final hero screenshot at assets/hero/veritasclin-field-hero.png -->
-<!-- Add final demo GIF at assets/hero/veritasclin-field-demo.gif -->
-
 ## Demo
 
 Primary hackathon story:
@@ -30,10 +28,7 @@ Primary hackathon story:
 4. They ask in Portuguese: `Quais sinais indicam maior risco de dengue grave?`
 5. VeritasClin answers only from the loaded pack, with cited claims, a Claim Ledger, a Caution & Conflict Map, and a safety notice.
 
-![Demo GIF placeholder](assets/hero/veritasclin-field-demo.gif)
-
-<!-- Replace the placeholder above with the recorded 3-minute demo GIF. -->
-<!-- Add UI screenshots at assets/screenshots/build-pack.png and assets/screenshots/offline-qa.png. -->
+> **Live demo:** Run `streamlit run app/streamlit_app.py` and select the dengue demo question. See `docs/demo_script.md` for the full 3-minute walkthrough script.
 
 ## Why It Matters
 
@@ -117,6 +112,18 @@ Open Streamlit and choose the dengue demo:
 What does recent evidence say about warning signs for severe dengue in adults?
 ```
 
+## LLM Provider
+
+| Mode | `GEMMA_PROVIDER` | Gemma 4 active | Requires |
+| --- | --- | --- | --- |
+| Default (demo) | `mock` | No — deterministic mock responses | Nothing |
+| Local inference | `ollama` | Yes — synthesis, explanation, baseline | Ollama + `gemma4:e4b` |
+| API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
+
+**In mock mode**, synthesis uses deterministic template responses that include mock evidence IDs. All other pipeline steps (safety guard, PICO extraction, evidence ranking, claim verification, offline Q&A) use deterministic rule-based logic in all modes — Gemma 4 is used for the generative synthesis and patient explanation steps.
+
+Set `GEMMA_PROVIDER=ollama` to enable live Gemma 4 inference for synthesis and patient-friendly explanations.
+
 ## Mock Mode
 
 Mock mode is the default no-credential path.
@@ -125,7 +132,7 @@ Mock mode is the default no-credential path.
 GEMMA_PROVIDER=mock
 ```
 
-It works without external keys, Ollama, or network access. Mock evidence is clearly labeled and uses IDs such as `MOCK-DENGUE-001`; it never invents real PMIDs.
+It works without external keys, Ollama, or network access. Mock evidence is clearly labeled and uses IDs such as `MOCK-DENGUE-001`; it never invents real PMIDs. Synthesis responses are deterministic.
 
 ## Ollama / Gemma Mode
 
@@ -137,7 +144,7 @@ GEMMA_MODEL=gemma4:e4b
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 
-Gemma is used for PICO extraction, safe rewriting, synthesis, patient-friendly explanation, offline Q&A, and baseline comparison. Deterministic code handles hard safety checks, ranking, citation coverage, unsupported claim detection, and serialization.
+Gemma 4 is used for evidence synthesis and patient-friendly explanation. Deterministic code handles safety checks, PICO extraction, evidence ranking, citation coverage, unsupported claim detection, and pack serialization.
 
 ## PubMed / NCBI Mode
 
