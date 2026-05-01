@@ -69,7 +69,7 @@ Gemma 4's **multimodal** capability (clinical image input), **native function ca
 Primary hackathon story:
 
 1. A public health worker builds an Evidence Pack for severe dengue warning signs while online.
-2. The pack is exported as JSON, Markdown, CSV, and caution-map artifacts.
+2. The pack is exported as an HTML field report, JSON, Markdown, CSV, and caution-map artifacts.
 3. The worker loads the pack offline.
 4. They ask in Portuguese: `Quais sinais indicam maior risco de dengue grave?`
 5. VeritasClin answers only from the loaded pack, with cited claims, a Claim Ledger, a Caution & Conflict Map, and a safety notice.
@@ -80,7 +80,7 @@ Primary hackathon story:
 
 | Problem in medical AI | VeritasClin Field response |
 | --- | --- |
-| Answers vanish after chat | Exports portable Evidence Packs |
+| Answers vanish after chat | Exports portable Evidence Packs (HTML, JSON, Markdown, CSV) |
 | Citations are decoration | Every clinical claim is logged and verified |
 | Online-only tools fail in the field | Offline Q&A uses only the loaded pack |
 | Risky prompts can become advice | SafetyGuard blocks or rewrites unsafe requests |
@@ -134,7 +134,7 @@ flowchart TD
     end
 
     subgraph pack["Portable Evidence Pack"]
-        X[/"JSON · Markdown dossier · CSV claim ledger · caution map"/]
+        X[/"HTML field report · JSON · Markdown dossier · CSV claim ledger · caution map"/]
         O["Offline Pack Loader"]
         A["Offline Q&A\nGemma 4 · cited claims only · no retrieval"]
     end
@@ -271,7 +271,7 @@ Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `c
 **v0.1 + v0.2 — Hackathon Submission** ✅ Complete
 
 - Live Gemma 4 pipeline: 8 touchpoints — multimodal image input, PICO extraction, safety rewrite, native function calling for PubMed query, evidence synthesis, patient explanation, LLM-backed caution reasoning, offline Q&A
-- Portable Evidence Pack: Claim Ledger, Caution & Conflict Map, freshness score, 4 export formats (JSON, Markdown, CSV, caution JSON)
+- Portable Evidence Pack: Claim Ledger, Caution & Conflict Map, freshness score, 5 export formats (HTML field report, JSON, Markdown, CSV, caution JSON)
 - SafetyGuard: 6-category detection, deterministic blocking, LLM-backed rewrite
 - Evaluation module: citation coverage, unsupported-claim delta, reproducibility score, baseline comparison
 - Six curated real-data demo packs (dengue, semaglutide/CKD, cannabis, malaria, TB, maternal health) — 10 real PubMed papers each

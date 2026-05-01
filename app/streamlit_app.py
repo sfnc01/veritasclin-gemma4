@@ -15,6 +15,7 @@ from veritasclin.evaluation.faithfulness import (
 )
 from veritasclin.evaluation.safety_eval import safety_rewrite_success
 from veritasclin.exporters.csv import caution_map_to_json, claims_to_csv
+from veritasclin.exporters.html_export import pack_to_html
 from veritasclin.exporters.json_export import pack_to_json
 from veritasclin.exporters.markdown import pack_to_markdown
 from veritasclin.llm import get_llm_provider
@@ -930,13 +931,37 @@ def render_pack(pack: EvidencePack) -> None:
             "All artifacts travel together with the pack: query, PMIDs, claims, cautions, "
             "and timestamps. The pack is fully self-contained for offline use."
         )
+
+        # Primary export — HTML field report (human-readable, browser-only, print-to-PDF)
+        st.markdown(
+            '<div class="export-card">'
+            '<div class="export-title">&#127760; Field Report (HTML)</div>'
+            '<div class="export-desc">'
+            "<strong>Start here.</strong> A readable field report — opens in any browser, "
+            "works offline, and prints to PDF. Designed for healthcare workers, "
+            "not data analysts. Contains summary, claim ledger, caution map, "
+            "evidence sources, and safety notice.</div>",
+            unsafe_allow_html=True,
+        )
+        _pack_slug = pack.pack_id.replace("vfield-", "")
+        st.download_button(
+            "Download field_report.html",
+            pack_to_html(pack),
+            f"veritasclin_field_report_{_pack_slug}.html",
+            "text/html",
+            use_container_width=True,
+            type="primary",
+        )
+        st.markdown("</div>", unsafe_allow_html=True)
+
+        st.markdown("---")
         col_a, col_b = st.columns(2)
         with col_a:
             st.markdown(
                 '<div class="export-card">'
                 '<div class="export-title">pack.json</div>'
                 '<div class="export-desc">Complete self-contained Evidence Pack. '
-                "Upload this file in Load Offline Pack mode.</div>",
+                "Upload this file in Load Offline Pack mode to enable offline Q&A.</div>",
                 unsafe_allow_html=True,
             )
             st.download_button(
@@ -952,7 +977,7 @@ def render_pack(pack: EvidencePack) -> None:
                 '<div class="export-card">'
                 '<div class="export-title">claim_ledger.csv</div>'
                 '<div class="export-desc">All extracted claims with support status, '
-                "risk level, evidence level, and cited IDs. Spreadsheet-ready.</div>",
+                "risk level, evidence level, and cited IDs. Opens in Excel or Sheets.</div>",
                 unsafe_allow_html=True,
             )
             st.download_button(
@@ -968,7 +993,7 @@ def render_pack(pack: EvidencePack) -> None:
             st.markdown(
                 '<div class="export-card">'
                 '<div class="export-title">dossier.md</div>'
-                '<div class="export-desc">Human-readable Markdown dossier — '
+                '<div class="export-desc">Markdown dossier — '
                 "executive summary, PICO, evidence list, and clinical interpretation.</div>",
                 unsafe_allow_html=True,
             )

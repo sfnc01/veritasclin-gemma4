@@ -29,7 +29,7 @@ Show the generated pack using the six tabs:
 - **Evidence Map** — ranked papers table with study type, evidence level, and relevance score.
 - **Claim Ledger** — each clinical claim with support-status pill (Supported / Partial / Unsupported), risk level, evidence level, and cited IDs.
 - **Caution Map** — uncertainty signals with severity indicators.
-- **Exports** — download `pack.json`, `dossier.md`, `claim_ledger.csv`, `caution_map.json`.
+- **Exports** — download `field_report.html` (readable in any browser, prints to PDF), plus `pack.json`, `dossier.md`, `claim_ledger.csv`, `caution_map.json`.
 
 Narration: "The answer is not the product. The pack is the product."
 
