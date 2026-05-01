@@ -5,12 +5,12 @@ from veritasclin.agents.freshness_scorer import FreshnessScorer
 from veritasclin.agents.pico_agent import PICOAgent
 from veritasclin.schemas.evidence import EvidenceItem
 from veritasclin.schemas.paper import PubMedPaper
-from veritasclin.tools.pubmed import mock_pubmed_papers
+from veritasclin.tools.pubmed import bundled_demo_papers
 
 
 def test_freshness_scorer_returns_score():
     pico = PICOAgent().extract("Dengue warning signs in adults")
-    evidence = EvidenceRanker().rank(mock_pubmed_papers("dengue"), pico)
+    evidence = EvidenceRanker().rank(bundled_demo_papers("dengue"), pico)
     freshness = FreshnessScorer().score(evidence)
     assert 0 <= freshness.score <= 1
     assert freshness.recommended_refresh_days > 0

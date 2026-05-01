@@ -86,10 +86,27 @@ def _deterministic_answer(relevant_claims: list[Claim], language: str) -> str:
     )
 
 
+_STOP_WORDS = frozenset({
+    "about", "above", "across", "after", "again", "also", "another", "before",
+    "between", "during", "evidence", "findings", "following", "however",
+    "include", "including", "might", "often", "other", "outcomes", "overall",
+    "patients", "published", "research", "results", "should", "since",
+    "studies", "study", "suggest", "suggests", "these", "those", "through",
+    "treatment", "trials", "using", "where", "which", "while", "within",
+})
+
+
 def _overlaps(question: str, claim: str) -> bool:
-    question_terms = {term for term in question.lower().split() if len(term) > 4}
-    claim_terms = {term.strip(".,;:()[]").lower() for term in claim.split() if len(term) > 4}
-    return bool(question_terms.intersection(claim_terms))
+    def _terms(text: str) -> set[str]:
+        return {
+            t.strip(".,;:()[]").lower()
+            for t in text.split()
+            if len(t) > 4 and t.strip(".,;:()[]").lower() not in _STOP_WORDS
+        }
+
+    q_terms = _terms(question)
+    c_terms = _terms(claim)
+    return bool(q_terms.intersection(c_terms))
 
 
 def _insufficient(language: str) -> str:

@@ -19,7 +19,7 @@ from veritasclin.evaluation.faithfulness import citation_coverage as eval_citati
 from veritasclin.llm import LLMProvider, get_llm_provider
 from veritasclin.schemas.baseline import BaselineComparison
 from veritasclin.schemas.pack import EvidencePack
-from veritasclin.tools.pubmed import fetch_pubmed_papers, mock_pubmed_papers, search_pubmed
+from veritasclin.tools.pubmed import bundled_demo_papers, fetch_pubmed_papers, search_pubmed
 
 
 class PackBuilder:
@@ -32,7 +32,7 @@ class PackBuilder:
         language: str = "en",
         max_results: int = 10,
         include_baseline: bool = True,
-        force_mock_retrieval: bool = False,
+        use_bundled_papers: bool = False,
         image_bytes: bytes | None = None,
     ) -> tuple[EvidencePack, BaselineComparison | None]:
         settings = get_settings()
@@ -60,13 +60,13 @@ class PackBuilder:
         papers = []
         source = "PubMed/NCBI"
 
-        if not force_mock_retrieval and settings.pubmed_configured:
+        if not use_bundled_papers and settings.pubmed_configured:
             pmids = search_pubmed(query, max_results=max_results)
             papers = fetch_pubmed_papers(pmids)
 
         if not papers:
-            papers = mock_pubmed_papers(research_question)
-            source = "Mock demo data - not real PubMed retrieval"
+            papers = bundled_demo_papers(research_question)
+            source = "Bundled demo data - not real PubMed retrieval"
 
         evidence_items = EvidenceRanker().rank(papers, pico)[:max_results]
         synthesis = SynthesisAgent(provider=self._provider).synthesize(
@@ -81,7 +81,7 @@ class PackBuilder:
         )
         extracted_claims = ClaimExtractor(provider=self._provider).extract(claim_text)
         claim_ledger = ClaimVerifier().verify(extracted_claims, evidence_items)
-        caution_map = CautionMapper().map(claim_ledger, evidence_items)
+        caution_map = CautionMapper(provider=self._provider).map(claim_ledger, evidence_items)
         freshness = FreshnessScorer().score(evidence_items, search_date=now.date().isoformat())
         pack = EvidencePack(
             pack_id=f"vfield-{uuid4().hex[:12]}",

@@ -37,8 +37,8 @@ def _rate_limiter(max_rps: float) -> RateLimiter:
     return limiter
 
 
-def mock_pubmed_papers(topic: str = "dengue") -> list[PubMedPaper]:
-    label = "[MOCK DEMO DATA - NOT A REAL PMID]"
+def bundled_demo_papers(topic: str = "dengue") -> list[PubMedPaper]:
+    label = "[BUNDLED DEMO DATA - NOT A REAL PMID]"
     if "cannabis" in topic.lower():
         return [
             PubMedPaper(
@@ -131,7 +131,7 @@ def mock_pubmed_papers(topic: str = "dengue") -> list[PubMedPaper]:
             pmid="MOCK-GENERIC-001",
             title=f"{label} Evidence summary for the queried clinical topic",
             abstract=(
-                "Mock demo data: no real PubMed retrieval was performed. "
+                "Bundled demo data: no real PubMed retrieval was performed. "
                 "Configure NCBI credentials and set GEMMA_PROVIDER=ollama to retrieve "
                 "live evidence for this topic. This placeholder is returned when the topic "
                 "does not match a pre-loaded demo pack."

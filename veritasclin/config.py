@@ -40,7 +40,7 @@ def get_settings() -> Settings:
         ncbi_email=_empty_to_none(os.getenv("NCBI_EMAIL")),
         ncbi_tool=os.getenv("NCBI_TOOL", "veritasclin-field"),
         ncbi_max_rps=float(os.getenv("NCBI_MAX_RPS", "3")),
-        gemma_provider=os.getenv("GEMMA_PROVIDER", "mock"),
+        gemma_provider=os.getenv("GEMMA_PROVIDER", "ollama"),
         gemma_model=os.getenv("GEMMA_MODEL", "gemma4:e4b"),
         ollama_base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
         ollama_api_key=_empty_to_none(os.getenv("OLLAMA_API_KEY")),

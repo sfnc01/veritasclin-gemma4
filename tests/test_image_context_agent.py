@@ -2,18 +2,18 @@ from __future__ import annotations
 
 import pytest
 
+from tests.support.fake_provider import FakeLLMProvider
 from veritasclin.agents.image_context_agent import ImageContextAgent
-from veritasclin.llm.mock import MockLLMProvider
 
 
 def test_image_context_agent_mock_returns_empty():
-    agent = ImageContextAgent(provider=MockLLMProvider())
+    agent = ImageContextAgent(provider=FakeLLMProvider())
     result = agent.describe(b"fake image bytes")
     assert result == ""
 
 
 def test_image_context_agent_describe_returns_string():
-    agent = ImageContextAgent(provider=MockLLMProvider())
+    agent = ImageContextAgent(provider=FakeLLMProvider())
     result = agent.describe(b"any bytes", mime_type="image/png")
     assert isinstance(result, str)
 

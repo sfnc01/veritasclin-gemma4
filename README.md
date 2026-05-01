@@ -145,7 +145,7 @@ flowchart TD
 
 ## Gemma 4 in the Pipeline
 
-In Ollama mode, Gemma 4 is called at seven points:
+Gemma 4 is called at eight points:
 
 | Step | Gemma 4 capability |
 | --- | --- |
@@ -155,16 +155,17 @@ In Ollama mode, Gemma 4 is called at seven points:
 | PubMed query | **Native function calling** — calls `set_pubmed_query` tool with MeSH terms |
 | Evidence synthesis | Long-context reasoning — synthesises over multiple PubMed abstracts |
 | Patient explanation | Text generation — plain-language summary |
+| Caution reasoning | LLM appraisal — identifies clinical uncertainty signals from evidence |
 | Offline Q&A | RAG — answers from loaded pack claims only, no external retrieval |
 
-Deterministic code handles ranking, citation coverage, claim verification, caution mapping, freshness scoring, and serialization.
+Deterministic code handles ranking, citation coverage, claim verification, freshness scoring, and serialization.
 
 ## Core Concepts
 
 | Concept | What it means |
 | --- | --- |
 | Evidence Pack | A portable review artifact containing the question, PICO, PubMed query, papers, ranked evidence, claims, cautions, freshness, summaries, and exports. |
-| Claim Ledger | A table of clinically meaningful claims with support status, cited PMIDs or mock evidence IDs, evidence level, risk level, rationale, and limitations. |
+| Claim Ledger | A table of clinically meaningful claims with support status, cited PMIDs, evidence level, risk level, rationale, and limitations. |
 | Offline Mode | A loaded pack can answer questions without PubMed, internet access, or external retrieval. Unsupported questions are refused. |
 | Caution & Conflict Map | A structured list of uncertainty signals such as low certainty, indirect evidence, population mismatch, safety signals, or insufficient data. |
 
@@ -188,12 +189,11 @@ What does recent evidence say about warning signs for severe dengue in adults?
 
 | Mode | `GEMMA_PROVIDER` | Gemma 4 active | Requires |
 | --- | --- | --- | --- |
-| Default (demo) | `mock` | No — deterministic mock responses | Nothing |
 | Ollama Cloud | `ollama` | Yes — full pipeline | Ollama Cloud key + `gemma4:31b` |
 | Local Ollama | `ollama` | Yes — full pipeline | Ollama installed + `gemma4:e4b` |
 | API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
 
-In **mock mode**, synthesis uses deterministic template responses so the app runs without any keys. Set `GEMMA_PROVIDER=ollama` to activate the full live pipeline, where Gemma 4 is called at all seven points above.
+Set `GEMMA_PROVIDER=ollama` to activate the full live pipeline, where Gemma 4 is called at all eight points above. When PubMed credentials are not configured, the app falls back to bundled demo papers so the pipeline still runs end-to-end for demonstration.
 
 ## PubMed / NCBI Mode
 
@@ -221,7 +221,7 @@ VeritasClin Field is designed for evidence review, not individualized care.
 | Medication stop/start instructions | Blocked |
 | Patient-identifiable records | Blocked |
 
-Hard rule: **no PMID/PMCID or explicit mock evidence ID, no strong clinical claim.**
+Hard rule: **no PMID/PMCID, no strong clinical claim.**
 
 ## Evaluation
 
@@ -241,13 +241,16 @@ make lint      # ruff check
 
 ## Example Evidence Packs
 
-Three real-data packs are included in [`examples/`](examples/), each built with live PubMed retrieval and Gemma 4 via Ollama Cloud. Each pack contains 10 papers with real numeric PMIDs, a Claim Ledger, a Caution Map, and all four export formats.
+Six real-data packs are included in [`examples/`](examples/), each built with live PubMed retrieval and Gemma 4 via Ollama Cloud. Each pack contains 10 papers with real numeric PMIDs, a Claim Ledger, a Caution Map, and all four export formats.
 
 | Topic | Query method | Papers |
 | --- | --- | --- |
 | [Severe dengue warning signs in adults](examples/dengue_severe_adults_pack/) | Gemma 4 function calling | 10 real PMIDs |
 | [Semaglutide safety and renal outcomes in CKD](examples/semaglutide_ckd_pack/) | Gemma 4 function calling | 10 real PMIDs |
 | [Medical cannabis for neuropathic pain](examples/cannabis_neuropathic_pain_pack/) | Gemma 4 function calling | 10 real PMIDs |
+| [Severe malaria treatment in adults](examples/malaria_severe_adults_pack/) | Gemma 4 function calling | 10 real PMIDs |
+| [Latent tuberculosis treatment outcomes](examples/tuberculosis_latent_pack/) | Gemma 4 function calling | 10 real PMIDs |
+| [Postpartum hemorrhage prevention and management](examples/maternal_health_pph_pack/) | Gemma 4 function calling | 10 real PMIDs |
 
 Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `caution_map.json`
 
@@ -265,16 +268,14 @@ Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `c
 
 ## Roadmap
 
-**v0.1 — Hackathon MVP** ✅ Complete
+**v0.1 + v0.2 — Hackathon Submission** ✅ Complete
 
-- Live Gemma 4 pipeline: multimodal image input, native function calling for PubMed query construction, LLM synthesis, LLM claim extraction, LLM PICO extraction, offline Q&A
+- Live Gemma 4 pipeline: 8 touchpoints — multimodal image input, PICO extraction, safety rewrite, native function calling for PubMed query, evidence synthesis, patient explanation, LLM-backed caution reasoning, offline Q&A
 - Portable Evidence Pack: Claim Ledger, Caution & Conflict Map, freshness score, 4 export formats (JSON, Markdown, CSV, caution JSON)
 - SafetyGuard: 6-category detection, deterministic blocking, LLM-backed rewrite
 - Evaluation module: citation coverage, unsupported-claim delta, reproducibility score, baseline comparison
-- Three curated real-data demo packs (dengue, semaglutide/CKD, cannabis) — 10 real PubMed papers each
+- Six curated real-data demo packs (dengue, semaglutide/CKD, cannabis, malaria, TB, maternal health) — 10 real PubMed papers each
 - Multilingual offline Q&A: English, Portuguese, Spanish
-
-**v0.2 — Post-hackathon** — Additional public-health demo packs (malaria, TB, maternal health); LLM-backed caution reasoning; stronger conflict detection.
 
 **Later** — Fine-tuned Gemma 4 for medical PICO extraction; Kaggle notebook; FHIR-compatible pack export.
 

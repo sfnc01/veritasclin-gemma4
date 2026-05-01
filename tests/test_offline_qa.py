@@ -7,7 +7,7 @@ def test_offline_qa_uses_loaded_pack_only(monkeypatch):
         raise AssertionError("PubMed should not be called in offline mode")
 
     monkeypatch.setattr("veritasclin.tools.pubmed.search_pubmed", fail_if_called)
-    pack, _ = PackBuilder().build("Dengue warning signs in adults", force_mock_retrieval=True)
+    pack, _ = PackBuilder().build("Dengue warning signs in adults", use_bundled_papers=True)
     answer = ask_offline_pack(
         pack, "Quais sinais indicam maior risco de dengue grave?", language="pt"
     )
@@ -17,7 +17,7 @@ def test_offline_qa_uses_loaded_pack_only(monkeypatch):
 
 
 def test_offline_qa_spanish_cites_loaded_claims():
-    pack, _ = PackBuilder().build("Dengue warning signs in adults", force_mock_retrieval=True)
+    pack, _ = PackBuilder().build("Dengue warning signs in adults", use_bundled_papers=True)
     answer = ask_offline_pack(
         pack, "Que signos indican mayor riesgo de dengue grave?", language="es"
     )
@@ -27,6 +27,6 @@ def test_offline_qa_spanish_cites_loaded_claims():
 
 
 def test_offline_qa_refuses_unsupported_question():
-    pack, _ = PackBuilder().build("Dengue warning signs in adults", force_mock_retrieval=True)
+    pack, _ = PackBuilder().build("Dengue warning signs in adults", use_bundled_papers=True)
     answer = ask_offline_pack(pack, "What does this pack say about malaria treatment?")
     assert "does not contain enough evidence" in answer

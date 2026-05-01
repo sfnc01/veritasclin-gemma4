@@ -55,6 +55,29 @@ TOPICS = [
         ),
         "language": "en",
     },
+    {
+        "slug": "malaria_severe_treatment_adults",
+        "question": (
+            "What does evidence say about treatment of severe malaria in adults "
+            "in endemic settings?"
+        ),
+        "language": "en",
+    },
+    {
+        "slug": "tuberculosis_latent_treatment_outcomes",
+        "question": (
+            "What does evidence say about treatment regimens for latent tuberculosis "
+            "infection and outcomes?"
+        ),
+        "language": "en",
+    },
+    {
+        "slug": "maternal_health_postpartum_hemorrhage",
+        "question": (
+            "What does evidence say about prevention and management of postpartum hemorrhage?"
+        ),
+        "language": "en",
+    },
 ]
 
 OUT_DIR = ROOT / "evidence_packs"
@@ -80,7 +103,7 @@ def build_and_save(topic: dict, provider) -> None:
         language=language,
         max_results=10,
         include_baseline=True,
-        force_mock_retrieval=False,
+        use_bundled_papers=False,
     )
 
     out = _slug_dir(slug)

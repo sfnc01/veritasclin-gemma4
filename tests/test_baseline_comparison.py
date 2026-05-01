@@ -3,7 +3,7 @@ from veritasclin.packs.builder import PackBuilder
 
 
 def test_baseline_comparison_produces_metrics():
-    pack, _ = PackBuilder().build("Dengue warning signs in adults", force_mock_retrieval=True)
+    pack, _ = PackBuilder().build("Dengue warning signs in adults", use_bundled_papers=True)
     comparison = BaselineAgent().compare("Dengue warning signs in adults", pack)
     assert comparison.baseline_claim_count >= 1
     assert (

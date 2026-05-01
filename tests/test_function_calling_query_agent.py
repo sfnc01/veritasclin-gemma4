@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pytest
 
+from tests.support.fake_provider import FakeLLMProvider
 from veritasclin.agents.function_calling_query_agent import FunctionCallingQueryAgent
-from veritasclin.llm.mock import MockLLMProvider
 from veritasclin.schemas.pico import PICOQuestion
 
 
@@ -20,7 +20,7 @@ def _dengue_pico() -> PICOQuestion:
 
 
 def test_function_calling_query_agent_falls_back_with_mock():
-    agent = FunctionCallingQueryAgent(provider=MockLLMProvider())
+    agent = FunctionCallingQueryAgent(provider=FakeLLMProvider())
     query = agent.build(_dengue_pico())
     assert isinstance(query, str)
     assert len(query) > 0
@@ -28,7 +28,7 @@ def test_function_calling_query_agent_falls_back_with_mock():
 
 
 def test_function_calling_query_agent_fallback_query_is_non_empty():
-    agent = FunctionCallingQueryAgent(provider=MockLLMProvider())
+    agent = FunctionCallingQueryAgent(provider=FakeLLMProvider())
     query = agent.build(_dengue_pico())
     assert "dengue" in query.lower() or len(query) > 5
 

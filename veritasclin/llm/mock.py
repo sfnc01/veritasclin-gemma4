@@ -4,12 +4,20 @@ import json
 
 from veritasclin.llm.base import LLMProvider
 
+MockLLMProvider = None  # removed — use tests.support.fake_provider.FakeLLMProvider in tests
 
-class MockLLMProvider(LLMProvider):
+
+class _MockLLMProvider(LLMProvider):
+    """Internal test double. Not a user-facing provider — use Ollama or OpenAI-compatible."""
+
     name = "mock"
 
     def generate(self, system_prompt: str, user_prompt: str, temperature: float = 0.2) -> str:
         combined = f"{system_prompt}\n{user_prompt}".lower()
+
+        # Caution reasoning call
+        if "caution_type" in combined or "uncertainty signals" in combined:
+            return _mock_caution_reasoning(combined)
 
         # Claim extraction call — JSON array of clinical assertions
         if "verifiable clinical" in combined or "json array" in combined:
@@ -159,6 +167,44 @@ def _mock_pico(prompt: str) -> str:
             "timeframe": None,
         }
     return json.dumps(data)
+
+
+def _mock_caution_reasoning(prompt: str) -> str:
+    if "dengue" in prompt:
+        return json.dumps([
+            {
+                "caution_type": "low_certainty",
+                "explanation": "Several dengue warning-sign studies are observational with "
+                               "limited sample sizes.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+            {
+                "caution_type": "population_mismatch",
+                "explanation": "Some cited evidence includes pediatric populations that may "
+                               "not fully generalise to adult dengue patients.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+        ])
+    if "semaglutide" in prompt or "ckd" in prompt or "kidney" in prompt:
+        return json.dumps([
+            {
+                "caution_type": "insufficient_data",
+                "explanation": "Long-term renal outcomes beyond trial follow-up periods "
+                               "remain uncertain.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+        ])
+    return json.dumps([
+        {
+            "caution_type": "low_certainty",
+            "explanation": "Evidence certainty for this topic requires independent review.",
+            "severity": "medium",
+            "claim_id": None,
+        },
+    ])
 
 
 def _mock_baseline(prompt: str) -> str:

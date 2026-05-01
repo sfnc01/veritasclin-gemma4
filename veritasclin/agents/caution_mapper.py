@@ -1,15 +1,73 @@
 from __future__ import annotations
 
+import json
 import re
 
+from veritasclin.llm.base import LLMProvider, LLMProviderError
+from veritasclin.llm.prompts import CAUTION_REASONING_SYSTEM_PROMPT
 from veritasclin.schemas.caution import CautionItem
 from veritasclin.schemas.claims import Claim
 from veritasclin.schemas.evidence import EvidenceItem
 
 
 class CautionMapper:
+    def __init__(self, provider: LLMProvider | None = None) -> None:
+        self._provider = provider
+
+    def _llm_cautions(
+        self,
+        claims: list[Claim],
+        evidence_items: list[EvidenceItem],
+    ) -> list[CautionItem]:
+        abstracts = "\n\n".join(
+            f"[{item.paper.pmid}] {item.paper.title}\n{item.paper.abstract or ''}"
+            for item in evidence_items[:6]
+        )
+        claim_summary = "\n".join(f"- {c.id}: {c.text}" for c in claims[:10])
+        user_prompt = (
+            f"Evidence abstracts:\n{abstracts}\n\n"
+            f"Claims in the ledger:\n{claim_summary}\n\n"
+            "Identify uncertainty signals. Output a JSON array of caution objects."
+        )
+        try:
+            raw = self._provider.generate(  # type: ignore[union-attr]
+                CAUTION_REASONING_SYSTEM_PROMPT, user_prompt, temperature=0.1
+            )
+            raw = raw.strip()
+            start = raw.find("[")
+            end = raw.rfind("]") + 1
+            if start == -1 or end == 0:
+                return []
+            items = json.loads(raw[start:end])
+            result = []
+            for i, item in enumerate(items, start=1):
+                ct = item.get("caution_type", "low_certainty")
+                ex = item.get("explanation", "")
+                sv = item.get("severity", "medium")
+                if not ex:
+                    continue
+                result.append(
+                    CautionItem(
+                        id=f"LCAU{i:03d}",
+                        claim_id=item.get("claim_id") or (claims[0].id if claims else ""),
+                        supporting_pmids=[],
+                        cautionary_pmids=[],
+                        caution_type=ct,
+                        explanation=ex,
+                        severity=sv,
+                    )
+                )
+            return result
+        except (LLMProviderError, json.JSONDecodeError, KeyError, IndexError):
+            return []
+
     def map(self, claims: list[Claim], evidence_items: list[EvidenceItem]) -> list[CautionItem]:
         cautions: list[CautionItem] = []
+
+        if self._provider is not None:
+            llm_cautions = self._llm_cautions(claims, evidence_items)
+            cautions.extend(llm_cautions)
+
         # Build a lookup from PMID to EvidenceItem for per-claim scoping
         evidence_by_pmid: dict[str, EvidenceItem] = {
             item.paper.pmid: item for item in evidence_items

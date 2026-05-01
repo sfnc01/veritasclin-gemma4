@@ -480,12 +480,12 @@ with st.sidebar:
     )
 
     st.markdown("### Provider")
-    _provider_options = ["openai_compatible", "ollama", "mock"]
-    _env_provider = os.environ.get("GEMMA_PROVIDER", "mock")
+    _provider_options = ["ollama", "openai_compatible"]
+    _env_provider = os.environ.get("GEMMA_PROVIDER", "ollama")
     _provider_default = (
         _provider_options.index(_env_provider)
         if _env_provider in _provider_options
-        else _provider_options.index("mock")
+        else 0
     )
     provider = st.selectbox("LLM provider", _provider_options, index=_provider_default)
     if os.environ.get("GEMMA_PROVIDER") != provider:
@@ -500,7 +500,7 @@ with st.sidebar:
     use_pubmed = st.toggle(
         "Use PubMed",
         value=_s.pubmed_configured,
-        help="When off, the app uses deterministic mock demo data.",
+        help="When off, the app uses bundled demo papers (no external retrieval).",
     )
     _settings_sidebar = get_settings()
     _pubmed_status = "configured" if _settings_sidebar.pubmed_configured else "not configured"
@@ -535,7 +535,7 @@ DEMO_QUESTIONS = {
 # ── Derived state ──────────────────────────────────────────────────────────
 
 settings = get_settings()
-source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Mock fallback"
+source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Bundled demo data"
 offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
 provider_label = provider.replace("_", " ").title()
 
@@ -611,7 +611,7 @@ st.markdown(
     <div class="vc-disclaimer">
       <strong>Medical disclaimer:</strong>&nbsp;
       Not a diagnostic, prescription, or emergency triage tool.
-      No PMID / mock evidence ID, no strong clinical claim.
+      No PMID, no strong clinical claim.
       All clinical decisions must be made by qualified healthcare professionals.
     </div>
     """,
@@ -1037,10 +1037,10 @@ if mode == "Build Evidence Pack":
         ),
     )
     image_bytes: bytes | None = uploaded_image.read() if uploaded_image else None
-    if uploaded_image and provider == "mock":
+    if uploaded_image and provider not in ("ollama", "openai_compatible"):
         st.warning(
             "Image analysis requires Ollama or OpenAI-compatible provider. "
-            "The image will be ignored in mock mode.",
+            "The image will be ignored with the current provider selection.",
             icon="⚠️",
         )
 
@@ -1057,7 +1057,7 @@ if mode == "Build Evidence Pack":
                 ("Image analysis (Gemma 4 multimodal)" if image_bytes else "PICO extraction", True),
                 ("PICO extraction", not bool(image_bytes)),
                 ("PubMed query via Gemma 4 function calling", True),
-                ("PubMed retrieval or mock fallback", True),
+                ("PubMed retrieval or bundled demo papers", True),
                 ("Evidence ranking", True),
                 ("Gemma 4 synthesis", True),
                 ("Claim extraction", True),
@@ -1081,7 +1081,7 @@ if mode == "Build Evidence Pack":
                     language=language,
                     max_results=max_results,
                     include_baseline=True,
-                    force_mock_retrieval=not use_pubmed,
+                    use_bundled_papers=not use_pubmed,
                     image_bytes=image_bytes,
                 )
                 st.session_state["pack"] = pack

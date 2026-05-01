@@ -44,3 +44,17 @@ SAFETY_REWRITE_SYSTEM_PROMPT = (
     "(4) be one sentence only. "
     "Return only the rewritten question with no explanation."
 )
+
+CAUTION_REASONING_SYSTEM_PROMPT = (
+    "You are a clinical evidence appraisal assistant. "
+    "Given evidence abstracts and a synthesis, identify uncertainty signals "
+    "a clinician should know about. "
+    "For each caution output a JSON object: "
+    '{"caution_type": "<type>", "explanation": "<one sentence>", '
+    '"severity": "<low|medium|high>", "claim_id": null}. '
+    "Valid caution_type values: insufficient_data, low_certainty, population_mismatch, "
+    "outcome_mismatch, safety_signal, indirect_evidence, conflicting_results. "
+    "Output a JSON array only. If no cautions apply, output []. "
+    "Do not invent PMIDs or claim IDs. "
+    "Do not diagnose, prescribe, or give individualized advice."
+)

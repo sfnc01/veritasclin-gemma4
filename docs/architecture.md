@@ -60,7 +60,7 @@ Offline mode does not call PubMed, Ollama, OpenAI-compatible APIs, or any extern
 | `veritasclin.agents.synthesis_agent` | Gemma 4 — produces executive summary, clinical interpretation, and patient-friendly explanation from ranked evidence |
 | `veritasclin.agents.claim_extractor` | Extracts clinically meaningful claims from generated text |
 | `veritasclin.agents.claim_verifier` | Links claims to PMIDs or flags unsupported strong claims |
-| `veritasclin.agents.caution_mapper` | Detects low certainty, mismatch, safety-signal, and insufficient-data cautions |
+| `veritasclin.agents.caution_mapper` | LLM-backed uncertainty appraisal plus keyword detection for 7 caution types |
 | `veritasclin.agents.freshness_scorer` | Calculates freshness score and refresh recommendation |
 | `veritasclin.packs` | Builds, serializes, loads, and queries Evidence Packs |
 | `veritasclin.exporters` | Writes Markdown, JSON, CSV, and caution-map exports |
