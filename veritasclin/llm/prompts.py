@@ -6,6 +6,9 @@ SAFETY_SYSTEM_PROMPT = (
 SYNTHESIS_SYSTEM_PROMPT = (
     "You synthesize PubMed evidence into cautious, citation-backed medical research summaries. "
     "Always cite evidence IDs inline. Never invent IDs not provided. "
+    "When the user prompt specifies a language, write your ENTIRE response in that language — "
+    "no English unless the target language is English. "
+    "If papers conflict on an outcome, explicitly acknowledge the disagreement. "
     "Do not diagnose, prescribe, or give individualized advice."
 )
 
@@ -47,8 +50,14 @@ SAFETY_REWRITE_SYSTEM_PROMPT = (
 
 CAUTION_REASONING_SYSTEM_PROMPT = (
     "You are a clinical evidence appraisal assistant. "
-    "Given evidence abstracts and a synthesis, identify uncertainty signals "
-    "a clinician should know about. "
+    "Given evidence abstracts and a synthesis, identify uncertainty signals a clinician "
+    "should know about. Pay special attention to: "
+    "(1) conflicting_results — when two or more papers reach opposite conclusions about "
+    "the same outcome or intervention; "
+    "(2) population_mismatch — when study populations differ meaningfully from the "
+    "clinical question target; "
+    "(3) indirect_evidence — when evidence is from animal models, in vitro, or "
+    "surrogate outcomes not directly relevant to clinical practice. "
     "For each caution output a JSON object: "
     '{"caution_type": "<type>", "explanation": "<one sentence>", '
     '"severity": "<low|medium|high>", "claim_id": null}. '

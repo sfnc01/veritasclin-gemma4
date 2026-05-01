@@ -25,15 +25,26 @@ class SynthesisResult:
 
 _SAFETY_NOTICE = (
     "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. "
-    "Strong clinical claims require PMID/PMCID or an explicit mock evidence ID."
+    "Strong clinical claims require a PMID/PMCID from the loaded evidence."
 )
 
-_WHAT_DOES_NOT_PROVE = [
-    "It does not diagnose any individual patient.",
-    "It does not replace urgent clinical evaluation for warning signs.",
-    "It does not prove that every warning sign has equal predictive value "
-    "in every setting.",
-]
+_WHAT_DOES_NOT_PROVE: dict[str, list[str]] = {
+    "en": [
+        "It does not diagnose any individual patient.",
+        "It does not replace urgent clinical evaluation for warning signs.",
+        "It does not prove that every finding has equal predictive value in every setting.",
+    ],
+    "pt": [
+        "Não diagnostica pacientes individuais.",
+        "Não substitui avaliação clínica urgente para sinais de alerta.",
+        "Não comprova que cada achado tem igual valor preditivo em todos os contextos.",
+    ],
+    "es": [
+        "No diagnostica a pacientes individuales.",
+        "No reemplaza la evaluación clínica urgente ante señales de alerta.",
+        "No prueba que cada hallazgo tenga igual valor predictivo en todos los contextos.",
+    ],
+}
 
 
 class SynthesisAgent:
@@ -62,10 +73,21 @@ class SynthesisAgent:
         return SynthesisResult(
             executive_summary=executive_summary,
             clinical_interpretation=clinical_interpretation,
-            what_the_evidence_does_not_prove=_WHAT_DOES_NOT_PROVE,
+            what_the_evidence_does_not_prove=_WHAT_DOES_NOT_PROVE.get(
+                language, _WHAT_DOES_NOT_PROVE["en"]
+            ),
             patient_friendly_explanation=patient_explanation,
             safety_notice=_SAFETY_NOTICE,
         )
+
+
+_LANG_NAMES = {"pt": "Portuguese (Brazilian)", "es": "Spanish", "en": "English"}
+
+_LANG_HEADER = {
+    "pt": "ATENÇÃO: Responda COMPLETAMENTE em Português (Brasileiro).",
+    "es": "ATENCIÓN: Responda COMPLETAMENTE en Español.",
+    "en": "",
+}
 
 
 def _build_synthesis_prompt(
@@ -75,22 +97,27 @@ def _build_synthesis_prompt(
 ) -> str:
     evidence_block = "\n".join(
         f"- ID: {item.paper.pmid} | Study: {item.study_type} | "
-        f"Level: {item.evidence_level}\n  Abstract: {item.paper.abstract or '(no abstract)'}"
+        f"Level: {item.evidence_level} | Year: {item.paper.publication_year or 'unknown'}\n"
+        f"  Abstract: {item.paper.abstract or '(no abstract)'}"
         for item in top_items
     )
-    lang_instruction = {
-        "pt": "Write the summary in Portuguese (Brazilian).",
-        "es": "Write the summary in Spanish.",
-    }.get(language, "Write the summary in English.")
+    lang_name = _LANG_NAMES.get(language, "English")
+    lang_header = _LANG_HEADER.get(language, "")
+    header = f"{lang_header}\n\n" if lang_header else ""
+    conflict_check = (
+        "If papers disagree on an outcome, explicitly note the conflicting findings. "
+    )
     return (
+        f"{header}"
         f"Clinical question: {pico.safe_rewritten_question or pico.original_question}\n"
         f"Population: {pico.population or 'not specified'}\n"
         f"Intervention/Exposure: {pico.intervention or 'not specified'}\n"
         f"Outcome: {pico.outcome or 'not specified'}\n\n"
         f"Loaded evidence (cite IDs inline — never invent new IDs):\n{evidence_block}\n\n"
-        f"Instructions: Write a 2–3 sentence executive summary citing evidence IDs inline "
-        f"(e.g. MOCK-DENGUE-001). Do not diagnose, prescribe, or give individualized advice. "
-        f"Do not invent IDs not listed above. {lang_instruction}"
+        f"Write a 2–3 sentence evidence synthesis in {lang_name}. "
+        f"Cite evidence IDs inline. {conflict_check}"
+        "Do not diagnose, prescribe, or give individualized advice. "
+        "Do not invent IDs not listed above."
     )
 
 
@@ -133,8 +160,14 @@ def _patient_explanation_prompt(
 ) -> str:
     citations = ", ".join(item.paper.pmid for item in top_items[:3]) or "no evidence loaded"
     lang_instruction = {
-        "pt": "Write in simple Portuguese (Brazilian) for a non-specialist reader.",
-        "es": "Write in simple Spanish for a non-specialist reader.",
+        "pt": (
+            "IMPORTANTE: Escreva APENAS em Português (Brasileiro) simples "
+            "para um leitor leigo. Não use inglês."
+        ),
+        "es": (
+            "IMPORTANTE: Escriba ÚNICAMENTE en Español simple "
+            "para un lector no especialista. No use inglés."
+        ),
     }.get(language, "Write in plain English for a non-specialist reader.")
     prompt = (
         f"In 1–2 sentences, explain what the evidence says about "

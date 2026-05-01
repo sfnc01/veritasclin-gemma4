@@ -73,6 +73,27 @@ def _mock_claim_extraction(prompt: str) -> str:
             "Dizziness and sedation were the most commonly reported adverse events with "
             "cannabinoid use (MOCK-CANNABIS-001).",
         ])
+    if "malaria" in prompt:
+        return json.dumps([
+            "Artesunate is the recommended treatment for severe malaria in adults "
+            "based on trial evidence (MOCK-MALARIA-001).",
+            "Intravenous artesunate demonstrated lower mortality compared to quinine "
+            "in severe falciparum malaria (MOCK-MALARIA-001).",
+        ])
+    if "tuberculosis" in prompt or "latent" in prompt:
+        return json.dumps([
+            "Shorter rifapentine-based regimens show non-inferior efficacy with "
+            "higher completion rates for latent TB (MOCK-TB-001).",
+            "Preventive therapy significantly reduces TB reactivation risk in "
+            "high-burden settings (MOCK-TB-001).",
+        ])
+    if "postpartum" in prompt or "hemorrhage" in prompt or "maternal" in prompt:
+        return json.dumps([
+            "Oxytocin remains the first-line uterotonic for postpartum hemorrhage "
+            "prevention across obstetric settings (MOCK-PPH-001).",
+            "Tranexamic acid administered within 3 hours of hemorrhage onset reduces "
+            "maternal mortality in low-resource settings (MOCK-PPH-001).",
+        ])
     return json.dumps([
         "The loaded evidence addresses the clinical question with citation-backed findings.",
     ])
@@ -127,6 +148,30 @@ def _mock_synthesis(prompt: str) -> str:
             "(MOCK-CANNABIS-001). Evidence certainty varies across trial designs "
             "(MOCK-CANNABIS-001)."
         )
+    if "malaria" in prompt:
+        return (
+            "The loaded evidence supports intravenous artesunate as the treatment of choice "
+            "for severe malaria in adults in endemic settings (MOCK-MALARIA-001). "
+            "Trial evidence demonstrates lower case fatality with artesunate compared to "
+            "quinine; results should be interpreted in the context of local drug availability "
+            "(MOCK-MALARIA-001)."
+        )
+    if "tuberculosis" in prompt or "latent" in prompt:
+        return (
+            "The loaded evidence shows that shorter rifapentine-based regimens for latent "
+            "tuberculosis achieve high completion rates with non-inferior efficacy compared "
+            "to 9-month isoniazid (MOCK-TB-001). "
+            "Preventive therapy reduces reactivation risk in high-burden settings "
+            "(MOCK-TB-001)."
+        )
+    if "postpartum" in prompt or "hemorrhage" in prompt or "maternal" in prompt:
+        return (
+            "The loaded evidence supports oxytocin as the first-line uterotonic for "
+            "postpartum hemorrhage prevention, with tranexamic acid reducing mortality "
+            "when given within 3 hours of hemorrhage onset (MOCK-PPH-001). "
+            "Evidence is strongest for high-quality oxytocin administration at delivery "
+            "(MOCK-PPH-001)."
+        )
     return (
         "The loaded evidence addresses the clinical question with citation-backed findings. "
         "Review the Claim Ledger for individual claim support status and cited evidence IDs."
@@ -156,6 +201,30 @@ def _mock_pico(prompt: str) -> str:
             "intervention": "cannabinoids",
             "comparison": "placebo",
             "outcome": "pain relief",
+            "timeframe": None,
+        }
+    elif "malaria" in prompt:
+        data = {
+            "population": "adults with severe malaria in endemic settings",
+            "intervention": "antimalarial treatment regimens",
+            "comparison": "quinine or standard of care",
+            "outcome": "mortality and clinical recovery",
+            "timeframe": None,
+        }
+    elif "tuberculosis" in prompt or "latent" in prompt:
+        data = {
+            "population": "individuals with latent tuberculosis infection",
+            "intervention": "preventive therapy regimens",
+            "comparison": "isoniazid 9-month standard",
+            "outcome": "treatment completion and reactivation rates",
+            "timeframe": None,
+        }
+    elif "postpartum" in prompt or "hemorrhage" in prompt or "maternal" in prompt:
+        data = {
+            "population": "pregnant or postpartum women",
+            "intervention": "uterotonic agents and tranexamic acid",
+            "comparison": "standard obstetric care",
+            "outcome": "postpartum hemorrhage incidence and maternal mortality",
             "timeframe": None,
         }
     else:
@@ -193,6 +262,50 @@ def _mock_caution_reasoning(prompt: str) -> str:
                 "caution_type": "insufficient_data",
                 "explanation": "Long-term renal outcomes beyond trial follow-up periods "
                                "remain uncertain.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+        ])
+    if "malaria" in prompt:
+        return json.dumps([
+            {
+                "caution_type": "population_mismatch",
+                "explanation": "Trial evidence may not fully generalise to all endemic "
+                               "settings with different parasite strains and resources.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+            {
+                "caution_type": "conflicting_results",
+                "explanation": "Drug availability varies by region; regimen efficacy "
+                               "may differ from trial conditions in field settings.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+        ])
+    if "tuberculosis" in prompt or "latent" in prompt:
+        return json.dumps([
+            {
+                "caution_type": "low_certainty",
+                "explanation": "Completion rates and long-term outcomes vary substantially "
+                               "across healthcare system contexts.",
+                "severity": "medium",
+                "claim_id": None,
+            },
+        ])
+    if "postpartum" in prompt or "hemorrhage" in prompt or "maternal" in prompt:
+        return json.dumps([
+            {
+                "caution_type": "population_mismatch",
+                "explanation": "Evidence on tranexamic acid efficacy is stronger for "
+                               "low-resource settings; high-resource contexts may differ.",
+                "severity": "low",
+                "claim_id": None,
+            },
+            {
+                "caution_type": "safety_signal",
+                "explanation": "Oxytocin heat stability is a concern in settings without "
+                               "cold chain — efficacy may vary.",
                 "severity": "medium",
                 "claim_id": None,
             },

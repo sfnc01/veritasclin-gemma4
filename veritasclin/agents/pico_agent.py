@@ -73,6 +73,30 @@ def _template_extract(
             "placebo or standard care",
             "pain relief and adverse events",
         )
+    if "malaria" in lowered:
+        population = "adults in malaria-endemic settings"
+        if "severe" in lowered or "falciparum" in lowered:
+            population = "adults with severe or complicated malaria"
+        return (
+            population,
+            "antimalarial treatment regimens",
+            "standard of care",
+            "clinical outcomes, mortality, and treatment efficacy",
+        )
+    if "tuberculosis" in lowered or " tb " in lowered or "latent" in lowered:
+        return (
+            "individuals with latent tuberculosis infection",
+            "preventive therapy regimens",
+            "isoniazid standard or no treatment",
+            "treatment completion, reactivation rates, and adverse events",
+        )
+    if "postpartum" in lowered or "maternal" in lowered or "hemorrhage" in lowered:
+        return (
+            "pregnant or postpartum women",
+            "uterotonic agents and surgical interventions",
+            "standard obstetric care",
+            "postpartum hemorrhage prevention, blood loss, and maternal mortality",
+        )
     # Marker-based last-resort fallback
     return (
         _phrase_after(lowered, ["in ", "among "]),

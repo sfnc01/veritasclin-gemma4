@@ -16,6 +16,10 @@
 - [x] Gemma 4 (31B) wired through full pipeline via Ollama Cloud.
 - [x] PubMed/NCBI live retrieval configured and rate-limited.
 - [x] Offline mode performs no PubMed retrieval (verified by monkeypatch test).
+- [x] Mock provider removed from user-facing code (Ollama / OpenAI-compatible only).
+- [x] 8 Gemma 4 touchpoints: image, PICO, safety rewrite, function-calling query, synthesis, patient explanation, caution reasoning, offline Q&A.
+- [x] LLM-backed CautionMapper + cross-paper conflict detection.
+- [x] Richer multilingual synthesis: language-native summaries, translated "what it does not prove" in EN/PT/ES.
 
 ## Demo Flows
 
@@ -30,7 +34,9 @@
 - [x] Offline Q&A (Spanish): `Que signos indican mayor riesgo de dengue grave?`
 - [x] Plain Gemma vs VeritasClin baseline comparison tab works.
 - [x] All 4 exports: pack.json, dossier.md, claim_ledger.csv, caution_map.json.
-- [x] Example Evidence Pack JSON included in repo (examples/ — 3 real PubMed packs, 10 papers each).
+- [x] 3 original demo packs: dengue, cannabis, semaglutide/CKD (10 real PubMed papers each).
+- [ ] 3 new v0.2 packs built and committed: malaria, TB, maternal health.
+  Run: `python scripts/build_real_packs.py` (requires Ollama Cloud + NCBI credentials).
 
 ## Assets (Manual)
 

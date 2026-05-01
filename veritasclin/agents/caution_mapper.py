@@ -111,7 +111,7 @@ class CautionMapper:
                 add(
                     claim,
                     "insufficient_data",
-                    "This claim is not supported by a PMID or loaded mock evidence ID.",
+                    "This claim is not supported by any PMID in the loaded evidence pack.",
                     "high" if claim.risk_level == "high" else "medium",
                 )
                 continue
@@ -181,12 +181,37 @@ class CautionMapper:
                     claim,
                     "conflicting_results",
                     (
-                        "Cited evidence uses cautious language suggesting mixed or "
-                        "inconsistent results."
+                        "Cited evidence uses language suggesting mixed or "
+                        "inconsistent results across studies."
                     ),
-                    "low",
+                    "medium",
                     claim.pmids,
                 )
+
+        # Pack-level cross-paper conflict: detect opposing conclusions across the full set
+        if claims and _has_cross_paper_conflict(evidence_items):
+            all_pmids = list({p for c in claims for p in c.pmids})
+            existing_conflict_ids = {
+                (item.claim_id, item.caution_type) for item in cautions
+            }
+            sentinel_claim = claims[0]
+            if (sentinel_claim.id, "conflicting_results") not in existing_conflict_ids:
+                cautions.append(
+                    CautionItem(
+                        id=f"CAU{caution_index:03d}",
+                        claim_id=sentinel_claim.id,
+                        supporting_pmids=[],
+                        cautionary_pmids=all_pmids[:6],
+                        caution_type="conflicting_results",
+                        explanation=(
+                            "Papers in this pack reach opposing conclusions on at least one "
+                            "outcome — review individual study findings before drawing "
+                            "clinical conclusions."
+                        ),
+                        severity="medium",
+                    )
+                )
+
         return cautions
 
 
@@ -239,14 +264,40 @@ def _has_safety_signal(claim_text: str, evidence_text: str) -> bool:
 
 
 def _has_indirect_evidence(evidence_text: str) -> bool:
-    return bool(re.search(r"\b(animal|mice|rat|in vitro|preclinical|indirect)\b", evidence_text))
+    return bool(
+        re.search(
+            r"\b(animal model|mice|rat model|in vitro|ex vivo|preclinical|indirect evidence"
+            r"|observational|retrospective cohort)\b",
+            evidence_text,
+        )
+    )
 
 
 def _has_conflict_language(evidence_text: str) -> bool:
     return bool(
         re.search(
-            r"\b(conflicting|inconsistent|mixed results|heterogeneity|not significant|"
-            r"no association|uncertain)\b",
+            r"\b(conflicting|inconsistent|mixed results|heterogeneity|high heterogeneity|"
+            r"not significant|no significant|no association|no benefit|failed to show|"
+            r"did not improve|uncertain|inconclusive|equivocal|limited evidence)\b",
             evidence_text,
         )
     )
+
+
+def _has_cross_paper_conflict(evidence_items: list[EvidenceItem]) -> bool:
+    """Detect when papers take opposite positions on the same outcome."""
+    positive = re.compile(
+        r"\b(improved|reduction|reduced|benefit|protective|significant decrease|"
+        r"significantly lower|effective|efficacious)\b"
+    )
+    negative = re.compile(
+        r"\b(no improvement|no benefit|no reduction|no significant|not effective|"
+        r"no difference|failed|did not reduce|did not improve|no association)\b"
+    )
+    has_positive = any(
+        positive.search((item.paper.abstract or "").lower()) for item in evidence_items
+    )
+    has_negative = any(
+        negative.search((item.paper.abstract or "").lower()) for item in evidence_items
+    )
+    return has_positive and has_negative

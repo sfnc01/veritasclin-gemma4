@@ -49,7 +49,7 @@ Offline mode does not call PubMed, Ollama, OpenAI-compatible APIs, or any extern
 | --- | --- |
 | `veritasclin.config` | Loads environment settings from `.env` without exposing secrets |
 | `veritasclin.schemas` | Pydantic v2 models for PICO, papers, evidence, claims, cautions, packs, and baseline metrics |
-| `veritasclin.llm` | Provider abstraction for mock mode, Ollama/Gemma, and optional OpenAI-compatible endpoints |
+| `veritasclin.llm` | Provider abstraction for Ollama/Gemma and OpenAI-compatible endpoints; internal test double in `llm/mock.py` |
 | `veritasclin.tools.pubmed` | NCBI E-utilities client for ESearch, Entrez History metadata, EFetch XML, caching, and rate limiting |
 | `veritasclin.agents.safety_guard` | Deterministic classification, blocking, and safe rewriting |
 | `veritasclin.agents.image_context_agent` | Gemma 4 multimodal — reads clinical images and adds context to the question |
@@ -57,10 +57,10 @@ Offline mode does not call PubMed, Ollama, OpenAI-compatible APIs, or any extern
 | `veritasclin.agents.function_calling_query_agent` | Gemma 4 native function calling — calls `set_pubmed_query` tool to build the PubMed query; falls back to `QueryAgent` on failure |
 | `veritasclin.agents.query_agent` | Algorithmic fallback query builder |
 | `veritasclin.agents.evidence_ranker` | Scores papers by study type, abstract availability, term overlap, year, and clinical relevance |
-| `veritasclin.agents.synthesis_agent` | Gemma 4 — produces executive summary, clinical interpretation, and patient-friendly explanation from ranked evidence |
+| `veritasclin.agents.synthesis_agent` | Gemma 4 — multilingual synthesis: executive summary, clinical interpretation, patient-friendly explanation; flags cross-study conflicts |
 | `veritasclin.agents.claim_extractor` | Extracts clinically meaningful claims from generated text |
 | `veritasclin.agents.claim_verifier` | Links claims to PMIDs or flags unsupported strong claims |
-| `veritasclin.agents.caution_mapper` | LLM-backed uncertainty appraisal plus keyword detection for 7 caution types |
+| `veritasclin.agents.caution_mapper` | Gemma 4 LLM-backed uncertainty appraisal + keyword detection + cross-paper conflict detection across all 7 caution types |
 | `veritasclin.agents.freshness_scorer` | Calculates freshness score and refresh recommendation |
 | `veritasclin.packs` | Builds, serializes, loads, and queries Evidence Packs |
 | `veritasclin.exporters` | Writes Markdown, JSON, CSV, and caution-map exports |
