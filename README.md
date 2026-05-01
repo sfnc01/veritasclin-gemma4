@@ -24,6 +24,14 @@ VeritasClin Field turns PubMed into portable Evidence Packs for healthcare teams
 
 It is not a generic PubMed chatbot, an AI doctor, a diagnosis tool, a prescription tool, or a clone of Elicit, Consensus, Perplexity, Semantic Scholar, or scite.
 
+## The Problem
+
+Healthcare workers in the field — outbreak responders, rural clinicians, field epidemiologists — need trustworthy clinical evidence that travels with them. Existing AI tools are online-only, citation-free, and produce answers with no audit trail. When connectivity drops, the answer disappears too.
+
+## The Solution
+
+VeritasClin Field uses Gemma 4's three flagship capabilities — **multimodal input**, **native function calling**, and **long-context reasoning** — to turn a clinical question into a fully portable, citable Evidence Pack that works offline.
+
 ## Runs on Ollama
 
 VeritasClin Field runs Gemma 4 with no data sent to third-party APIs. Choose the path that fits your hardware:
@@ -135,6 +143,22 @@ flowchart TD
     Q --> S --> P --> R --> N --> K --> Y --> C --> V --> M --> F --> X --> O --> A
 ```
 
+## Gemma 4 in the Pipeline
+
+In Ollama mode, Gemma 4 is called at seven points:
+
+| Step | Gemma 4 capability |
+| --- | --- |
+| Image input (optional) | **Multimodal** — reads clinical images, lab reports, charts |
+| PICO extraction | Text reasoning — population, intervention, outcome |
+| Safety rewrite | Text reasoning — rewrites unsafe prompts as research questions |
+| PubMed query | **Native function calling** — calls `set_pubmed_query` tool with MeSH terms |
+| Evidence synthesis | Long-context reasoning — synthesises over multiple PubMed abstracts |
+| Patient explanation | Text generation — plain-language summary |
+| Offline Q&A | RAG — answers from loaded pack claims only, no external retrieval |
+
+Deterministic code handles ranking, citation coverage, claim verification, caution mapping, freshness scoring, and serialization.
+
 ## Core Concepts
 
 | Concept | What it means |
@@ -143,7 +167,6 @@ flowchart TD
 | Claim Ledger | A table of clinically meaningful claims with support status, cited PMIDs or mock evidence IDs, evidence level, risk level, rationale, and limitations. |
 | Offline Mode | A loaded pack can answer questions without PubMed, internet access, or external retrieval. Unsupported questions are refused. |
 | Caution & Conflict Map | A structured list of uncertainty signals such as low certainty, indirect evidence, population mismatch, safety signals, or insufficient data. |
-
 
 ## Quickstart
 
@@ -170,39 +193,11 @@ What does recent evidence say about warning signs for severe dengue in adults?
 | Local Ollama | `ollama` | Yes — full pipeline | Ollama installed + `gemma4:e4b` |
 | API inference | `openai_compatible` | Yes — same as Ollama path | API endpoint + key |
 
-**In mock mode**, synthesis uses deterministic template responses. Gemma 4 is called at 7 points in the live pipeline: image analysis, PICO extraction, safety rewrite, PubMed query (via native function calling), evidence synthesis, patient explanation, and offline Q&A. Deterministic code handles ranking, verification, caution mapping, and exports — Gemma 4 is not given free rein over safety-critical outputs.
-
-Set `GEMMA_PROVIDER=ollama` to activate the full live pipeline.
-
-## Mock Mode
-
-Mock mode is the default no-credential path.
-
-```bash
-GEMMA_PROVIDER=mock
-```
-
-It works without external keys, Ollama, or network access. Mock evidence is clearly labeled and uses IDs such as `MOCK-DENGUE-001`; it never invents real PMIDs. Synthesis responses are deterministic.
-
-## Gemma 4 in the Pipeline
-
-In Ollama mode, Gemma 4 is called at seven points:
-
-| Step | Gemma 4 capability |
-| --- | --- |
-| Image input (optional) | **Multimodal** — reads clinical images, lab reports, charts |
-| PICO extraction | Text reasoning — population, intervention, outcome |
-| Safety rewrite | Text reasoning — rewrites unsafe prompts as research questions |
-| PubMed query | **Native function calling** — calls `set_pubmed_query` tool with MeSH terms |
-| Evidence synthesis | Long-context reasoning — synthesises over multiple PubMed abstracts |
-| Patient explanation | Text generation — plain-language summary |
-| Offline Q&A | RAG — answers from loaded pack claims only, no external retrieval |
-
-Deterministic code handles ranking, citation coverage, claim verification, caution mapping, freshness scoring, and serialization.
+In **mock mode**, synthesis uses deterministic template responses so the app runs without any keys. Set `GEMMA_PROVIDER=ollama` to activate the full live pipeline, where Gemma 4 is called at all seven points above.
 
 ## PubMed / NCBI Mode
 
-Set local credentials in `.env`:
+Set credentials in `.env`:
 
 ```bash
 NCBI_API_KEY=your_key
@@ -211,9 +206,7 @@ NCBI_TOOL=veritasclin-field
 NCBI_MAX_RPS=3
 ```
 
-Secrets are never committed or printed. Tests pass without credentials. With credentials, integration tests verify real numeric PMIDs and Entrez History Server metadata for the dengue demo query.
-
-The PubMed client follows NCBI Entrez E-utilities guidance: it includes `tool` and `email` when configured, honors `NCBI_MAX_RPS`, supports `retstart`/`retmax`, can request `usehistory=y`, and batches EFetch calls at about 200 PMIDs per request.
+Secrets are never committed or printed. Tests pass without credentials. The PubMed client follows NCBI Entrez E-utilities guidance: it includes `tool` and `email` when configured, honors `NCBI_MAX_RPS`, supports `retstart`/`retmax`, can request `usehistory=y`, and batches EFetch calls at about 200 PMIDs per request.
 
 ## Safety Model
 
@@ -241,54 +234,49 @@ Hard rule: **no PMID/PMCID or explicit mock evidence ID, no strong clinical clai
 | `pack_reproducibility_present` | Whether query, evidence, claims, and exports are present |
 | `safety_rewrite_success` | Whether unsafe prompts are rewritten or blocked correctly |
 
-Run the gate:
-
 ```bash
-make test
-make lint
+make test      # 39 unit tests, no credentials required
+make lint      # ruff check
 ```
 
-For credentialed PubMed verification:
+## Example Evidence Packs
 
-```bash
-pytest
-ruff check .
-streamlit run app/streamlit_app.py
-```
+Three real-data packs are included in [`examples/`](examples/), each built with live PubMed retrieval and Gemma 4 via Ollama Cloud. Each pack contains 10 papers with real numeric PMIDs, a Claim Ledger, a Caution Map, and all four export formats.
+
+| Topic | Query method | Papers |
+| --- | --- | --- |
+| [Severe dengue warning signs in adults](examples/dengue_severe_adults_pack/) | Gemma 4 function calling | 10 real PMIDs |
+| [Semaglutide safety and renal outcomes in CKD](examples/semaglutide_ckd_pack/) | Gemma 4 function calling | 10 real PMIDs |
+| [Medical cannabis for neuropathic pain](examples/cannabis_neuropathic_pain_pack/) | Gemma 4 function calling | 10 real PMIDs |
+
+Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `caution_map.json`
 
 ## Documentation
 
-- [Architecture](docs/architecture.md)
-- [Evidence Packs](docs/evidence_packs.md)
-- [Safety Model](docs/safety.md)
-- [Evaluation](docs/evaluation.md)
-- [3-Minute Demo Script](docs/demo_script.md)
-- [Judging Strategy](docs/judging_strategy.md)
-- [Submission Checklist](docs/submission_checklist.md)
-
-<details>
-<summary>Example exported pack files</summary>
-
-```text
-pack.json
-dossier.md
-claim_ledger.csv
-caution_map.json
-```
-
-</details>
+| Document | What it covers |
+| --- | --- |
+| [Architecture](docs/architecture.md) | Pipeline flow, module responsibilities, failure strategy |
+| [Evidence Packs](docs/evidence_packs.md) | Pack schema, export formats, offline guarantees |
+| [Safety Model](docs/safety.md) | Guard categories, rewrite logic, hard rules |
+| [Evaluation](docs/evaluation.md) | Metrics, baselines, reproducibility criteria |
+| [3-Minute Demo Script](docs/demo_script.md) | Step-by-step walkthrough for judges and presenters |
+| [Judging Strategy](docs/judging_strategy.md) | Alignment with hackathon criteria |
+| [Submission Checklist](docs/submission_checklist.md) | Pre-submission verification list |
 
 ## Roadmap
 
-| Stage | Status | Focus |
-| --- | --- | --- |
-| v0.1 — Hackathon MVP | ✅ Done | Live Gemma 4 pipeline: multimodal image input, native function calling for PubMed query, LLM synthesis, LLM claim extraction, LLM PICO extraction, offline Q&A |
-| v0.1 — Hackathon MVP | ✅ Done | Offline Evidence Pack: Claim Ledger, Caution Map, freshness score, 4 export formats (JSON, Markdown, CSV, caution JSON) |
-| v0.1 — Hackathon MVP | ✅ Done | SafetyGuard with 6-category detection and LLM-backed rewrite; evaluation module (citation coverage, unsupported-claim delta, reproducibility score) |
-| v0.1 — Hackathon MVP | ✅ Done | Three curated demo topics; any topic via LLM PICO extraction; multilingual offline Q&A (English, Portuguese, Spanish) |
-| v0.2 — Post-hackathon | 🔜 Planned | Demo video and hero assets; additional public-health demo packs (malaria, TB, maternal health) |
-| v0.3 | 🔜 Planned | LLM-backed caution reasoning; stronger conflict detection; richer multilingual synthesis |
-| Later | 💡 Ideas | Fine-tuned Gemma 4 for medical PICO extraction; Kaggle notebook; FHIR-compatible pack export |
+**v0.1 — Hackathon MVP** ✅ Complete
+
+- Live Gemma 4 pipeline: multimodal image input, native function calling for PubMed query construction, LLM synthesis, LLM claim extraction, LLM PICO extraction, offline Q&A
+- Portable Evidence Pack: Claim Ledger, Caution & Conflict Map, freshness score, 4 export formats (JSON, Markdown, CSV, caution JSON)
+- SafetyGuard: 6-category detection, deterministic blocking, LLM-backed rewrite
+- Evaluation module: citation coverage, unsupported-claim delta, reproducibility score, baseline comparison
+- Three curated real-data demo packs (dengue, semaglutide/CKD, cannabis) — 10 real PubMed papers each
+- Multilingual offline Q&A: English, Portuguese, Spanish
+
+**v0.2 — Post-hackathon** — Additional public-health demo packs (malaria, TB, maternal health); LLM-backed caution reasoning; stronger conflict detection.
+
+**Later** — Fine-tuned Gemma 4 for medical PICO extraction; Kaggle notebook; FHIR-compatible pack export.
 
 ## Medical Disclaimer
 
