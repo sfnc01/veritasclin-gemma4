@@ -1,0 +1,86 @@
+[
+  {
+    "id": "LCAU001",
+    "claim_id": "C004",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "indirect_evidence",
+    "explanation": "Claim C004 cites PMID 31852268, which is a review of infection risks in arthritis patients, not a primary study on the efficacy of LTBI treatment regimens.",
+    "severity": "medium"
+  },
+  {
+    "id": "LCAU002",
+    "claim_id": "C005",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "insufficient_data",
+    "explanation": "Claim C005 asserts a higher risk of liver toxicity for shorter regimens, but the provided abstract [38031772] does not mention liver toxicity specifically for shorter regimens, only that regimen selection depends on the risk of adverse events.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU001",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "31731988",
+      "28409555"
+    ],
+    "cautionary_pmids": [
+      "31731988",
+      "28409555",
+      "29238270",
+      "33013856",
+      "26836374",
+      "28260424"
+    ],
+    "caution_type": "low_certainty",
+    "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "38031772",
+      "28409555"
+    ],
+    "cautionary_pmids": [
+      "31731988",
+      "28409555",
+      "29238270",
+      "33013856",
+      "26836374",
+      "28260424"
+    ],
+    "caution_type": "low_certainty",
+    "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU003",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "38031772",
+      "28409555"
+    ],
+    "cautionary_pmids": [
+      "38031772",
+      "28409555"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C005",
+    "supporting_pmids": [
+      "38031772"
+    ],
+    "cautionary_pmids": [
+      "38031772"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  }
+]

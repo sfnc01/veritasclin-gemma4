@@ -1,0 +1,991 @@
+{
+  "pack_id": "vfield-b07bbe60f877",
+  "title": "Evidence Pack: What does evidence say about prevention and management of postpartum hemorrhage",
+  "topic": "What does evidence say about prevention and management of postpartum hemorrhage?",
+  "created_at": "2026-05-01T04:18:23.480410+00:00",
+  "last_pubmed_search_at": "2026-05-01T04:18:23.480410+00:00",
+  "language": "en",
+  "source": "PubMed/NCBI",
+  "pico": {
+    "original_question": "What does evidence say about prevention and management of postpartum hemorrhage?",
+    "safe_rewritten_question": null,
+    "population": "postpartum women",
+    "intervention": "prevention and management strategies",
+    "comparison": null,
+    "outcome": "reduction or control of hemorrhage",
+    "timeframe": null,
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"Postpartum Hemorrhage\"[MeSH Terms] OR \"postpartum hemorrhage\"[Title/Abstract] OR \"postpartum haemorrhage\"[Title/Abstract] OR \"PPH\"[Title/Abstract]) AND (\"Prevention and Control\"[MeSH Terms] OR \"Therapeutics\"[MeSH Terms] OR prevention[Title/Abstract] OR management[Title/Abstract] OR treatment[Title/Abstract] OR therapy[Title/Abstract])",
+  "pubmed_query_method": "gemma4-function-calling",
+  "papers": [
+    {
+      "pmid": "37130373",
+      "pmcid": null,
+      "title": "Postpartum Hemorrhage-Epidemiology, Risk Factors, and Causes.",
+      "abstract": "The incidence of postpartum hemorrhage (PPH) is increasing worldwide and in the United States. Coinciding, is the increased rate of severe maternal morbidity with blood transfusion in the United States over the past 2 decades. Consequences of PPH can be life-threatening and carry significant cost burden to the health care system. This review will discuss the current trends, distribution, and risk factors for PPH. Causes of PPH will be explored in detail.",
+      "journal": "Clinical obstetrics and gynecology",
+      "publication_year": 2023,
+      "authors": [
+        "Kara Patek",
+        "Perry Friedman"
+      ],
+      "doi": "10.1097/GRF.0000000000000782",
+      "publication_types": [
+        "Review",
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Pregnancy",
+        "Female",
+        "Humans",
+        "United States",
+        "Postpartum Hemorrhage",
+        "Risk Factors",
+        "Blood Transfusion",
+        "Incidence"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37130373/"
+    },
+    {
+      "pmid": "35297039",
+      "pmcid": "PMC4782490",
+      "title": "FIGO recommendations on the management of postpartum hemorrhage 2022.",
+      "abstract": null,
+      "journal": "International journal of gynaecology and obstetrics: the official organ of the International Federation of Gynaecology and Obstetrics",
+      "publication_year": 2022,
+      "authors": [
+        "Maria Fernanda Escobar",
+        "Anwar H Nassar",
+        "Gerhard Theron",
+        "Eythan R Barnea",
+        "Wanda Nicholson",
+        "Diana Ramasauskaite",
+        "Isabel Lloyd",
+        "Edwin Chandraharan",
+        "Suellen Miller",
+        "Thomas Burke",
+        "Gabriel Ossanan",
+        "Javier Andres Carvajal",
+        "Isabella Ramos",
+        "Maria Antonia Hincapie",
+        "Sara Loaiza",
+        "Daniela Nasner",
+        "FIGO Safe Motherhood and Newborn Health Committee"
+      ],
+      "doi": "10.1002/ijgo.14116",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Female",
+        "Humans",
+        "Oxytocics",
+        "Postpartum Hemorrhage",
+        "Pregnancy",
+        "Risk Factors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35297039/"
+    },
+    {
+      "pmid": "27701915",
+      "pmcid": null,
+      "title": "Postpartum haemorrhage: prevention and treatment.",
+      "abstract": "Postpartum hemorrhage (PPH) is one of the leading causes of maternal death and severe maternal morbidity worldwide and strategies to prevent and treat PPH vary among international authorities. Areas covered: This review seeks to provide a global overview of PPH (incidence, causes, risk factors), prevention (active management of the third stage of labor and prohemostatic agents), treatment (first, second and third-line measures to control PPH), by also underlining recommendations elaborated by international authorities and using algorithms. Expert commentary: When available, oxytocin is considered the drug of first choice for both prevention and treatment of PPH, while peripartum hysterectomy remains the ultimate life-saving procedure if pharmacological and resuscitation measures fail. Nevertheless, the level of evidence for preventing and treating PPH is globally low. The emergency nature of PPH makes randomized controlled trials (RCT) logistically difficult. Population-based observational studies should be encouraged as they can usefully strengthen the evidence base, particularly for components of PPH treatment that are difficult or impossible to assess through RCT.",
+      "journal": "Expert review of hematology",
+      "publication_year": 2016,
+      "authors": [
+        "Loïc Sentilhes",
+        "Benjamin Merlot",
+        "Hugo Madar",
+        "François Sztark",
+        "Stéphanie Brun",
+        "Catherine Deneux-Tharaux"
+      ],
+      "doi": "10.1080/17474086.2016.1245135",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Algorithms",
+        "Combined Modality Therapy",
+        "Disease Management",
+        "Ergot Alkaloids",
+        "Female",
+        "Humans",
+        "Incidence",
+        "Oxytocin",
+        "Postpartum Hemorrhage",
+        "Practice Guidelines as Topic",
+        "Pregnancy",
+        "Risk Factors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27701915/"
+    },
+    {
+      "pmid": "36345105",
+      "pmcid": null,
+      "title": "Postpartum Hemorrhage: A Comprehensive Review of Guidelines.",
+      "abstract": "Postpartum hemorrhage (PPH) is a common complication of childbirth and the leading cause of maternal deaths worldwide, also associated with important secondary sequelae. The aim of this study was to review and compare the most recently published influential guidelines on evaluation, management, and prevention of this severe, life-threatening obstetric complication. A descriptive review of guidelines from the American College of Obstetricians and Gynecologists, the Royal College of Obstetricians and Gynecologists, the Royal Australian and New Zealand College of Obstetricians and Gynecologists, the Society of Obstetricians and Gynecologists of Canada, the Network for the Advancement of Patient Blood Management, Hemostasis and Thrombosis in collaboration with the International Federation of Gynecology and Obstetrics, the European Board and College of Obstetrics and Gynecology and the European Society of Anaesthesiology, and the World Health Organization on PPH was carried out. There is a consensus among the reviewed guidelines that once PPH occurs, it is important to identify the underlying cause (4 T's), estimate the blood loss, and immediately initiate a resuscitation protocol with fluid replacement, blood transfusion, and close monitoring of the woman. In case of uterine atony, all the reviewed medical societies recommend uterine massage, bimanual uterine compression, and administration of uterotonics, although minor discrepancies are observed regarding the optimal regimens. If these measures fail, the use of intrauterine balloon tamponade or other surgical interventions is unanimously recommended. There is also agreement regarding the management of PPH due to retained placenta, placenta accreta, obstetric trauma, uterine rupture or inversion, and acute coagulopathy. Massive transfusion protocols are not consistent in the reviewed guidelines. Finally, all guidelines highlight the importance of the active management of the third stage of labor for the prevention of PPH, suggesting several interventions, with the administration of oxytocin being the criterion standard. Postpartum hemorrhage is a significant contributor of maternal morbidity and mortality. Thus, the development of consistent international practice protocols for the effective management and prevention of this major complication seems of paramount importance and will hopefully improve obstetric outcomes and especially maternal mortality rate.",
+      "journal": "Obstetrical & gynecological survey",
+      "publication_year": 2022,
+      "authors": [
+        "Sonia Giouleka",
+        "Ioannis Tsakiridis",
+        "Ioannis Kalogiannidis",
+        "Apostolos Mamopoulos",
+        "Ioannis Tentas",
+        "Apostolos Athanasiadis",
+        "Themistoklis Dagklis"
+      ],
+      "doi": "10.1097/OGX.0000000000001061",
+      "publication_types": [
+        "Review",
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Pregnancy",
+        "Female",
+        "Humans",
+        "Postpartum Hemorrhage",
+        "Australia",
+        "Blood Transfusion",
+        "Delivery, Obstetric",
+        "Labor, Obstetric"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36345105/"
+    },
+    {
+      "pmid": "32782215",
+      "pmcid": null,
+      "title": "Prevention of postpartum hemorrhage.",
+      "abstract": "Postpartum hemorrhage is a leading cause of severe maternal morbidity and mortality worldwide and the United States. While the rates of maternal mortality attributable to hemorrhage are declining, severe maternal morbidity continues to be a growing problem. Efforts in recent years to more appropriately identify patients at risk, define significant hemorrhage, quantify blood loss, and standardize approaches to care in pregnancy and postpartum have led to an increasing preventability of PPH. We aim to review the most current recommendation for the prevention and effective management of obstetric hemorrhage.",
+      "journal": "Seminars in fetal & neonatal medicine",
+      "publication_year": 2020,
+      "authors": [
+        "Veronica Gonzalez-Brown",
+        "Patrick Schneider"
+      ],
+      "doi": "10.1016/j.siny.2020.101129",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Delivery, Obstetric",
+        "Female",
+        "Humans",
+        "Maternal Mortality",
+        "Monitoring, Physiologic",
+        "Postnatal Care",
+        "Postpartum Hemorrhage",
+        "Pregnancy",
+        "Risk Factors",
+        "Severity of Illness Index",
+        "United States"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32782215/"
+    },
+    {
+      "pmid": "33275708",
+      "pmcid": "PMC5446563",
+      "title": "Prevention and treatment of postpartum hemorrhage: focus on hematological aspects of management.",
+      "abstract": "Postpartum hemorrhage (PPH) is the leading cause of global maternal mortality and accounts for approximately one-quarter of all maternal deaths worldwide. Prevention of excess maternal deaths requires a coordinated approach to prevention, early recognition, and intervention by a multidisciplinary team. Although some women have risk factors for PPH that can be identified during pregnancy or during labor or birth, most women with severe PPH do not have any risk factors. Therefore, all pregnant women must be considered to be at risk of PPH. Common causes include uterine atony, retained placenta, trauma to the genital tract or uterus, and coagulopathy. The pivotal role of fibrinogen and hyperfibrinolysis in the evolution and as a treatment target for PPH is increasingly recognized. Coagulopathy can be an early feature in PPH that may be unrecognized, as it can be present before massive transfusion has occurred. Identification of coagulopathy by viscoelastic point-of-care testing or conventional laboratory assays can be helpful in guiding management of PPH and preventing severe maternal outcomes.",
+      "journal": "Hematology. American Society of Hematology. Education Program",
+      "publication_year": 2020,
+      "authors": [
+        "Claire McLintock"
+      ],
+      "doi": "10.1182/hematology.2020000139",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Blood Transfusion",
+        "Female",
+        "Humans",
+        "Postpartum Hemorrhage",
+        "Pregnancy",
+        "Risk Factors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33275708/"
+    },
+    {
+      "pmid": "32575159",
+      "pmcid": null,
+      "title": "Predicting risk of postpartum haemorrhage: a systematic review.",
+      "abstract": "Postpartum haemorrhage (PPH) causes substantial morbidity and mortality worldwide. A reliable prognostic tool for PPH has potential to aid prevention efforts. Systematically to identify and appraise prognostic modelling studies for prediction of PPH. MEDLINE, Embase, CINAHL and the Cochrane Library were searched using a combination of terms and synonyms including 'prediction tool', 'risk score' and 'postpartum haemorrhage'. Any observational or experimental study developing a prognostic model for women's risk of PPH. English language publications. Predesigned data extraction form to record: data source; participant criteria; outcome; candidate predictors; actual predictors; sample size; missing data; model development; model performance; model evaluation; interpretation. Of 2146 citations screened, 14 studies were eligible for inclusion. Studies addressed populations of women who experienced placenta praevia, placenta accreta spectrum, vaginal birth, caesarean birth (CS) and the general obstetric population. All studies were at high risk of bias due to low sample size, no internal validation, suboptimal or no external validation or no reporting or handling of missing data. Five studies raised applicability concerns. Three externally validated and three internally validated studies show potential for robust external validation. Of 14 prognostic models for PPH risk, three have some potential for clinical use: in CS, in placenta accreta spectrum disorders with MRI placental Evaluation and in placenta praevia. Future research requires robust internal and external validation of existing tools and development of a model for use in the general obstetric population. Current PPH prediction tools need external validation: one for CS, one for placenta praevia and one for placenta accreta. Tools are needed for labouring women.",
+      "journal": "BJOG : an international journal of obstetrics and gynaecology",
+      "publication_year": 2021,
+      "authors": [
+        "C Neary",
+        "S Naheed",
+        "D J McLernon",
+        "M Black"
+      ],
+      "doi": "10.1111/1471-0528.16379",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "mesh_terms": [
+        "Female",
+        "Humans",
+        "Postpartum Hemorrhage",
+        "Predictive Value of Tests",
+        "Pregnancy",
+        "Prenatal Care",
+        "Prenatal Diagnosis",
+        "Risk Factors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32575159/"
+    },
+    {
+      "pmid": "30578144",
+      "pmcid": null,
+      "title": "Surgical management of postpartum hemorrhage.",
+      "abstract": "When medical management of PPH is unsuccessful, surgical options should be utilized in a timely fashion in order to reduce maternal morbidity and mortality. This chapter describes ways of effective preparation, mobilization of resources and an organized approach to evaluation and surgical amelioration of PPH. Multiple fertility preserving surgical techniques to control PPH are described. Although a variety of conservative surgical approaches can be used in the setting of PPH, in a hemodynamically unstable patient, readiness for definitive management with a hysterectomy is necessary in order to reduce the risk of maternal mortality.",
+      "journal": "Seminars in perinatology",
+      "publication_year": 2019,
+      "authors": [
+        "Dzhamala Gilmandyar",
+        "Loralei L Thornburg"
+      ],
+      "doi": "10.1053/j.semperi.2018.11.006",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Female",
+        "Fertility Preservation",
+        "Guidelines as Topic",
+        "Humans",
+        "Hysterectomy",
+        "Organ Sparing Treatments",
+        "Patient Selection",
+        "Postpartum Hemorrhage",
+        "Pregnancy",
+        "Uterine Artery Embolization",
+        "Uterus"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30578144/"
+    },
+    {
+      "pmid": "37832561",
+      "pmcid": null,
+      "title": "[Postpartum Hemorrhage].",
+      "abstract": "Postpartum hemorrhage (PPH) affects about 4% of all deliveries in high-income countries and continues to rise, a trend attributable to the increase in caesarean section rates and maternal morbidity. Preventive measures such as the precautionary administration of uterotonics effectively reduce the risk of severe bleeding irrespective of birth mode. As a time-critical condition and a significant contributor to adverse maternal outcomes, PPH needs to be diagnosed early by measuring, not estimating, blood losses. Institutional treatment algorithms should be available to guide stage-based interdisciplinary management without delay. The main therapy goals are to identify the etiology and stop the bleeding by using uterotonics and mechanical and surgical interventions, to restore hemodynamic stability by volume and transfusion therapy and to optimize hemostasis by laboratory- and viscoelastic assay-guided factor replacement. This review highlights current recommendations for prevention, diagnosis and treatment of PPH.",
+      "journal": "Anasthesiologie, Intensivmedizin, Notfallmedizin, Schmerztherapie : AINS",
+      "publication_year": 2023,
+      "authors": [
+        "Christina Massoth",
+        "Philipp Helmer",
+        "Ulrich Pecks",
+        "Dietmar Schlembach",
+        "Patrick Meybohm",
+        "Peter Kranke"
+      ],
+      "doi": "10.1055/a-2043-4451",
+      "publication_types": [
+        "Review",
+        "English Abstract",
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Pregnancy",
+        "Female",
+        "Humans",
+        "Postpartum Hemorrhage",
+        "Oxytocics",
+        "Cesarean Section",
+        "Blood Transfusion"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37832561/"
+    },
+    {
+      "pmid": "38902107",
+      "pmcid": null,
+      "title": "Conservative approaches to postpartum haemorrhage.",
+      "abstract": "Postpartum haemorrhage (PPH) and PPH-related deaths are disproportionately higher in low-income countries, with sub-Saharan Africa and Southern Asia accounting for approximately 85% of the global burden of PPH-related maternal deaths. Although PPH-related mortality is directly related to the amount and duration of bleeding, the high maternal death burden in resource-limited countries suggests that a great majority of these deaths would be avoidable with the appropriate resources and effective use of evidence-based interventions. Non-surgical management is often the first-line approach for PPH, but conservative surgical interventions may be required if bleeding persists or if the underlying cause is not responsive to the initial conservative measures. The appropriate interventions should be selected based on the individual's specific circumstances and clinical condition.",
+      "journal": "Best practice & research. Clinical obstetrics & gynaecology",
+      "publication_year": 2024,
+      "authors": [
+        "Christian Chigozie Makwe",
+        "Kehinde Sharafadeen Okunade"
+      ],
+      "doi": "10.1016/j.bpobgyn.2024.102516",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Postpartum Hemorrhage",
+        "Female",
+        "Pregnancy",
+        "Conservative Treatment",
+        "Developing Countries",
+        "Maternal Mortality",
+        "Uterine Artery Embolization"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38902107/"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "27701915",
+        "pmcid": null,
+        "title": "Postpartum haemorrhage: prevention and treatment.",
+        "abstract": "Postpartum hemorrhage (PPH) is one of the leading causes of maternal death and severe maternal morbidity worldwide and strategies to prevent and treat PPH vary among international authorities. Areas covered: This review seeks to provide a global overview of PPH (incidence, causes, risk factors), prevention (active management of the third stage of labor and prohemostatic agents), treatment (first, second and third-line measures to control PPH), by also underlining recommendations elaborated by international authorities and using algorithms. Expert commentary: When available, oxytocin is considered the drug of first choice for both prevention and treatment of PPH, while peripartum hysterectomy remains the ultimate life-saving procedure if pharmacological and resuscitation measures fail. Nevertheless, the level of evidence for preventing and treating PPH is globally low. The emergency nature of PPH makes randomized controlled trials (RCT) logistically difficult. Population-based observational studies should be encouraged as they can usefully strengthen the evidence base, particularly for components of PPH treatment that are difficult or impossible to assess through RCT.",
+        "journal": "Expert review of hematology",
+        "publication_year": 2016,
+        "authors": [
+          "Loïc Sentilhes",
+          "Benjamin Merlot",
+          "Hugo Madar",
+          "François Sztark",
+          "Stéphanie Brun",
+          "Catherine Deneux-Tharaux"
+        ],
+        "doi": "10.1080/17474086.2016.1245135",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Algorithms",
+          "Combined Modality Therapy",
+          "Disease Management",
+          "Ergot Alkaloids",
+          "Female",
+          "Humans",
+          "Incidence",
+          "Oxytocin",
+          "Postpartum Hemorrhage",
+          "Practice Guidelines as Topic",
+          "Pregnancy",
+          "Risk Factors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27701915/"
+      },
+      "relevance_score": 76.0,
+      "evidence_level": "high",
+      "study_type": "Practice Guideline",
+      "rationale": "Ranked by study type (Practice Guideline), PICO term overlap (6), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum hemorrhage (PPH) is one of the leading causes of maternal death and severe maternal morbidity worldwide and strategies to prevent and treat PPH vary among international authorities.",
+        "Areas covered: This review seeks to provide a global overview of PPH (incidence, causes, risk factors), prevention (active management of the third stage of labor and prohemostatic agents), treatment (first, second and third-line measures to control PPH), by also underlining recommendations elaborated by international authorities and using algorithms."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "32575159",
+        "pmcid": null,
+        "title": "Predicting risk of postpartum haemorrhage: a systematic review.",
+        "abstract": "Postpartum haemorrhage (PPH) causes substantial morbidity and mortality worldwide. A reliable prognostic tool for PPH has potential to aid prevention efforts. Systematically to identify and appraise prognostic modelling studies for prediction of PPH. MEDLINE, Embase, CINAHL and the Cochrane Library were searched using a combination of terms and synonyms including 'prediction tool', 'risk score' and 'postpartum haemorrhage'. Any observational or experimental study developing a prognostic model for women's risk of PPH. English language publications. Predesigned data extraction form to record: data source; participant criteria; outcome; candidate predictors; actual predictors; sample size; missing data; model development; model performance; model evaluation; interpretation. Of 2146 citations screened, 14 studies were eligible for inclusion. Studies addressed populations of women who experienced placenta praevia, placenta accreta spectrum, vaginal birth, caesarean birth (CS) and the general obstetric population. All studies were at high risk of bias due to low sample size, no internal validation, suboptimal or no external validation or no reporting or handling of missing data. Five studies raised applicability concerns. Three externally validated and three internally validated studies show potential for robust external validation. Of 14 prognostic models for PPH risk, three have some potential for clinical use: in CS, in placenta accreta spectrum disorders with MRI placental Evaluation and in placenta praevia. Future research requires robust internal and external validation of existing tools and development of a model for use in the general obstetric population. Current PPH prediction tools need external validation: one for CS, one for placenta praevia and one for placenta accreta. Tools are needed for labouring women.",
+        "journal": "BJOG : an international journal of obstetrics and gynaecology",
+        "publication_year": 2021,
+        "authors": [
+          "C Neary",
+          "S Naheed",
+          "D J McLernon",
+          "M Black"
+        ],
+        "doi": "10.1111/1471-0528.16379",
+        "publication_types": [
+          "Journal Article",
+          "Systematic Review"
+        ],
+        "mesh_terms": [
+          "Female",
+          "Humans",
+          "Postpartum Hemorrhage",
+          "Predictive Value of Tests",
+          "Pregnancy",
+          "Prenatal Care",
+          "Prenatal Diagnosis",
+          "Risk Factors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32575159/"
+      },
+      "relevance_score": 76.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum haemorrhage (PPH) causes substantial morbidity and mortality worldwide.",
+        "A reliable prognostic tool for PPH has potential to aid prevention efforts."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "36345105",
+        "pmcid": null,
+        "title": "Postpartum Hemorrhage: A Comprehensive Review of Guidelines.",
+        "abstract": "Postpartum hemorrhage (PPH) is a common complication of childbirth and the leading cause of maternal deaths worldwide, also associated with important secondary sequelae. The aim of this study was to review and compare the most recently published influential guidelines on evaluation, management, and prevention of this severe, life-threatening obstetric complication. A descriptive review of guidelines from the American College of Obstetricians and Gynecologists, the Royal College of Obstetricians and Gynecologists, the Royal Australian and New Zealand College of Obstetricians and Gynecologists, the Society of Obstetricians and Gynecologists of Canada, the Network for the Advancement of Patient Blood Management, Hemostasis and Thrombosis in collaboration with the International Federation of Gynecology and Obstetrics, the European Board and College of Obstetrics and Gynecology and the European Society of Anaesthesiology, and the World Health Organization on PPH was carried out. There is a consensus among the reviewed guidelines that once PPH occurs, it is important to identify the underlying cause (4 T's), estimate the blood loss, and immediately initiate a resuscitation protocol with fluid replacement, blood transfusion, and close monitoring of the woman. In case of uterine atony, all the reviewed medical societies recommend uterine massage, bimanual uterine compression, and administration of uterotonics, although minor discrepancies are observed regarding the optimal regimens. If these measures fail, the use of intrauterine balloon tamponade or other surgical interventions is unanimously recommended. There is also agreement regarding the management of PPH due to retained placenta, placenta accreta, obstetric trauma, uterine rupture or inversion, and acute coagulopathy. Massive transfusion protocols are not consistent in the reviewed guidelines. Finally, all guidelines highlight the importance of the active management of the third stage of labor for the prevention of PPH, suggesting several interventions, with the administration of oxytocin being the criterion standard. Postpartum hemorrhage is a significant contributor of maternal morbidity and mortality. Thus, the development of consistent international practice protocols for the effective management and prevention of this major complication seems of paramount importance and will hopefully improve obstetric outcomes and especially maternal mortality rate.",
+        "journal": "Obstetrical & gynecological survey",
+        "publication_year": 2022,
+        "authors": [
+          "Sonia Giouleka",
+          "Ioannis Tsakiridis",
+          "Ioannis Kalogiannidis",
+          "Apostolos Mamopoulos",
+          "Ioannis Tentas",
+          "Apostolos Athanasiadis",
+          "Themistoklis Dagklis"
+        ],
+        "doi": "10.1097/OGX.0000000000001061",
+        "publication_types": [
+          "Review",
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Pregnancy",
+          "Female",
+          "Humans",
+          "Postpartum Hemorrhage",
+          "Australia",
+          "Blood Transfusion",
+          "Delivery, Obstetric",
+          "Labor, Obstetric"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36345105/"
+      },
+      "relevance_score": 72.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum hemorrhage (PPH) is a common complication of childbirth and the leading cause of maternal deaths worldwide, also associated with important secondary sequelae.",
+        "The aim of this study was to review and compare the most recently published influential guidelines on evaluation, management, and prevention of this severe, life-threatening obstetric complication."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "30578144",
+        "pmcid": null,
+        "title": "Surgical management of postpartum hemorrhage.",
+        "abstract": "When medical management of PPH is unsuccessful, surgical options should be utilized in a timely fashion in order to reduce maternal morbidity and mortality. This chapter describes ways of effective preparation, mobilization of resources and an organized approach to evaluation and surgical amelioration of PPH. Multiple fertility preserving surgical techniques to control PPH are described. Although a variety of conservative surgical approaches can be used in the setting of PPH, in a hemodynamically unstable patient, readiness for definitive management with a hysterectomy is necessary in order to reduce the risk of maternal mortality.",
+        "journal": "Seminars in perinatology",
+        "publication_year": 2019,
+        "authors": [
+          "Dzhamala Gilmandyar",
+          "Loralei L Thornburg"
+        ],
+        "doi": "10.1053/j.semperi.2018.11.006",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Female",
+          "Fertility Preservation",
+          "Guidelines as Topic",
+          "Humans",
+          "Hysterectomy",
+          "Organ Sparing Treatments",
+          "Patient Selection",
+          "Postpartum Hemorrhage",
+          "Pregnancy",
+          "Uterine Artery Embolization",
+          "Uterus"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30578144/"
+      },
+      "relevance_score": 69.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "When medical management of PPH is unsuccessful, surgical options should be utilized in a timely fashion in order to reduce maternal morbidity and mortality.",
+        "This chapter describes ways of effective preparation, mobilization of resources and an organized approach to evaluation and surgical amelioration of PPH."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "37832561",
+        "pmcid": null,
+        "title": "[Postpartum Hemorrhage].",
+        "abstract": "Postpartum hemorrhage (PPH) affects about 4% of all deliveries in high-income countries and continues to rise, a trend attributable to the increase in caesarean section rates and maternal morbidity. Preventive measures such as the precautionary administration of uterotonics effectively reduce the risk of severe bleeding irrespective of birth mode. As a time-critical condition and a significant contributor to adverse maternal outcomes, PPH needs to be diagnosed early by measuring, not estimating, blood losses. Institutional treatment algorithms should be available to guide stage-based interdisciplinary management without delay. The main therapy goals are to identify the etiology and stop the bleeding by using uterotonics and mechanical and surgical interventions, to restore hemodynamic stability by volume and transfusion therapy and to optimize hemostasis by laboratory- and viscoelastic assay-guided factor replacement. This review highlights current recommendations for prevention, diagnosis and treatment of PPH.",
+        "journal": "Anasthesiologie, Intensivmedizin, Notfallmedizin, Schmerztherapie : AINS",
+        "publication_year": 2023,
+        "authors": [
+          "Christina Massoth",
+          "Philipp Helmer",
+          "Ulrich Pecks",
+          "Dietmar Schlembach",
+          "Patrick Meybohm",
+          "Peter Kranke"
+        ],
+        "doi": "10.1055/a-2043-4451",
+        "publication_types": [
+          "Review",
+          "English Abstract",
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Pregnancy",
+          "Female",
+          "Humans",
+          "Postpartum Hemorrhage",
+          "Oxytocics",
+          "Cesarean Section",
+          "Blood Transfusion"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37832561/"
+      },
+      "relevance_score": 43.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum hemorrhage (PPH) affects about 4% of all deliveries in high-income countries and continues to rise, a trend attributable to the increase in caesarean section rates and maternal morbidity.",
+        "Preventive measures such as the precautionary administration of uterotonics effectively reduce the risk of severe bleeding irrespective of birth mode."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "32782215",
+        "pmcid": null,
+        "title": "Prevention of postpartum hemorrhage.",
+        "abstract": "Postpartum hemorrhage is a leading cause of severe maternal morbidity and mortality worldwide and the United States. While the rates of maternal mortality attributable to hemorrhage are declining, severe maternal morbidity continues to be a growing problem. Efforts in recent years to more appropriately identify patients at risk, define significant hemorrhage, quantify blood loss, and standardize approaches to care in pregnancy and postpartum have led to an increasing preventability of PPH. We aim to review the most current recommendation for the prevention and effective management of obstetric hemorrhage.",
+        "journal": "Seminars in fetal & neonatal medicine",
+        "publication_year": 2020,
+        "authors": [
+          "Veronica Gonzalez-Brown",
+          "Patrick Schneider"
+        ],
+        "doi": "10.1016/j.siny.2020.101129",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Delivery, Obstetric",
+          "Female",
+          "Humans",
+          "Maternal Mortality",
+          "Monitoring, Physiologic",
+          "Postnatal Care",
+          "Postpartum Hemorrhage",
+          "Pregnancy",
+          "Risk Factors",
+          "Severity of Illness Index",
+          "United States"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32782215/"
+      },
+      "relevance_score": 40.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum hemorrhage is a leading cause of severe maternal morbidity and mortality worldwide and the United States.",
+        "While the rates of maternal mortality attributable to hemorrhage are declining, severe maternal morbidity continues to be a growing problem."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "38902107",
+        "pmcid": null,
+        "title": "Conservative approaches to postpartum haemorrhage.",
+        "abstract": "Postpartum haemorrhage (PPH) and PPH-related deaths are disproportionately higher in low-income countries, with sub-Saharan Africa and Southern Asia accounting for approximately 85% of the global burden of PPH-related maternal deaths. Although PPH-related mortality is directly related to the amount and duration of bleeding, the high maternal death burden in resource-limited countries suggests that a great majority of these deaths would be avoidable with the appropriate resources and effective use of evidence-based interventions. Non-surgical management is often the first-line approach for PPH, but conservative surgical interventions may be required if bleeding persists or if the underlying cause is not responsive to the initial conservative measures. The appropriate interventions should be selected based on the individual's specific circumstances and clinical condition.",
+        "journal": "Best practice & research. Clinical obstetrics & gynaecology",
+        "publication_year": 2024,
+        "authors": [
+          "Christian Chigozie Makwe",
+          "Kehinde Sharafadeen Okunade"
+        ],
+        "doi": "10.1016/j.bpobgyn.2024.102516",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Postpartum Hemorrhage",
+          "Female",
+          "Pregnancy",
+          "Conservative Treatment",
+          "Developing Countries",
+          "Maternal Mortality",
+          "Uterine Artery Embolization"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38902107/"
+      },
+      "relevance_score": 40.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum haemorrhage (PPH) and PPH-related deaths are disproportionately higher in low-income countries, with sub-Saharan Africa and Southern Asia accounting for approximately 85% of the global burden of PPH-related maternal deaths.",
+        "Although PPH-related mortality is directly related to the amount and duration of bleeding, the high maternal death burden in resource-limited countries suggests that a great majority of these deaths would be avoidable with the appropriate resources and effective use of evidence-based interventions."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "37130373",
+        "pmcid": null,
+        "title": "Postpartum Hemorrhage-Epidemiology, Risk Factors, and Causes.",
+        "abstract": "The incidence of postpartum hemorrhage (PPH) is increasing worldwide and in the United States. Coinciding, is the increased rate of severe maternal morbidity with blood transfusion in the United States over the past 2 decades. Consequences of PPH can be life-threatening and carry significant cost burden to the health care system. This review will discuss the current trends, distribution, and risk factors for PPH. Causes of PPH will be explored in detail.",
+        "journal": "Clinical obstetrics and gynecology",
+        "publication_year": 2023,
+        "authors": [
+          "Kara Patek",
+          "Perry Friedman"
+        ],
+        "doi": "10.1097/GRF.0000000000000782",
+        "publication_types": [
+          "Review",
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Pregnancy",
+          "Female",
+          "Humans",
+          "United States",
+          "Postpartum Hemorrhage",
+          "Risk Factors",
+          "Blood Transfusion",
+          "Incidence"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37130373/"
+      },
+      "relevance_score": 35.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (2), abstract availability, and publication year.",
+      "key_findings": [
+        "The incidence of postpartum hemorrhage (PPH) is increasing worldwide and in the United States.",
+        "Coinciding, is the increased rate of severe maternal morbidity with blood transfusion in the United States over the past 2 decades."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "33275708",
+        "pmcid": "PMC5446563",
+        "title": "Prevention and treatment of postpartum hemorrhage: focus on hematological aspects of management.",
+        "abstract": "Postpartum hemorrhage (PPH) is the leading cause of global maternal mortality and accounts for approximately one-quarter of all maternal deaths worldwide. Prevention of excess maternal deaths requires a coordinated approach to prevention, early recognition, and intervention by a multidisciplinary team. Although some women have risk factors for PPH that can be identified during pregnancy or during labor or birth, most women with severe PPH do not have any risk factors. Therefore, all pregnant women must be considered to be at risk of PPH. Common causes include uterine atony, retained placenta, trauma to the genital tract or uterus, and coagulopathy. The pivotal role of fibrinogen and hyperfibrinolysis in the evolution and as a treatment target for PPH is increasingly recognized. Coagulopathy can be an early feature in PPH that may be unrecognized, as it can be present before massive transfusion has occurred. Identification of coagulopathy by viscoelastic point-of-care testing or conventional laboratory assays can be helpful in guiding management of PPH and preventing severe maternal outcomes.",
+        "journal": "Hematology. American Society of Hematology. Education Program",
+        "publication_year": 2020,
+        "authors": [
+          "Claire McLintock"
+        ],
+        "doi": "10.1182/hematology.2020000139",
+        "publication_types": [
+          "Case Reports",
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Blood Transfusion",
+          "Female",
+          "Humans",
+          "Postpartum Hemorrhage",
+          "Pregnancy",
+          "Risk Factors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33275708/"
+      },
+      "relevance_score": 32.0,
+      "evidence_level": "low",
+      "study_type": "Case Report",
+      "rationale": "Ranked by study type (Case Report), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "Postpartum hemorrhage (PPH) is the leading cause of global maternal mortality and accounts for approximately one-quarter of all maternal deaths worldwide.",
+        "Prevention of excess maternal deaths requires a coordinated approach to prevention, early recognition, and intervention by a multidisciplinary team."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "35297039",
+        "pmcid": "PMC4782490",
+        "title": "FIGO recommendations on the management of postpartum hemorrhage 2022.",
+        "abstract": null,
+        "journal": "International journal of gynaecology and obstetrics: the official organ of the International Federation of Gynaecology and Obstetrics",
+        "publication_year": 2022,
+        "authors": [
+          "Maria Fernanda Escobar",
+          "Anwar H Nassar",
+          "Gerhard Theron",
+          "Eythan R Barnea",
+          "Wanda Nicholson",
+          "Diana Ramasauskaite",
+          "Isabel Lloyd",
+          "Edwin Chandraharan",
+          "Suellen Miller",
+          "Thomas Burke",
+          "Gabriel Ossanan",
+          "Javier Andres Carvajal",
+          "Isabella Ramos",
+          "Maria Antonia Hincapie",
+          "Sara Loaiza",
+          "Daniela Nasner",
+          "FIGO Safe Motherhood and Newborn Health Committee"
+        ],
+        "doi": "10.1002/ijgo.14116",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Female",
+          "Humans",
+          "Oxytocics",
+          "Postpartum Hemorrhage",
+          "Pregnancy",
+          "Risk Factors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35297039/"
+      },
+      "relevance_score": 22.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [],
+      "limitations": [
+        "No abstract available for automated evidence extraction.",
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "Prevention of postpartum hemorrhage (PPH) focuses on the active management of the third stage of labor, with oxytocin identified as the gold standard for both prevention and initial treatment [27701915, 36345105].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "27701915",
+        "36345105"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "Management strategies emphasize early diagnosis through measured blood loss, hemodynamic resuscitation, and a staged approach using uterotonics, uterine massage, and mechanical interventions like balloon tamponade [36345105, 37832561].",
+      "claim_type": "diagnosis",
+      "support_status": "supported",
+      "pmids": [
+        "36345105",
+        "37832561"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "If pharmacological and conservative surgical measures fail, peripartum hysterectomy is considered the definitive life-saving procedure [27701915, 30578144].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "27701915",
+        "30578144"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C004",
+      "text": "To prevent and manage postpartum hemorrhage, healthcare providers use a combination of active management during birth and the use of specific medications to help the uterus contract [27701915, 32575159].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "27701915",
+        "32575159"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C005",
+      "text": "Research also emphasizes the importance of using standardized toolkits and clear protocols to ensure a rapid and coordinated response when heavy bleeding occurs [36345105].",
+      "claim_type": "safety",
+      "support_status": "supported",
+      "pmids": [
+        "36345105"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "LCAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "low_certainty",
+      "explanation": "The evidence explicitly states that the level of evidence for preventing and treating PPH is globally low due to the difficulty of conducting RCTs in emergency settings.",
+      "severity": "medium"
+    },
+    {
+      "id": "LCAU002",
+      "claim_id": "C004",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "low_certainty",
+      "explanation": "Systematic review of PPH prediction tools found all 14 included studies were at high risk of bias due to low sample size and lack of validation.",
+      "severity": "high"
+    },
+    {
+      "id": "LCAU003",
+      "claim_id": "C002",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "conflicting_results",
+      "explanation": "Guidelines show minor discrepancies regarding optimal uterotonic regimens and lack consistency in massive transfusion protocols.",
+      "severity": "low"
+    },
+    {
+      "id": "CAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "27701915",
+        "36345105"
+      ],
+      "cautionary_pmids": [
+        "27701915",
+        "36345105"
+      ],
+      "caution_type": "indirect_evidence",
+      "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "36345105",
+        "37832561"
+      ],
+      "cautionary_pmids": [
+        "37832561",
+        "32782215",
+        "38902107",
+        "37130373",
+        "33275708",
+        "35297039"
+      ],
+      "caution_type": "low_certainty",
+      "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "27701915",
+        "30578144"
+      ],
+      "cautionary_pmids": [
+        "27701915",
+        "30578144"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "27701915",
+        "30578144"
+      ],
+      "cautionary_pmids": [
+        "27701915",
+        "30578144"
+      ],
+      "caution_type": "indirect_evidence",
+      "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU005",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "27701915",
+        "32575159"
+      ],
+      "cautionary_pmids": [
+        "27701915",
+        "32575159"
+      ],
+      "caution_type": "indirect_evidence",
+      "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU006",
+      "claim_id": "C005",
+      "supporting_pmids": [
+        "36345105"
+      ],
+      "cautionary_pmids": [
+        "36345105"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    }
+  ],
+  "freshness": {
+    "score": 0.85,
+    "last_search_date": "2026-05-01",
+    "newest_publication_year": 2024,
+    "oldest_publication_year": 2016,
+    "recommended_refresh_days": 120,
+    "rationale": "Newest loaded publication year is 2024 and oldest is 2016; the pack is 2 years from the newest included evidence."
+  },
+  "executive_summary": "Prevention of postpartum hemorrhage (PPH) focuses on the active management of the third stage of labor, with oxytocin identified as the gold standard for both prevention and initial treatment [27701915, 36345105]. Management strategies emphasize early diagnosis through measured blood loss, hemodynamic resuscitation, and a staged approach using uterotonics, uterine massage, and mechanical interventions like balloon tamponade [36345105, 37832561]. If pharmacological and conservative surgical measures fail, peripartum hysterectomy is considered the definitive life-saving procedure [27701915, 30578144].",
+  "clinical_interpretation": "Prevention of postpartum hemorrhage (PPH) focuses on the active management of the third stage of labor, with oxytocin identified as the gold standard for both prevention and initial treatment [27701915, 36345105]. Management strategies emphasize early diagnosis through measured blood loss, hemodynamic resuscitation, and a staged approach using uterotonics, uterine massage, and mechanical interventions like balloon tamponade [36345105, 37832561]. If pharmacological and conservative surgical measures fail, peripartum hysterectomy is considered the definitive life-saving procedure [27701915, 30578144]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every finding has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "To prevent and manage postpartum hemorrhage, healthcare providers use a combination of active management during birth and the use of specific medications to help the uterus contract [27701915, 32575159]. Research also emphasizes the importance of using standardized toolkits and clear protocols to ensure a rapid and coordinated response when heavy bleeding occurs [36345105].",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require a PMID/PMCID from the loaded evidence.",
+  "citation_coverage": 1.0
+}

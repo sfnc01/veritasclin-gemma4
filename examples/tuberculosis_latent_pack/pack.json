@@ -1,0 +1,838 @@
+{
+  "pack_id": "vfield-0789f1f93e36",
+  "title": "Evidence Pack: What does evidence say about treatment regimens for latent tuberculosis infection and o...",
+  "topic": "What does evidence say about treatment regimens for latent tuberculosis infection and outcomes?",
+  "created_at": "2026-05-01T04:17:36.019476+00:00",
+  "last_pubmed_search_at": "2026-05-01T04:17:36.019476+00:00",
+  "language": "en",
+  "source": "PubMed/NCBI",
+  "pico": {
+    "original_question": "What does evidence say about treatment regimens for latent tuberculosis infection and outcomes?",
+    "safe_rewritten_question": null,
+    "population": "patients with latent tuberculosis infection",
+    "intervention": "treatment regimens",
+    "comparison": null,
+    "outcome": "clinical outcomes",
+    "timeframe": null,
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"Tuberculosis, Latent\"[MeSH Terms] OR \"latent tuberculosis\"[Title/Abstract] OR \"LTBI\"[Title/Abstract]) AND (\"Therapeutics\"[MeSH Terms] OR \"drug therapy\"[MeSH Terms] OR \"treatment\"[Title/Abstract] OR \"regimen*\"[Title/Abstract]) AND (\"Treatment Outcome\"[MeSH Terms] OR \"outcome*\"[Title/Abstract] OR \"efficacy\"[Title/Abstract] OR \"effectiveness\"[Title/Abstract])",
+  "pubmed_query_method": "gemma4-function-calling",
+  "papers": [
+    {
+      "pmid": "33013856",
+      "pmcid": "PMC4538006",
+      "title": "Diagnosis for Latent Tuberculosis Infection: New Alternatives.",
+      "abstract": "Latent tuberculosis infection (LTBI) is a subclinical mycobacterial infection defined on the basis of cellular immune response to mycobacterial antigens. The tuberculin skin test (TST) and the interferon gamma release assay (IGRA) are currently used to establish the diagnosis of LTB. However, neither TST nor IGRA is useful to discriminate between active and latent tuberculosis. Moreover, these tests cannot be used to predict whether an individual with LTBI will develop active tuberculosis (TB) or whether therapy for LTBI could be effective to decrease the risk of developing active TB. Therefore, in this article, we review current approaches and some efforts to identify an immunological marker that could be useful in distinguishing LTBI from TB and in evaluating the effectiveness of treatment of LTB on the risk of progression to active TB.",
+      "journal": "Frontiers in immunology",
+      "publication_year": 2020,
+      "authors": [
+        "Claudia Carranza",
+        "Sigifredo Pedraza-Sanchez",
+        "Eleane de Oyarzabal-Mendez",
+        "Martha Torres"
+      ],
+      "doi": "10.1016/j.gene.2018.02.052",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Animals",
+        "Biomarkers",
+        "Diagnosis, Differential",
+        "Disease Progression",
+        "Humans",
+        "Interferon-gamma",
+        "Latent Tuberculosis",
+        "Mycobacterium tuberculosis",
+        "Risk",
+        "Tuberculin Test"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33013856/"
+    },
+    {
+      "pmid": "28409555",
+      "pmcid": "PMC3556878",
+      "title": "Treatment of Latent Tuberculosis Infection.",
+      "abstract": "There are approximately 56 million people who harbor Mycobacterium tuberculosis that may progress to active tuberculosis (TB) at some point in their lives. Modeling studies suggest that if only 8% of these individuals with latent TB infection (LTBI) were treated annually, overall global incidence would be 14-fold lower by 2050 compared to incidence in 2013, even in the absence of additional TB control measures. This highlights the importance of identifying and treating latently infected individuals, and that this intervention must be scaled up to achieve the goals of the Global End TB Strategy. The efficacy of LTBI treatment is well established, and the most commonly used regimen is 9 months of daily self-administered isoniazid. However, its use has been hindered by limited provider awareness of the benefits, concern about potential side effects such as hepatotoxicity, and low rates of treatment completion. There is increasing evidence that shorter rifamycin-based regimens are as effective, better tolerated, and more likely to be completed compared to isoniazid. Such regimens include four months of daily self-administered rifampin monotherapy, three months of once weekly directly observed isoniazid-rifapentine, and three months of daily self-administered isoniazid-rifampin. The success of LTBI treatment to prevent additional TB disease relies upon choosing an appropriate regimen individualized to the patient, monitoring for potential adverse clinical events, and utilizing strategies to promote adherence. Safer, more cost-effective, and more easily completed regimens are needed and should be combined with interventions to better identify, engage, and retain high-risk individuals across the cascade from diagnosis through treatment completion of LTBI.",
+      "journal": "Microbiology spectrum",
+      "publication_year": 2017,
+      "authors": [
+        "Connie A Haley"
+      ],
+      "doi": "10.1016/j.ijid.2016.11.006",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antitubercular Agents",
+        "Humans",
+        "Isoniazid",
+        "Latent Tuberculosis",
+        "Medication Adherence",
+        "Mycobacterium tuberculosis",
+        "Rifampin",
+        "Treatment Outcome"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28409555/"
+    },
+    {
+      "pmid": "29238270",
+      "pmcid": "PMC3260212",
+      "title": "Treatment of Latent Tuberculosis Infection.",
+      "abstract": "The treatment of latent tuberculosis infection (LTBI) is an essential component of tuberculosis (TB) elimination in regions that have a low incidence of TB. However, the decision to treat individuals with LTBI must consider the limitations of current diagnostic tests for LTBI, the risk of developing active TB disease, the potential adverse effects from chemoprophylactic therapy, and the importance of treatment adherence. When an individual has been diagnosed with LTBI and active TB has been ruled out, this is followed by an evaluation of the risks and benefits of LTBI treatment within the context of the regional epidemiology of TB and public health priorities. Once the decision to treat LTBI has been reached, and the infection is not suspected to be due to drug-resistant TB, the recommended regimens include isoniazid and/or rifamycin-derivatives, and the choice of regimen will depend upon the clinical considerations for that individual, such as patient preference, concomitant medications, hepatic disease, pregnancy, or immunodeficiency. As the duration of treatment of LTBI therapy is many months, therapy must be offered within a plan that monitors for adverse drug reactions and emphasizes adherence. For latent multidrug-resistant TB (MDR-TB) or extensively drug-resistant TB (XDR-TB) infection, the management is more complicated as there are few options for chemoprophylactic therapy and little evidence regarding the efficacy or risks of these regimens.",
+      "journal": "Current treatment options in infectious diseases",
+      "publication_year": 2017,
+      "authors": [
+        "Patrick Tang",
+        "James Johnston"
+      ],
+      "doi": "10.1136/thx.2008.100974",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29238270/"
+    },
+    {
+      "pmid": "31731988",
+      "pmcid": "PMC5651239",
+      "title": "Treatment of Latent Tuberculosis Infection-An Update.",
+      "abstract": "Treatment of latent tuberculosis infection (LTBI) is an important component of TB control and elimination. LTBI treatment regimens include once-weekly isoniazid plus rifapentine for 3 months, daily rifampin for 4 months, daily isoniazid plus rifampin for 3-4 months, and daily isoniazid for 6-9 months. Isoniazid monotherapy is efficacious in preventing TB disease, but the rifampin- and rifapentine-containing regimens are shorter and have similar efficacy, adequate safety, and higher treatment completion rates. Novel vaccine strategies, host immunity-directed therapies and ultrashort antimicrobial regimens for TB prevention, such as daily isoniazid plus rifapentine for 1 month, are under evaluation.",
+      "journal": "Clinics in chest medicine",
+      "publication_year": 2019,
+      "authors": [
+        "Moises A Huaman",
+        "Timothy R Sterling"
+      ],
+      "doi": "10.1016/j.ccm.2019.07.008",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antitubercular Agents",
+        "Female",
+        "Humans",
+        "Latent Tuberculosis",
+        "Male"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31731988/"
+    },
+    {
+      "pmid": "28260424",
+      "pmcid": null,
+      "title": "Posttransplant Tuberculosis.",
+      "abstract": "Tuberculosis is a major problem in the posttransplantation period, because of its high incidence and prevalence, difficulty in diagnosis as well as high risk of morbidity and mortality. In solid-organ transplant recipients, the diagnosis of tuberculosis is complex because it is paucisymptomatic. Tuberculin skin testing results may be negative, and interferon-gamma release assays may be insufficiently sensitive. Furthermore, imaging technique findings are mostly atypical, and sputum smear results can be negative despite the presence of active disease. Therefore, most tuberculosis cases are overlooked, and thus, treatment initiation is often delayed. The treatment of tuberculosis falls under 2 headings: that of active disease and latent disease. The drugs for treating these 2 entities are similar; however, their protocols are completely different. Active disease in the immunocompetent patient is treated mostly by giving isoniazid, rifampicin, pyrazinamide, and ethambutol for 2 months (intensive phase), followed by isoniazid and rifampicin for 4 months (continuation phase). The treatment of immunosuppressed patients is controversial; a similar protocol or longer duration of treatment has been suggested as compared to immunocompetent patients. Because there is a drug interaction between antituberculosis drugs (rifamycins) and immunosuppressants (calcineurin/mammalian target of rapamycin inhibitors and glucocorticoids), the risk of graft rejection increases during the treatment of tuberculosis. For the treatment of latent tuberculosis, in regions with a high prevalence of tuberculosis, universal prophylaxis with isoniazid for 6 months (preferably 9 months) has been recommended. In countries where the risk of tuberculosis is lower, no prophylaxis has been proposed. We propose that the best solution is to individualize therapy for patients at greatest risk of the disease. To conclude, posttransplant tuberculosis is still an important source of comorbidity in transplant recipients because of its high frequency, problems in diagnosis and treatment and association with increased risk of morbidity and mortality.",
+      "journal": "Experimental and clinical transplantation : official journal of the Middle East Society for Organ Transplantation",
+      "publication_year": 2017,
+      "authors": [
+        "Erol Demir",
+        "Mehmet Sukru Sever"
+      ],
+      "doi": "10.6002/ect.mesot2016.L32",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antitubercular Agents",
+        "Delayed Diagnosis",
+        "Drug Therapy, Combination",
+        "Humans",
+        "Immunocompromised Host",
+        "Immunosuppressive Agents",
+        "Organ Transplantation",
+        "Predictive Value of Tests",
+        "Risk Factors",
+        "Treatment Outcome",
+        "Tuberculosis"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28260424/"
+    },
+    {
+      "pmid": "31852268",
+      "pmcid": null,
+      "title": "Infection risk in patients undergoing treatment for inflammatory arthritis: non-biologics versus biologics.",
+      "abstract": "Introduction: Despite the therapeutic effectiveness of biologics targeting immune cells or cytokines in patients with inflammatory arthritis, which reflects their pathogenic roles, an increased infection risk is observed in those undergoing biological treatment. However, there are limited data regarding the comparison of infection risks in inflammatory arthritis patients treated with non-biologics (csDMARDs), biologics (bDMARDs), including tumor necrosis factor (TNF) inhibitors and non-TNF inhibitors, or targeted synthetic (ts)DMARDs.Areas covered: Through a review of English-language literature as of 30 June 2019, we focus on the existing evidence on the risk of infections caused by bacteria, Mycobacterium tuberculosis, and hepatitis virus in inflammatory arthritis patients undergoing treatment with csDMARDs, bDMARDs, or tsDMARDs.Expert opinion: While the risks of bacterial and mycobacterial infection are increased in arthritis patients treated with csDMARDs, the risks are further higher in those receiving bDMARDs therapy, particularly TNF inhibitors. Regarding HBV infection, antiviral therapy may effectively prevent HBV reactivation in patients receiving bDMARDs, especially rituximab. However, more data are needed to establish effective preventive strategies for HBsAg-negative/HBcAb-positive patients. It seems safe to use cyclosporine and TNF inhibitors in patients with HCV infection, while those undergoing rituximab therapies should be frequently monitored for HCV activity.Abbreviations: ABT: abatacept; ADA: adalimumab; AS: ankylosing spondylitis; bDMARDs: biologic disease-modifying anti-rheumatic drugs; CKD: chronic kidney disease; COPD: chronic obstructive pulmonary disease; CS: corticosteroids; CsA: cyclosporine A; csDMARDs: conventional synthetic disease-modifying anti-rheumatic drugs; CZP: certolizumab; DAAs: direct-acting antiviral agents; DM: diabetes mellitus; DOT: directly observed therapy; EIN: Emerging Infections Network; ETN: etanercept; GOL: golimumab; GPRD: General Practice Research Database; HBV: hepatitis B virus; HBVr: HBV reactivation; HBsAg+: HBsAg-positive; HBsAg-/anti-HBc+: HBsAg-negative anti-HBc antibodies-positive; HCV: hepatitis C virus; HCQ: hydroxychloroquine: IFX: infliximab; IL-6: interleukin-6; JAK: Janus kinase; LEF: leflunomide; LTBI: latent tuberculosis infection; mAb: monoclonal antibody; MTX: methotrexate; OR: odds ratio; PsA: psoriatic arthritis; PMS: post-marketing surveillance; RA: rheumatoid arthritis; TNF: tumor necrosis factor; TNFi: tumor necrosis factor inhibitor; SCK: secukinumab; SSZ: sulfasalazine; TOZ: tocilizumab; RCT: randomized controlled trial; RR: relative risk; RTX: rituximab; 3HP: 3-month once-weekly isoniazid plus rifapentine; TB: tuberculosis; tsDMARDs: targeted synthetic disease-modifying anti-rheumatic drugs; UTK: ustekinumab; WHO: World Health Organization.",
+      "journal": "Expert review of clinical immunology",
+      "publication_year": 2020,
+      "authors": [
+        "Ying-Ming Chiu",
+        "Der-Yuan Chen"
+      ],
+      "doi": "10.1080/1744666X.2019.1705785",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antirheumatic Agents",
+        "Arthritis",
+        "Biological Products",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Humans",
+        "Infections",
+        "Inflammation",
+        "Molecular Targeted Therapy",
+        "Treatment Outcome",
+        "Tumor Necrosis Factor Inhibitors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31852268/"
+    },
+    {
+      "pmid": "30403551",
+      "pmcid": null,
+      "title": "The Global Landscape of Tuberculosis Therapeutics.",
+      "abstract": "Tuberculosis (TB) is one of the oldest infections afflicting humans yet remains the number one infectious disease killer worldwide. Despite decades of experience treating this disease, TB regimens require months of multidrug therapy, even for latent infections. There have been important recent advances in treatment options across the spectrum of TB, from latent infection to extensively drug-resistant (XDR) TB disease. In addition, new, potent drugs are emerging out of the development pipeline and are being tested in novel regimens in multiple currently enrolling trials. Shorter, safer regimens for many forms of TB are now available or are in our near-term vision. We review recent advances in TB therapeutics and provide an overview of the upcoming clinical trials landscape that will help define the future of worldwide TB treatment.",
+      "journal": "Annual review of medicine",
+      "publication_year": 2019,
+      "authors": [
+        "Jeffrey A Tornheim",
+        "Kelly E Dooley"
+      ],
+      "doi": "10.1146/annurev-med-040717-051150",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antitubercular Agents",
+        "Drug Therapy, Combination",
+        "Female",
+        "Global Health",
+        "Humans",
+        "Latent Tuberculosis",
+        "Male",
+        "Mycobacterium tuberculosis",
+        "Prevalence",
+        "Risk Assessment",
+        "Severity of Illness Index",
+        "Treatment Outcome",
+        "Tuberculosis",
+        "Tuberculosis, Multidrug-Resistant"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30403551/"
+    },
+    {
+      "pmid": "26836374",
+      "pmcid": null,
+      "title": "Diagnosis and management of latent tuberculosis.",
+      "abstract": "Latent tuberculosis infection (LTBI) may affect over two billion individuals and serves as a potential reservoir for future active tuberculosis. The identification and treatment of LTBI in those at highest risk for progression is an essential part of tuberculosis control. Interferon-γ release assays are increasingly used for targeted testing and diagnosis of latent disease. The performance of these immunodiagnostic tests has been studied in various groups and may be better than the tuberculin skin test in certain populations. Ongoing research is focused on new biomarkers that may diagnose LTBI or predict progression to active tuberculosis. Isoniazid preventive treatment is effective at reducing risk of active disease, but length of treatment and potential side-effects limit patient acceptance and compliance. Rifamycin-based regimens are increasingly studied as a shorter and perhaps less toxic alternative for preventive therapy. Identification of those with LTBI is important as it allows treatment of those at highest risk of progression to active disease and thus decreases the overall burden of tuberculosis. The development of new immunodiagnostics may further improve identification of those at risk and alternative medication regimens may increase compliance with and efficacy of preventive therapy.",
+      "journal": "Current opinion in infectious diseases",
+      "publication_year": 2016,
+      "authors": [
+        "Meredith L Turetz",
+        "Kevin C Ma"
+      ],
+      "doi": "10.1097/QCO.0000000000000253",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Antitubercular Agents",
+        "Diagnostic Tests, Routine",
+        "Humans",
+        "Interferon-gamma Release Tests",
+        "Latent Tuberculosis"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26836374/"
+    },
+    {
+      "pmid": "38031772",
+      "pmcid": null,
+      "title": "Diagnosis and Management of Latent Tuberculosis Infection: Updates.",
+      "abstract": "India has the largest problem of tuberculosis (TB) infection globally (estimated at about 35-40 crores cases), and around 18-36 lakh develop active tuberculosis annually. Latent TB is defined as a state of persistent immune response to stimulation by Mycobacterium tuberculosis antigens with no evidence of clinically manifested active TB. The progression of a latent infection to active tuberculosis increases several-fold in children < 5 years of age and in people with some or the other form of an immunocompromising condition. Therefore, to cater to this gigantic problem of tuberculosis, it is necessary to have awareness about latent tuberculosis infection (LTBI) amongst clinicians and to prioritise its diagnosis and treatment in high-risk groups. India plans to end TB well before the deadline set by the World Health organisation (WHO). However, this can only be achieved with effective strategies targeting LTBI. Multiple treatment regimens have been approved for LTBI treatment, and all have comparable efficacy. The selection of one regimen over the other depends on various factors, such as availability, risk of adverse events, age, and drug interactions. Recently, the WHO, as well as the Revised National TB Control Programme (RNTCP), have updated their guidelines on TB preventive treatment in 2020 and 2021, respectively. This review has been especially prepared to acknowledge the differences in approach to LTBI in developed and developing countries.",
+      "journal": "Infectious disorders drug targets",
+      "publication_year": 2024,
+      "authors": [
+        "Satish Swain",
+        "Arvind Kumar",
+        "Vishal Kumar Vishwakarma",
+        "Adarsh Aayilliath K",
+        "Ankit Mittal",
+        "Naveet Wig"
+      ],
+      "doi": "10.5588/ijtld.18.0370",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Latent Tuberculosis",
+        "Antitubercular Agents",
+        "India",
+        "Mycobacterium tuberculosis",
+        "World Health Organization",
+        "Practice Guidelines as Topic",
+        "Risk Factors"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38031772/"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "38031772",
+        "pmcid": null,
+        "title": "Diagnosis and Management of Latent Tuberculosis Infection: Updates.",
+        "abstract": "India has the largest problem of tuberculosis (TB) infection globally (estimated at about 35-40 crores cases), and around 18-36 lakh develop active tuberculosis annually. Latent TB is defined as a state of persistent immune response to stimulation by Mycobacterium tuberculosis antigens with no evidence of clinically manifested active TB. The progression of a latent infection to active tuberculosis increases several-fold in children < 5 years of age and in people with some or the other form of an immunocompromising condition. Therefore, to cater to this gigantic problem of tuberculosis, it is necessary to have awareness about latent tuberculosis infection (LTBI) amongst clinicians and to prioritise its diagnosis and treatment in high-risk groups. India plans to end TB well before the deadline set by the World Health organisation (WHO). However, this can only be achieved with effective strategies targeting LTBI. Multiple treatment regimens have been approved for LTBI treatment, and all have comparable efficacy. The selection of one regimen over the other depends on various factors, such as availability, risk of adverse events, age, and drug interactions. Recently, the WHO, as well as the Revised National TB Control Programme (RNTCP), have updated their guidelines on TB preventive treatment in 2020 and 2021, respectively. This review has been especially prepared to acknowledge the differences in approach to LTBI in developed and developing countries.",
+        "journal": "Infectious disorders drug targets",
+        "publication_year": 2024,
+        "authors": [
+          "Satish Swain",
+          "Arvind Kumar",
+          "Vishal Kumar Vishwakarma",
+          "Adarsh Aayilliath K",
+          "Ankit Mittal",
+          "Naveet Wig"
+        ],
+        "doi": "10.5588/ijtld.18.0370",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Latent Tuberculosis",
+          "Antitubercular Agents",
+          "India",
+          "Mycobacterium tuberculosis",
+          "World Health Organization",
+          "Practice Guidelines as Topic",
+          "Risk Factors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38031772/"
+      },
+      "relevance_score": 80.0,
+      "evidence_level": "high",
+      "study_type": "Practice Guideline",
+      "rationale": "Ranked by study type (Practice Guideline), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "India has the largest problem of tuberculosis (TB) infection globally (estimated at about 35-40 crores cases), and around 18-36 lakh develop active tuberculosis annually.",
+        "Latent TB is defined as a state of persistent immune response to stimulation by Mycobacterium tuberculosis antigens with no evidence of clinically manifested active TB."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "31852268",
+        "pmcid": null,
+        "title": "Infection risk in patients undergoing treatment for inflammatory arthritis: non-biologics versus biologics.",
+        "abstract": "Introduction: Despite the therapeutic effectiveness of biologics targeting immune cells or cytokines in patients with inflammatory arthritis, which reflects their pathogenic roles, an increased infection risk is observed in those undergoing biological treatment. However, there are limited data regarding the comparison of infection risks in inflammatory arthritis patients treated with non-biologics (csDMARDs), biologics (bDMARDs), including tumor necrosis factor (TNF) inhibitors and non-TNF inhibitors, or targeted synthetic (ts)DMARDs.Areas covered: Through a review of English-language literature as of 30 June 2019, we focus on the existing evidence on the risk of infections caused by bacteria, Mycobacterium tuberculosis, and hepatitis virus in inflammatory arthritis patients undergoing treatment with csDMARDs, bDMARDs, or tsDMARDs.Expert opinion: While the risks of bacterial and mycobacterial infection are increased in arthritis patients treated with csDMARDs, the risks are further higher in those receiving bDMARDs therapy, particularly TNF inhibitors. Regarding HBV infection, antiviral therapy may effectively prevent HBV reactivation in patients receiving bDMARDs, especially rituximab. However, more data are needed to establish effective preventive strategies for HBsAg-negative/HBcAb-positive patients. It seems safe to use cyclosporine and TNF inhibitors in patients with HCV infection, while those undergoing rituximab therapies should be frequently monitored for HCV activity.Abbreviations: ABT: abatacept; ADA: adalimumab; AS: ankylosing spondylitis; bDMARDs: biologic disease-modifying anti-rheumatic drugs; CKD: chronic kidney disease; COPD: chronic obstructive pulmonary disease; CS: corticosteroids; CsA: cyclosporine A; csDMARDs: conventional synthetic disease-modifying anti-rheumatic drugs; CZP: certolizumab; DAAs: direct-acting antiviral agents; DM: diabetes mellitus; DOT: directly observed therapy; EIN: Emerging Infections Network; ETN: etanercept; GOL: golimumab; GPRD: General Practice Research Database; HBV: hepatitis B virus; HBVr: HBV reactivation; HBsAg+: HBsAg-positive; HBsAg-/anti-HBc+: HBsAg-negative anti-HBc antibodies-positive; HCV: hepatitis C virus; HCQ: hydroxychloroquine: IFX: infliximab; IL-6: interleukin-6; JAK: Janus kinase; LEF: leflunomide; LTBI: latent tuberculosis infection; mAb: monoclonal antibody; MTX: methotrexate; OR: odds ratio; PsA: psoriatic arthritis; PMS: post-marketing surveillance; RA: rheumatoid arthritis; TNF: tumor necrosis factor; TNFi: tumor necrosis factor inhibitor; SCK: secukinumab; SSZ: sulfasalazine; TOZ: tocilizumab; RCT: randomized controlled trial; RR: relative risk; RTX: rituximab; 3HP: 3-month once-weekly isoniazid plus rifapentine; TB: tuberculosis; tsDMARDs: targeted synthetic disease-modifying anti-rheumatic drugs; UTK: ustekinumab; WHO: World Health Organization.",
+        "journal": "Expert review of clinical immunology",
+        "publication_year": 2020,
+        "authors": [
+          "Ying-Ming Chiu",
+          "Der-Yuan Chen"
+        ],
+        "doi": "10.1080/1744666X.2019.1705785",
+        "publication_types": [
+          "Comparative Study",
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antirheumatic Agents",
+          "Arthritis",
+          "Biological Products",
+          "Drug-Related Side Effects and Adverse Reactions",
+          "Humans",
+          "Infections",
+          "Inflammation",
+          "Molecular Targeted Therapy",
+          "Treatment Outcome",
+          "Tumor Necrosis Factor Inhibitors"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31852268/"
+      },
+      "relevance_score": 68.0,
+      "evidence_level": "high",
+      "study_type": "Randomized Controlled Trial",
+      "rationale": "Ranked by study type (Randomized Controlled Trial), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Introduction: Despite the therapeutic effectiveness of biologics targeting immune cells or cytokines in patients with inflammatory arthritis, which reflects their pathogenic roles, an increased infection risk is observed in those undergoing biological treatment.",
+        "However, there are limited data regarding the comparison of infection risks in inflammatory arthritis patients treated with non-biologics (csDMARDs), biologics (bDMARDs), including tumor necrosis factor (TNF) inhibitors and non-TNF inhibitors, or targeted synthetic (ts)DMARDs.Areas covered: Through a review of English-language literature as of 30 June 2019, we focus on the existing evidence on the risk of infections caused by bacteria, Mycobacterium tuberculosis, and hepatitis virus in inflammatory arthritis patients undergoing treatment with csDMARDs, bDMARDs, or tsDMARDs.Expert opinion: While the risks of bacterial and mycobacterial infection are increased in arthritis patients treated with csDMARDs, the risks are further higher in those receiving bDMARDs therapy, particularly TNF inhibitors."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "30403551",
+        "pmcid": null,
+        "title": "The Global Landscape of Tuberculosis Therapeutics.",
+        "abstract": "Tuberculosis (TB) is one of the oldest infections afflicting humans yet remains the number one infectious disease killer worldwide. Despite decades of experience treating this disease, TB regimens require months of multidrug therapy, even for latent infections. There have been important recent advances in treatment options across the spectrum of TB, from latent infection to extensively drug-resistant (XDR) TB disease. In addition, new, potent drugs are emerging out of the development pipeline and are being tested in novel regimens in multiple currently enrolling trials. Shorter, safer regimens for many forms of TB are now available or are in our near-term vision. We review recent advances in TB therapeutics and provide an overview of the upcoming clinical trials landscape that will help define the future of worldwide TB treatment.",
+        "journal": "Annual review of medicine",
+        "publication_year": 2019,
+        "authors": [
+          "Jeffrey A Tornheim",
+          "Kelly E Dooley"
+        ],
+        "doi": "10.1146/annurev-med-040717-051150",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antitubercular Agents",
+          "Drug Therapy, Combination",
+          "Female",
+          "Global Health",
+          "Humans",
+          "Latent Tuberculosis",
+          "Male",
+          "Mycobacterium tuberculosis",
+          "Prevalence",
+          "Risk Assessment",
+          "Severity of Illness Index",
+          "Treatment Outcome",
+          "Tuberculosis",
+          "Tuberculosis, Multidrug-Resistant"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30403551/"
+      },
+      "relevance_score": 65.0,
+      "evidence_level": "moderate",
+      "study_type": "Clinical Trial",
+      "rationale": "Ranked by study type (Clinical Trial), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "Tuberculosis (TB) is one of the oldest infections afflicting humans yet remains the number one infectious disease killer worldwide.",
+        "Despite decades of experience treating this disease, TB regimens require months of multidrug therapy, even for latent infections."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "31731988",
+        "pmcid": "PMC5651239",
+        "title": "Treatment of Latent Tuberculosis Infection-An Update.",
+        "abstract": "Treatment of latent tuberculosis infection (LTBI) is an important component of TB control and elimination. LTBI treatment regimens include once-weekly isoniazid plus rifapentine for 3 months, daily rifampin for 4 months, daily isoniazid plus rifampin for 3-4 months, and daily isoniazid for 6-9 months. Isoniazid monotherapy is efficacious in preventing TB disease, but the rifampin- and rifapentine-containing regimens are shorter and have similar efficacy, adequate safety, and higher treatment completion rates. Novel vaccine strategies, host immunity-directed therapies and ultrashort antimicrobial regimens for TB prevention, such as daily isoniazid plus rifapentine for 1 month, are under evaluation.",
+        "journal": "Clinics in chest medicine",
+        "publication_year": 2019,
+        "authors": [
+          "Moises A Huaman",
+          "Timothy R Sterling"
+        ],
+        "doi": "10.1016/j.ccm.2019.07.008",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antitubercular Agents",
+          "Female",
+          "Humans",
+          "Latent Tuberculosis",
+          "Male"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31731988/"
+      },
+      "relevance_score": 43.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "Treatment of latent tuberculosis infection (LTBI) is an important component of TB control and elimination.",
+        "LTBI treatment regimens include once-weekly isoniazid plus rifapentine for 3 months, daily rifampin for 4 months, daily isoniazid plus rifampin for 3-4 months, and daily isoniazid for 6-9 months."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "28409555",
+        "pmcid": "PMC3556878",
+        "title": "Treatment of Latent Tuberculosis Infection.",
+        "abstract": "There are approximately 56 million people who harbor Mycobacterium tuberculosis that may progress to active tuberculosis (TB) at some point in their lives. Modeling studies suggest that if only 8% of these individuals with latent TB infection (LTBI) were treated annually, overall global incidence would be 14-fold lower by 2050 compared to incidence in 2013, even in the absence of additional TB control measures. This highlights the importance of identifying and treating latently infected individuals, and that this intervention must be scaled up to achieve the goals of the Global End TB Strategy. The efficacy of LTBI treatment is well established, and the most commonly used regimen is 9 months of daily self-administered isoniazid. However, its use has been hindered by limited provider awareness of the benefits, concern about potential side effects such as hepatotoxicity, and low rates of treatment completion. There is increasing evidence that shorter rifamycin-based regimens are as effective, better tolerated, and more likely to be completed compared to isoniazid. Such regimens include four months of daily self-administered rifampin monotherapy, three months of once weekly directly observed isoniazid-rifapentine, and three months of daily self-administered isoniazid-rifampin. The success of LTBI treatment to prevent additional TB disease relies upon choosing an appropriate regimen individualized to the patient, monitoring for potential adverse clinical events, and utilizing strategies to promote adherence. Safer, more cost-effective, and more easily completed regimens are needed and should be combined with interventions to better identify, engage, and retain high-risk individuals across the cascade from diagnosis through treatment completion of LTBI.",
+        "journal": "Microbiology spectrum",
+        "publication_year": 2017,
+        "authors": [
+          "Connie A Haley"
+        ],
+        "doi": "10.1016/j.ijid.2016.11.006",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antitubercular Agents",
+          "Humans",
+          "Isoniazid",
+          "Latent Tuberculosis",
+          "Medication Adherence",
+          "Mycobacterium tuberculosis",
+          "Rifampin",
+          "Treatment Outcome"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28409555/"
+      },
+      "relevance_score": 41.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "There are approximately 56 million people who harbor Mycobacterium tuberculosis that may progress to active tuberculosis (TB) at some point in their lives.",
+        "Modeling studies suggest that if only 8% of these individuals with latent TB infection (LTBI) were treated annually, overall global incidence would be 14-fold lower by 2050 compared to incidence in 2013, even in the absence of additional TB control measures."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "29238270",
+        "pmcid": "PMC3260212",
+        "title": "Treatment of Latent Tuberculosis Infection.",
+        "abstract": "The treatment of latent tuberculosis infection (LTBI) is an essential component of tuberculosis (TB) elimination in regions that have a low incidence of TB. However, the decision to treat individuals with LTBI must consider the limitations of current diagnostic tests for LTBI, the risk of developing active TB disease, the potential adverse effects from chemoprophylactic therapy, and the importance of treatment adherence. When an individual has been diagnosed with LTBI and active TB has been ruled out, this is followed by an evaluation of the risks and benefits of LTBI treatment within the context of the regional epidemiology of TB and public health priorities. Once the decision to treat LTBI has been reached, and the infection is not suspected to be due to drug-resistant TB, the recommended regimens include isoniazid and/or rifamycin-derivatives, and the choice of regimen will depend upon the clinical considerations for that individual, such as patient preference, concomitant medications, hepatic disease, pregnancy, or immunodeficiency. As the duration of treatment of LTBI therapy is many months, therapy must be offered within a plan that monitors for adverse drug reactions and emphasizes adherence. For latent multidrug-resistant TB (MDR-TB) or extensively drug-resistant TB (XDR-TB) infection, the management is more complicated as there are few options for chemoprophylactic therapy and little evidence regarding the efficacy or risks of these regimens.",
+        "journal": "Current treatment options in infectious diseases",
+        "publication_year": 2017,
+        "authors": [
+          "Patrick Tang",
+          "James Johnston"
+        ],
+        "doi": "10.1136/thx.2008.100974",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29238270/"
+      },
+      "relevance_score": 41.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "The treatment of latent tuberculosis infection (LTBI) is an essential component of tuberculosis (TB) elimination in regions that have a low incidence of TB.",
+        "However, the decision to treat individuals with LTBI must consider the limitations of current diagnostic tests for LTBI, the risk of developing active TB disease, the potential adverse effects from chemoprophylactic therapy, and the importance of treatment adherence."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "33013856",
+        "pmcid": "PMC4538006",
+        "title": "Diagnosis for Latent Tuberculosis Infection: New Alternatives.",
+        "abstract": "Latent tuberculosis infection (LTBI) is a subclinical mycobacterial infection defined on the basis of cellular immune response to mycobacterial antigens. The tuberculin skin test (TST) and the interferon gamma release assay (IGRA) are currently used to establish the diagnosis of LTB. However, neither TST nor IGRA is useful to discriminate between active and latent tuberculosis. Moreover, these tests cannot be used to predict whether an individual with LTBI will develop active tuberculosis (TB) or whether therapy for LTBI could be effective to decrease the risk of developing active TB. Therefore, in this article, we review current approaches and some efforts to identify an immunological marker that could be useful in distinguishing LTBI from TB and in evaluating the effectiveness of treatment of LTB on the risk of progression to active TB.",
+        "journal": "Frontiers in immunology",
+        "publication_year": 2020,
+        "authors": [
+          "Claudia Carranza",
+          "Sigifredo Pedraza-Sanchez",
+          "Eleane de Oyarzabal-Mendez",
+          "Martha Torres"
+        ],
+        "doi": "10.1016/j.gene.2018.02.052",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Animals",
+          "Biomarkers",
+          "Diagnosis, Differential",
+          "Disease Progression",
+          "Humans",
+          "Interferon-gamma",
+          "Latent Tuberculosis",
+          "Mycobacterium tuberculosis",
+          "Risk",
+          "Tuberculin Test"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33013856/"
+      },
+      "relevance_score": 40.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Latent tuberculosis infection (LTBI) is a subclinical mycobacterial infection defined on the basis of cellular immune response to mycobacterial antigens.",
+        "The tuberculin skin test (TST) and the interferon gamma release assay (IGRA) are currently used to establish the diagnosis of LTB."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "26836374",
+        "pmcid": null,
+        "title": "Diagnosis and management of latent tuberculosis.",
+        "abstract": "Latent tuberculosis infection (LTBI) may affect over two billion individuals and serves as a potential reservoir for future active tuberculosis. The identification and treatment of LTBI in those at highest risk for progression is an essential part of tuberculosis control. Interferon-γ release assays are increasingly used for targeted testing and diagnosis of latent disease. The performance of these immunodiagnostic tests has been studied in various groups and may be better than the tuberculin skin test in certain populations. Ongoing research is focused on new biomarkers that may diagnose LTBI or predict progression to active tuberculosis. Isoniazid preventive treatment is effective at reducing risk of active disease, but length of treatment and potential side-effects limit patient acceptance and compliance. Rifamycin-based regimens are increasingly studied as a shorter and perhaps less toxic alternative for preventive therapy. Identification of those with LTBI is important as it allows treatment of those at highest risk of progression to active disease and thus decreases the overall burden of tuberculosis. The development of new immunodiagnostics may further improve identification of those at risk and alternative medication regimens may increase compliance with and efficacy of preventive therapy.",
+        "journal": "Current opinion in infectious diseases",
+        "publication_year": 2016,
+        "authors": [
+          "Meredith L Turetz",
+          "Kevin C Ma"
+        ],
+        "doi": "10.1097/QCO.0000000000000253",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antitubercular Agents",
+          "Diagnostic Tests, Routine",
+          "Humans",
+          "Interferon-gamma Release Tests",
+          "Latent Tuberculosis"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26836374/"
+      },
+      "relevance_score": 40.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "Latent tuberculosis infection (LTBI) may affect over two billion individuals and serves as a potential reservoir for future active tuberculosis.",
+        "The identification and treatment of LTBI in those at highest risk for progression is an essential part of tuberculosis control."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "28260424",
+        "pmcid": null,
+        "title": "Posttransplant Tuberculosis.",
+        "abstract": "Tuberculosis is a major problem in the posttransplantation period, because of its high incidence and prevalence, difficulty in diagnosis as well as high risk of morbidity and mortality. In solid-organ transplant recipients, the diagnosis of tuberculosis is complex because it is paucisymptomatic. Tuberculin skin testing results may be negative, and interferon-gamma release assays may be insufficiently sensitive. Furthermore, imaging technique findings are mostly atypical, and sputum smear results can be negative despite the presence of active disease. Therefore, most tuberculosis cases are overlooked, and thus, treatment initiation is often delayed. The treatment of tuberculosis falls under 2 headings: that of active disease and latent disease. The drugs for treating these 2 entities are similar; however, their protocols are completely different. Active disease in the immunocompetent patient is treated mostly by giving isoniazid, rifampicin, pyrazinamide, and ethambutol for 2 months (intensive phase), followed by isoniazid and rifampicin for 4 months (continuation phase). The treatment of immunosuppressed patients is controversial; a similar protocol or longer duration of treatment has been suggested as compared to immunocompetent patients. Because there is a drug interaction between antituberculosis drugs (rifamycins) and immunosuppressants (calcineurin/mammalian target of rapamycin inhibitors and glucocorticoids), the risk of graft rejection increases during the treatment of tuberculosis. For the treatment of latent tuberculosis, in regions with a high prevalence of tuberculosis, universal prophylaxis with isoniazid for 6 months (preferably 9 months) has been recommended. In countries where the risk of tuberculosis is lower, no prophylaxis has been proposed. We propose that the best solution is to individualize therapy for patients at greatest risk of the disease. To conclude, posttransplant tuberculosis is still an important source of comorbidity in transplant recipients because of its high frequency, problems in diagnosis and treatment and association with increased risk of morbidity and mortality.",
+        "journal": "Experimental and clinical transplantation : official journal of the Middle East Society for Organ Transplantation",
+        "publication_year": 2017,
+        "authors": [
+          "Erol Demir",
+          "Mehmet Sukru Sever"
+        ],
+        "doi": "10.6002/ect.mesot2016.L32",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Antitubercular Agents",
+          "Delayed Diagnosis",
+          "Drug Therapy, Combination",
+          "Humans",
+          "Immunocompromised Host",
+          "Immunosuppressive Agents",
+          "Organ Transplantation",
+          "Predictive Value of Tests",
+          "Risk Factors",
+          "Treatment Outcome",
+          "Tuberculosis"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28260424/"
+      },
+      "relevance_score": 33.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [
+        "Tuberculosis is a major problem in the posttransplantation period, because of its high incidence and prevalence, difficulty in diagnosis as well as high risk of morbidity and mortality.",
+        "In solid-organ transplant recipients, the diagnosis of tuberculosis is complex because it is paucisymptomatic."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "Multiple treatment regimens for latent tuberculosis infection (LTBI) have been approved and demonstrate comparable efficacy [38031772].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "38031772"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "While isoniazid monotherapy is efficacious, shorter rifamycin-based regimens—such as daily rifampin for 4 months or once-weekly isoniazid plus rifapentine for 3 months—are associated with higher treatment completion rates and better tolerability [31731988, 28409555].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "31731988",
+        "28409555"
+      ],
+      "evidence_level": "uncertain",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "The selection of a specific regimen depends on individual patient factors, including age, drug interactions, and the risk of adverse events [38031772, 28409555].",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "38031772",
+        "28409555"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C004",
+      "text": "Research suggests that shorter treatment courses, such as those using rifapentine and isoniazid, can be as effective as longer traditional regimens in treating latent tuberculosis infection [31852268, 30403551].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "31852268",
+        "30403551"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C005",
+      "text": "However, some evidence indicates that these shorter options may be associated with a higher risk of liver toxicity [38031772].",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "38031772"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "LCAU001",
+      "claim_id": "C004",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "indirect_evidence",
+      "explanation": "Claim C004 cites PMID 31852268, which is a review of infection risks in arthritis patients, not a primary study on the efficacy of LTBI treatment regimens.",
+      "severity": "medium"
+    },
+    {
+      "id": "LCAU002",
+      "claim_id": "C005",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "insufficient_data",
+      "explanation": "Claim C005 asserts a higher risk of liver toxicity for shorter regimens, but the provided abstract [38031772] does not mention liver toxicity specifically for shorter regimens, only that regimen selection depends on the risk of adverse events.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU001",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "31731988",
+        "28409555"
+      ],
+      "cautionary_pmids": [
+        "31731988",
+        "28409555",
+        "29238270",
+        "33013856",
+        "26836374",
+        "28260424"
+      ],
+      "caution_type": "low_certainty",
+      "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "38031772",
+        "28409555"
+      ],
+      "cautionary_pmids": [
+        "31731988",
+        "28409555",
+        "29238270",
+        "33013856",
+        "26836374",
+        "28260424"
+      ],
+      "caution_type": "low_certainty",
+      "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "38031772",
+        "28409555"
+      ],
+      "cautionary_pmids": [
+        "38031772",
+        "28409555"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C005",
+      "supporting_pmids": [
+        "38031772"
+      ],
+      "cautionary_pmids": [
+        "38031772"
+      ],
+      "caution_type": "safety_signal",
+      "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+      "severity": "medium"
+    }
+  ],
+  "freshness": {
+    "score": 0.85,
+    "last_search_date": "2026-05-01",
+    "newest_publication_year": 2024,
+    "oldest_publication_year": 2016,
+    "recommended_refresh_days": 120,
+    "rationale": "Newest loaded publication year is 2024 and oldest is 2016; the pack is 2 years from the newest included evidence."
+  },
+  "executive_summary": "Multiple treatment regimens for latent tuberculosis infection (LTBI) have been approved and demonstrate comparable efficacy [38031772]. While isoniazid monotherapy is efficacious, shorter rifamycin-based regimens—such as daily rifampin for 4 months or once-weekly isoniazid plus rifapentine for 3 months—are associated with higher treatment completion rates and better tolerability [31731988, 28409555]. The selection of a specific regimen depends on individual patient factors, including age, drug interactions, and the risk of adverse events [38031772, 28409555].",
+  "clinical_interpretation": "Multiple treatment regimens for latent tuberculosis infection (LTBI) have been approved and demonstrate comparable efficacy [38031772]. While isoniazid monotherapy is efficacious, shorter rifamycin-based regimens—such as daily rifampin for 4 months or once-weekly isoniazid plus rifapentine for 3 months—are associated with higher treatment completion rates and better tolerability [31731988, 28409555]. The selection of a specific regimen depends on individual patient factors, including age, drug interactions, and the risk of adverse events [38031772, 28409555]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every finding has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "Research suggests that shorter treatment courses, such as those using rifapentine and isoniazid, can be as effective as longer traditional regimens in treating latent tuberculosis infection [31852268, 30403551]. However, some evidence indicates that these shorter options may be associated with a higher risk of liver toxicity [38031772].",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require a PMID/PMCID from the loaded evidence.",
+  "citation_coverage": 1.0
+}

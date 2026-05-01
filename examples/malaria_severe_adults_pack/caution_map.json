@@ -1,0 +1,128 @@
+[
+  {
+    "id": "LCAU001",
+    "claim_id": "C003",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "conflicting_results",
+    "explanation": "Study [40445171] suggests isolated hyperparasitaemia is not an independent risk factor for critical disease, whereas [41077038] identifies parasitemia >5% as an independent risk factor for artesunate treatment failure.",
+    "severity": "medium"
+  },
+  {
+    "id": "LCAU002",
+    "claim_id": "C003",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "population_mismatch",
+    "explanation": "The evidence for treatment failure risk scoring [41077038] is derived from a South Korean cohort and may not extrapolate to endemic populations.",
+    "severity": "medium"
+  },
+  {
+    "id": "LCAU003",
+    "claim_id": "C004",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Study [36367444] focuses on mosquito habitat modification for malaria control (preventative/public health) and does not provide evidence for the clinical efficacy of artesunate versus quinine in treating severe malaria.",
+    "severity": "high"
+  },
+  {
+    "id": "CAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "26880088"
+    ],
+    "cautionary_pmids": [
+      "26880088"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "26880088"
+    ],
+    "cautionary_pmids": [
+      "26880088"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU003",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "40445171",
+      "41077038"
+    ],
+    "cautionary_pmids": [
+      "40445171",
+      "41077038"
+    ],
+    "caution_type": "outcome_mismatch",
+    "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "26880088",
+      "36367444"
+    ],
+    "cautionary_pmids": [
+      "26880088",
+      "36367444"
+    ],
+    "caution_type": "population_mismatch",
+    "explanation": "Some cited evidence may not directly match the target adult human population.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU005",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "26880088",
+      "36367444"
+    ],
+    "cautionary_pmids": [
+      "26880088",
+      "36367444"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Cited evidence uses language suggesting mixed or inconsistent results across studies.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU006",
+    "claim_id": "C005",
+    "supporting_pmids": [
+      "38960312"
+    ],
+    "cautionary_pmids": [
+      "38960312"
+    ],
+    "caution_type": "indirect_evidence",
+    "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU007",
+    "claim_id": "C001",
+    "supporting_pmids": [],
+    "cautionary_pmids": [
+      "40445171",
+      "41077038",
+      "38960312",
+      "36367444",
+      "26880088"
+    ],
+    "caution_type": "conflicting_results",
+    "explanation": "Papers in this pack reach opposing conclusions on at least one outcome \u2014 review individual study findings before drawing clinical conclusions.",
+    "severity": "medium"
+  }
+]

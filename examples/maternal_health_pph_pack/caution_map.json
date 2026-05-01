@@ -1,0 +1,121 @@
+[
+  {
+    "id": "LCAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "low_certainty",
+    "explanation": "The evidence explicitly states that the level of evidence for preventing and treating PPH is globally low due to the difficulty of conducting RCTs in emergency settings.",
+    "severity": "medium"
+  },
+  {
+    "id": "LCAU002",
+    "claim_id": "C004",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "low_certainty",
+    "explanation": "Systematic review of PPH prediction tools found all 14 included studies were at high risk of bias due to low sample size and lack of validation.",
+    "severity": "high"
+  },
+  {
+    "id": "LCAU003",
+    "claim_id": "C002",
+    "supporting_pmids": [],
+    "cautionary_pmids": [],
+    "caution_type": "conflicting_results",
+    "explanation": "Guidelines show minor discrepancies regarding optimal uterotonic regimens and lack consistency in massive transfusion protocols.",
+    "severity": "low"
+  },
+  {
+    "id": "CAU001",
+    "claim_id": "C001",
+    "supporting_pmids": [
+      "27701915",
+      "36345105"
+    ],
+    "cautionary_pmids": [
+      "27701915",
+      "36345105"
+    ],
+    "caution_type": "indirect_evidence",
+    "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU002",
+    "claim_id": "C002",
+    "supporting_pmids": [
+      "36345105",
+      "37832561"
+    ],
+    "cautionary_pmids": [
+      "37832561",
+      "32782215",
+      "38902107",
+      "37130373",
+      "33275708",
+      "35297039"
+    ],
+    "caution_type": "low_certainty",
+    "explanation": "The claim depends on low-certainty or limited evidence in the pack.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU003",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "27701915",
+      "30578144"
+    ],
+    "cautionary_pmids": [
+      "27701915",
+      "30578144"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU004",
+    "claim_id": "C003",
+    "supporting_pmids": [
+      "27701915",
+      "30578144"
+    ],
+    "cautionary_pmids": [
+      "27701915",
+      "30578144"
+    ],
+    "caution_type": "indirect_evidence",
+    "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU005",
+    "claim_id": "C004",
+    "supporting_pmids": [
+      "27701915",
+      "32575159"
+    ],
+    "cautionary_pmids": [
+      "27701915",
+      "32575159"
+    ],
+    "caution_type": "indirect_evidence",
+    "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+    "severity": "medium"
+  },
+  {
+    "id": "CAU006",
+    "claim_id": "C005",
+    "supporting_pmids": [
+      "36345105"
+    ],
+    "cautionary_pmids": [
+      "36345105"
+    ],
+    "caution_type": "safety_signal",
+    "explanation": "Cited evidence includes safety or adverse-event language relevant to this claim.",
+    "severity": "medium"
+  }
+]

@@ -1,0 +1,1137 @@
+{
+  "pack_id": "vfield-26808ce2b334",
+  "title": "Evidence Pack: What does evidence say about treatment of severe malaria in adults in endemic settings",
+  "topic": "What does evidence say about treatment of severe malaria in adults in endemic settings?",
+  "created_at": "2026-05-01T04:16:54.562721+00:00",
+  "last_pubmed_search_at": "2026-05-01T04:16:54.562721+00:00",
+  "language": "en",
+  "source": "PubMed/NCBI",
+  "pico": {
+    "original_question": "What does evidence say about treatment of severe malaria in adults in endemic settings?",
+    "safe_rewritten_question": null,
+    "population": "adults with severe malaria in endemic settings",
+    "intervention": "treatment",
+    "comparison": null,
+    "outcome": null,
+    "timeframe": null,
+    "preferred_study_types": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Randomized Controlled Trial",
+      "Clinical Trial"
+    ],
+    "language": "en"
+  },
+  "pubmed_query": "(\"Malaria, Cerebral\"[MeSH Terms] OR \"Malaria\"[MeSH Terms]) AND (\"severe malaria\"[Title/Abstract] OR \"complicated malaria\"[Title/Abstract]) AND (\"adults\"[MeSH Terms] OR \"adult\"[Title/Abstract]) AND (\"Therapeutics\"[MeSH Terms] OR \"treatment\"[Title/Abstract] OR \"therapy\"[Title/Abstract] OR \"artesunate\"[Title/Abstract] OR \"quinine\"[Title/Abstract]) AND (\"endemic\"[Title/Abstract] OR \"developing countries\"[MeSH Terms])",
+  "pubmed_query_method": "gemma4-function-calling",
+  "papers": [
+    {
+      "pmid": "35699901",
+      "pmcid": "PMC8431839",
+      "title": "Neurological Complications of Malaria.",
+      "abstract": "To discuss the neurological complications and pathophysiology of organ damage following malaria infection. The principal advancement made in malaria research has been a better understanding of the pathogenesis of cerebral malaria (CM), the most dreaded neurological complication generally caused by Plasmodium falciparum infection. However, no definitive treatment has yet been evolved other than the use of antimalarial drugs and supportive care. The development of severe cerebral edema in CM results from two distinct pathophysiologic mechanisms. First, the development of \"sticky\" red blood cells (RBCs) leads to cytoadherence, where red blood cells (RBCs) get stuck to the endothelial walls and between themselves, resulting in clogging of the brain microvasculature with resultant hypoxemia and cerebral edema. In addition, the P. falciparum-infected erythrocyte membrane protein 1 (PfEMP1) molecules protrude from the raised knob structures on the RBCs walls and are in themselves made of a combination of human and parasite proteins in a tight complex. Antibodies to surfins, rifins, and stevors from the parasite are also located in the RBC membrane. On the human microvascular side, a range of molecules involved in host-parasite interactions, including CD36 and intracellular adhesion molecule 1, is activated during interaction with other molecules such as endothelial protein C receptor and thrombospondin. As a result, an inflammatory response occurs with the dysregulated release of cytokines (TNF, interleukins 1 and 10) which damage the blood-brain barrier (BBB), causing plasma leakage and brain edema. This second mechanism of CNS injury often involves multiple organs in adult patients in endemic areas but remains localized only to the central nervous system (CNS) among African children. Neurological sequelae may follow both P. falciparum and P. vivax infections. The major brain pathology of CM is brain edema with diffuse brain swelling resulting from the combined effects of reduced perfusion and hypoxemia of cerebral neurons due to blockage of the microvasculature by parasitized RBCs as well as the neurotoxic effect of released cytokines from a hyper-acute immune host reaction. A plethora of additional neurological manifestations have been associated with malaria, including posterior reversible encephalopathy syndrome (PRES), reversible cerebral vasoconstriction syndrome (RCVS), malarial retinopathy, post-malarial neurological syndrome (PMNS), acute disseminated encephalomyelitis (ADEM), Guillain-Barré syndrome (GBS), and cerebellar ataxia. Lastly, the impact of the COVID-19 pandemic on worldwide malaria control programs and the possible threat from co-infections is briefly discussed.",
+      "journal": "Current neurology and neuroscience reports",
+      "publication_year": 2022,
+      "authors": [
+        "Sweety Trivedi",
+        "Ambar Chakravarty"
+      ],
+      "doi": "10.1093/jtm/taaa051",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Brain Edema",
+        "COVID-19",
+        "Child",
+        "Cytokines",
+        "Humans",
+        "Hypoxia",
+        "Malaria, Cerebral",
+        "Malaria, Falciparum",
+        "Pandemics",
+        "Plasmodium falciparum",
+        "Posterior Leukoencephalopathy Syndrome"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35699901/"
+    },
+    {
+      "pmid": "26880088",
+      "pmcid": "PMC2481394",
+      "title": "UK malaria treatment guidelines 2016.",
+      "abstract": "1.Malaria is the tropical disease most commonly imported into the UK, with 1300-1800 cases reported each year, and 2-11 deaths. 2. Approximately three quarters of reported malaria cases in the UK are caused by Plasmodium falciparum, which is capable of invading a high proportion of red blood cells and rapidly leading to severe or life-threatening multi-organ disease. 3. Most non-falciparum malaria cases are caused by Plasmodium vivax; a few cases are caused by the other species of plasmodium: Plasmodium ovale, Plasmodium malariae or Plasmodium knowlesi. 4. Mixed infections with more than one species of parasite can occur; they commonly involve P. falciparum with the attendant risks of severe malaria. 5. There are no typical clinical features of malaria; even fever is not invariably present. Malaria in children (and sometimes in adults) may present with misleading symptoms such as gastrointestinal features, sore throat or lower respiratory complaints. 6. A diagnosis of malaria must always be sought in a feverish or sick child or adult who has visited malaria-endemic areas. Specific country information on malaria can be found at http://travelhealthpro.org.uk/. P. falciparum infection rarely presents more than six months after exposure but presentation of other species can occur more than a year after exposure. 7. Management of malaria depends on awareness of the diagnosis and on performing the correct diagnostic tests: the diagnosis cannot be excluded until more than one blood specimen has been examined. Other travel related infections, especially viral haemorrhagic fevers, should also be considered. 8. The optimum diagnostic procedure is examination of thick and thin blood films by an expert to detect and speciate the malarial parasites. P. falciparum and P. vivax (depending upon the product) malaria can be diagnosed almost as accurately using rapid diagnostic tests (RDTs) which detect plasmodial antigens. RDTs for other Plasmodium species are not as reliable. 9. Most patients treated for P. falciparum malaria should be admitted to hospital for at least 24 h as patients can deteriorate suddenly, especially early in the course of treatment. In specialised units seeing large numbers of patients, outpatient treatment may be considered if specific protocols for patient selection and follow up are in place. 10. Uncomplicated P. falciparum malaria should be treated with an artemisinin combination therapy (Grade 1A). Artemether-lumefantrine (Riamet(®)) is the drug of choice (Grade 2C) and dihydroartemisinin-piperaquine (Eurartesim(®)) is an alternative. Quinine or atovaquone-proguanil (Malarone(®)) can be used if an ACT is not available. Quinine is highly effective but poorly-tolerated in prolonged treatment and should be used in combination with an additional drug, usually oral doxycycline. 11. Severe falciparum malaria, or infections complicated by a relatively high parasite count (more than 2% of red blood cells parasitized) should be treated with intravenous therapy until the patient is well enough to continue with oral treatment. Severe malaria is a rare complication of P. vivax or P. knowlesi infection and also requires parenteral therapy. 12. The treatment of choice for severe or complicated malaria in adults and children is intravenous artesunate (Grade 1A). Intravenous artesunate is unlicensed in the EU but is available in many centres. The alternative is intravenous quinine, which should be started immediately if artesunate is not available (Grade 1A). Patients treated with intravenous quinine require careful monitoring for hypoglycemia. 13. Patients with severe or complicated malaria should be managed in a high-dependency or intensive care environment. They may require haemodynamic support and management of: acute respiratory distress syndrome, disseminated intravascular coagulation, acute kidney injury, seizures, and severe intercurrent infections including Gram-negative bacteraemia/septicaemia. 14. Children with severe malaria should also be treated with empirical broad spectrum antibiotics until bacterial infection can be excluded (Grade 1B). 15. Haemolysis occurs in approximately 10-15% patients following intravenous artesunate treatment. Haemoglobin concentrations should be checked approximately 14 days following treatment in those treated with IV artemisinins (Grade 2C). 16. Falciparum malaria in pregnancy is more likely to be complicated: the placenta contains high levels of parasites, stillbirth or early delivery may occur and diagnosis can be difficult if parasites are concentrated in the placenta and scanty in the blood. 17. Uncomplicated falciparum malaria in the second and third trimester of pregnancy should be treated with artemether-lumefantrine (Grade 2B). Uncomplicated falciparum malaria in the first trimester of pregnancy should usually be treated with quinine and clindamycin but specialist advice should be sought. Severe malaria in any trimester of pregnancy should be treated as for any other patient with artesunate preferred over quinine (Grade 1C). 18. Children with uncomplicated malaria should be treated with an ACT (artemether-lumefantrine or dihydroartemisinin-piperaquine) as first line treatment (Grade 1A). Quinine with doxycycline or clindamycin, or atovaquone-proguanil at appropriate doses for weight can also be used. Doxycycline should not be given to children under 12 years. 19. Either an oral ACT or chloroquine can be used for the treatment of non-falciparum malaria. An oral ACT is preferred for a mixed infection, if there is uncertainty about the infecting species, or for P. vivax infection from areas where chloroquine resistance is common (Grade 1B). 20. Dormant parasites (hypnozoites) persist in the liver after treatment of P. vivax or P. ovale infection: the only currently effective drug for eradication of hypnozoites is primaquine (1A). Primaquine is more effective at preventing relapse if taken at the same time as chloroquine (Grade 1C). 21. Primaquine should be avoided or given with caution under expert supervision in patients with Glucose-6-phosphate dehydrogenase deficiency (G6PD), in whom it may cause severe haemolysis. 22. Primaquine (for eradication of P. vivax or P. ovale hypnozoites) is contraindicated in pregnancy and when breastfeeding (until the G6PD status of child is known); after initial treatment for these infections a pregnant woman should take weekly chloroquine prophylaxis until after delivery or cessation of breastfeeding when hypnozoite eradication can be considered. 23. An acute attack of malaria does not confer protection from future attacks: individuals who have had malaria should take effective anti-mosquito precautions and chemoprophylaxis during future visits to endemic areas.",
+      "journal": "The Journal of infection",
+      "publication_year": 2016,
+      "authors": [
+        "David G Lalloo",
+        "Delane Shingadia",
+        "David J Bell",
+        "Nicholas J Beeching",
+        "Christopher J M Whitty",
+        "Peter L Chiodini",
+        "PHE Advisory Committee on Malaria Prevention in UK Travellers"
+      ],
+      "doi": "10.1016/j.jinf.2016.02.001",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Antimalarials",
+        "Artemisinins",
+        "Artesunate",
+        "Breast Feeding",
+        "Child",
+        "Child, Preschool",
+        "Female",
+        "Humans",
+        "Malaria",
+        "Malaria, Falciparum",
+        "Malaria, Vivax",
+        "Plasmodium falciparum",
+        "Plasmodium vivax",
+        "Pregnancy",
+        "Pregnancy Complications, Parasitic",
+        "Primaquine",
+        "Travel"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26880088/"
+    },
+    {
+      "pmid": "38960312",
+      "pmcid": null,
+      "title": "How to manage adult patients with malaria in the non-endemic setting.",
+      "abstract": "The diagnosis and management of malaria in non-endemic countries presents a continuing challenge. Plasmodium falciparum, which is capable of rapidly inducing severe and life-threatening multiorgan disease, is the species most frequently diagnosed in Europe and North America. To summarise the more relevant diagnostic findings and clinical features of malaria observed in non-endemic settings and to provide an update of the key management decision points using three illustrative clinical scenarios of uncomplicated and severe malaria. The discussion is based on a relevant literature search spanning the last 20 years. Recommendations are based on available clinical guidelines including those of the WHO, observational studies conducted in non-endemic settings, and, when available, extrapolation from randomised studies from malaria-endemic settings. The following topics are covered: diagnosis, including the use of molecular biology; clinical characteristics; management with a specific focus on complicated (severe) and uncomplicated malaria; and areas of resistance to available antimalarial drugs. Malaria imported to non-endemic settings, especially P. falciparum malaria, is sometimes initially overlooked and the delayed diagnosis is responsible for every year of preventable deaths. This review aims to raise awareness of malaria outside endemic countries and to provide clinicians with a practical guide for efficient diagnosis and targeted therapy for the different species involved.",
+      "journal": "Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases",
+      "publication_year": 2024,
+      "authors": [
+        "Spinello Antinori",
+        "Andrea Giacomelli",
+        "Giacomo Casalini",
+        "Anna Lisa Ridolfo"
+      ],
+      "doi": "10.1016/j.cmi.2024.06.021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Antimalarials",
+        "Adult",
+        "Malaria, Falciparum",
+        "Malaria",
+        "Plasmodium falciparum",
+        "Disease Management",
+        "Drug Resistance"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38960312/"
+    },
+    {
+      "pmid": "40415188",
+      "pmcid": null,
+      "title": "Prognosis of isolated hyperparasitemia in adults with imported severe malaria.",
+      "abstract": "Hyperparasitemia (HP), defined as a parasitemia > 4%, is the most frequent severity criterion considered in adults with imported malaria. Isolated hyperparasitemia (iHP), accounting for 10-40% of cases, has a controversial prognostic significance. Multicenter retrospective study including all adult patients with imported Plasmodium falciparum malaria and HP admitted to 16 hospitals in the Greater Paris area between 2018 and 2022 and reported to the National Reference Center. Amongst HP patients, iHP at hospital admission was identified by retrospective analysis of medical records to minimize classification bias. The primary endpoint was a composite outcome using the Desirability of Outcome Ranking (DOOR) method with three levels of decreasing desirability: hospital survival, absence of organ support requirement, shortest length of stay. Association between HP, iHP and outcomes was evaluated by negative binomial regression models. Of 355 patients enrolled with HP, 135 (38%) had iHP. iHP patients were predominantly male (55.6%), aged 41 (32-52.3) years and born in an endemic country (86.4%). Compared with patients with HP and additional severity criteria, iHP was independently associated with a lower risk of worse DOOR [RR 0.56, 95%CI (0.48-0.65)]. No deaths were recorded in the iHP population, and 2/135 (1.5%) patients required organ support. In the iHP population, immunosuppression [RR 1.65, 95%CI (1.16-2.37)] and parasitemia>10% [RR 1.57, 95%CI (1.01-2.24)] were independently associated with worse DOOR. Only 47 (34.8%) iHP patients were admitted to an ICU at diagnosis, and 40 (29.6%) were treated with oral therapy alone. In imported malaria in France, iHP was associated with a low risk of serious adverse outcomes overall. In patients with iHP, immunosuppression and parasitemia >10% were associated with an increased risk of adverse outcome, highlighting the importance of a close hospital monitoring.",
+      "journal": "Journal of travel medicine",
+      "publication_year": 2025,
+      "authors": [
+        "Sébastien Gaultier",
+        "Sandrine Houzé",
+        "Marc Thellier",
+        "Michael Thy",
+        "Nathan Peiffer-Smadja",
+        "Hermann Do Rego",
+        "Stéphane Jauréguiberry",
+        "Jean-François Timsit",
+        "Etienne de Montmollin",
+        "French National Reference Center for Malaria"
+      ],
+      "doi": "10.1093/jtm/taaf042",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Adult",
+        "Female",
+        "Retrospective Studies",
+        "Middle Aged",
+        "Prognosis",
+        "Parasitemia",
+        "Malaria, Falciparum",
+        "Communicable Diseases, Imported",
+        "Travel",
+        "Paris",
+        "Severity of Illness Index",
+        "Antimalarials",
+        "Plasmodium falciparum"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40415188/"
+    },
+    {
+      "pmid": "40445171",
+      "pmcid": null,
+      "title": "Severe imported Plasmodium falciparum malaria with hyperparasitaemia: evaluation of determinants of critical disease in adult returning travellers.",
+      "abstract": "Severe Plasmodium falciparum (P.f.) malaria remains a major health threat for travellers. World Health Organization (WHO) defines criteria for severe malaria, including hyperparasitaemia ≥10% infected red blood cells (iRBCs), as major risk factors for adverse outcome. Additionally, WHO recognizes 'uncomplicated hyperparasitaemia' with 4-10% iRBC, a parasite density usually defining severe malaria outside endemic areas. Overall, the role of hyperparasitaemia as an independent risk factor in imported severe malaria is unclear, with most data predating the artemisinin era. We retrospectively analysed adult in-patients with hyperparasitaemia (≥4% iRBC) and/or severe P.f. malaria according to WHO criteria who received artemisinin-based treatment at two German university hospitals 2013-2023, to assess the risk for critical disease with need for organ replacement therapy or vasopressors. Based on multivariable nominal logistic regression, we developed a scoring system to identify patients with critical disease and validated it on an independent cohort. Of 168 patients, 33 (20%) developed critical disease, all of whom presented with at least one WHO criterion other than hyperparasitaemia. Of 72 patients with isolated hyperparasitaemia, none developed critical disease. Hyperparasitaemia was no independent risk factor for critical disease in logistic regression (adjusted odds ratio (aOR) 0.85 95%CI 0.23-3.12), in contrast to creatinine >3 mg/dl (aOR 6.74 95%CI 1.06-42.75), oligo-/anuria (aOR 5.94 95%CI 1.27-27.82), lactate ≥5 mmol/l (aOR 8.16 95%CI 8.16-35.03), confusion (aOR 4.07 95%CI 1.39-11.94) and circulatory shock and respiratory failure, which are inherently critical conditions. The risk score identified all 33 patients with and 131/135 (97.0%) without critical disease (AUC = 0.99; sensitivity: 100%; specificity: 97.0%). In the validation cohort, all eight patients with critical disease and 39/44 (89%) without were correctly identified. Isolated hyperparasitaemia was no independent risk factor for critical disease in this patient cohort treated with artemisinins, suggesting that such patients can be managed outside intensive care units.",
+      "journal": "Journal of travel medicine",
+      "publication_year": 2025,
+      "authors": [
+        "Tilman Lingscheid",
+        "Johannes Jochum",
+        "Pinkus Tober-Lau",
+        "Johanna Schöllgen",
+        "Regina Stegherr",
+        "Juliane Dörfler",
+        "Henrik Nielsen",
+        "Alessandro Bartoloni",
+        "Kristine Mørch",
+        "Emmanuel Bottieau",
+        "Frieder Pfäfflin",
+        "Leif Erik Sander",
+        "Thomas Zoller",
+        "Michael Ramharter",
+        "Florian Kurth"
+      ],
+      "doi": "10.1093/jtm/taaf049",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Malaria, Falciparum",
+        "Female",
+        "Retrospective Studies",
+        "Adult",
+        "Middle Aged",
+        "Travel",
+        "Communicable Diseases, Imported",
+        "Parasitemia",
+        "Antimalarials",
+        "Risk Factors",
+        "Plasmodium falciparum",
+        "Germany",
+        "Artemisinins"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40445171/"
+    },
+    {
+      "pmid": "36367444",
+      "pmcid": "PMC4669681",
+      "title": "Mosquito aquatic habitat modification and manipulation interventions to control malaria.",
+      "abstract": "Larval source management (LSM) may help reduce Plasmodium parasite transmission in malaria-endemic areas. LSM approaches include habitat modification (permanently or temporarily reducing mosquito breeding aquatic habitats); habitat manipulation (temporary or recurrent change to environment); or use of chemical (e.g. larviciding) or biological agents (e.g. natural predators) to breeding sites. We examined the effectiveness of habitat modification or manipulation (or both), with and without larviciding. This is an update of a review published in 2013. 1. To describe and summarize the interventions on mosquito aquatic habitat modification or mosquito aquatic habitat manipulation, or both, on malaria control. 2. To evaluate the beneficial and harmful effects of mosquito aquatic habitat modification or mosquito aquatic habitat manipulation, or both, on malaria control. We used standard, extensive Cochrane search methods. The latest search was from January 2012 to 30 November 2021. Randomized controlled trials (RCT) and non-randomized intervention studies comparing mosquito aquatic habitat modification or manipulation (or both) to no treatment or another active intervention. We also included uncontrolled before-after (BA) studies, but only described and summarized the interventions from studies with these designs. Primary outcomes were clinical malaria incidence, malaria parasite prevalence, and malaria parasitaemia incidence. We used standard Cochrane methods. We assessed risk of bias using the Cochrane RoB 2 tool for RCTs and the ROBINS-I tool for non-randomized intervention studies. We used a narrative synthesis approach to systematically describe and summarize all the interventions included within the review, categorized by the type of intervention (habitat modification, habitat manipulation, combination of habitat modification and manipulation). Our primary outcomes were 1. clinical malaria incidence; 2. malaria parasite prevalence; and 3. malaria parasitaemia incidence. Our secondary outcomes were 1. incidence of severe malaria; 2. anaemia prevalence; 3. mean haemoglobin levels; 4. mortality rate due to malaria; 5. hospital admissions for malaria; 6. density of immature mosquitoes; 7. density of adult mosquitoes; 8. sporozoite rate; 9. entomological inoculation rate; and 10. We used the GRADE approach to assess the certainty of the evidence for each type of intervention. Sixteen studies met the inclusion criteria. Six used an RCT design, six used a controlled before-after (CBA) study design, three used a non-randomized controlled design, and one used an uncontrolled BA study design. Eleven studies were conducted in Africa and five in Asia. Five studies reported epidemiological outcomes and 15 studies reported entomological outcomes. None of the included studies reported on the environmental impacts associated with the intervention. For risk of bias, all trials had some concerns and other designs ranging from moderate to critical. Ten studies assessed habitat manipulation (temporary change to the environment). This included water management (spillways across streams; floodgates; intermittent flooding; different drawdown rates of water; different flooding and draining regimens), shading management (shading of drainage channels with different plants), other/combined management approaches (minimal tillage; disturbance of aquatic habitats with grass clearing and water replenishment), which showed mixed results for entomological outcomes. Spillways across streams, faster drawdown rates of water, shading drainage canals with Napier grass, and using minimal tillage may reduce the density of immature mosquitoes (range of effects from 95% reduction to 1.7 times increase; low-certainty evidence), and spillways across streams may reduce densities of adult mosquitoes compared to no intervention (low-certainty evidence). However, the effect of habitat manipulation on malaria parasite prevalence and clinical malaria incidence is uncertain (very low-certainty evidence). Two studies assessed habitat manipulation with larviciding. This included reducing or removal of habitat sites; and drain cleaning, grass cutting, and minor repairs. It is uncertain whether drain cleaning, grass cutting, and minor repairs reduces malaria parasite prevalence compared to no intervention (odds ratio 0.59, 95% confidence interval (CI) 0.42 to 0.83; very low-certainty evidence). Two studies assessed combination of habitat manipulation and permanent change (habitat modification). This included drainage canals, filling, and planting of papyrus and other reeds for shading near dams; and drainage of canals, removal of debris, land levelling, and filling ditches. Studies did not report on epidemiological outcomes, but entomological outcomes suggest that such activities may reduce the density of adult mosquitoes compared to no intervention (relative risk reduction 0.49, 95% CI 0.47 to 0.50; low-certainty evidence), and preventing water stagnating using drainage of canals, removal of debris, land levelling, and filling ditches may reduce the density of immature mosquitoes compared to no intervention (ranged from 10% to 55% reductions; low-certainty evidence). Three studies assessed combining manipulation and modification with larviciding. This included filling or drainage of water bodies; filling, draining, or elimination of rain pools and puddles at water supply points and stream bed pools; and shoreline work, improvement and maintenance to drainage, clearing vegetation and undergrowth, and filling pools. There were mixed effect sizes for the reduction of entomological outcomes (moderate-certainty evidence). However, filling or draining water bodies probably makes little or no difference to malaria parasite prevalence, haemoglobin levels, or entomological inoculation rate when delivered with larviciding compared to no intervention (moderate-certainty evidence). Habitat modification and manipulation interventions for preventing malaria has some indication of benefit in both epidemiological and entomological outcomes. While the data are quite mixed and further studies could help improve the knowledge base, these varied approaches may be useful in some circumstances.",
+      "journal": "The Cochrane database of systematic reviews",
+      "publication_year": 2022,
+      "authors": [
+        "Elisa Martello",
+        "Gowsika Yogeswaran",
+        "Richard Reithinger",
+        "Jo Leonardi-Bee"
+      ],
+      "doi": "10.1002/14651858.CD008923.pub2",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Animals",
+        "Humans",
+        "Culicidae",
+        "Ecosystem",
+        "Hemoglobins",
+        "Larva",
+        "Malaria",
+        "Mosquito Control",
+        "Water"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36367444/"
+    },
+    {
+      "pmid": "23022040",
+      "pmcid": null,
+      "title": "Severe febrile illness in adult hospital admissions in Tanzania: a prospective study in an area of high malaria transmission.",
+      "abstract": "Severe febrile illness is a major cause of adult hospital admission in Africa. Studies of non-malarial fever come largely from children or from high HIV prevalence settings. This prospective study of adult admissions with severe febrile illness in a malaria-endemic area with moderate/low HIV prevalence investigated admission diagnosis as well as final diagnosis based on results of investigations. Severe malaria was the admission diagnosis in 148/198 (74.7%) cases. Plasmodium falciparum was identified in 38/188 (20.2%) admissions and 26/198 (13.1%) were bacteraemic, with 13/25 (52%) prescribed empirical antibiotics. HIV was equally common among those with (16/37; 43.2%) and without P. falciparum (50/138; 36.2%) (p=0.44). In 6/22 (27.3%) deaths, blood cultures were positive for a pathogen, with Streptococcus pneumoniae, Escherichia coli and non-Typhi Salmonella predominating. Chest radiography was suspicious for bacterial/mycobacterial disease in 5/22 additional deaths. Systemic inflammatory response syndrome criteria were more sensitive but less specific than WHO severe malaria criteria for predicting mortality. Malaria is overdiagnosed in adults with severe febrile illness and was not associated with mortality in the absence of co-infection in this high-incidence setting. Adults with severe febrile illness should be tested for malaria and HIV using rapid, sensitive tests. Early antibiotic use should be promoted. Improved diagnostics for invasive bacterial disease are needed.",
+      "journal": "Transactions of the Royal Society of Tropical Medicine and Hygiene",
+      "publication_year": 2012,
+      "authors": [
+        "Behzad Nadjm",
+        "George Mtove",
+        "Ben Amos",
+        "Naomi F Walker",
+        "Helmut Diefendal",
+        "Hugh Reyburn",
+        "Christopher J M Whitty"
+      ],
+      "doi": "10.1016/j.trstmh.2012.08.006",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "mesh_terms": [
+        "AIDS-Related Opportunistic Infections",
+        "Acquired Immunodeficiency Syndrome",
+        "Adolescent",
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Bacteremia",
+        "CD4 Lymphocyte Count",
+        "Coinfection",
+        "Female",
+        "Fever",
+        "Hospital Mortality",
+        "Hospitalization",
+        "Humans",
+        "Malaria",
+        "Male",
+        "Middle Aged",
+        "Prevalence",
+        "Prospective Studies",
+        "Tanzania"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23022040/"
+    },
+    {
+      "pmid": "11512657",
+      "pmcid": null,
+      "title": "Severe falciparum malaria in five soldiers from East Timor: a case series and literature review.",
+      "abstract": "Despite chemoprophylaxis, malaria remains a serious threat for large numbers of non-immune soldiers deployed in endemic areas. Five adult cases of severe falciparum malaria are reported. Three cases were complicated by multiorgan failure and one of these patients died from cerebral malaria. These cases serve to highlight issues, in an Australian intensive care unit, associated with the management of severe malaria, an uncommon disease in our country. The need for rapid diagnosis and commencement of appropriate treatment is paramount in preventing further morbidity and mortality. Understanding and management of malaria continues to evolve rapidly. The pathophysiology of acute lung injury, shock and brain injury associated with malaria are examined in light of recent research. This article discusses the current controversies of exchange blood transfusion and the use of the new artemisinin derivatives.",
+      "journal": "Anaesthesia and intensive care",
+      "publication_year": 2001,
+      "authors": [
+        "P G Blum",
+        "D Stephens"
+      ],
+      "doi": "10.1177/0310057X0102900417",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Antimalarials",
+        "Artemisinins",
+        "Australia",
+        "Exchange Transfusion, Whole Blood",
+        "Female",
+        "Humans",
+        "Indonesia",
+        "Malaria, Cerebral",
+        "Malaria, Falciparum",
+        "Military Personnel",
+        "Multiple Organ Failure",
+        "Sesquiterpenes"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11512657/"
+    },
+    {
+      "pmid": "41077038",
+      "pmcid": "PMC3321768",
+      "title": "Development of a clinical risk scoring system for artesunate treatment failure prediction in malaria patients.",
+      "abstract": "Severe malaria remains a major cause of morbidity and mortality worldwide. Early identification of patients at high risk of poor response to treatment is essential, yet no simple clinical tool is currently available. This study aimed to develop a risk scoring system to predict failure to artesunate therapy. This retrospective study included adult patients (aged ≥18 years) who received at least one dose of intravenous artesunate at the National Medical Center in South Korea between 2014 and 2023. Treatment failure (early or late clinical failure) was the response variable, which was defined according to WHO criteria. Candidate predictor variables included demographic, clinical, parasitological, and laboratory parameters. Odds ratios (ORs) and adjusted odds ratios (aORs) were calculated using univariate and multivariable logistic regression analyses, respectively. Final predictors were selected through backward elimination based on the Likelihood Ratio criterion, and a clinical risk scoring system was developed based on the adjusted ORs. Among 98 patients included in the final analysis, treatment failure occurred in 12 (12.2 %). Multivariable analysis identified female sex, parasitemia >5 %, and impaired consciousness as independent risk factors. Using these variables, a risk-scoring system was constructed, and the predicted probabilities of treatment failure for patients with scores of 0, 1, 2, 3, and 4 points were 5 %, 16 %, 41 %, 72 %, and 90 %, respectively (AUROC = 0.768, 95 % CI: 0.605-0.931). Parasitemia >5 %, impaired consciousness, and female sex were predictive of artesunate treatment failure as defined by WHO clinical criteria. The developed risk scoring system provides a practical tool for identifying high-risk patients requiring intensified monitoring and alternative treatment strategies. These findings are derived from a South Korean cohort and should be interpreted with caution when extrapolated to endemic populations.",
+      "journal": "International journal for parasitology. Drugs and drug resistance",
+      "publication_year": 2025,
+      "authors": [
+        "Dasom Kim",
+        "Da Hoon Lee",
+        "Yubin Song",
+        "Jung Sun Kim",
+        "Hye Sun Gwak"
+      ],
+      "doi": "10.1016/j.ijpddr.2025.100621",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Artesunate",
+        "Male",
+        "Female",
+        "Treatment Failure",
+        "Retrospective Studies",
+        "Adult",
+        "Middle Aged",
+        "Antimalarials",
+        "Republic of Korea",
+        "Risk Factors",
+        "Malaria",
+        "Young Adult",
+        "Aged",
+        "Parasitemia",
+        "Risk Assessment"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41077038/"
+    },
+    {
+      "pmid": "25322145",
+      "pmcid": "PMC2693516",
+      "title": "Higher Rates of Misdiagnosis in Pediatric Patients Versus Adults Hospitalized With Imported Malaria.",
+      "abstract": "Despite the availability of effective antimalarial prophylaxis, imported adult and pediatric malaria occurs in the United States, and this can pose diagnostic issues. We examined the clinical characteristics and diagnostic challenges of imported malaria requiring adult or pediatric inpatient admission at Montefiore Medical Center in the Bronx which provides care for a large population of immigrants from malaria endemic areas. We conducted a retrospective single center review of patients admitted with a diagnosis of malaria at Montefiore Medical Center from 2005 through 2012. We extracted historical, clinical, and laboratory values from the electronic medical record and patient charts. We identified 95 patients who were diagnosed and hospitalized with malaria from 2005 to 2012, 33 (35%) of them were children and 17 (18%) were with severe malaria. Most patients contracted malaria while visiting friends and relatives in West Africa. Only 38% of travelers took prophylaxis, and fewer than half reported taking it as prescribed. Misdiagnosis by emergency room or primary care doctors was observed in almost one quarter of all of the patients. Misdiagnosis occurred significantly more frequently in children (43%) compared to adults (13%) (P = 0.002). Pediatric patients were more likely to present with abdominal pain (42% vs. 15%; P = 0.005). Pediatric patients admitted for imported malaria at Montefiore Medical Center had a higher rate of misdiagnosis and presented with more gastrointestinal symptoms than hospitalized adults. By describing the clinical characteristics of patients with imported malaria, we hope to improve diagnostic accuracy by health care workers and raise awareness that friends and relatives may require more intensive pretravel counseling.",
+      "journal": "Pediatric emergency care",
+      "publication_year": 2016,
+      "authors": [
+        "Adam E Goldman-Yassen",
+        "Vidya K Mony",
+        "Paul M Arguin",
+        "Johanna P Daily"
+      ],
+      "doi": "10.1097/PEC.0000000000000251",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Antimalarials",
+        "Child",
+        "Child, Preschool",
+        "Cross-Sectional Studies",
+        "Diagnostic Errors",
+        "Emergency Service, Hospital",
+        "Emigrants and Immigrants",
+        "Female",
+        "Hospitalization",
+        "Humans",
+        "Malaria",
+        "Male",
+        "Pediatrics",
+        "Plasmodium",
+        "Retrospective Studies",
+        "Travel",
+        "United States"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25322145/"
+    }
+  ],
+  "evidence_items": [
+    {
+      "paper": {
+        "pmid": "38960312",
+        "pmcid": null,
+        "title": "How to manage adult patients with malaria in the non-endemic setting.",
+        "abstract": "The diagnosis and management of malaria in non-endemic countries presents a continuing challenge. Plasmodium falciparum, which is capable of rapidly inducing severe and life-threatening multiorgan disease, is the species most frequently diagnosed in Europe and North America. To summarise the more relevant diagnostic findings and clinical features of malaria observed in non-endemic settings and to provide an update of the key management decision points using three illustrative clinical scenarios of uncomplicated and severe malaria. The discussion is based on a relevant literature search spanning the last 20 years. Recommendations are based on available clinical guidelines including those of the WHO, observational studies conducted in non-endemic settings, and, when available, extrapolation from randomised studies from malaria-endemic settings. The following topics are covered: diagnosis, including the use of molecular biology; clinical characteristics; management with a specific focus on complicated (severe) and uncomplicated malaria; and areas of resistance to available antimalarial drugs. Malaria imported to non-endemic settings, especially P. falciparum malaria, is sometimes initially overlooked and the delayed diagnosis is responsible for every year of preventable deaths. This review aims to raise awareness of malaria outside endemic countries and to provide clinicians with a practical guide for efficient diagnosis and targeted therapy for the different species involved.",
+        "journal": "Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases",
+        "publication_year": 2024,
+        "authors": [
+          "Spinello Antinori",
+          "Andrea Giacomelli",
+          "Giacomo Casalini",
+          "Anna Lisa Ridolfo"
+        ],
+        "doi": "10.1016/j.cmi.2024.06.021",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Antimalarials",
+          "Adult",
+          "Malaria, Falciparum",
+          "Malaria",
+          "Plasmodium falciparum",
+          "Disease Management",
+          "Drug Resistance"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38960312/"
+      },
+      "relevance_score": 74.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "The diagnosis and management of malaria in non-endemic countries presents a continuing challenge.",
+        "Plasmodium falciparum, which is capable of rapidly inducing severe and life-threatening multiorgan disease, is the species most frequently diagnosed in Europe and North America."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "36367444",
+        "pmcid": "PMC4669681",
+        "title": "Mosquito aquatic habitat modification and manipulation interventions to control malaria.",
+        "abstract": "Larval source management (LSM) may help reduce Plasmodium parasite transmission in malaria-endemic areas. LSM approaches include habitat modification (permanently or temporarily reducing mosquito breeding aquatic habitats); habitat manipulation (temporary or recurrent change to environment); or use of chemical (e.g. larviciding) or biological agents (e.g. natural predators) to breeding sites. We examined the effectiveness of habitat modification or manipulation (or both), with and without larviciding. This is an update of a review published in 2013. 1. To describe and summarize the interventions on mosquito aquatic habitat modification or mosquito aquatic habitat manipulation, or both, on malaria control. 2. To evaluate the beneficial and harmful effects of mosquito aquatic habitat modification or mosquito aquatic habitat manipulation, or both, on malaria control. We used standard, extensive Cochrane search methods. The latest search was from January 2012 to 30 November 2021. Randomized controlled trials (RCT) and non-randomized intervention studies comparing mosquito aquatic habitat modification or manipulation (or both) to no treatment or another active intervention. We also included uncontrolled before-after (BA) studies, but only described and summarized the interventions from studies with these designs. Primary outcomes were clinical malaria incidence, malaria parasite prevalence, and malaria parasitaemia incidence. We used standard Cochrane methods. We assessed risk of bias using the Cochrane RoB 2 tool for RCTs and the ROBINS-I tool for non-randomized intervention studies. We used a narrative synthesis approach to systematically describe and summarize all the interventions included within the review, categorized by the type of intervention (habitat modification, habitat manipulation, combination of habitat modification and manipulation). Our primary outcomes were 1. clinical malaria incidence; 2. malaria parasite prevalence; and 3. malaria parasitaemia incidence. Our secondary outcomes were 1. incidence of severe malaria; 2. anaemia prevalence; 3. mean haemoglobin levels; 4. mortality rate due to malaria; 5. hospital admissions for malaria; 6. density of immature mosquitoes; 7. density of adult mosquitoes; 8. sporozoite rate; 9. entomological inoculation rate; and 10. We used the GRADE approach to assess the certainty of the evidence for each type of intervention. Sixteen studies met the inclusion criteria. Six used an RCT design, six used a controlled before-after (CBA) study design, three used a non-randomized controlled design, and one used an uncontrolled BA study design. Eleven studies were conducted in Africa and five in Asia. Five studies reported epidemiological outcomes and 15 studies reported entomological outcomes. None of the included studies reported on the environmental impacts associated with the intervention. For risk of bias, all trials had some concerns and other designs ranging from moderate to critical. Ten studies assessed habitat manipulation (temporary change to the environment). This included water management (spillways across streams; floodgates; intermittent flooding; different drawdown rates of water; different flooding and draining regimens), shading management (shading of drainage channels with different plants), other/combined management approaches (minimal tillage; disturbance of aquatic habitats with grass clearing and water replenishment), which showed mixed results for entomological outcomes. Spillways across streams, faster drawdown rates of water, shading drainage canals with Napier grass, and using minimal tillage may reduce the density of immature mosquitoes (range of effects from 95% reduction to 1.7 times increase; low-certainty evidence), and spillways across streams may reduce densities of adult mosquitoes compared to no intervention (low-certainty evidence). However, the effect of habitat manipulation on malaria parasite prevalence and clinical malaria incidence is uncertain (very low-certainty evidence). Two studies assessed habitat manipulation with larviciding. This included reducing or removal of habitat sites; and drain cleaning, grass cutting, and minor repairs. It is uncertain whether drain cleaning, grass cutting, and minor repairs reduces malaria parasite prevalence compared to no intervention (odds ratio 0.59, 95% confidence interval (CI) 0.42 to 0.83; very low-certainty evidence). Two studies assessed combination of habitat manipulation and permanent change (habitat modification). This included drainage canals, filling, and planting of papyrus and other reeds for shading near dams; and drainage of canals, removal of debris, land levelling, and filling ditches. Studies did not report on epidemiological outcomes, but entomological outcomes suggest that such activities may reduce the density of adult mosquitoes compared to no intervention (relative risk reduction 0.49, 95% CI 0.47 to 0.50; low-certainty evidence), and preventing water stagnating using drainage of canals, removal of debris, land levelling, and filling ditches may reduce the density of immature mosquitoes compared to no intervention (ranged from 10% to 55% reductions; low-certainty evidence). Three studies assessed combining manipulation and modification with larviciding. This included filling or drainage of water bodies; filling, draining, or elimination of rain pools and puddles at water supply points and stream bed pools; and shoreline work, improvement and maintenance to drainage, clearing vegetation and undergrowth, and filling pools. There were mixed effect sizes for the reduction of entomological outcomes (moderate-certainty evidence). However, filling or draining water bodies probably makes little or no difference to malaria parasite prevalence, haemoglobin levels, or entomological inoculation rate when delivered with larviciding compared to no intervention (moderate-certainty evidence). Habitat modification and manipulation interventions for preventing malaria has some indication of benefit in both epidemiological and entomological outcomes. While the data are quite mixed and further studies could help improve the knowledge base, these varied approaches may be useful in some circumstances.",
+        "journal": "The Cochrane database of systematic reviews",
+        "publication_year": 2022,
+        "authors": [
+          "Elisa Martello",
+          "Gowsika Yogeswaran",
+          "Richard Reithinger",
+          "Jo Leonardi-Bee"
+        ],
+        "doi": "10.1002/14651858.CD008923.pub2",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
+          "Systematic Review"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Animals",
+          "Humans",
+          "Culicidae",
+          "Ecosystem",
+          "Hemoglobins",
+          "Larva",
+          "Malaria",
+          "Mosquito Control",
+          "Water"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36367444/"
+      },
+      "relevance_score": 73.0,
+      "evidence_level": "high",
+      "study_type": "Systematic Review",
+      "rationale": "Ranked by study type (Systematic Review), PICO term overlap (3), abstract availability, and publication year.",
+      "key_findings": [
+        "Larval source management (LSM) may help reduce Plasmodium parasite transmission in malaria-endemic areas.",
+        "LSM approaches include habitat modification (permanently or temporarily reducing mosquito breeding aquatic habitats); habitat manipulation (temporary or recurrent change to environment); or use of chemical (e.g."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "26880088",
+        "pmcid": "PMC2481394",
+        "title": "UK malaria treatment guidelines 2016.",
+        "abstract": "1.Malaria is the tropical disease most commonly imported into the UK, with 1300-1800 cases reported each year, and 2-11 deaths. 2. Approximately three quarters of reported malaria cases in the UK are caused by Plasmodium falciparum, which is capable of invading a high proportion of red blood cells and rapidly leading to severe or life-threatening multi-organ disease. 3. Most non-falciparum malaria cases are caused by Plasmodium vivax; a few cases are caused by the other species of plasmodium: Plasmodium ovale, Plasmodium malariae or Plasmodium knowlesi. 4. Mixed infections with more than one species of parasite can occur; they commonly involve P. falciparum with the attendant risks of severe malaria. 5. There are no typical clinical features of malaria; even fever is not invariably present. Malaria in children (and sometimes in adults) may present with misleading symptoms such as gastrointestinal features, sore throat or lower respiratory complaints. 6. A diagnosis of malaria must always be sought in a feverish or sick child or adult who has visited malaria-endemic areas. Specific country information on malaria can be found at http://travelhealthpro.org.uk/. P. falciparum infection rarely presents more than six months after exposure but presentation of other species can occur more than a year after exposure. 7. Management of malaria depends on awareness of the diagnosis and on performing the correct diagnostic tests: the diagnosis cannot be excluded until more than one blood specimen has been examined. Other travel related infections, especially viral haemorrhagic fevers, should also be considered. 8. The optimum diagnostic procedure is examination of thick and thin blood films by an expert to detect and speciate the malarial parasites. P. falciparum and P. vivax (depending upon the product) malaria can be diagnosed almost as accurately using rapid diagnostic tests (RDTs) which detect plasmodial antigens. RDTs for other Plasmodium species are not as reliable. 9. Most patients treated for P. falciparum malaria should be admitted to hospital for at least 24 h as patients can deteriorate suddenly, especially early in the course of treatment. In specialised units seeing large numbers of patients, outpatient treatment may be considered if specific protocols for patient selection and follow up are in place. 10. Uncomplicated P. falciparum malaria should be treated with an artemisinin combination therapy (Grade 1A). Artemether-lumefantrine (Riamet(®)) is the drug of choice (Grade 2C) and dihydroartemisinin-piperaquine (Eurartesim(®)) is an alternative. Quinine or atovaquone-proguanil (Malarone(®)) can be used if an ACT is not available. Quinine is highly effective but poorly-tolerated in prolonged treatment and should be used in combination with an additional drug, usually oral doxycycline. 11. Severe falciparum malaria, or infections complicated by a relatively high parasite count (more than 2% of red blood cells parasitized) should be treated with intravenous therapy until the patient is well enough to continue with oral treatment. Severe malaria is a rare complication of P. vivax or P. knowlesi infection and also requires parenteral therapy. 12. The treatment of choice for severe or complicated malaria in adults and children is intravenous artesunate (Grade 1A). Intravenous artesunate is unlicensed in the EU but is available in many centres. The alternative is intravenous quinine, which should be started immediately if artesunate is not available (Grade 1A). Patients treated with intravenous quinine require careful monitoring for hypoglycemia. 13. Patients with severe or complicated malaria should be managed in a high-dependency or intensive care environment. They may require haemodynamic support and management of: acute respiratory distress syndrome, disseminated intravascular coagulation, acute kidney injury, seizures, and severe intercurrent infections including Gram-negative bacteraemia/septicaemia. 14. Children with severe malaria should also be treated with empirical broad spectrum antibiotics until bacterial infection can be excluded (Grade 1B). 15. Haemolysis occurs in approximately 10-15% patients following intravenous artesunate treatment. Haemoglobin concentrations should be checked approximately 14 days following treatment in those treated with IV artemisinins (Grade 2C). 16. Falciparum malaria in pregnancy is more likely to be complicated: the placenta contains high levels of parasites, stillbirth or early delivery may occur and diagnosis can be difficult if parasites are concentrated in the placenta and scanty in the blood. 17. Uncomplicated falciparum malaria in the second and third trimester of pregnancy should be treated with artemether-lumefantrine (Grade 2B). Uncomplicated falciparum malaria in the first trimester of pregnancy should usually be treated with quinine and clindamycin but specialist advice should be sought. Severe malaria in any trimester of pregnancy should be treated as for any other patient with artesunate preferred over quinine (Grade 1C). 18. Children with uncomplicated malaria should be treated with an ACT (artemether-lumefantrine or dihydroartemisinin-piperaquine) as first line treatment (Grade 1A). Quinine with doxycycline or clindamycin, or atovaquone-proguanil at appropriate doses for weight can also be used. Doxycycline should not be given to children under 12 years. 19. Either an oral ACT or chloroquine can be used for the treatment of non-falciparum malaria. An oral ACT is preferred for a mixed infection, if there is uncertainty about the infecting species, or for P. vivax infection from areas where chloroquine resistance is common (Grade 1B). 20. Dormant parasites (hypnozoites) persist in the liver after treatment of P. vivax or P. ovale infection: the only currently effective drug for eradication of hypnozoites is primaquine (1A). Primaquine is more effective at preventing relapse if taken at the same time as chloroquine (Grade 1C). 21. Primaquine should be avoided or given with caution under expert supervision in patients with Glucose-6-phosphate dehydrogenase deficiency (G6PD), in whom it may cause severe haemolysis. 22. Primaquine (for eradication of P. vivax or P. ovale hypnozoites) is contraindicated in pregnancy and when breastfeeding (until the G6PD status of child is known); after initial treatment for these infections a pregnant woman should take weekly chloroquine prophylaxis until after delivery or cessation of breastfeeding when hypnozoite eradication can be considered. 23. An acute attack of malaria does not confer protection from future attacks: individuals who have had malaria should take effective anti-mosquito precautions and chemoprophylaxis during future visits to endemic areas.",
+        "journal": "The Journal of infection",
+        "publication_year": 2016,
+        "authors": [
+          "David G Lalloo",
+          "Delane Shingadia",
+          "David J Bell",
+          "Nicholas J Beeching",
+          "Christopher J M Whitty",
+          "Peter L Chiodini",
+          "PHE Advisory Committee on Malaria Prevention in UK Travellers"
+        ],
+        "doi": "10.1016/j.jinf.2016.02.001",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Antimalarials",
+          "Artemisinins",
+          "Artesunate",
+          "Breast Feeding",
+          "Child",
+          "Child, Preschool",
+          "Female",
+          "Humans",
+          "Malaria",
+          "Malaria, Falciparum",
+          "Malaria, Vivax",
+          "Plasmodium falciparum",
+          "Plasmodium vivax",
+          "Pregnancy",
+          "Pregnancy Complications, Parasitic",
+          "Primaquine",
+          "Travel"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26880088/"
+      },
+      "relevance_score": 70.0,
+      "evidence_level": "high",
+      "study_type": "Guideline",
+      "rationale": "Ranked by study type (Guideline), PICO term overlap (5), abstract availability, and publication year.",
+      "key_findings": [
+        "1.Malaria is the tropical disease most commonly imported into the UK, with 1300-1800 cases reported each year, and 2-11 deaths."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40445171",
+        "pmcid": null,
+        "title": "Severe imported Plasmodium falciparum malaria with hyperparasitaemia: evaluation of determinants of critical disease in adult returning travellers.",
+        "abstract": "Severe Plasmodium falciparum (P.f.) malaria remains a major health threat for travellers. World Health Organization (WHO) defines criteria for severe malaria, including hyperparasitaemia ≥10% infected red blood cells (iRBCs), as major risk factors for adverse outcome. Additionally, WHO recognizes 'uncomplicated hyperparasitaemia' with 4-10% iRBC, a parasite density usually defining severe malaria outside endemic areas. Overall, the role of hyperparasitaemia as an independent risk factor in imported severe malaria is unclear, with most data predating the artemisinin era. We retrospectively analysed adult in-patients with hyperparasitaemia (≥4% iRBC) and/or severe P.f. malaria according to WHO criteria who received artemisinin-based treatment at two German university hospitals 2013-2023, to assess the risk for critical disease with need for organ replacement therapy or vasopressors. Based on multivariable nominal logistic regression, we developed a scoring system to identify patients with critical disease and validated it on an independent cohort. Of 168 patients, 33 (20%) developed critical disease, all of whom presented with at least one WHO criterion other than hyperparasitaemia. Of 72 patients with isolated hyperparasitaemia, none developed critical disease. Hyperparasitaemia was no independent risk factor for critical disease in logistic regression (adjusted odds ratio (aOR) 0.85 95%CI 0.23-3.12), in contrast to creatinine >3 mg/dl (aOR 6.74 95%CI 1.06-42.75), oligo-/anuria (aOR 5.94 95%CI 1.27-27.82), lactate ≥5 mmol/l (aOR 8.16 95%CI 8.16-35.03), confusion (aOR 4.07 95%CI 1.39-11.94) and circulatory shock and respiratory failure, which are inherently critical conditions. The risk score identified all 33 patients with and 131/135 (97.0%) without critical disease (AUC = 0.99; sensitivity: 100%; specificity: 97.0%). In the validation cohort, all eight patients with critical disease and 39/44 (89%) without were correctly identified. Isolated hyperparasitaemia was no independent risk factor for critical disease in this patient cohort treated with artemisinins, suggesting that such patients can be managed outside intensive care units.",
+        "journal": "Journal of travel medicine",
+        "publication_year": 2025,
+        "authors": [
+          "Tilman Lingscheid",
+          "Johannes Jochum",
+          "Pinkus Tober-Lau",
+          "Johanna Schöllgen",
+          "Regina Stegherr",
+          "Juliane Dörfler",
+          "Henrik Nielsen",
+          "Alessandro Bartoloni",
+          "Kristine Mørch",
+          "Emmanuel Bottieau",
+          "Frieder Pfäfflin",
+          "Leif Erik Sander",
+          "Thomas Zoller",
+          "Michael Ramharter",
+          "Florian Kurth"
+        ],
+        "doi": "10.1093/jtm/taaf049",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Male",
+          "Malaria, Falciparum",
+          "Female",
+          "Retrospective Studies",
+          "Adult",
+          "Middle Aged",
+          "Travel",
+          "Communicable Diseases, Imported",
+          "Parasitemia",
+          "Antimalarials",
+          "Risk Factors",
+          "Plasmodium falciparum",
+          "Germany",
+          "Artemisinins"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40445171/"
+      },
+      "relevance_score": 61.0,
+      "evidence_level": "moderate",
+      "study_type": "Cohort",
+      "rationale": "Ranked by study type (Cohort), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Severe Plasmodium falciparum (P.f.) malaria remains a major health threat for travellers.",
+        "World Health Organization (WHO) defines criteria for severe malaria, including hyperparasitaemia ≥10% infected red blood cells (iRBCs), as major risk factors for adverse outcome."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "41077038",
+        "pmcid": "PMC3321768",
+        "title": "Development of a clinical risk scoring system for artesunate treatment failure prediction in malaria patients.",
+        "abstract": "Severe malaria remains a major cause of morbidity and mortality worldwide. Early identification of patients at high risk of poor response to treatment is essential, yet no simple clinical tool is currently available. This study aimed to develop a risk scoring system to predict failure to artesunate therapy. This retrospective study included adult patients (aged ≥18 years) who received at least one dose of intravenous artesunate at the National Medical Center in South Korea between 2014 and 2023. Treatment failure (early or late clinical failure) was the response variable, which was defined according to WHO criteria. Candidate predictor variables included demographic, clinical, parasitological, and laboratory parameters. Odds ratios (ORs) and adjusted odds ratios (aORs) were calculated using univariate and multivariable logistic regression analyses, respectively. Final predictors were selected through backward elimination based on the Likelihood Ratio criterion, and a clinical risk scoring system was developed based on the adjusted ORs. Among 98 patients included in the final analysis, treatment failure occurred in 12 (12.2 %). Multivariable analysis identified female sex, parasitemia >5 %, and impaired consciousness as independent risk factors. Using these variables, a risk-scoring system was constructed, and the predicted probabilities of treatment failure for patients with scores of 0, 1, 2, 3, and 4 points were 5 %, 16 %, 41 %, 72 %, and 90 %, respectively (AUROC = 0.768, 95 % CI: 0.605-0.931). Parasitemia >5 %, impaired consciousness, and female sex were predictive of artesunate treatment failure as defined by WHO clinical criteria. The developed risk scoring system provides a practical tool for identifying high-risk patients requiring intensified monitoring and alternative treatment strategies. These findings are derived from a South Korean cohort and should be interpreted with caution when extrapolated to endemic populations.",
+        "journal": "International journal for parasitology. Drugs and drug resistance",
+        "publication_year": 2025,
+        "authors": [
+          "Dasom Kim",
+          "Da Hoon Lee",
+          "Yubin Song",
+          "Jung Sun Kim",
+          "Hye Sun Gwak"
+        ],
+        "doi": "10.1016/j.ijpddr.2025.100621",
+        "publication_types": [
+          "Journal Article"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Artesunate",
+          "Male",
+          "Female",
+          "Treatment Failure",
+          "Retrospective Studies",
+          "Adult",
+          "Middle Aged",
+          "Antimalarials",
+          "Republic of Korea",
+          "Risk Factors",
+          "Malaria",
+          "Young Adult",
+          "Aged",
+          "Parasitemia",
+          "Risk Assessment"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41077038/"
+      },
+      "relevance_score": 61.0,
+      "evidence_level": "moderate",
+      "study_type": "Cohort",
+      "rationale": "Ranked by study type (Cohort), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Severe malaria remains a major cause of morbidity and mortality worldwide.",
+        "Early identification of patients at high risk of poor response to treatment is essential, yet no simple clinical tool is currently available."
+      ],
+      "limitations": []
+    },
+    {
+      "paper": {
+        "pmid": "40415188",
+        "pmcid": null,
+        "title": "Prognosis of isolated hyperparasitemia in adults with imported severe malaria.",
+        "abstract": "Hyperparasitemia (HP), defined as a parasitemia > 4%, is the most frequent severity criterion considered in adults with imported malaria. Isolated hyperparasitemia (iHP), accounting for 10-40% of cases, has a controversial prognostic significance. Multicenter retrospective study including all adult patients with imported Plasmodium falciparum malaria and HP admitted to 16 hospitals in the Greater Paris area between 2018 and 2022 and reported to the National Reference Center. Amongst HP patients, iHP at hospital admission was identified by retrospective analysis of medical records to minimize classification bias. The primary endpoint was a composite outcome using the Desirability of Outcome Ranking (DOOR) method with three levels of decreasing desirability: hospital survival, absence of organ support requirement, shortest length of stay. Association between HP, iHP and outcomes was evaluated by negative binomial regression models. Of 355 patients enrolled with HP, 135 (38%) had iHP. iHP patients were predominantly male (55.6%), aged 41 (32-52.3) years and born in an endemic country (86.4%). Compared with patients with HP and additional severity criteria, iHP was independently associated with a lower risk of worse DOOR [RR 0.56, 95%CI (0.48-0.65)]. No deaths were recorded in the iHP population, and 2/135 (1.5%) patients required organ support. In the iHP population, immunosuppression [RR 1.65, 95%CI (1.16-2.37)] and parasitemia>10% [RR 1.57, 95%CI (1.01-2.24)] were independently associated with worse DOOR. Only 47 (34.8%) iHP patients were admitted to an ICU at diagnosis, and 40 (29.6%) were treated with oral therapy alone. In imported malaria in France, iHP was associated with a low risk of serious adverse outcomes overall. In patients with iHP, immunosuppression and parasitemia >10% were associated with an increased risk of adverse outcome, highlighting the importance of a close hospital monitoring.",
+        "journal": "Journal of travel medicine",
+        "publication_year": 2025,
+        "authors": [
+          "Sébastien Gaultier",
+          "Sandrine Houzé",
+          "Marc Thellier",
+          "Michael Thy",
+          "Nathan Peiffer-Smadja",
+          "Hermann Do Rego",
+          "Stéphane Jauréguiberry",
+          "Jean-François Timsit",
+          "Etienne de Montmollin",
+          "French National Reference Center for Malaria"
+        ],
+        "doi": "10.1093/jtm/taaf042",
+        "publication_types": [
+          "Journal Article",
+          "Multicenter Study"
+        ],
+        "mesh_terms": [
+          "Humans",
+          "Male",
+          "Adult",
+          "Female",
+          "Retrospective Studies",
+          "Middle Aged",
+          "Prognosis",
+          "Parasitemia",
+          "Malaria, Falciparum",
+          "Communicable Diseases, Imported",
+          "Travel",
+          "Paris",
+          "Severity of Illness Index",
+          "Antimalarials",
+          "Plasmodium falciparum"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40415188/"
+      },
+      "relevance_score": 45.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Hyperparasitemia (HP), defined as a parasitemia > 4%, is the most frequent severity criterion considered in adults with imported malaria.",
+        "Isolated hyperparasitemia (iHP), accounting for 10-40% of cases, has a controversial prognostic significance."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "35699901",
+        "pmcid": "PMC8431839",
+        "title": "Neurological Complications of Malaria.",
+        "abstract": "To discuss the neurological complications and pathophysiology of organ damage following malaria infection. The principal advancement made in malaria research has been a better understanding of the pathogenesis of cerebral malaria (CM), the most dreaded neurological complication generally caused by Plasmodium falciparum infection. However, no definitive treatment has yet been evolved other than the use of antimalarial drugs and supportive care. The development of severe cerebral edema in CM results from two distinct pathophysiologic mechanisms. First, the development of \"sticky\" red blood cells (RBCs) leads to cytoadherence, where red blood cells (RBCs) get stuck to the endothelial walls and between themselves, resulting in clogging of the brain microvasculature with resultant hypoxemia and cerebral edema. In addition, the P. falciparum-infected erythrocyte membrane protein 1 (PfEMP1) molecules protrude from the raised knob structures on the RBCs walls and are in themselves made of a combination of human and parasite proteins in a tight complex. Antibodies to surfins, rifins, and stevors from the parasite are also located in the RBC membrane. On the human microvascular side, a range of molecules involved in host-parasite interactions, including CD36 and intracellular adhesion molecule 1, is activated during interaction with other molecules such as endothelial protein C receptor and thrombospondin. As a result, an inflammatory response occurs with the dysregulated release of cytokines (TNF, interleukins 1 and 10) which damage the blood-brain barrier (BBB), causing plasma leakage and brain edema. This second mechanism of CNS injury often involves multiple organs in adult patients in endemic areas but remains localized only to the central nervous system (CNS) among African children. Neurological sequelae may follow both P. falciparum and P. vivax infections. The major brain pathology of CM is brain edema with diffuse brain swelling resulting from the combined effects of reduced perfusion and hypoxemia of cerebral neurons due to blockage of the microvasculature by parasitized RBCs as well as the neurotoxic effect of released cytokines from a hyper-acute immune host reaction. A plethora of additional neurological manifestations have been associated with malaria, including posterior reversible encephalopathy syndrome (PRES), reversible cerebral vasoconstriction syndrome (RCVS), malarial retinopathy, post-malarial neurological syndrome (PMNS), acute disseminated encephalomyelitis (ADEM), Guillain-Barré syndrome (GBS), and cerebellar ataxia. Lastly, the impact of the COVID-19 pandemic on worldwide malaria control programs and the possible threat from co-infections is briefly discussed.",
+        "journal": "Current neurology and neuroscience reports",
+        "publication_year": 2022,
+        "authors": [
+          "Sweety Trivedi",
+          "Ambar Chakravarty"
+        ],
+        "doi": "10.1093/jtm/taaa051",
+        "publication_types": [
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Brain Edema",
+          "COVID-19",
+          "Child",
+          "Cytokines",
+          "Humans",
+          "Hypoxia",
+          "Malaria, Cerebral",
+          "Malaria, Falciparum",
+          "Pandemics",
+          "Plasmodium falciparum",
+          "Posterior Leukoencephalopathy Syndrome"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35699901/"
+      },
+      "relevance_score": 42.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "To discuss the neurological complications and pathophysiology of organ damage following malaria infection.",
+        "The principal advancement made in malaria research has been a better understanding of the pathogenesis of cerebral malaria (CM), the most dreaded neurological complication generally caused by Plasmodium falciparum infection."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "25322145",
+        "pmcid": "PMC2693516",
+        "title": "Higher Rates of Misdiagnosis in Pediatric Patients Versus Adults Hospitalized With Imported Malaria.",
+        "abstract": "Despite the availability of effective antimalarial prophylaxis, imported adult and pediatric malaria occurs in the United States, and this can pose diagnostic issues. We examined the clinical characteristics and diagnostic challenges of imported malaria requiring adult or pediatric inpatient admission at Montefiore Medical Center in the Bronx which provides care for a large population of immigrants from malaria endemic areas. We conducted a retrospective single center review of patients admitted with a diagnosis of malaria at Montefiore Medical Center from 2005 through 2012. We extracted historical, clinical, and laboratory values from the electronic medical record and patient charts. We identified 95 patients who were diagnosed and hospitalized with malaria from 2005 to 2012, 33 (35%) of them were children and 17 (18%) were with severe malaria. Most patients contracted malaria while visiting friends and relatives in West Africa. Only 38% of travelers took prophylaxis, and fewer than half reported taking it as prescribed. Misdiagnosis by emergency room or primary care doctors was observed in almost one quarter of all of the patients. Misdiagnosis occurred significantly more frequently in children (43%) compared to adults (13%) (P = 0.002). Pediatric patients were more likely to present with abdominal pain (42% vs. 15%; P = 0.005). Pediatric patients admitted for imported malaria at Montefiore Medical Center had a higher rate of misdiagnosis and presented with more gastrointestinal symptoms than hospitalized adults. By describing the clinical characteristics of patients with imported malaria, we hope to improve diagnostic accuracy by health care workers and raise awareness that friends and relatives may require more intensive pretravel counseling.",
+        "journal": "Pediatric emergency care",
+        "publication_year": 2016,
+        "authors": [
+          "Adam E Goldman-Yassen",
+          "Vidya K Mony",
+          "Paul M Arguin",
+          "Johanna P Daily"
+        ],
+        "doi": "10.1097/PEC.0000000000000251",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ],
+        "mesh_terms": [
+          "Adult",
+          "Antimalarials",
+          "Child",
+          "Child, Preschool",
+          "Cross-Sectional Studies",
+          "Diagnostic Errors",
+          "Emergency Service, Hospital",
+          "Emigrants and Immigrants",
+          "Female",
+          "Hospitalization",
+          "Humans",
+          "Malaria",
+          "Male",
+          "Pediatrics",
+          "Plasmodium",
+          "Retrospective Studies",
+          "Travel",
+          "United States"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25322145/"
+      },
+      "relevance_score": 36.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Despite the availability of effective antimalarial prophylaxis, imported adult and pediatric malaria occurs in the United States, and this can pose diagnostic issues.",
+        "We examined the clinical characteristics and diagnostic challenges of imported malaria requiring adult or pediatric inpatient admission at Montefiore Medical Center in the Bronx which provides care for a large population of immigrants from malaria endemic areas."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "23022040",
+        "pmcid": null,
+        "title": "Severe febrile illness in adult hospital admissions in Tanzania: a prospective study in an area of high malaria transmission.",
+        "abstract": "Severe febrile illness is a major cause of adult hospital admission in Africa. Studies of non-malarial fever come largely from children or from high HIV prevalence settings. This prospective study of adult admissions with severe febrile illness in a malaria-endemic area with moderate/low HIV prevalence investigated admission diagnosis as well as final diagnosis based on results of investigations. Severe malaria was the admission diagnosis in 148/198 (74.7%) cases. Plasmodium falciparum was identified in 38/188 (20.2%) admissions and 26/198 (13.1%) were bacteraemic, with 13/25 (52%) prescribed empirical antibiotics. HIV was equally common among those with (16/37; 43.2%) and without P. falciparum (50/138; 36.2%) (p=0.44). In 6/22 (27.3%) deaths, blood cultures were positive for a pathogen, with Streptococcus pneumoniae, Escherichia coli and non-Typhi Salmonella predominating. Chest radiography was suspicious for bacterial/mycobacterial disease in 5/22 additional deaths. Systemic inflammatory response syndrome criteria were more sensitive but less specific than WHO severe malaria criteria for predicting mortality. Malaria is overdiagnosed in adults with severe febrile illness and was not associated with mortality in the absence of co-infection in this high-incidence setting. Adults with severe febrile illness should be tested for malaria and HIV using rapid, sensitive tests. Early antibiotic use should be promoted. Improved diagnostics for invasive bacterial disease are needed.",
+        "journal": "Transactions of the Royal Society of Tropical Medicine and Hygiene",
+        "publication_year": 2012,
+        "authors": [
+          "Behzad Nadjm",
+          "George Mtove",
+          "Ben Amos",
+          "Naomi F Walker",
+          "Helmut Diefendal",
+          "Hugh Reyburn",
+          "Christopher J M Whitty"
+        ],
+        "doi": "10.1016/j.trstmh.2012.08.006",
+        "publication_types": [
+          "Journal Article",
+          "Research Support, Non-U.S. Gov't",
+          "Review"
+        ],
+        "mesh_terms": [
+          "AIDS-Related Opportunistic Infections",
+          "Acquired Immunodeficiency Syndrome",
+          "Adolescent",
+          "Adult",
+          "Aged",
+          "Aged, 80 and over",
+          "Bacteremia",
+          "CD4 Lymphocyte Count",
+          "Coinfection",
+          "Female",
+          "Fever",
+          "Hospital Mortality",
+          "Hospitalization",
+          "Humans",
+          "Malaria",
+          "Male",
+          "Middle Aged",
+          "Prevalence",
+          "Prospective Studies",
+          "Tanzania"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23022040/"
+      },
+      "relevance_score": 34.0,
+      "evidence_level": "uncertain",
+      "study_type": "Other",
+      "rationale": "Ranked by study type (Other), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Severe febrile illness is a major cause of adult hospital admission in Africa.",
+        "Studies of non-malarial fever come largely from children or from high HIV prevalence settings."
+      ],
+      "limitations": [
+        "Publication type does not clearly identify a high-level clinical design."
+      ]
+    },
+    {
+      "paper": {
+        "pmid": "11512657",
+        "pmcid": null,
+        "title": "Severe falciparum malaria in five soldiers from East Timor: a case series and literature review.",
+        "abstract": "Despite chemoprophylaxis, malaria remains a serious threat for large numbers of non-immune soldiers deployed in endemic areas. Five adult cases of severe falciparum malaria are reported. Three cases were complicated by multiorgan failure and one of these patients died from cerebral malaria. These cases serve to highlight issues, in an Australian intensive care unit, associated with the management of severe malaria, an uncommon disease in our country. The need for rapid diagnosis and commencement of appropriate treatment is paramount in preventing further morbidity and mortality. Understanding and management of malaria continues to evolve rapidly. The pathophysiology of acute lung injury, shock and brain injury associated with malaria are examined in light of recent research. This article discusses the current controversies of exchange blood transfusion and the use of the new artemisinin derivatives.",
+        "journal": "Anaesthesia and intensive care",
+        "publication_year": 2001,
+        "authors": [
+          "P G Blum",
+          "D Stephens"
+        ],
+        "doi": "10.1177/0310057X0102900417",
+        "publication_types": [
+          "Case Reports",
+          "Journal Article",
+          "Review"
+        ],
+        "mesh_terms": [
+          "Adolescent",
+          "Adult",
+          "Antimalarials",
+          "Artemisinins",
+          "Australia",
+          "Exchange Transfusion, Whole Blood",
+          "Female",
+          "Humans",
+          "Indonesia",
+          "Malaria, Cerebral",
+          "Malaria, Falciparum",
+          "Military Personnel",
+          "Multiple Organ Failure",
+          "Sesquiterpenes"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11512657/"
+      },
+      "relevance_score": 22.0,
+      "evidence_level": "low",
+      "study_type": "Case Report",
+      "rationale": "Ranked by study type (Case Report), PICO term overlap (4), abstract availability, and publication year.",
+      "key_findings": [
+        "Despite chemoprophylaxis, malaria remains a serious threat for large numbers of non-immune soldiers deployed in endemic areas.",
+        "Five adult cases of severe falciparum malaria are reported."
+      ],
+      "limitations": []
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C001",
+      "text": "For adults with severe or complicated malaria, intravenous artesunate is the treatment of choice, with intravenous quinine serving as the immediate alternative if artesunate is unavailable [26880088].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "26880088"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C002",
+      "text": "Patients with severe malaria should be managed in high-dependency or intensive care environments to address potential multi-organ failure and hemodynamic instability [26880088].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "26880088"
+      ],
+      "evidence_level": "high",
+      "risk_level": "medium",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C003",
+      "text": "While some evidence from non-endemic cohorts suggests that isolated hyperparasitaemia may not be an independent risk factor for critical disease [40445171], other data indicate that parasitemia >5% may be a predictor of artesunate treatment failure [41077038].",
+      "claim_type": "prognosis",
+      "support_status": "supported",
+      "pmids": [
+        "40445171",
+        "41077038"
+      ],
+      "evidence_level": "moderate",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C004",
+      "text": "For adults with severe malaria in endemic areas, artesunate is recommended as the first-choice treatment because it is more effective at saving lives than quinine [26880088, 36367444].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "26880088",
+        "36367444"
+      ],
+      "evidence_level": "high",
+      "risk_level": "high",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    },
+    {
+      "id": "C005",
+      "text": "Research also emphasizes the importance of using high-quality medicines and providing supportive care to improve patient outcomes [38960312].",
+      "claim_type": "epidemiology",
+      "support_status": "supported",
+      "pmids": [
+        "38960312"
+      ],
+      "evidence_level": "high",
+      "risk_level": "low",
+      "rationale": "Claim has cited support in the loaded Evidence Pack.",
+      "limitation_note": null
+    }
+  ],
+  "caution_map": [
+    {
+      "id": "LCAU001",
+      "claim_id": "C003",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "conflicting_results",
+      "explanation": "Study [40445171] suggests isolated hyperparasitaemia is not an independent risk factor for critical disease, whereas [41077038] identifies parasitemia >5% as an independent risk factor for artesunate treatment failure.",
+      "severity": "medium"
+    },
+    {
+      "id": "LCAU002",
+      "claim_id": "C003",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "population_mismatch",
+      "explanation": "The evidence for treatment failure risk scoring [41077038] is derived from a South Korean cohort and may not extrapolate to endemic populations.",
+      "severity": "medium"
+    },
+    {
+      "id": "LCAU003",
+      "claim_id": "C004",
+      "supporting_pmids": [],
+      "cautionary_pmids": [],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Study [36367444] focuses on mosquito habitat modification for malaria control (preventative/public health) and does not provide evidence for the clinical efficacy of artesunate versus quinine in treating severe malaria.",
+      "severity": "high"
+    },
+    {
+      "id": "CAU001",
+      "claim_id": "C001",
+      "supporting_pmids": [
+        "26880088"
+      ],
+      "cautionary_pmids": [
+        "26880088"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU002",
+      "claim_id": "C002",
+      "supporting_pmids": [
+        "26880088"
+      ],
+      "cautionary_pmids": [
+        "26880088"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU003",
+      "claim_id": "C003",
+      "supporting_pmids": [
+        "40445171",
+        "41077038"
+      ],
+      "cautionary_pmids": [
+        "40445171",
+        "41077038"
+      ],
+      "caution_type": "outcome_mismatch",
+      "explanation": "Cited evidence emphasizes surrogate or laboratory outcomes rather than the claimed clinical outcome.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU004",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "26880088",
+        "36367444"
+      ],
+      "cautionary_pmids": [
+        "26880088",
+        "36367444"
+      ],
+      "caution_type": "population_mismatch",
+      "explanation": "Some cited evidence may not directly match the target adult human population.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU005",
+      "claim_id": "C004",
+      "supporting_pmids": [
+        "26880088",
+        "36367444"
+      ],
+      "cautionary_pmids": [
+        "26880088",
+        "36367444"
+      ],
+      "caution_type": "conflicting_results",
+      "explanation": "Cited evidence uses language suggesting mixed or inconsistent results across studies.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU006",
+      "claim_id": "C005",
+      "supporting_pmids": [
+        "38960312"
+      ],
+      "cautionary_pmids": [
+        "38960312"
+      ],
+      "caution_type": "indirect_evidence",
+      "explanation": "Cited evidence is indirect for clinical decision-making in the target setting.",
+      "severity": "medium"
+    },
+    {
+      "id": "CAU007",
+      "claim_id": "C001",
+      "supporting_pmids": [],
+      "cautionary_pmids": [
+        "40445171",
+        "41077038",
+        "38960312",
+        "36367444",
+        "26880088"
+      ],
+      "caution_type": "conflicting_results",
+      "explanation": "Papers in this pack reach opposing conclusions on at least one outcome — review individual study findings before drawing clinical conclusions.",
+      "severity": "medium"
+    }
+  ],
+  "freshness": {
+    "score": 1.0,
+    "last_search_date": "2026-05-01",
+    "newest_publication_year": 2025,
+    "oldest_publication_year": 2001,
+    "recommended_refresh_days": 180,
+    "rationale": "Newest loaded publication year is 2025 and oldest is 2001; the pack is 1 years from the newest included evidence."
+  },
+  "executive_summary": "For adults with severe or complicated malaria, intravenous artesunate is the treatment of choice, with intravenous quinine serving as the immediate alternative if artesunate is unavailable [26880088]. Patients with severe malaria should be managed in high-dependency or intensive care environments to address potential multi-organ failure and hemodynamic instability [26880088]. While some evidence from non-endemic cohorts suggests that isolated hyperparasitaemia may not be an independent risk factor for critical disease [40445171], other data indicate that parasitemia >5% may be a predictor of artesunate treatment failure [41077038].",
+  "clinical_interpretation": "For adults with severe or complicated malaria, intravenous artesunate is the treatment of choice, with intravenous quinine serving as the immediate alternative if artesunate is unavailable [26880088]. Patients with severe malaria should be managed in high-dependency or intensive care environments to address potential multi-organ failure and hemodynamic instability [26880088]. While some evidence from non-endemic cohorts suggests that isolated hyperparasitaemia may not be an independent risk factor for critical disease [40445171], other data indicate that parasitemia >5% may be a predictor of artesunate treatment failure [41077038]. These findings should be used for evidence review and education, not for individual diagnosis, emergency triage, or treatment instructions.",
+  "what_the_evidence_does_not_prove": [
+    "It does not diagnose any individual patient.",
+    "It does not replace urgent clinical evaluation for warning signs.",
+    "It does not prove that every finding has equal predictive value in every setting."
+  ],
+  "patient_friendly_explanation": "For adults with severe malaria in endemic areas, artesunate is recommended as the first-choice treatment because it is more effective at saving lives than quinine [26880088, 36367444]. Research also emphasizes the importance of using high-quality medicines and providing supportive care to improve patient outcomes [38960312].",
+  "safety_notice": "VeritasClin Field is not a diagnostic, prescription, or emergency triage tool. Strong clinical claims require a PMID/PMCID from the loaded evidence.",
+  "citation_coverage": 1.0
+}
