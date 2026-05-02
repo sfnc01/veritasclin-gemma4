@@ -72,7 +72,7 @@ Gemma 4's **multimodal** capability (clinical image input), **native function ca
 4. They ask in Portuguese: `Quais sinais indicam maior risco de dengue grave?`
 5. VeritasClin answers only from the loaded pack, with cited claims, a Claim Ledger, a Caution & Conflict Map, and a safety notice.
 
-> **Live demo:** [veritasclin.aureagroup.org](https://veritasclin.aureagroup.org) — runs Gemma 4 E4B via Ollama, no login required.
+> **Live demo:** [veritasclin.aureagroup.org](https://veritasclin.aureagroup.org) — runs Gemma 4 31B via Ollama Cloud, no login required.
 > Run locally: `streamlit run app/streamlit_app.py` and select the dengue demo question. See `docs/demo_script.md` for the full walkthrough.
 
 ## Why It Matters
