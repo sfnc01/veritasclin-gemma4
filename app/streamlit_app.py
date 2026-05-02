@@ -643,14 +643,29 @@ with st.sidebar:
     )
 
     st.markdown("### Provider")
-    _provider_options = ["ollama", "openai_compatible"]
+    _PROVIDER_LABELS = ["Ollama Cloud", "Local Ollama", "OpenAI-compatible"]
+    _LABEL_TO_INTERNAL = {
+        "Ollama Cloud": "ollama",
+        "Local Ollama": "ollama",
+        "OpenAI-compatible": "openai_compatible",
+    }
     _env_provider = os.environ.get("GEMMA_PROVIDER", "ollama")
-    _provider_default = (
-        _provider_options.index(_env_provider)
-        if _env_provider in _provider_options
-        else 0
+    _ollama_url = os.environ.get("OLLAMA_BASE_URL", "")
+    if _env_provider == "openai_compatible":
+        _provider_default = 2
+    elif "ollama.com" in _ollama_url:
+        _provider_default = 0
+    else:
+        _provider_default = 1
+    _provider_display = st.selectbox(
+        "LLM provider",
+        _PROVIDER_LABELS,
+        index=_provider_default,
+        help="Reflects your OLLAMA_BASE_URL in .env. "
+             "Ollama Cloud = ollama.com (internet required). "
+             "Local Ollama = localhost:11434 (fully offline capable).",
     )
-    provider = st.selectbox("LLM provider", _provider_options, index=_provider_default)
+    provider = _LABEL_TO_INTERNAL[_provider_display]
     if os.environ.get("GEMMA_PROVIDER") != provider:
         os.environ["GEMMA_PROVIDER"] = provider
         reset_settings_cache()
@@ -700,7 +715,7 @@ DEMO_QUESTIONS = {
 settings = get_settings()
 source_mode = "PubMed enabled" if use_pubmed and settings.pubmed_configured else "Bundled demo data"
 offline_state = "Loaded" if "pack" in st.session_state else "No pack loaded"
-provider_label = provider.replace("_", " ").title()
+provider_label = _provider_display
 
 # ── Provider warnings ─────────────────────────────────────────────────────
 
