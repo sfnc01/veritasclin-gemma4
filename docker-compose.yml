@@ -1,16 +1,8 @@
 services:
   veritasclin-field:
-    image: python:3.11-slim
-    working_dir: /workspace
-    volumes:
-      - .:/workspace
+    build: .
     ports:
       - "8501:8501"
     env_file:
       - .env
     restart: unless-stopped
-    command: >
-      sh -c "pip install -r requirements.txt &&
-             streamlit run app/streamlit_app.py
-             --server.address=0.0.0.0
-             --server.port=8501"
