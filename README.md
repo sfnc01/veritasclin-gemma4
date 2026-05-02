@@ -66,15 +66,14 @@ Gemma 4's **multimodal** capability (clinical image input), **native function ca
 
 ## Demo
 
-Primary hackathon story:
-
 1. A public health worker builds an Evidence Pack for severe dengue warning signs while online.
 2. The pack is exported as an HTML field report, JSON, Markdown, CSV, and caution-map artifacts.
 3. The worker loads the pack offline.
 4. They ask in Portuguese: `Quais sinais indicam maior risco de dengue grave?`
 5. VeritasClin answers only from the loaded pack, with cited claims, a Claim Ledger, a Caution & Conflict Map, and a safety notice.
 
-> **Live demo:** Run `streamlit run app/streamlit_app.py` and select the dengue demo question. See `docs/demo_script.md` for the full 3-minute walkthrough script.
+> **Live demo:** [veritasclin.sthef.dev](https://veritasclin.sthef.dev) — runs Gemma 4 E4B via Ollama, no login required.
+> Run locally: `streamlit run app/streamlit_app.py` and select the dengue demo question. See `docs/demo_script.md` for the full walkthrough.
 
 ## Why It Matters
 
@@ -175,7 +174,7 @@ Deterministic code handles ranking, citation coverage, claim verification, fresh
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env        # then edit .env with your Ollama and NCBI credentials
 streamlit run app/streamlit_app.py
 ```
 
@@ -183,6 +182,13 @@ Open Streamlit and choose the dengue demo:
 
 ```text
 What does recent evidence say about warning signs for severe dengue in adults?
+```
+
+**Or run with Docker:**
+
+```bash
+cp .env.example .env        # edit with your credentials
+docker compose up
 ```
 
 ## LLM Provider
@@ -262,9 +268,7 @@ Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `c
 | [Evidence Packs](docs/evidence_packs.md) | Pack schema, export formats, offline guarantees |
 | [Safety Model](docs/safety.md) | Guard categories, rewrite logic, hard rules |
 | [Evaluation](docs/evaluation.md) | Metrics, baselines, reproducibility criteria |
-| [3-Minute Demo Script](docs/demo_script.md) | Step-by-step walkthrough for judges and presenters |
-| [Judging Strategy](docs/judging_strategy.md) | Alignment with hackathon criteria |
-| [Submission Checklist](docs/submission_checklist.md) | Pre-submission verification list |
+| [Demo Script](docs/demo_script.md) | Step-by-step walkthrough of the full pipeline |
 
 ## Roadmap
 
