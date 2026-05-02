@@ -68,90 +68,171 @@ st.markdown(
       line-height: 1.6;
     }
 
+    /* Make Streamlit's default header transparent so our app bar sits flush */
+    header[data-testid="stHeader"] {
+      background: transparent !important;
+      backdrop-filter: none !important;
+    }
     .block-container {
-      padding-top: 1.25rem;
+      padding-top: 4.2rem;
       max-width: 1300px;
     }
+    /* Kill Streamlit's default inter-element gap */
+    [data-testid="stVerticalBlock"] { gap: 0.4rem !important; }
 
-    /* ── Header ─────────────────────────────────────────────────── */
-    .vc-header {
+    /* ── App bar (console header) ────────────────────────────────── */
+    .vc-appbar {
+      position: relative;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 28px;
+      padding: 14px 22px;
+      min-height: 72px;
+      background:
+        radial-gradient(600px 200px at 100% 0%, rgba(34,211,238,0.16) 0%, rgba(34,211,238,0) 70%),
+        linear-gradient(90deg, #0A1F3A 0%, #0D3B55 100%);
+      border: 1px solid rgba(165, 243, 252, 0.18);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.05) inset,
+        0 12px 28px rgba(8, 31, 58, 0.18);
+    }
+    .vc-appbar-brand {
       display: flex;
       align-items: center;
-      gap: 2rem;
-      border-bottom: 2px solid var(--vc-teal-light);
-      padding-bottom: 1.25rem;
-      margin-bottom: 0.75rem;
+      gap: 12px;
+      min-width: 0;
+      padding-right: 22px;
+      border-right: 1px solid rgba(255,255,255,0.08);
     }
-    .vc-logo {
-      width: 200px;
-      min-width: 160px;
+    .vc-appbar-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 9px;
+      background: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: grid;
+      place-items: center;
+      padding: 6px;
+      flex: 0 0 auto;
+    }
+    .vc-appbar-mark img {
+      width: 100%; height: 100%;
+      display: block; object-fit: contain;
+    }
+    .vc-appbar-mark-fallback {
+      color: #0C2340;
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .vc-appbar-wordmark {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      line-height: 1.05;
+    }
+    .vc-appbar-wordmark-main {
+      color: #FFFFFF !important;
+      font-size: 0.97rem;
+      font-weight: 800;
+      letter-spacing: -0.005em;
+      white-space: nowrap;
+    }
+    .vc-appbar-wordmark-sub {
+      color: rgba(165, 243, 252, 0.72) !important;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      margin-top: 0.32rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .vc-appbar-tagline {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      line-height: 1.25;
+    }
+    .vc-appbar-tagline-pri {
+      color: #FFFFFF !important;
+      font-size: 0.96rem;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .vc-appbar-tagline-pri b {
+      color: #67E8F9;
+      font-weight: 700;
+    }
+    .vc-appbar-tagline-sec {
+      color: rgba(226, 255, 250, 0.62) !important;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-top: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .vc-appbar-status {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 6px;
+      padding-left: 22px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .vc-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      color: rgba(226, 255, 250, 0.86) !important;
+      font-weight: 500;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .vc-chip-accent {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(165, 243, 252, 0.32);
+      color: #A5F3FC !important;
+      font-weight: 600;
+    }
+    .vc-chip-accent svg { color: #67E8F9; }
+    .vc-chip-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      display: inline-block;
       flex-shrink: 0;
     }
-    .vc-header-right { flex: 1; }
-    .vc-kicker {
-      color: var(--vc-teal);
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-    }
-    .vc-title h1 {
-      color: var(--vc-navy);
-      font-size: 1.85rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0;
-      line-height: 1.15;
-    }
-    .vc-title p {
-      color: var(--vc-muted);
-      font-size: 0.94rem;
-      margin: 0.4rem 0 0 0;
-      max-width: 72ch;
-    }
+    .dot-green { background: #34D399; box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2); }
+    .dot-teal  { background: #22D3EE; box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2); }
+    .dot-amber { background: #FBBF24; box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2); }
+    .dot-muted { background: rgba(255,255,255,0.32); }
 
-    /* ── Status grid ─────────────────────────────────────────────── */
-    .vc-status-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-    .vc-status {
-      background: var(--vc-panel-alt);
-      border: 1px solid var(--vc-line);
-      border-radius: 8px;
-      padding: 0.7rem 0.95rem;
-    }
-    .vc-status-label {
-      color: var(--vc-muted);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.22rem;
-    }
-    .vc-status-value {
-      color: var(--vc-navy);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    /* ── Disclaimer banner ───────────────────────────────────────── */
+    /* ── Disclaimer notice ───────────────────────────────────────── */
     .vc-disclaimer {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      border-left: 4px solid var(--vc-alert-border);
-      background: var(--vc-alert-bg);
-      border-radius: 0 6px 6px 0;
-      padding: 0.65rem 1rem;
-      margin: 0.75rem 0 1.1rem 0;
-      color: var(--vc-alert-text);
-      font-size: 0.875rem;
-      font-weight: 500;
+      gap: 0.5rem;
+      border: 1px solid var(--vc-line);
+      background: #FAFBFC;
+      border-radius: 8px;
+      padding: 0.58rem 1rem;
+      margin: 0.15rem 0 1.15rem 0;
+      color: var(--vc-muted);
+      font-size: 0.8rem;
     }
 
     /* ── Section headings ────────────────────────────────────────── */
@@ -409,6 +490,24 @@ st.markdown(
       background-color: #F0F9FF;
       border-right: 1px solid var(--vc-line);
     }
+    .vc-sidebar-brand {
+      width: 108px;
+      height: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 1px 8px rgba(12, 35, 64, 0.08);
+      margin: 0.2rem 0 1.35rem 0;
+    }
+    .vc-sidebar-brand img {
+      width: 86px;
+      height: 86px;
+      display: block;
+      object-fit: contain;
+    }
     [data-testid="stSidebar"] h3 {
       color: var(--vc-navy);
       font-size: 0.8rem;
@@ -442,11 +541,27 @@ st.markdown(
     }
 
     /* ── Responsive ──────────────────────────────────────────────── */
-    @media (max-width: 760px) {
-      .vc-status-grid { grid-template-columns: 1fr; }
-      .pico-grid      { grid-template-columns: 1fr; }
-      .metric-row     { flex-direction: column; }
-      .block-container { padding-left: 1rem; padding-right: 1rem; }
+    @media (max-width: 1100px) {
+      .vc-appbar { grid-template-columns: auto 1fr; row-gap: 10px; padding: 14px 18px; }
+      .vc-appbar-status {
+        grid-column: 1 / -1;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .vc-appbar { grid-template-columns: 1fr; padding: 14px 16px; }
+      .vc-appbar-brand { padding-right: 0; border-right: none; }
+      .vc-appbar-tagline-pri { white-space: normal; }
+      .vc-appbar-tagline-sec { display: none; }
+      .vc-appbar-status { gap: 6px; }
+      .pico-grid              { grid-template-columns: 1fr; }
+      .metric-row             { flex-direction: column; }
+      .block-container        { padding-left: 1rem; padding-right: 1rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -470,7 +585,11 @@ with st.sidebar:
     _mark_src = f"data:image/png;base64,{_img_b64(MARK_PATH)}" if MARK_PATH.exists() else ""
     if _mark_src:
         st.markdown(
-            f'<img src="{_mark_src}" width="88" style="margin-bottom:0.5rem">',
+            (
+                f'<div class="vc-sidebar-brand">'
+                f'<img src="{_mark_src}" alt="VeritasClin Field">'
+                f"</div>"
+            ),
             unsafe_allow_html=True,
         )
     st.markdown("### Mode")
@@ -564,43 +683,55 @@ elif provider == "openai_compatible" and not (
 
 # ── Header ─────────────────────────────────────────────────────────────────
 
-_logo_src = f"data:image/png;base64,{_img_b64(LOGO_PATH)}" if LOGO_PATH.exists() else ""
-_logo_html = (
-    f'<img src="{_logo_src}" alt="VeritasClin Field" class="vc-logo">'
-    if _logo_src
-    else '<span style="font-size:1.5rem;font-weight:800;color:var(--vc-navy)">VeritasClin</span>'
+_hero_mark_src = f"data:image/png;base64,{_img_b64(MARK_PATH)}" if MARK_PATH.exists() else ""
+_hero_mark_html = (
+    f'<img src="{_hero_mark_src}" alt="VeritasClin Field">'
+    if _hero_mark_src
+    else '<span class="vc-appbar-mark-fallback">V</span>'
 )
+
+_retrieval_dot = "dot-green" if (use_pubmed and settings.pubmed_configured) else "dot-amber"
+_offline_dot = "dot-green" if "pack" in st.session_state else "dot-muted"
 
 st.markdown(
     f"""
-    <div class="vc-header">
-      {_logo_html}
-      <div class="vc-header-right">
-        <div class="vc-title">
-          <div class="vc-kicker">Offline-first evidence pack console</div>
-          <h1>Audit-ready medical evidence for field teams</h1>
-          <p>
-            Build PubMed-backed Evidence Packs online, carry their Claim Ledger and
-            Caution Map offline, and answer only from loaded evidence in English,
-            Portuguese, or Spanish — powered by Gemma&nbsp;4.
-          </p>
-        </div>
-        <div class="vc-status-grid">
-          <div class="vc-status">
-            <span class="vc-status-label">Provider</span>
-            <span class="vc-status-value">{provider_label}</span>
-          </div>
-          <div class="vc-status">
-            <span class="vc-status-label">Retrieval</span>
-            <span class="vc-status-value">{source_mode}</span>
-          </div>
-          <div class="vc-status">
-            <span class="vc-status-label">Offline pack</span>
-            <span class="vc-status-value">{offline_state}</span>
-          </div>
+    <header class="vc-appbar" role="banner" aria-label="VeritasClin Field console">
+      <div class="vc-appbar-brand">
+        <div class="vc-appbar-mark">{_hero_mark_html}</div>
+        <div class="vc-appbar-wordmark">
+          <span class="vc-appbar-wordmark-main">VeritasClin</span>
+          <span class="vc-appbar-wordmark-sub">Field Console</span>
         </div>
       </div>
-    </div>
+      <div class="vc-appbar-tagline">
+        <span class="vc-appbar-tagline-pri">
+          Audit-ready medical evidence <b>for field teams</b>
+        </span>
+        <span class="vc-appbar-tagline-sec">
+          PubMed-backed packs &middot; offline-capable &middot; English, Portuguese, Spanish
+        </span>
+      </div>
+      <div class="vc-appbar-status">
+        <span class="vc-chip vc-chip-accent" title="Powered by Gemma 4 — 8 pipeline touchpoints">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          Gemma&nbsp;4
+        </span>
+        <span class="vc-chip">
+          <span class="vc-chip-dot dot-teal"></span>
+          {provider_label}
+        </span>
+        <span class="vc-chip">
+          <span class="vc-chip-dot {_retrieval_dot}"></span>
+          {source_mode}
+        </span>
+        <span class="vc-chip">
+          <span class="vc-chip-dot {_offline_dot}"></span>
+          {offline_state}
+        </span>
+      </div>
+    </header>
     """,
     unsafe_allow_html=True,
 )
@@ -610,10 +741,18 @@ st.markdown(
 st.markdown(
     """
     <div class="vc-disclaimer">
-      <strong>Medical disclaimer:</strong>&nbsp;
-      Not a diagnostic, prescription, or emergency triage tool.
-      No PMID, no strong clinical claim.
-      All clinical decisions must be made by qualified healthcare professionals.
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           style="flex-shrink:0;opacity:0.6">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <span>
+        <strong style="color:#374151">Medical disclaimer:</strong>&nbsp;
+        Evidence review and education only — not a diagnostic, prescription, or triage tool.
+        All clinical decisions must be made by qualified healthcare professionals.
+      </span>
     </div>
     """,
     unsafe_allow_html=True,
