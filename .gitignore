@@ -11,3 +11,4 @@ htmlcov/
 .DS_Store
 evidence_packs/
 .streamlit/secrets.toml
+*.egg-info/
