@@ -34,7 +34,50 @@ def _img_b64(path: Path) -> str:
         return base64.b64encode(path.read_bytes()).decode()
     return ""
 
-st.set_page_config(page_title="VeritasClin Field", page_icon="VC", layout="wide")
+st.set_page_config(
+    page_title="VeritasClin Field — Offline Medical Evidence Packs",
+    page_icon="🩺",
+    layout="wide",
+    menu_items={
+        "Get Help": "https://github.com/sfnc01/veritasclin-gemma4",
+        "Report a bug": "https://github.com/sfnc01/veritasclin-gemma4/issues",
+        "About": "VeritasClin Field — Offline-first medical evidence packs powered by Gemma 4.",
+    },
+)
+
+st.markdown(
+    """
+    <meta name="description" content="VeritasClin Field turns PubMed into portable, offline-ready medical Evidence Packs for healthcare workers in low-connectivity settings. Powered by Gemma 4 via Ollama.">
+    <meta name="keywords" content="medical AI, evidence-based medicine, offline health tools, PubMed evidence packs, Gemma 4, Ollama, clinical evidence, healthcare AI, field medicine">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veritasclin.aureagroup.org">
+    <meta property="og:title" content="VeritasClin Field — Offline Medical Evidence Packs">
+    <meta property="og:description" content="Turn clinical questions into portable, citable Evidence Packs using Gemma 4. Works offline. Built for field healthcare teams in low-connectivity settings.">
+    <meta property="og:site_name" content="VeritasClin Field">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VeritasClin Field — Offline Medical Evidence Packs">
+    <meta name="twitter:description" content="Offline-first medical evidence packs powered by Gemma 4. For healthcare workers in low-connectivity settings.">
+    <meta name="twitter:site" content="@veritasclin">
+    <link rel="canonical" href="https://veritasclin.aureagroup.org">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VeritasClin Field",
+      "description": "Offline-first medical evidence pack system. Turns PubMed into portable, audit-ready Evidence Packs powered by Gemma 4 for healthcare workers in low-connectivity settings.",
+      "url": "https://veritasclin.aureagroup.org",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "codeRepository": "https://github.com/sfnc01/veritasclin-gemma4",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@type": "Organization", "name": "VeritasClin"}
+    }
+    </script>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown(
     """

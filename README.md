@@ -292,7 +292,7 @@ Each directory contains: `pack.json` · `dossier.md` · `claim_ledger.csv` · `c
 
 ## Roadmap
 
-**v0.1 + v0.2 — Hackathon Submission** ✅ Complete
+**v0.2
 
 - Live Gemma 4 pipeline: 8 touchpoints — multimodal image input, PICO extraction, safety rewrite, native function calling for PubMed query, evidence synthesis, patient explanation, LLM-backed caution reasoning, offline Q&A
 - Portable Evidence Pack: Claim Ledger, Caution & Conflict Map, freshness score, 5 export formats (HTML field report, JSON, Markdown, CSV, caution JSON)
