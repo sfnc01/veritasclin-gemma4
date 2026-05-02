@@ -12,3 +12,4 @@ htmlcov/
 evidence_packs/
 .streamlit/secrets.toml
 *.egg-info/
+.claude/
