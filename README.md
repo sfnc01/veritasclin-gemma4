@@ -46,10 +46,12 @@ OLLAMA_BASE_URL=https://ollama.com
 OLLAMA_API_KEY=your_key          # get one at ollama.com/settings/keys
 ```
 
-**Option B — Local Ollama** (runs on consumer hardware with the efficiency variant):
+**Option B — Local Ollama** (fully local, no cloud APIs, ~8 GB VRAM):
 
 ```bash
-ollama pull gemma4:e4b           # quantised 4-bit variant, ~8 GB VRAM
+git clone https://github.com/sfnc01/veritasclin-gemma4
+cd veritasclin-gemma4
+ollama pull gemma4:e4b           # quantised 4-bit variant
 # .env
 GEMMA_PROVIDER=ollama
 GEMMA_MODEL=gemma4:e4b
@@ -60,7 +62,10 @@ Then start the app either way:
 
 ```bash
 streamlit run app/streamlit_app.py
+# or: docker compose up
 ```
+
+> **Note on "offline":** The *offline Q&A* feature means pack answers are generated from the loaded pack only — no PubMed calls, no cloud inference. The app server itself still needs to run. For a fully local or air-gapped deployment with no internet dependency, use **Option B** above. The hosted demo at [veritasclin.aureagroup.org](https://veritasclin.aureagroup.org) runs on Ollama Cloud and requires an internet connection.
 
 Gemma 4's **multimodal** capability (clinical image input), **native function calling** (PubMed query construction), and **long-context reasoning** (evidence synthesis over multiple abstracts) are all used in the live pipeline.
 
@@ -165,7 +170,7 @@ Deterministic code handles ranking, citation coverage, claim verification, fresh
 | --- | --- |
 | Evidence Pack | A portable review artifact containing the question, PICO, PubMed query, papers, ranked evidence, claims, cautions, freshness, summaries, and exports. |
 | Claim Ledger | A table of clinically meaningful claims with support status, cited PMIDs, evidence level, risk level, rationale, and limitations. |
-| Offline Mode | A loaded pack can answer questions without PubMed, internet access, or external retrieval. Unsupported questions are refused. |
+| Offline Mode | Once a pack is loaded, Q&A uses only that pack's evidence — no PubMed calls, no cloud inference. For a fully air-gapped setup, run the app locally with local Ollama (Option B above). |
 | Caution & Conflict Map | A structured list of uncertainty signals such as low certainty, indirect evidence, population mismatch, safety signals, or insufficient data. |
 
 ## Quickstart
