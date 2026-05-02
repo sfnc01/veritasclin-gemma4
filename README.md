@@ -173,6 +173,21 @@ Deterministic code handles ranking, citation coverage, claim verification, fresh
 | Offline Mode | Once a pack is loaded, Q&A uses only that pack's evidence — no PubMed calls, no cloud inference. For a fully air-gapped setup, run the app locally with local Ollama (Option B above). |
 | Caution & Conflict Map | A structured list of uncertainty signals such as low certainty, indirect evidence, population mismatch, safety signals, or insufficient data. |
 
+## Offline Mode
+
+"Offline-first" describes the *use* phase, not the build phase. The workflow is intentionally two-step:
+
+| Phase | Connectivity | What happens |
+| --- | --- | --- |
+| **Build** | Online | App calls PubMed/NCBI to retrieve papers. Gemma 4 synthesises evidence, extracts claims, maps cautions. Produces a self-contained Evidence Pack. |
+| **Use** | None required | Load `pack.json`. Ask questions in English, Portuguese, or Spanish. Gemma 4 answers only from the embedded pack data — no PubMed call, no cloud API, no external retrieval. |
+
+The Evidence Pack contains everything the offline Q&A engine needs: paper metadata, abstracts, ranked evidence items, extracted claims, caution map, and summaries. Once built, it is independent of PubMed and Ollama.
+
+This matches the real field workflow: build a dengue or malaria evidence pack at a connected facility, export it, carry it to a field clinic or outbreak site, and keep asking questions after connectivity is gone.
+
+> The six pre-built packs in [`examples/`](examples/) are ready to load offline right now — no credentials or API keys required. Open the app, select **Load Offline Pack**, and upload any `pack.json`.
+
 ## Quickstart
 
 ```bash
