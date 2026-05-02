@@ -11,9 +11,15 @@ def get_llm_provider(provider_name: str | None = None) -> LLMProvider:
         return OllamaProvider()
     if name == "openai_compatible":
         return OpenAICompatibleProvider()
-    # "mock" is accepted only for test isolation — not a user-facing option
-    from veritasclin.llm.mock import _MockLLMProvider  # noqa: PLC0415
-    return _MockLLMProvider()
+    if name == "mock":
+        # Test isolation only — injected by conftest.py monkeypatch; not a user-facing option
+        from veritasclin.llm.mock import _MockLLMProvider  # noqa: PLC0415
+        return _MockLLMProvider()
+    raise ValueError(
+        f"Unknown GEMMA_PROVIDER '{name}'. "
+        "Set GEMMA_PROVIDER=ollama (Ollama Cloud or local) or "
+        "GEMMA_PROVIDER=openai_compatible in .env. See README for setup."
+    )
 
 
 __all__ = [
